@@ -1,0 +1,92 @@
+#inputForm input{
+    font-size: 3em;
+    margin: 4px;
+    border: solid black 2px;
+}
+
+#inputForm{
+    height: 15%;
+    background-color: rgb(74, 158, 158);
+    width: fit-content;
+    height: fit-content;
+    margin: 14px;
+    padding: 0 5px 0 0;
+}
+
+#inputForm button{
+    height: fit-content;
+}
+
+#cijIcon{
+    max-height: 100px;
+}
+
+#header{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    margin: 20px 0px;
+}
+
+button{
+    border-radius: 3px;
+    background: #db7aa2;
+    color: #ffffff;
+    padding: 0.4em 1em;
+    border: 0;
+    line-height: 1.6;
+    display: inline-block;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0px 0px 0px -7px rgba(0,0,0,0);
+}
+
+.site-title{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 1;
+    font-family: 'Josefin Sans', var(--global-fallback-font);
+    color: var(--global-palette4);
+    display: flex;
+}
+
+.site-title-wrap{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+}
+
+.site-title-wrap p{
+    height: fit-content;
+    padding: 2px;
+    margin: 2px;
+}
+
+.site-description{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 2px;
+    font-family: Lato, var(--global-fallback-font);
+    text-transform: uppercase;
+    color: rgb(100 100 100 / 46%);
+}
+
+html, body {margin:0;padding:0;height:100%;}
+
+body{
+    background-color: #eee0e0;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
