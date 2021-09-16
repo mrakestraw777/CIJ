@@ -30,11 +30,11 @@
 }
 
 #inputForm{
-    height: 15%;
-    width: fit-content;
-    height: fit-content;
+            /* height: 15%; */
+    /* width: fit-content; */
+    /* height: fit-content; */
     margin: 14px;
-    padding: 0 5px 0 0;
+    /* padding: 0 5px 0 0; */
     display: flex;
     align-items: center;
 }
