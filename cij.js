@@ -39,9 +39,20 @@ function searchTranscripts(text,searchTerm)
 function presentArrayData(formattedArray)
 {
   let htmlData = '';
+  let arrayFormatCount = 0
   formattedArray.forEach(currentArray =>{
-    htmlData += `<a target="_blank" href="${currentArray['url']}">${currentArray['title']}</a> has ${currentArray['term']} 
-    appear ${currentArray['termCount']} times (${currentArray['level']})<br>`
+    if(arrayFormatCount == 0)
+    {
+
+      htmlData += `<a id="ichiban" target="_blank" href="${currentArray['url']}"><p>${currentArray['title']}</a> has <span class="searchTerm">${currentArray['term']}</span> appear ${currentArray['termCount']} times (${currentArray['level']})</p><br>`;
+
+      arrayFormatCount = 1;
+
+    }else
+    {
+      htmlData += `<a target="_blank" href="${currentArray['url']}"><p>${currentArray['title']}</a> has <span class="searchTerm">${currentArray['term']}</span> appear ${currentArray['termCount']} times (${currentArray['level']})</p><br>`
+    }
+    
     console.log(htmlData)
   })
   return htmlData;
@@ -59,6 +70,7 @@ document.getElementById("searchButton").onclick = function() {
     const searchTerm = document.getElementById('searchInput').value;
     let searchTermArray = searchTranscripts(fullTranscripts, searchTerm);
     document.getElementById('searchResults').innerHTML = presentArrayData(searchTermArray);
+    document.getElementById('searchResults').style.display = 'inherit';
 
   }
     
@@ -17738,18072 +17750,22086 @@ let fullTranscripts = [ //this is the main array for FULL TRANSCRIPTS
 
 ] //end of main array for FULL TRANSCRIPTS
 
-/* core2000 assembled by uploading a csv version of of the core2000 anki
-to https://jsbin.com/qicoyahufa/edit?js,console,output then copy/paste into the js
+/* core2000 array assembled by transposing anki file to csv via https://fasiha.github.io/fuzzy-anki/uploading. Then uploading csv to https://jsbin.com/qicoyahufa/edit?js,console,output.  Then copy/paste into the js
 file */
 let core2000 = [ //begining of core2000 array
+  
   {
+
+  Alt_Spelling: {},
   Core_Index: "1",
   Frequency: "37",
-  Optimized_Sent_Index: "56",
-  Optimized_Voc_Index: "1",
   Furigana: "それ",
   Kana: "それ",
   Kanji: "それ",
+  Optimized_Sent_Index: "56",
+  Optimized_Voc_Index: "1",
   PartOfSpeech: "Pronoun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "53",
   Frequency: "247",
-  Optimized_Sent_Index: "1",
-  Optimized_Voc_Index: "2",
   Furigana: "一[ひと]つ",
   Kana: "ひとつ",
   Kanji: "一つ",
+  Optimized_Sent_Index: "1",
+  Optimized_Voc_Index: "2",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "114",
   Frequency: "35",
-  Optimized_Sent_Index: "158",
-  Optimized_Voc_Index: "3",
   Furigana: "一[いち]",
   Kana: "いち",
   Kanji: "一",
+  Optimized_Sent_Index: "158",
+  Optimized_Voc_Index: "3",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "276",
   Frequency: "42",
-  Optimized_Sent_Index: "130",
-  Optimized_Voc_Index: "4",
   Furigana: "二[に]",
   Kana: "に",
   Kanji: "二",
+  Optimized_Sent_Index: "130",
+  Optimized_Voc_Index: "4",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "294",
   Frequency: "589",
-  Optimized_Sent_Index: "2",
-  Optimized_Voc_Index: "5",
   Furigana: "二[ふた]つ",
   Kana: "ふたつ",
   Kanji: "二つ",
+  Optimized_Sent_Index: "2",
+  Optimized_Voc_Index: "5",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "292",
   Frequency: "59",
-  Optimized_Sent_Index: "239",
-  Optimized_Voc_Index: "6",
   Furigana: "三[さん]",
   Kana: "さん",
   Kanji: "三",
+  Optimized_Sent_Index: "239",
+  Optimized_Voc_Index: "6",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "317",
   Frequency: "1401",
-  Optimized_Sent_Index: "53",
-  Optimized_Voc_Index: "7",
   Furigana: "三[みっ]つ",
   Kana: "みっつ",
   Kanji: "三つ",
+  Optimized_Sent_Index: "53",
+  Optimized_Voc_Index: "7",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "326",
   Frequency: "3088",
-  Optimized_Sent_Index: "371",
-  Optimized_Voc_Index: "8",
   Furigana: "四[よっ]つ",
   Kana: "よっつ",
   Kanji: "四つ",
+  Optimized_Sent_Index: "371",
+  Optimized_Voc_Index: "8",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "353",
   Frequency: "122",
-  Optimized_Sent_Index: "118",
-  Optimized_Voc_Index: "9",
   Furigana: "四[し]",
   Kana: "し",
   Kanji: "四",
+  Optimized_Sent_Index: "118",
+  Optimized_Voc_Index: "9",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "6",
   Frequency: "57",
-  Optimized_Sent_Index: "5",
-  Optimized_Voc_Index: "10",
   Furigana: "これ",
   Kana: "これ",
   Kanji: "これ",
+  Optimized_Sent_Index: "5",
+  Optimized_Voc_Index: "10",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "387",
   Frequency: "122",
-  Optimized_Sent_Index: "131",
-  Optimized_Voc_Index: "11",
   Furigana: "四[よん]",
   Kana: "よん",
   Kanji: "四",
+  Optimized_Sent_Index: "131",
+  Optimized_Voc_Index: "11",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "330",
   Frequency: "4742",
-  Optimized_Sent_Index: "390",
-  Optimized_Voc_Index: "12",
   Furigana: "五[いつ]つ",
   Kana: "いつつ",
   Kanji: "五つ",
+  Optimized_Sent_Index: "390",
+  Optimized_Voc_Index: "12",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "347",
   Frequency: "105",
-  Optimized_Sent_Index: "181",
-  Optimized_Voc_Index: "13",
   Furigana: "五[ご]",
   Kana: "ご",
   Kanji: "五",
+  Optimized_Sent_Index: "181",
+  Optimized_Voc_Index: "13",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "297",
   Frequency: "8020",
-  Optimized_Sent_Index: "207",
-  Optimized_Voc_Index: "14",
   Furigana: "六[むっ]つ",
   Kana: "むっつ",
   Kanji: "六つ",
+  Optimized_Sent_Index: "207",
+  Optimized_Voc_Index: "14",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "389",
   Frequency: "149",
-  Optimized_Sent_Index: "244",
-  Optimized_Voc_Index: "15",
   Furigana: "六[ろく]",
   Kana: "ろく",
   Kanji: "六",
+  Optimized_Sent_Index: "244",
+  Optimized_Voc_Index: "15",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "322",
   Frequency: "169",
-  Optimized_Sent_Index: "16",
-  Optimized_Voc_Index: "16",
   Furigana: "七[なな]",
   Kana: "なな",
   Kanji: "七",
+  Optimized_Sent_Index: "16",
+  Optimized_Voc_Index: "16",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "367",
   Frequency: "7460",
-  Optimized_Sent_Index: "22",
-  Optimized_Voc_Index: "17",
   Furigana: "七[なな]つ",
   Kana: "ななつ",
   Kanji: "七つ",
+  Optimized_Sent_Index: "22",
+  Optimized_Voc_Index: "17",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "306",
   Frequency: "160",
-  Optimized_Sent_Index: "132",
-  Optimized_Voc_Index: "18",
   Furigana: "八[はち]",
   Kana: "はち",
   Kanji: "八",
+  Optimized_Sent_Index: "132",
+  Optimized_Voc_Index: "18",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "383",
   Frequency: "10055",
-  Optimized_Sent_Index: "138",
-  Optimized_Voc_Index: "19",
   Furigana: "八[やっ]つ",
   Kana: "やっつ",
   Kanji: "八つ",
+  Optimized_Sent_Index: "138",
+  Optimized_Voc_Index: "19",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "11",
   Frequency: "19",
-  Optimized_Sent_Index: "256",
-  Optimized_Voc_Index: "20",
   Furigana: "なる",
   Kana: "なる",
   Kanji: "なる",
+  Optimized_Sent_Index: "256",
+  Optimized_Voc_Index: "20",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "313",
   Frequency: "184",
-  Optimized_Sent_Index: "283",
-  Optimized_Voc_Index: "21",
   Furigana: "九[きゅう]",
   Kana: "きゅう",
   Kanji: "九",
+  Optimized_Sent_Index: "283",
+  Optimized_Voc_Index: "21",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "349",
   Frequency: "17641",
-  Optimized_Sent_Index: "205",
-  Optimized_Voc_Index: "22",
   Furigana: "九[ここの]つ",
   Kana: "ここのつ",
   Kanji: "九つ",
+  Optimized_Sent_Index: "205",
+  Optimized_Voc_Index: "22",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "234",
   Frequency: "52",
-  Optimized_Sent_Index: "143",
-  Optimized_Voc_Index: "23",
   Furigana: "十[じゅう]",
   Kana: "じゅう",
   Kanji: "十",
+  Optimized_Sent_Index: "143",
+  Optimized_Voc_Index: "23",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "373",
   Frequency: "213",
-  Optimized_Sent_Index: "388",
-  Optimized_Voc_Index: "24",
   Furigana: "百[ひゃく]",
   Kana: "ひゃく",
   Kanji: "百",
+  Optimized_Sent_Index: "388",
+  Optimized_Voc_Index: "24",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "296",
   Frequency: "336",
-  Optimized_Sent_Index: "140",
-  Optimized_Voc_Index: "25",
   Furigana: "千[せん]",
   Kana: "せん",
   Kanji: "千",
+  Optimized_Sent_Index: "140",
+  Optimized_Voc_Index: "25",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "378",
   Frequency: "300",
-  Optimized_Sent_Index: "395",
-  Optimized_Voc_Index: "26",
   Furigana: "万[まん]",
   Kana: "まん",
   Kanji: "万",
+  Optimized_Sent_Index: "395",
+  Optimized_Voc_Index: "26",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "3",
   Frequency: "503",
+  Furigana: "円[えん]",
+  Kana: "えん",
+  Kanji: "円",
   Optimized_Sent_Index: "343",
   Optimized_Voc_Index: "27",
-  Furigana: "円[えん]",
-  Kana: "えん",
-  Kanji: "円",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "397",
   Frequency: "503",
-  Optimized_Sent_Index: "3",
-  Optimized_Voc_Index: "28",
   Furigana: "円[えん]",
   Kana: "えん",
   Kanji: "円",
+  Optimized_Sent_Index: "3",
+  Optimized_Voc_Index: "28",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "202",
   Frequency: "87",
-  Optimized_Sent_Index: "154",
-  Optimized_Voc_Index: "29",
   Furigana: "時[とき]",
   Kana: "とき",
   Kanji: "時",
+  Optimized_Sent_Index: "154",
+  Optimized_Voc_Index: "29",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "12",
   Frequency: "10",
-  Optimized_Sent_Index: "294",
-  Optimized_Voc_Index: "30",
   Furigana: "する",
   Kana: "する",
   Kanji: "する",
+  Optimized_Sent_Index: "294",
+  Optimized_Voc_Index: "30",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "365",
   Frequency: "2199",
-  Optimized_Sent_Index: "312",
-  Optimized_Voc_Index: "31",
   Furigana: "時々[ときどき]",
   Kana: "ときどき",
   Kanji: "時々",
+  Optimized_Sent_Index: "312",
+  Optimized_Voc_Index: "31",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "266",
   Frequency: "94",
-  Optimized_Sent_Index: "247",
-  Optimized_Voc_Index: "32",
   Furigana: "日[にち]",
   Kana: "にち",
   Kanji: "日",
+  Optimized_Sent_Index: "247",
+  Optimized_Voc_Index: "32",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "298",
   Frequency: "111256",
-  Optimized_Sent_Index: "40",
-  Optimized_Voc_Index: "33",
   Furigana: "六日[むいか]",
   Kana: "むいか",
   Kanji: "六日",
+  Optimized_Sent_Index: "40",
+  Optimized_Voc_Index: "33",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "307",
   Frequency: "182214",
-  Optimized_Sent_Index: "165",
-  Optimized_Voc_Index: "34",
   Furigana: "三日[みっか]",
   Kana: "みっか",
   Kanji: "三日",
+  Optimized_Sent_Index: "165",
+  Optimized_Voc_Index: "34",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "311",
   Frequency: "149693",
-  Optimized_Sent_Index: "328",
-  Optimized_Voc_Index: "35",
   Furigana: "五日[いつか]",
   Kana: "いつか",
   Kanji: "五日",
+  Optimized_Sent_Index: "328",
+  Optimized_Voc_Index: "35",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "318",
   Frequency: "161821",
-  Optimized_Sent_Index: "9",
-  Optimized_Voc_Index: "36",
   Furigana: "八日[ようか]",
   Kana: "ようか",
   Kanji: "八日",
+  Optimized_Sent_Index: "9",
+  Optimized_Voc_Index: "36",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "323",
   Frequency: "32654",
-  Optimized_Sent_Index: "326",
-  Optimized_Voc_Index: "37",
   Furigana: "二十日[はつか]",
   Kana: "はつか",
   Kanji: "二十日",
+  Optimized_Sent_Index: "326",
+  Optimized_Voc_Index: "37",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "325",
   Frequency: "131093",
-  Optimized_Sent_Index: "113",
-  Optimized_Voc_Index: "38",
   Furigana: "二日[ふつか]",
   Kana: "ふつか",
   Kanji: "二日",
+  Optimized_Sent_Index: "113",
+  Optimized_Voc_Index: "38",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "348",
   Frequency: "",
-  Optimized_Sent_Index: "111",
-  Optimized_Voc_Index: "39",
   Furigana: "九日[ここのか]",
   Kana: "ここのか",
   Kanji: "九日",
+  Optimized_Sent_Index: "111",
+  Optimized_Voc_Index: "39",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "15",
   Frequency: "92",
-  Optimized_Sent_Index: "185",
-  Optimized_Voc_Index: "40",
   Furigana: "ところ",
   Kana: "ところ",
   Kanji: "ところ",
+  Optimized_Sent_Index: "185",
+  Optimized_Voc_Index: "40",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "359",
   Frequency: "182214",
-  Optimized_Sent_Index: "20",
-  Optimized_Voc_Index: "41",
   Furigana: "一日[ついたち]",
   Kana: "ついたち",
   Kanji: "一日",
+  Optimized_Sent_Index: "20",
+  Optimized_Voc_Index: "41",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "364",
   Frequency: "79296",
-  Optimized_Sent_Index: "42",
-  Optimized_Voc_Index: "42",
   Furigana: "十日[とおか]",
   Kana: "とおか",
   Kanji: "十日",
+  Optimized_Sent_Index: "42",
+  Optimized_Voc_Index: "42",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "369",
   Frequency: "161821",
-  Optimized_Sent_Index: "363",
-  Optimized_Voc_Index: "43",
   Furigana: "七日[なのか]",
   Kana: "なのか",
   Kanji: "七日",
+  Optimized_Sent_Index: "363",
+  Optimized_Voc_Index: "43",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "385",
   Frequency: "",
-  Optimized_Sent_Index: "141",
-  Optimized_Voc_Index: "44",
   Furigana: "四日[よっか]",
   Kana: "よっか",
   Kanji: "四日",
+  Optimized_Sent_Index: "141",
+  Optimized_Voc_Index: "44",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "360",
   Frequency: "535",
-  Optimized_Sent_Index: "47",
-  Optimized_Voc_Index: "45",
   Furigana: "月[つき]",
   Kana: "つき",
   Kanji: "月",
+  Optimized_Sent_Index: "47",
+  Optimized_Voc_Index: "45",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "274",
   Frequency: "309",
-  Optimized_Sent_Index: "267",
-  Optimized_Voc_Index: "46",
   Furigana: "水[みず]",
   Kana: "みず",
   Kanji: "水",
+  Optimized_Sent_Index: "267",
+  Optimized_Voc_Index: "46",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "342",
   Frequency: "269",
-  Optimized_Sent_Index: "4",
-  Optimized_Voc_Index: "47",
   Furigana: "金[かね]",
   Kana: "かね",
   Kanji: "金",
+  Optimized_Sent_Index: "4",
+  Optimized_Voc_Index: "47",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "212",
   Frequency: "3720",
-  Optimized_Sent_Index: "21",
-  Optimized_Voc_Index: "48",
   Furigana: "日曜日[にちようび]",
   Kana: "にちようび",
   Kanji: "日曜日",
+  Optimized_Sent_Index: "21",
+  Optimized_Voc_Index: "48",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "239",
   Frequency: "5196",
-  Optimized_Sent_Index: "45",
-  Optimized_Voc_Index: "49",
   Furigana: "土曜日[どようび]",
   Kana: "どようび",
   Kanji: "土曜日",
+  Optimized_Sent_Index: "45",
+  Optimized_Voc_Index: "49",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "27",
   Frequency: "78",
-  Optimized_Sent_Index: "295",
-  Optimized_Voc_Index: "50",
   Furigana: "やる",
   Kana: "やる",
   Kanji: "やる",
+  Optimized_Sent_Index: "295",
+  Optimized_Voc_Index: "50",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "253",
   Frequency: "7625",
-  Optimized_Sent_Index: "46",
-  Optimized_Voc_Index: "51",
   Furigana: "金曜日[きんようび]",
   Kana: "きんようび",
   Kanji: "金曜日",
+  Optimized_Sent_Index: "46",
+  Optimized_Voc_Index: "51",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "269",
   Frequency: "7822",
-  Optimized_Sent_Index: "61",
-  Optimized_Voc_Index: "52",
   Furigana: "月曜日[げつようび]",
   Kana: "げつようび",
   Kanji: "月曜日",
+  Optimized_Sent_Index: "61",
+  Optimized_Voc_Index: "52",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "286",
   Frequency: "13245",
-  Optimized_Sent_Index: "65",
-  Optimized_Voc_Index: "53",
   Furigana: "木曜日[もくようび]",
   Kana: "もくようび",
   Kanji: "木曜日",
+  Optimized_Sent_Index: "65",
+  Optimized_Voc_Index: "53",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "287",
   Frequency: "29940",
-  Optimized_Sent_Index: "179",
-  Optimized_Voc_Index: "54",
   Furigana: "曜日[ようび]",
   Kana: "ようび",
   Kanji: "曜日",
+  Optimized_Sent_Index: "179",
+  Optimized_Voc_Index: "54",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "290",
   Frequency: "12773",
-  Optimized_Sent_Index: "252",
-  Optimized_Voc_Index: "55",
   Furigana: "火曜日[かようび]",
   Kana: "かようび",
   Kanji: "火曜日",
+  Optimized_Sent_Index: "252",
+  Optimized_Voc_Index: "55",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "293",
   Frequency: "12590",
-  Optimized_Sent_Index: "6",
-  Optimized_Voc_Index: "56",
   Furigana: "水曜日[すいようび]",
   Kana: "すいようび",
   Kanji: "水曜日",
+  Optimized_Sent_Index: "6",
+  Optimized_Voc_Index: "56",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "167",
   Frequency: "4817",
-  Optimized_Sent_Index: "150",
-  Optimized_Voc_Index: "57",
   Furigana: "週[しゅう]",
   Kana: "しゅう",
   Kanji: "週",
+  Optimized_Sent_Index: "150",
+  Optimized_Voc_Index: "57",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "143",
   Frequency: "99",
-  Optimized_Sent_Index: "159",
-  Optimized_Voc_Index: "58",
   Furigana: "年[とし]",
   Kana: "とし",
   Kanji: "年",
+  Optimized_Sent_Index: "159",
+  Optimized_Voc_Index: "58",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "82",
   Frequency: "433",
-  Optimized_Sent_Index: "270",
-  Optimized_Voc_Index: "59",
   Furigana: "分[わ]かる",
   Kana: "わかる",
   Kanji: "分かる",
+  Optimized_Sent_Index: "270",
+  Optimized_Voc_Index: "59",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "36",
   Frequency: "30",
-  Optimized_Sent_Index: "103",
-  Optimized_Voc_Index: "60",
   Furigana: "そう",
   Kana: "そう",
   Kanji: "そう",
+  Optimized_Sent_Index: "103",
+  Optimized_Voc_Index: "60",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "368",
   Frequency: "53",
-  Optimized_Sent_Index: "50",
-  Optimized_Voc_Index: "61",
   Furigana: "何[なに]",
   Kana: "なに",
   Kanji: "何",
+  Optimized_Sent_Index: "50",
+  Optimized_Voc_Index: "61",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "351",
   Frequency: "259",
-  Optimized_Sent_Index: "8",
-  Optimized_Voc_Index: "62",
   Furigana: "先[さき]",
   Kana: "さき",
   Kanji: "先",
+  Optimized_Sent_Index: "8",
+  Optimized_Voc_Index: "62",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "19",
   Frequency: "2139",
-  Optimized_Sent_Index: "180",
-  Optimized_Voc_Index: "63",
   Furigana: "今年[ことし]",
   Kana: "ことし",
   Kanji: "今年",
+  Optimized_Sent_Index: "180",
+  Optimized_Voc_Index: "63",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "23",
   Frequency: "147",
-  Optimized_Sent_Index: "210",
-  Optimized_Voc_Index: "64",
   Furigana: "今[いま]",
   Kana: "いま",
   Kanji: "今",
+  Optimized_Sent_Index: "210",
+  Optimized_Voc_Index: "64",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "162",
   Frequency: "278",
-  Optimized_Sent_Index: "64",
-  Optimized_Voc_Index: "65",
   Furigana: "今日[きょう]",
   Kana: "きょう",
   Kanji: "今日",
+  Optimized_Sent_Index: "64",
+  Optimized_Voc_Index: "65",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "179",
   Frequency: "12272",
-  Optimized_Sent_Index: "262",
-  Optimized_Voc_Index: "66",
   Furigana: "今月[こんげつ]",
   Kana: "こんげつ",
   Kanji: "今月",
+  Optimized_Sent_Index: "262",
+  Optimized_Voc_Index: "66",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "272",
   Frequency: "16739",
-  Optimized_Sent_Index: "58",
-  Optimized_Voc_Index: "67",
   Furigana: "今週[こんしゅう]",
   Kana: "こんしゅう",
   Kanji: "今週",
+  Optimized_Sent_Index: "58",
+  Optimized_Voc_Index: "67",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "309",
   Frequency: "63",
-  Optimized_Sent_Index: "240",
-  Optimized_Voc_Index: "68",
   Furigana: "来[く]る",
   Kana: "くる",
   Kanji: "来る",
+  Optimized_Sent_Index: "240",
+  Optimized_Voc_Index: "68",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "388",
   Frequency: "6153",
-  Optimized_Sent_Index: "297",
-  Optimized_Voc_Index: "69",
   Furigana: "来年[らいねん]",
   Kana: "らいねん",
   Kanji: "来年",
+  Optimized_Sent_Index: "297",
+  Optimized_Voc_Index: "69",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "38",
   Frequency: "103",
-  Optimized_Sent_Index: "211",
-  Optimized_Voc_Index: "70",
   Furigana: "もう",
   Kana: "もう",
   Kanji: "もう",
+  Optimized_Sent_Index: "211",
+  Optimized_Voc_Index: "70",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "30",
   Frequency: "67",
-  Optimized_Sent_Index: "182",
-  Optimized_Voc_Index: "71",
   Furigana: "行[い]く",
   Kana: "いく",
   Kanji: "行く",
+  Optimized_Sent_Index: "182",
+  Optimized_Voc_Index: "71",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "76",
   Frequency: "175",
-  Optimized_Sent_Index: "29",
-  Optimized_Voc_Index: "72",
   Furigana: "帰[かえ]る",
   Kana: "かえる",
   Kanji: "帰る",
+  Optimized_Sent_Index: "29",
+  Optimized_Voc_Index: "72",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "336",
   Frequency: "905",
-  Optimized_Sent_Index: "287",
-  Optimized_Voc_Index: "73",
   Furigana: "大[おお]きい",
   Kana: "おおきい",
   Kanji: "大きい",
+  Optimized_Sent_Index: "287",
+  Optimized_Voc_Index: "73",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "357",
   Frequency: "550",
-  Optimized_Sent_Index: "333",
-  Optimized_Voc_Index: "74",
   Furigana: "小[ちい]さい",
   Kana: "ちいさい",
   Kanji: "小さい",
+  Optimized_Sent_Index: "333",
+  Optimized_Voc_Index: "74",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "29",
   Frequency: "1081",
-  Optimized_Sent_Index: "32",
-  Optimized_Voc_Index: "75",
   Furigana: "少[すく]ない",
   Kana: "すくない",
   Kanji: "少ない",
+  Optimized_Sent_Index: "32",
+  Optimized_Voc_Index: "75",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "125",
   Frequency: "204",
-  Optimized_Sent_Index: "263",
-  Optimized_Voc_Index: "76",
   Furigana: "少[すこ]し",
   Kana: "すこし",
   Kanji: "少し",
+  Optimized_Sent_Index: "263",
+  Optimized_Voc_Index: "76",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "4",
   Frequency: "334",
-  Optimized_Sent_Index: "108",
-  Optimized_Voc_Index: "77",
   Furigana: "多[おお]い",
   Kana: "おおい",
   Kanji: "多い",
+  Optimized_Sent_Index: "108",
+  Optimized_Voc_Index: "77",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "243",
   Frequency: "1977",
-  Optimized_Sent_Index: "307",
-  Optimized_Voc_Index: "78",
   Furigana: "多分[たぶん]",
   Kana: "たぶん",
   Kanji: "多分",
+  Optimized_Sent_Index: "307",
+  Optimized_Voc_Index: "78",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "197",
   Frequency: "358",
-  Optimized_Sent_Index: "236",
-  Optimized_Voc_Index: "79",
   Furigana: "上[あ]げる",
   Kana: "あげる",
   Kanji: "上げる",
+  Optimized_Sent_Index: "236",
+  Optimized_Voc_Index: "79",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "45",
   Frequency: "154",
-  Optimized_Sent_Index: "213",
-  Optimized_Voc_Index: "80",
   Furigana: "よく",
   Kana: "よく",
   Kanji: "よく",
+  Optimized_Sent_Index: "213",
+  Optimized_Voc_Index: "80",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "264",
   Frequency: "856",
-  Optimized_Sent_Index: "383",
-  Optimized_Voc_Index: "81",
   Furigana: "上[のぼ]る",
   Kana: "のぼる",
   Kanji: "上る",
+  Optimized_Sent_Index: "383",
+  Optimized_Voc_Index: "81",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "332",
   Frequency: "120",
-  Optimized_Sent_Index: "34",
-  Optimized_Voc_Index: "82",
   Furigana: "上[うえ]",
   Kana: "うえ",
   Kanji: "上",
+  Optimized_Sent_Index: "34",
+  Optimized_Voc_Index: "82",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "354",
   Frequency: "219",
-  Optimized_Sent_Index: "375",
-  Optimized_Voc_Index: "83",
   Furigana: "下[した]",
   Kana: "した",
   Kanji: "下",
+  Optimized_Sent_Index: "375",
+  Optimized_Voc_Index: "83",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "185",
   Frequency: "564",
-  Optimized_Sent_Index: "12",
-  Optimized_Voc_Index: "84",
   Furigana: "右[みぎ]",
   Kana: "みぎ",
   Kanji: "右",
+  Optimized_Sent_Index: "12",
+  Optimized_Voc_Index: "84",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "324",
   Frequency: "715",
-  Optimized_Sent_Index: "178",
-  Optimized_Voc_Index: "85",
   Furigana: "左[ひだり]",
   Kana: "ひだり",
   Kanji: "左",
+  Optimized_Sent_Index: "178",
+  Optimized_Voc_Index: "85",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "374",
   Frequency: "121",
-  Optimized_Sent_Index: "242",
-  Optimized_Voc_Index: "86",
   Furigana: "方[ほう]",
   Kana: "ほう",
   Kanji: "方",
+  Optimized_Sent_Index: "242",
+  Optimized_Voc_Index: "86",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "339",
   Frequency: "1516",
-  Optimized_Sent_Index: "266",
-  Optimized_Voc_Index: "87",
   Furigana: "大人[おとな]",
   Kana: "おとな",
   Kanji: "大人",
+  Optimized_Sent_Index: "266",
+  Optimized_Voc_Index: "87",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "371",
   Frequency: "31",
-  Optimized_Sent_Index: "319",
-  Optimized_Voc_Index: "88",
   Furigana: "人[ひと]",
   Kana: "ひと",
   Kanji: "人",
+  Optimized_Sent_Index: "319",
+  Optimized_Voc_Index: "88",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "372",
   Frequency: "97423",
-  Optimized_Sent_Index: "27",
-  Optimized_Voc_Index: "89",
   Furigana: "一人[ひとり]",
   Kana: "ひとり",
   Kanji: "一人",
+  Optimized_Sent_Index: "27",
+  Optimized_Voc_Index: "89",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "48",
   Frequency: "112",
-  Optimized_Sent_Index: "104",
-  Optimized_Voc_Index: "90",
   Furigana: "どう",
   Kana: "どう",
   Kanji: "どう",
+  Optimized_Sent_Index: "104",
+  Optimized_Voc_Index: "90",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "40",
   Frequency: "234",
-  Optimized_Sent_Index: "376",
-  Optimized_Voc_Index: "91",
   Furigana: "入[い]れる",
   Kana: "いれる",
   Kanji: "入れる",
+  Optimized_Sent_Index: "376",
+  Optimized_Voc_Index: "91",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "270",
   Frequency: "126",
-  Optimized_Sent_Index: "94",
-  Optimized_Voc_Index: "92",
   Furigana: "入[はい]る",
   Kana: "はいる",
   Kanji: "入る",
+  Optimized_Sent_Index: "94",
+  Optimized_Voc_Index: "92",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "13",
   Frequency: "76",
-  Optimized_Sent_Index: "152",
-  Optimized_Voc_Index: "93",
   Furigana: "出[で]る",
   Kana: "でる",
   Kanji: "出る",
+  Optimized_Sent_Index: "152",
+  Optimized_Voc_Index: "93",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "132",
   Frequency: "72",
-  Optimized_Sent_Index: "229",
-  Optimized_Voc_Index: "94",
   Furigana: "できる",
   Kana: "できる",
   Kanji: "できる",
+  Optimized_Sent_Index: "229",
+  Optimized_Voc_Index: "94",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "356",
   Frequency: "130",
-  Optimized_Sent_Index: "260",
-  Optimized_Voc_Index: "95",
   Furigana: "出[だ]す",
   Kana: "だす",
   Kanji: "出す",
+  Optimized_Sent_Index: "260",
+  Optimized_Voc_Index: "95",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "44",
   Frequency: "208",
-  Optimized_Sent_Index: "309",
-  Optimized_Voc_Index: "96",
   Furigana: "本[ほん]",
   Kana: "ほん",
   Kanji: "本",
+  Optimized_Sent_Index: "309",
+  Optimized_Voc_Index: "96",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "399",
   Frequency: "1706",
-  Optimized_Sent_Index: "63",
-  Optimized_Voc_Index: "97",
   Furigana: "休[やす]む",
   Kana: "やすむ",
   Kanji: "休む",
+  Optimized_Sent_Index: "63",
+  Optimized_Voc_Index: "97",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "104",
   Frequency: "242",
-  Optimized_Sent_Index: "385",
-  Optimized_Voc_Index: "98",
   Furigana: "体[からだ]",
   Kana: "からだ",
   Kanji: "体",
+  Optimized_Sent_Index: "385",
+  Optimized_Voc_Index: "98",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "382",
   Frequency: "84",
-  Optimized_Sent_Index: "243",
-  Optimized_Voc_Index: "99",
   Furigana: "目[め]",
   Kana: "め",
   Kanji: "目",
+  Optimized_Sent_Index: "243",
+  Optimized_Voc_Index: "99",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "52",
   Frequency: "133",
-  Optimized_Sent_Index: "289",
-  Optimized_Voc_Index: "100",
   Furigana: "どこ",
   Kana: "どこ",
   Kanji: "どこ",
+  Optimized_Sent_Index: "289",
+  Optimized_Voc_Index: "100",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "346",
   Frequency: "145",
-  Optimized_Sent_Index: "37",
-  Optimized_Voc_Index: "101",
   Furigana: "口[くち]",
   Kana: "くち",
   Kanji: "口",
+  Optimized_Sent_Index: "37",
+  Optimized_Voc_Index: "101",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "183",
   Frequency: "328",
-  Optimized_Sent_Index: "235",
-  Optimized_Voc_Index: "102",
   Furigana: "耳[みみ]",
   Kana: "みみ",
   Kanji: "耳",
+  Optimized_Sent_Index: "235",
+  Optimized_Voc_Index: "102",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "320",
   Frequency: "3003",
-  Optimized_Sent_Index: "199",
-  Optimized_Voc_Index: "103",
   Furigana: "上手[じょうず]",
   Kana: "じょうず",
   Kanji: "上手",
+  Optimized_Sent_Index: "199",
+  Optimized_Voc_Index: "103",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "363",
   Frequency: "81",
-  Optimized_Sent_Index: "17",
-  Optimized_Voc_Index: "104",
   Furigana: "手[て]",
   Kana: "て",
   Kanji: "手",
+  Optimized_Sent_Index: "17",
+  Optimized_Voc_Index: "104",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "119",
   Frequency: "261",
-  Optimized_Sent_Index: "228",
-  Optimized_Voc_Index: "105",
   Furigana: "足[あし]",
   Kana: "あし",
   Kanji: "足",
+  Optimized_Sent_Index: "228",
+  Optimized_Voc_Index: "105",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "263",
   Frequency: "3139",
-  Optimized_Sent_Index: "19",
-  Optimized_Voc_Index: "106",
   Furigana: "空[す]く",
   Kana: "すく",
   Kanji: "空く",
+  Optimized_Sent_Index: "19",
+  Optimized_Voc_Index: "106",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "338",
   Frequency: "68",
-  Optimized_Sent_Index: "57",
-  Optimized_Voc_Index: "107",
   Furigana: "男[おとこ]",
   Kana: "おとこ",
   Kanji: "男",
+  Optimized_Sent_Index: "57",
+  Optimized_Voc_Index: "107",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "341",
   Frequency: "97",
-  Optimized_Sent_Index: "208",
-  Optimized_Voc_Index: "108",
   Furigana: "女[おんな]",
   Kana: "おんな",
   Kanji: "女",
+  Optimized_Sent_Index: "208",
+  Optimized_Voc_Index: "108",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "35",
   Frequency: "268",
-  Optimized_Sent_Index: "359",
-  Optimized_Voc_Index: "109",
   Furigana: "子供[こども]",
   Kana: "こども",
   Kanji: "子供",
+  Optimized_Sent_Index: "359",
+  Optimized_Voc_Index: "109",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "54",
   Frequency: "181",
-  Optimized_Sent_Index: "13",
-  Optimized_Voc_Index: "110",
   Furigana: "あげる",
   Kana: "あげる",
   Kanji: "あげる",
+  Optimized_Sent_Index: "13",
+  Optimized_Voc_Index: "110",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "158",
   Frequency: "368",
-  Optimized_Sent_Index: "25",
-  Optimized_Voc_Index: "111",
   Furigana: "好[す]き",
   Kana: "すき",
   Kanji: "好き",
+  Optimized_Sent_Index: "25",
+  Optimized_Voc_Index: "111",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "260",
   Frequency: "3717",
-  Optimized_Sent_Index: "358",
-  Optimized_Voc_Index: "112",
   Furigana: "大好[だいす]き",
   Kana: "だいすき",
   Kanji: "大好き",
+  Optimized_Sent_Index: "358",
+  Optimized_Voc_Index: "112",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "8",
   Frequency: "41",
-  Optimized_Sent_Index: "24",
-  Optimized_Voc_Index: "113",
   Furigana: "私[わたし]",
   Kana: "わたし",
   Kanji: "私",
+  Optimized_Sent_Index: "24",
+  Optimized_Voc_Index: "113",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "151",
   Frequency: "1384",
-  Optimized_Sent_Index: "28",
-  Optimized_Voc_Index: "114",
   Furigana: "友達[ともだち]",
   Kana: "ともだち",
   Kanji: "友達",
+  Optimized_Sent_Index: "28",
+  Optimized_Voc_Index: "114",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "5",
   Frequency: "114",
-  Optimized_Sent_Index: "187",
-  Optimized_Voc_Index: "115",
   Furigana: "家[うち]",
   Kana: "うち",
   Kanji: "家",
+  Optimized_Sent_Index: "187",
+  Optimized_Voc_Index: "115",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "73",
   Frequency: "106",
-  Optimized_Sent_Index: "269",
-  Optimized_Voc_Index: "116",
   Furigana: "気[き]",
   Kana: "き",
   Kanji: "気",
+  Optimized_Sent_Index: "269",
+  Optimized_Voc_Index: "116",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "191",
   Frequency: "1055",
-  Optimized_Sent_Index: "30",
-  Optimized_Voc_Index: "117",
   Furigana: "元気[げんき]",
   Kana: "げんき",
   Kanji: "元気",
+  Optimized_Sent_Index: "30",
+  Optimized_Voc_Index: "117",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "235",
   Frequency: "5509",
-  Optimized_Sent_Index: "31",
-  Optimized_Voc_Index: "118",
   Furigana: "天気[てんき]",
   Kana: "てんき",
   Kanji: "天気",
+  Optimized_Sent_Index: "31",
+  Optimized_Voc_Index: "118",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "259",
   Frequency: "3331",
-  Optimized_Sent_Index: "33",
-  Optimized_Voc_Index: "119",
   Furigana: "晴[は]れる",
   Kana: "はれる",
   Kanji: "晴れる",
+  Optimized_Sent_Index: "33",
+  Optimized_Voc_Index: "119",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "55",
   Frequency: "253",
-  Optimized_Sent_Index: "59",
-  Optimized_Voc_Index: "120",
   Furigana: "こう",
   Kana: "こう",
   Kanji: "こう",
+  Optimized_Sent_Index: "59",
+  Optimized_Voc_Index: "120",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "344",
   Frequency: "878",
-  Optimized_Sent_Index: "62",
-  Optimized_Voc_Index: "121",
   Furigana: "昨日[きのう]",
   Kana: "きのう",
   Kanji: "昨日",
+  Optimized_Sent_Index: "62",
+  Optimized_Voc_Index: "121",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "213",
   Frequency: "478",
-  Optimized_Sent_Index: "190",
-  Optimized_Voc_Index: "122",
   Furigana: "開[あ]ける",
   Kana: "あける",
   Kanji: "開ける",
+  Optimized_Sent_Index: "190",
+  Optimized_Voc_Index: "122",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "273",
   Frequency: "280",
-  Optimized_Sent_Index: "36",
-  Optimized_Voc_Index: "123",
   Furigana: "開[ひら]く",
   Kana: "ひらく",
   Kanji: "開く",
+  Optimized_Sent_Index: "36",
+  Optimized_Voc_Index: "123",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "201",
   Frequency: "1059",
-  Optimized_Sent_Index: "259",
-  Optimized_Voc_Index: "124",
   Furigana: "閉[と]じる",
   Kana: "とじる",
   Kanji: "閉じる",
+  Optimized_Sent_Index: "259",
+  Optimized_Voc_Index: "124",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "251",
   Frequency: "2053",
-  Optimized_Sent_Index: "38",
-  Optimized_Voc_Index: "125",
   Furigana: "閉[し]める",
   Kana: "しめる",
   Kanji: "閉める",
+  Optimized_Sent_Index: "38",
+  Optimized_Voc_Index: "125",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "277",
   Frequency: "5612",
-  Optimized_Sent_Index: "86",
-  Optimized_Voc_Index: "126",
   Furigana: "閉[し]まる",
   Kana: "しまる",
   Kanji: "閉まる",
+  Optimized_Sent_Index: "86",
+  Optimized_Voc_Index: "126",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "47",
   Frequency: "117",
-  Optimized_Sent_Index: "215",
-  Optimized_Voc_Index: "127",
   Furigana: "聞[き]く",
   Kana: "きく",
   Kanji: "聞く",
+  Optimized_Sent_Index: "215",
+  Optimized_Voc_Index: "127",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "18",
   Frequency: "188",
-  Optimized_Sent_Index: "39",
-  Optimized_Voc_Index: "128",
   Furigana: "時間[じかん]",
   Kana: "じかん",
   Kanji: "時間",
+  Optimized_Sent_Index: "39",
+  Optimized_Voc_Index: "128",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "32",
   Frequency: "294",
-  Optimized_Sent_Index: "107",
-  Optimized_Voc_Index: "129",
   Furigana: "高[たか]い",
   Kana: "たかい",
   Kanji: "高い",
+  Optimized_Sent_Index: "107",
+  Optimized_Voc_Index: "129",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "57",
   Frequency: "80",
-  Optimized_Sent_Index: "325",
-  Optimized_Voc_Index: "130",
   Furigana: "くれる",
   Kana: "くれる",
   Kanji: "くれる",
+  Optimized_Sent_Index: "325",
+  Optimized_Voc_Index: "130",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "100",
   Frequency: "2485",
-  Optimized_Sent_Index: "188",
-  Optimized_Voc_Index: "131",
   Furigana: "安[やす]い",
   Kana: "やすい",
   Kanji: "安い",
+  Optimized_Sent_Index: "188",
+  Optimized_Voc_Index: "131",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "107",
   Frequency: "675",
-  Optimized_Sent_Index: "340",
-  Optimized_Voc_Index: "132",
   Furigana: "低[ひく]い",
   Kana: "ひくい",
   Kanji: "低い",
+  Optimized_Sent_Index: "340",
+  Optimized_Voc_Index: "132",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "310",
   Frequency: "88",
-  Optimized_Sent_Index: "87",
-  Optimized_Voc_Index: "133",
   Furigana: "前[まえ]",
   Kana: "まえ",
   Kanji: "前",
+  Optimized_Sent_Index: "87",
+  Optimized_Voc_Index: "133",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "70",
   Frequency: "194",
-  Optimized_Sent_Index: "169",
-  Optimized_Voc_Index: "134",
   Furigana: "後[あと]",
   Kana: "あと",
   Kanji: "後",
+  Optimized_Sent_Index: "169",
+  Optimized_Voc_Index: "134",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "209",
   Frequency: "826",
-  Optimized_Sent_Index: "41",
-  Optimized_Voc_Index: "135",
   Furigana: "後[うし]ろ",
   Kana: "うしろ",
   Kanji: "後ろ",
+  Optimized_Sent_Index: "41",
+  Optimized_Voc_Index: "135",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "42",
   Frequency: "792",
-  Optimized_Sent_Index: "109",
-  Optimized_Voc_Index: "136",
   Furigana: "午後[ごご]",
   Kana: "ごご",
   Kanji: "午後",
+  Optimized_Sent_Index: "109",
+  Optimized_Voc_Index: "136",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "60",
   Frequency: "1918",
-  Optimized_Sent_Index: "43",
-  Optimized_Voc_Index: "137",
   Furigana: "午前[ごぜん]",
   Kana: "ごぜん",
   Kanji: "午前",
+  Optimized_Sent_Index: "43",
+  Optimized_Voc_Index: "137",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "88",
   Frequency: "431",
-  Optimized_Sent_Index: "115",
-  Optimized_Voc_Index: "138",
   Furigana: "朝[あさ]",
   Kana: "あさ",
   Kanji: "朝",
+  Optimized_Sent_Index: "115",
+  Optimized_Voc_Index: "138",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "214",
   Frequency: "2069",
-  Optimized_Sent_Index: "54",
-  Optimized_Voc_Index: "139",
   Furigana: "昼[ひる]",
   Kana: "ひる",
   Kanji: "昼",
+  Optimized_Sent_Index: "54",
+  Optimized_Voc_Index: "139",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "65",
   Frequency: "516",
-  Optimized_Sent_Index: "217",
-  Optimized_Voc_Index: "140",
   Furigana: "かなり",
   Kana: "かなり",
   Kanji: "かなり",
+  Optimized_Sent_Index: "217",
+  Optimized_Voc_Index: "140",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "238",
   Frequency: "901",
-  Optimized_Sent_Index: "51",
-  Optimized_Voc_Index: "141",
   Furigana: "晩[ばん]",
   Kana: "ばん",
   Kanji: "晩",
+  Optimized_Sent_Index: "51",
+  Optimized_Voc_Index: "141",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "295",
   Frequency: "4532",
-  Optimized_Sent_Index: "44",
-  Optimized_Voc_Index: "142",
   Furigana: "今晩[こんばん]",
   Kana: "こんばん",
   Kanji: "今晩",
+  Optimized_Sent_Index: "44",
+  Optimized_Voc_Index: "142",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "386",
   Frequency: "211",
-  Optimized_Sent_Index: "48",
-  Optimized_Voc_Index: "143",
   Furigana: "夜[よる]",
   Kana: "よる",
   Kanji: "夜",
+  Optimized_Sent_Index: "48",
+  Optimized_Voc_Index: "143",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "109",
   Frequency: "393",
-  Optimized_Sent_Index: "49",
-  Optimized_Voc_Index: "144",
   Furigana: "食[た]べる",
   Kana: "たべる",
   Kanji: "食べる",
+  Optimized_Sent_Index: "49",
+  Optimized_Voc_Index: "144",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "188",
   Frequency: "335",
-  Optimized_Sent_Index: "265",
-  Optimized_Voc_Index: "145",
   Furigana: "飲[の]む",
   Kana: "のむ",
   Kanji: "飲む",
+  Optimized_Sent_Index: "265",
+  Optimized_Voc_Index: "145",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "265",
   Frequency: "6578",
-  Optimized_Sent_Index: "52",
-  Optimized_Voc_Index: "146",
   Furigana: "ご 飯[はん]",
   Kana: "ごはん",
   Kanji: "ご飯",
+  Optimized_Sent_Index: "52",
+  Optimized_Voc_Index: "146",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "61",
   Frequency: "437",
-  Optimized_Sent_Index: "142",
-  Optimized_Voc_Index: "147",
   Furigana: "買[か]う",
   Kana: "かう",
   Kanji: "買う",
+  Optimized_Sent_Index: "142",
+  Optimized_Voc_Index: "147",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "2",
   Frequency: "45",
-  Optimized_Sent_Index: "166",
-  Optimized_Voc_Index: "148",
   Furigana: "見[み]る",
   Kana: "みる",
   Kanji: "見る",
+  Optimized_Sent_Index: "166",
+  Optimized_Voc_Index: "148",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "122",
   Frequency: "288",
-  Optimized_Sent_Index: "170",
-  Optimized_Voc_Index: "149",
   Furigana: "見[み]せる",
   Kana: "みせる",
   Kanji: "見せる",
+  Optimized_Sent_Index: "170",
+  Optimized_Voc_Index: "149",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "75",
   Frequency: "367",
-  Optimized_Sent_Index: "72",
-  Optimized_Voc_Index: "150",
   Furigana: "もっと",
   Kana: "もっと",
   Kanji: "もっと",
+  Optimized_Sent_Index: "72",
+  Optimized_Voc_Index: "150",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "149",
   Frequency: "728",
-  Optimized_Sent_Index: "98",
-  Optimized_Voc_Index: "151",
   Furigana: "見[み]つける",
   Kana: "みつける",
   Kanji: "見つける",
+  Optimized_Sent_Index: "98",
+  Optimized_Voc_Index: "151",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "379",
   Frequency: "132",
-  Optimized_Sent_Index: "330",
-  Optimized_Voc_Index: "152",
   Furigana: "見[み]える",
   Kana: "みえる",
   Kanji: "見える",
+  Optimized_Sent_Index: "330",
+  Optimized_Voc_Index: "152",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "400",
   Frequency: "1183",
-  Optimized_Sent_Index: "55",
-  Optimized_Voc_Index: "153",
   Furigana: "見[み]つかる",
   Kana: "みつかる",
   Kanji: "見つかる",
+  Optimized_Sent_Index: "55",
+  Optimized_Voc_Index: "153",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "28",
   Frequency: "32",
-  Optimized_Sent_Index: "350",
-  Optimized_Voc_Index: "154",
   Furigana: "言[い]う",
   Kana: "いう",
   Kanji: "言う",
+  Optimized_Sent_Index: "350",
+  Optimized_Voc_Index: "154",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "102",
   Frequency: "240",
-  Optimized_Sent_Index: "193",
-  Optimized_Voc_Index: "155",
   Furigana: "話[はな]す",
   Kana: "はなす",
   Kanji: "話す",
+  Optimized_Sent_Index: "193",
+  Optimized_Voc_Index: "155",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "146",
   Frequency: "344",
-  Optimized_Sent_Index: "232",
-  Optimized_Voc_Index: "156",
   Furigana: "読[よ]む",
   Kana: "よむ",
   Kanji: "読む",
+  Optimized_Sent_Index: "232",
+  Optimized_Voc_Index: "156",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "168",
   Frequency: "7172",
-  Optimized_Sent_Index: "77",
-  Optimized_Voc_Index: "157",
   Furigana: "漢字[かんじ]",
   Kana: "かんじ",
   Kanji: "漢字",
+  Optimized_Sent_Index: "77",
+  Optimized_Voc_Index: "157",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "101",
   Frequency: "193",
-  Optimized_Sent_Index: "226",
-  Optimized_Voc_Index: "158",
   Furigana: "書[か]く",
   Kana: "かく",
   Kanji: "書く",
+  Optimized_Sent_Index: "226",
+  Optimized_Voc_Index: "158",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "156",
   Frequency: "555",
-  Optimized_Sent_Index: "344",
-  Optimized_Voc_Index: "159",
   Furigana: "覚[おぼ]える",
   Kana: "おぼえる",
   Kanji: "覚える",
+  Optimized_Sent_Index: "344",
+  Optimized_Voc_Index: "159",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "85",
   Frequency: "135",
-  Optimized_Sent_Index: "148",
-  Optimized_Voc_Index: "160",
   Furigana: "そこ",
   Kana: "そこ",
   Kanji: "そこ",
+  Optimized_Sent_Index: "148",
+  Optimized_Voc_Index: "160",
   PartOfSpeech: "Pronoun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "92",
   Frequency: "264",
-  Optimized_Sent_Index: "60",
-  Optimized_Voc_Index: "161",
   Furigana: "会[あ]う",
   Kana: "あう",
   Kanji: "会う",
+  Optimized_Sent_Index: "60",
+  Optimized_Voc_Index: "161",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "9",
   Frequency: "236",
-  Optimized_Sent_Index: "261",
-  Optimized_Voc_Index: "162",
   Furigana: "仕事[しごと]",
   Kana: "しごと",
   Kanji: "仕事",
+  Optimized_Sent_Index: "261",
+  Optimized_Voc_Index: "162",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "398",
   Frequency: "375",
-  Optimized_Sent_Index: "66",
-  Optimized_Voc_Index: "163",
   Furigana: "場合[ばあい]",
   Kana: "ばあい",
   Kanji: "場合",
+  Optimized_Sent_Index: "66",
+  Optimized_Voc_Index: "163",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "79",
   Frequency: "305",
-  Optimized_Sent_Index: "202",
-  Optimized_Voc_Index: "164",
   Furigana: "車[くるま]",
   Kana: "くるま",
   Kanji: "車",
+  Optimized_Sent_Index: "202",
+  Optimized_Voc_Index: "164",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "170",
   Frequency: "1809",
-  Optimized_Sent_Index: "117",
-  Optimized_Voc_Index: "165",
   Furigana: "電車[でんしゃ]",
   Kana: "でんしゃ",
   Kanji: "電車",
+  Optimized_Sent_Index: "117",
+  Optimized_Voc_Index: "165",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "334",
   Frequency: "817",
-  Optimized_Sent_Index: "68",
-  Optimized_Voc_Index: "166",
   Furigana: "駅[えき]",
   Kana: "えき",
   Kanji: "駅",
+  Optimized_Sent_Index: "68",
+  Optimized_Voc_Index: "166",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "381",
   Frequency: "277",
-  Optimized_Sent_Index: "175",
-  Optimized_Voc_Index: "167",
   Furigana: "道[みち]",
   Kana: "みち",
   Kanji: "道",
+  Optimized_Sent_Index: "175",
+  Optimized_Voc_Index: "167",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "375",
   Frequency: "274",
-  Optimized_Sent_Index: "136",
-  Optimized_Voc_Index: "168",
   Furigana: "他[ほか]",
   Kana: "ほか",
   Kanji: "他",
+  Optimized_Sent_Index: "136",
+  Optimized_Voc_Index: "168",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "384",
   Frequency: "652",
-  Optimized_Sent_Index: "69",
-  Optimized_Voc_Index: "169",
   Furigana: "止[や]める",
   Kana: "やめる",
   Kanji: "止める",
+  Optimized_Sent_Index: "69",
+  Optimized_Voc_Index: "169",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "105",
   Frequency: "116",
-  Optimized_Sent_Index: "14",
-  Optimized_Voc_Index: "170",
   Furigana: "ここ",
   Kana: "ここ",
   Kanji: "ここ",
+  Optimized_Sent_Index: "14",
+  Optimized_Voc_Index: "170",
   PartOfSpeech: "Pronoun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "90",
   Frequency: "198",
-  Optimized_Sent_Index: "70",
-  Optimized_Voc_Index: "171",
   Furigana: "歩[ある]く",
   Kana: "あるく",
   Kanji: "歩く",
+  Optimized_Sent_Index: "70",
+  Optimized_Voc_Index: "171",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "86",
   Frequency: "320",
-  Optimized_Sent_Index: "222",
-  Optimized_Voc_Index: "172",
   Furigana: "走[はし]る",
   Kana: "はしる",
   Kanji: "走る",
+  Optimized_Sent_Index: "222",
+  Optimized_Voc_Index: "172",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "39",
   Frequency: "453",
-  Optimized_Sent_Index: "71",
-  Optimized_Voc_Index: "173",
   Furigana: "近[ちか]く",
   Kana: "ちかく",
   Kanji: "近く",
+  Optimized_Sent_Index: "71",
+  Optimized_Voc_Index: "173",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "84",
   Frequency: "645",
-  Optimized_Sent_Index: "73",
-  Optimized_Voc_Index: "174",
   Furigana: "近[ちか]い",
   Kana: "ちかい",
   Kanji: "近い",
+  Optimized_Sent_Index: "73",
+  Optimized_Voc_Index: "174",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "228",
   Frequency: "453",
-  Optimized_Sent_Index: "74",
-  Optimized_Voc_Index: "175",
   Furigana: "近[ちか]く",
   Kana: "ちかく",
   Kanji: "近く",
+  Optimized_Sent_Index: "74",
+  Optimized_Voc_Index: "175",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "181",
   Frequency: "653",
-  Optimized_Sent_Index: "119",
-  Optimized_Voc_Index: "176",
   Furigana: "遠[とお]い",
   Kana: "とおい",
   Kanji: "遠い",
+  Optimized_Sent_Index: "119",
+  Optimized_Voc_Index: "176",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "43",
   Frequency: "316",
-  Optimized_Sent_Index: "367",
-  Optimized_Voc_Index: "177",
   Furigana: "長[なが]い",
   Kana: "ながい",
   Kanji: "長い",
+  Optimized_Sent_Index: "367",
+  Optimized_Voc_Index: "177",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "133",
   Frequency: "1071",
-  Optimized_Sent_Index: "230",
-  Optimized_Voc_Index: "178",
   Furigana: "短[みじか]い",
   Kana: "みじかい",
   Kanji: "短い",
+  Optimized_Sent_Index: "230",
+  Optimized_Voc_Index: "178",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "81",
   Frequency: "830",
-  Optimized_Sent_Index: "221",
-  Optimized_Voc_Index: "179",
   Furigana: "広[ひろ]い",
   Kana: "ひろい",
   Kanji: "広い",
+  Optimized_Sent_Index: "221",
+  Optimized_Voc_Index: "179",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "108",
   Frequency: "224",
-  Optimized_Sent_Index: "227",
-  Optimized_Voc_Index: "180",
   Furigana: "もらう",
   Kana: "もらう",
   Kanji: "もらう",
+  Optimized_Sent_Index: "227",
+  Optimized_Voc_Index: "180",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "193",
   Frequency: "777",
-  Optimized_Sent_Index: "75",
-  Optimized_Voc_Index: "181",
   Furigana: "全部[ぜんぶ]",
   Kana: "ぜんぶ",
   Kanji: "全部",
+  Optimized_Sent_Index: "75",
+  Optimized_Voc_Index: "181",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "25",
   Frequency: "373",
-  Optimized_Sent_Index: "76",
-  Optimized_Voc_Index: "182",
   Furigana: "国[くに]",
   Kana: "くに",
   Kanji: "国",
+  Optimized_Sent_Index: "76",
+  Optimized_Voc_Index: "182",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "136",
   Frequency: "337",
-  Optimized_Sent_Index: "258",
-  Optimized_Voc_Index: "183",
   Furigana: "白[しろ]い",
   Kana: "しろい",
   Kanji: "白い",
+  Optimized_Sent_Index: "258",
+  Optimized_Voc_Index: "183",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "161",
   Frequency: "586",
-  Optimized_Sent_Index: "78",
-  Optimized_Voc_Index: "184",
   Furigana: "赤[あか]い",
   Kana: "あかい",
   Kanji: "赤い",
+  Optimized_Sent_Index: "78",
+  Optimized_Voc_Index: "184",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "93",
   Frequency: "153",
-  Optimized_Sent_Index: "89",
-  Optimized_Voc_Index: "185",
   Furigana: "部屋[へや]",
   Kana: "へや",
   Kanji: "部屋",
+  Optimized_Sent_Index: "89",
+  Optimized_Voc_Index: "185",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "203",
   Frequency: "1104",
-  Optimized_Sent_Index: "80",
-  Optimized_Voc_Index: "186",
   Furigana: "米[こめ]",
   Kana: "こめ",
   Kanji: "米",
+  Optimized_Sent_Index: "80",
+  Optimized_Voc_Index: "186",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "26",
   Frequency: "134",
-  Optimized_Sent_Index: "184",
-  Optimized_Voc_Index: "187",
   Furigana: "まだ",
   Kana: "まだ",
   Kanji: "まだ",
+  Optimized_Sent_Index: "184",
+  Optimized_Voc_Index: "187",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "328",
   Frequency: "15",
-  Optimized_Sent_Index: "364",
-  Optimized_Voc_Index: "188",
   Furigana: "ある",
   Kana: "ある",
   Kanji: "ある",
+  Optimized_Sent_Index: "364",
+  Optimized_Voc_Index: "188",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "255",
   Frequency: "1082",
-  Optimized_Sent_Index: "82",
-  Optimized_Voc_Index: "189",
   Furigana: "無[な]い",
   Kana: "ない",
   Kanji: "無い",
+  Optimized_Sent_Index: "82",
+  Optimized_Voc_Index: "189",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "124",
   Frequency: "426",
-  Optimized_Sent_Index: "15",
-  Optimized_Voc_Index: "190",
   Furigana: "とても",
   Kana: "とても",
   Kanji: "とても",
+  Optimized_Sent_Index: "15",
+  Optimized_Voc_Index: "190",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "21",
   Frequency: "388",
-  Optimized_Sent_Index: "83",
-  Optimized_Voc_Index: "191",
   Furigana: "作[つく]る",
   Kana: "つくる",
   Kanji: "作る",
+  Optimized_Sent_Index: "83",
+  Optimized_Voc_Index: "191",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "14",
   Frequency: "248",
-  Optimized_Sent_Index: "84",
-  Optimized_Voc_Index: "192",
   Furigana: "使[つか]う",
   Kana: "つかう",
   Kanji: "使う",
+  Optimized_Sent_Index: "84",
+  Optimized_Voc_Index: "192",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "190",
   Frequency: "1001",
-  Optimized_Sent_Index: "85",
-  Optimized_Voc_Index: "193",
   Furigana: "消[け]す",
   Kana: "けす",
   Kanji: "消す",
+  Optimized_Sent_Index: "85",
+  Optimized_Voc_Index: "193",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "87",
   Frequency: "973",
-  Optimized_Sent_Index: "223",
-  Optimized_Voc_Index: "194",
   Furigana: "売[う]る",
   Kana: "うる",
   Kanji: "売る",
+  Optimized_Sent_Index: "223",
+  Optimized_Voc_Index: "194",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "380",
   Frequency: "354",
-  Optimized_Sent_Index: "88",
-  Optimized_Voc_Index: "195",
   Furigana: "店[みせ]",
   Kana: "みせ",
   Kanji: "店",
+  Optimized_Sent_Index: "88",
+  Optimized_Voc_Index: "195",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "59",
   Frequency: "963",
-  Optimized_Sent_Index: "96",
-  Optimized_Voc_Index: "196",
   Furigana: "春[はる]",
   Kana: "はる",
   Kanji: "春",
+  Optimized_Sent_Index: "96",
+  Optimized_Voc_Index: "196",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "366",
   Frequency: "794",
-  Optimized_Sent_Index: "90",
-  Optimized_Voc_Index: "197",
   Furigana: "夏[なつ]",
   Kana: "なつ",
   Kanji: "夏",
+  Optimized_Sent_Index: "90",
+  Optimized_Voc_Index: "197",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "95",
   Frequency: "1260",
-  Optimized_Sent_Index: "245",
-  Optimized_Voc_Index: "198",
   Furigana: "秋[あき]",
   Kana: "あき",
   Kanji: "秋",
+  Optimized_Sent_Index: "245",
+  Optimized_Voc_Index: "198",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "142",
   Frequency: "1235",
-  Optimized_Sent_Index: "93",
-  Optimized_Voc_Index: "199",
   Furigana: "冬[ふゆ]",
   Kana: "ふゆ",
   Kanji: "冬",
+  Optimized_Sent_Index: "93",
+  Optimized_Voc_Index: "199",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "129",
   Frequency: "257",
-  Optimized_Sent_Index: "372",
-  Optimized_Voc_Index: "200",
   Furigana: "みんな",
   Kana: "みんな",
   Kanji: "みんな",
+  Optimized_Sent_Index: "372",
+  Optimized_Voc_Index: "200",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "236",
   Frequency: "2161",
-  Optimized_Sent_Index: "91",
-  Optimized_Voc_Index: "201",
   Furigana: "暑[あつ]い",
   Kana: "あつい",
   Kanji: "暑い",
+  Optimized_Sent_Index: "91",
+  Optimized_Voc_Index: "201",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "223",
   Frequency: "1315",
-  Optimized_Sent_Index: "92",
-  Optimized_Voc_Index: "202",
   Furigana: "熱[あつ]い",
   Kana: "あつい",
   Kanji: "熱い",
+  Optimized_Sent_Index: "92",
+  Optimized_Voc_Index: "202",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "352",
   Frequency: "1282",
-  Optimized_Sent_Index: "95",
-  Optimized_Voc_Index: "203",
   Furigana: "寒[さむ]い",
   Kana: "さむい",
   Kanji: "寒い",
+  Optimized_Sent_Index: "95",
+  Optimized_Voc_Index: "203",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "327",
   Frequency: "4365",
-  Optimized_Sent_Index: "97",
-  Optimized_Voc_Index: "204",
   Furigana: "暖[あたた]かい",
   Kana: "あたたかい",
   Kanji: "暖かい",
+  Optimized_Sent_Index: "97",
+  Optimized_Voc_Index: "204",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "7",
   Frequency: "591",
-  Optimized_Sent_Index: "209",
-  Optimized_Voc_Index: "205",
   Furigana: "新[あたら]しい",
   Kana: "あたらしい",
   Kanji: "新しい",
+  Optimized_Sent_Index: "209",
+  Optimized_Voc_Index: "205",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "117",
   Frequency: "909",
-  Optimized_Sent_Index: "100",
-  Optimized_Voc_Index: "206",
   Furigana: "古[ふる]い",
   Kana: "ふるい",
   Kanji: "古い",
+  Optimized_Sent_Index: "100",
+  Optimized_Voc_Index: "206",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "329",
   Frequency: "584",
-  Optimized_Sent_Index: "241",
-  Optimized_Voc_Index: "207",
   Furigana: "良[い]い",
   Kana: "いい",
   Kanji: "良い",
+  Optimized_Sent_Index: "241",
+  Optimized_Voc_Index: "207",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "390",
   Frequency: "217",
-  Optimized_Sent_Index: "101",
-  Optimized_Voc_Index: "208",
   Furigana: "悪[わる]い",
   Kana: "わるい",
   Kanji: "悪い",
+  Optimized_Sent_Index: "101",
+  Optimized_Voc_Index: "208",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "16",
   Frequency: "43",
-  Optimized_Sent_Index: "102",
-  Optimized_Voc_Index: "209",
   Furigana: "思[おも]う",
   Kana: "おもう",
   Kanji: "思う",
+  Optimized_Sent_Index: "102",
+  Optimized_Voc_Index: "209",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "138",
   Frequency: "241",
-  Optimized_Sent_Index: "231",
-  Optimized_Voc_Index: "210",
   Furigana: "いつも",
   Kana: "いつも",
   Kanji: "いつも",
+  Optimized_Sent_Index: "231",
+  Optimized_Voc_Index: "210",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "152",
   Frequency: "349",
-  Optimized_Sent_Index: "145",
-  Optimized_Voc_Index: "211",
   Furigana: "忘[わす]れる",
   Kana: "わすれる",
   Kanji: "忘れる",
+  Optimized_Sent_Index: "145",
+  Optimized_Voc_Index: "211",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "33",
   Frequency: "109",
-  Optimized_Sent_Index: "105",
-  Optimized_Voc_Index: "212",
   Furigana: "考[かんが]える",
   Kana: "かんがえる",
   Kanji: "考える",
+  Optimized_Sent_Index: "105",
+  Optimized_Voc_Index: "212",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "31",
   Frequency: "910",
-  Optimized_Sent_Index: "106",
-  Optimized_Voc_Index: "213",
   Furigana: "決[き]める",
   Kana: "きめる",
   Kanji: "決める",
+  Optimized_Sent_Index: "106",
+  Optimized_Voc_Index: "213",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "206",
   Frequency: "1287",
-  Optimized_Sent_Index: "317",
-  Optimized_Voc_Index: "214",
   Furigana: "決[き]まる",
   Kana: "きまる",
   Kanji: "決まる",
+  Optimized_Sent_Index: "317",
+  Optimized_Voc_Index: "214",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "20",
   Frequency: "85",
-  Optimized_Sent_Index: "321",
-  Optimized_Voc_Index: "215",
   Furigana: "知[し]る",
   Kana: "しる",
   Kanji: "知る",
+  Optimized_Sent_Index: "321",
+  Optimized_Voc_Index: "215",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "165",
   Frequency: "620",
-  Optimized_Sent_Index: "341",
-  Optimized_Voc_Index: "216",
   Furigana: "一番[いちばん]",
   Kana: "いちばん",
   Kanji: "一番",
+  Optimized_Sent_Index: "341",
+  Optimized_Voc_Index: "216",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "67",
   Frequency: "597",
-  Optimized_Sent_Index: "218",
-  Optimized_Voc_Index: "217",
   Furigana: "住[す]む",
   Kana: "すむ",
   Kanji: "住む",
+  Optimized_Sent_Index: "218",
+  Optimized_Voc_Index: "217",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "112",
   Frequency: "378",
-  Optimized_Sent_Index: "120",
-  Optimized_Voc_Index: "218",
   Furigana: "名前[なまえ]",
   Kana: "なまえ",
   Kanji: "名前",
+  Optimized_Sent_Index: "120",
+  Optimized_Voc_Index: "218",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "231",
   Frequency: "5010",
-  Optimized_Sent_Index: "349",
-  Optimized_Voc_Index: "219",
   Furigana: "食[た]べ 物[もの]",
   Kana: "たべもの",
   Kanji: "食べ物",
+  Optimized_Sent_Index: "349",
+  Optimized_Voc_Index: "219",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "150",
   Frequency: "443",
-  Optimized_Sent_Index: "233",
-  Optimized_Voc_Index: "220",
   Furigana: "いつ",
   Kana: "いつ",
   Kanji: "いつ",
+  Optimized_Sent_Index: "233",
+  Optimized_Voc_Index: "220",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "285",
   Frequency: "8782",
-  Optimized_Sent_Index: "168",
-  Optimized_Voc_Index: "221",
   Furigana: "飲[の]み 物[もの]",
   Kana: "のみもの",
   Kanji: "飲み物",
+  Optimized_Sent_Index: "168",
+  Optimized_Voc_Index: "221",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "144",
   Frequency: "825",
-  Optimized_Sent_Index: "110",
-  Optimized_Voc_Index: "222",
   Furigana: "重[おも]い",
   Kana: "おもい",
   Kanji: "重い",
+  Optimized_Sent_Index: "110",
+  Optimized_Voc_Index: "222",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "148",
   Frequency: "643",
-  Optimized_Sent_Index: "392",
-  Optimized_Voc_Index: "223",
   Furigana: "軽[かる]い",
   Kana: "かるい",
   Kanji: "軽い",
+  Optimized_Sent_Index: "392",
+  Optimized_Voc_Index: "223",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "97",
   Frequency: "562",
-  Optimized_Sent_Index: "225",
-  Optimized_Voc_Index: "224",
   Furigana: "送[おく]る",
   Kana: "おくる",
   Kanji: "送る",
+  Optimized_Sent_Index: "225",
+  Optimized_Voc_Index: "224",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "130",
   Frequency: "289",
-  Optimized_Sent_Index: "128",
-  Optimized_Voc_Index: "225",
   Furigana: "取[と]る",
   Kana: "とる",
   Kanji: "取る",
+  Optimized_Sent_Index: "128",
+  Optimized_Voc_Index: "225",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "106",
   Frequency: "203",
-  Optimized_Sent_Index: "112",
-  Optimized_Voc_Index: "226",
   Furigana: "待[ま]つ",
   Kana: "まつ",
   Kanji: "待つ",
+  Optimized_Sent_Index: "112",
+  Optimized_Voc_Index: "226",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "17",
   Frequency: "127",
-  Optimized_Sent_Index: "114",
-  Optimized_Voc_Index: "227",
   Furigana: "持[も]つ",
   Kana: "もつ",
   Kanji: "持つ",
+  Optimized_Sent_Index: "114",
+  Optimized_Voc_Index: "227",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "77",
   Frequency: "571",
-  Optimized_Sent_Index: "220",
-  Optimized_Voc_Index: "228",
   Furigana: "気持[きも]ち",
   Kana: "きもち",
   Kanji: "気持ち",
+  Optimized_Sent_Index: "220",
+  Optimized_Voc_Index: "228",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "49",
   Frequency: "331",
-  Optimized_Sent_Index: "366",
-  Optimized_Voc_Index: "229",
   Furigana: "生[い]きる",
   Kana: "いきる",
   Kanji: "生きる",
+  Optimized_Sent_Index: "366",
+  Optimized_Voc_Index: "229",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "154",
   Frequency: "1204",
-  Optimized_Sent_Index: "79",
-  Optimized_Voc_Index: "230",
   Furigana: "どちら",
   Kana: "どちら",
   Kanji: "どちら",
+  Optimized_Sent_Index: "79",
+  Optimized_Voc_Index: "230",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "71",
   Frequency: "205",
-  Optimized_Sent_Index: "116",
-  Optimized_Voc_Index: "231",
   Furigana: "先生[せんせい]",
   Kana: "せんせい",
   Kanji: "先生",
+  Optimized_Sent_Index: "116",
+  Optimized_Voc_Index: "231",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "37",
   Frequency: "999",
-  Optimized_Sent_Index: "121",
-  Optimized_Voc_Index: "232",
   Furigana: "大学[だいがく]",
   Kana: "だいがく",
   Kanji: "大学",
+  Optimized_Sent_Index: "121",
+  Optimized_Voc_Index: "232",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "41",
   Frequency: "1481",
-  Optimized_Sent_Index: "212",
-  Optimized_Voc_Index: "233",
   Furigana: "学生[がくせい]",
   Kana: "がくせい",
   Kanji: "学生",
+  Optimized_Sent_Index: "212",
+  Optimized_Voc_Index: "233",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "217",
   Frequency: "6609",
-  Optimized_Sent_Index: "197",
-  Optimized_Voc_Index: "234",
   Furigana: "大学生[だいがくせい]",
   Kana: "だいがくせい",
   Kanji: "大学生",
+  Optimized_Sent_Index: "197",
+  Optimized_Voc_Index: "234",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "56",
   Frequency: "596",
-  Optimized_Sent_Index: "157",
-  Optimized_Voc_Index: "235",
   Furigana: "学校[がっこう]",
   Kana: "がっこう",
   Kanji: "学校",
+  Optimized_Sent_Index: "157",
+  Optimized_Voc_Index: "235",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "319",
   Frequency: "4215",
-  Optimized_Sent_Index: "203",
-  Optimized_Voc_Index: "236",
   Furigana: "高校生[こうこうせい]",
   Kana: "こうこうせい",
   Kanji: "高校生",
+  Optimized_Sent_Index: "203",
+  Optimized_Voc_Index: "236",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "89",
   Frequency: "470",
-  Optimized_Sent_Index: "224",
-  Optimized_Voc_Index: "237",
   Furigana: "教[おし]える",
   Kana: "おしえる",
   Kanji: "教える",
+  Optimized_Sent_Index: "224",
+  Optimized_Voc_Index: "237",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "131",
   Frequency: "1605",
-  Optimized_Sent_Index: "122",
-  Optimized_Voc_Index: "238",
   Furigana: "勉強[べんきょう]",
   Kana: "べんきょう",
   Kanji: "勉強",
+  Optimized_Sent_Index: "122",
+  Optimized_Voc_Index: "238",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "321",
   Frequency: "304",
-  Optimized_Sent_Index: "123",
-  Optimized_Voc_Index: "239",
   Furigana: "強[つよ]い",
   Kana: "つよい",
   Kanji: "強い",
+  Optimized_Sent_Index: "123",
+  Optimized_Voc_Index: "239",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "160",
   Frequency: "870",
-  Optimized_Sent_Index: "23",
-  Optimized_Voc_Index: "240",
   Furigana: "どれ",
   Kana: "どれ",
   Kanji: "どれ",
+  Optimized_Sent_Index: "23",
+  Optimized_Voc_Index: "240",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "182",
   Frequency: "1561",
-  Optimized_Sent_Index: "124",
-  Optimized_Voc_Index: "241",
   Furigana: "弱[よわ]い",
   Kana: "よわい",
   Kanji: "弱い",
+  Optimized_Sent_Index: "124",
+  Optimized_Voc_Index: "241",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "195",
   Frequency: "497",
-  Optimized_Sent_Index: "125",
-  Optimized_Voc_Index: "242",
   Furigana: "引[ひ]く",
   Kana: "ひく",
   Kanji: "引く",
+  Optimized_Sent_Index: "125",
+  Optimized_Voc_Index: "242",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "126",
   Frequency: "843",
-  Optimized_Sent_Index: "126",
-  Optimized_Voc_Index: "243",
   Furigana: "質問[しつもん]",
   Kana: "しつもん",
   Kanji: "質問",
+  Optimized_Sent_Index: "126",
+  Optimized_Voc_Index: "243",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "96",
   Frequency: "1764",
-  Optimized_Sent_Index: "127",
-  Optimized_Voc_Index: "244",
   Furigana: "難[むずか]しい",
   Kana: "むずかしい",
   Kanji: "難しい",
+  Optimized_Sent_Index: "127",
+  Optimized_Voc_Index: "244",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "83",
   Frequency: "254",
-  Optimized_Sent_Index: "129",
-  Optimized_Voc_Index: "245",
   Furigana: "数[かず]",
   Kana: "かず",
   Kanji: "数",
+  Optimized_Sent_Index: "129",
+  Optimized_Voc_Index: "245",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "140",
   Frequency: "1543",
-  Optimized_Sent_Index: "133",
-  Optimized_Voc_Index: "246",
   Furigana: "勝[か]つ",
   Kana: "かつ",
   Kanji: "勝つ",
+  Optimized_Sent_Index: "133",
+  Optimized_Voc_Index: "246",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "192",
   Frequency: "1397",
-  Optimized_Sent_Index: "134",
-  Optimized_Voc_Index: "247",
   Furigana: "負[ま]ける",
   Kana: "まける",
   Kanji: "負ける",
+  Optimized_Sent_Index: "134",
+  Optimized_Voc_Index: "247",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "393",
   Frequency: "442",
-  Optimized_Sent_Index: "135",
-  Optimized_Voc_Index: "248",
   Furigana: "本当[ほんとう]に",
   Kana: "ほんとうに",
   Kanji: "本当に",
+  Optimized_Sent_Index: "135",
+  Optimized_Voc_Index: "248",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "254",
   Frequency: "4358",
-  Optimized_Sent_Index: "144",
-  Optimized_Voc_Index: "249",
   Furigana: "要[い]る",
   Kana: "いる",
   Kanji: "要る",
+  Optimized_Sent_Index: "144",
+  Optimized_Voc_Index: "249",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "200",
   Frequency: "341",
-  Optimized_Sent_Index: "35",
-  Optimized_Voc_Index: "250",
   Furigana: "ドア",
   Kana: "ドア",
   Kanji: "ドア",
+  Optimized_Sent_Index: "35",
+  Optimized_Voc_Index: "250",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "244",
   Frequency: "1619",
-  Optimized_Sent_Index: "137",
-  Optimized_Voc_Index: "251",
   Furigana: "時計[とけい]",
   Kana: "とけい",
   Kanji: "時計",
+  Optimized_Sent_Index: "137",
+  Optimized_Voc_Index: "251",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "147",
   Frequency: "1068",
-  Optimized_Sent_Index: "139",
-  Optimized_Voc_Index: "252",
   Furigana: "払[はら]う",
   Kana: "はらう",
   Kanji: "払う",
+  Optimized_Sent_Index: "139",
+  Optimized_Voc_Index: "252",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "204",
   Frequency: "428",
-  Optimized_Sent_Index: "164",
-  Optimized_Voc_Index: "253",
   Furigana: "切[き]る",
   Kana: "きる",
   Kanji: "切る",
+  Optimized_Sent_Index: "164",
+  Optimized_Voc_Index: "253",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "80",
   Frequency: "718",
-  Optimized_Sent_Index: "316",
-  Optimized_Voc_Index: "254",
   Furigana: "変[か]える",
   Kana: "かえる",
   Kanji: "変える",
+  Optimized_Sent_Index: "316",
+  Optimized_Voc_Index: "254",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "99",
   Frequency: "397",
-  Optimized_Sent_Index: "146",
-  Optimized_Voc_Index: "255",
   Furigana: "乗[の]る",
   Kana: "のる",
   Kanji: "乗る",
+  Optimized_Sent_Index: "146",
+  Optimized_Voc_Index: "255",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "163",
   Frequency: "510",
-  Optimized_Sent_Index: "147",
-  Optimized_Voc_Index: "256",
   Furigana: "着[き]る",
   Kana: "きる",
   Kanji: "着る",
+  Optimized_Sent_Index: "147",
+  Optimized_Voc_Index: "256",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "72",
   Frequency: "166",
-  Optimized_Sent_Index: "219",
-  Optimized_Voc_Index: "257",
   Furigana: "立[た]つ",
   Kana: "たつ",
   Kanji: "立つ",
+  Optimized_Sent_Index: "219",
+  Optimized_Voc_Index: "257",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "184",
   Frequency: "853",
-  Optimized_Sent_Index: "308",
-  Optimized_Voc_Index: "258",
   Furigana: "座[すわ]る",
   Kana: "すわる",
   Kanji: "座る",
+  Optimized_Sent_Index: "308",
+  Optimized_Voc_Index: "258",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "120",
   Frequency: "323",
-  Optimized_Sent_Index: "149",
-  Optimized_Voc_Index: "259",
   Furigana: "次[つぎ]",
   Kana: "つぎ",
   Kanji: "次",
+  Optimized_Sent_Index: "149",
+  Optimized_Voc_Index: "259",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "227",
   Frequency: "1299",
-  Optimized_Sent_Index: "238",
-  Optimized_Voc_Index: "260",
   Furigana: "喋る[しゃべる]",
   Kana: "しゃべる",
   Kanji: "喋る",
+  Optimized_Sent_Index: "238",
+  Optimized_Voc_Index: "260",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "333",
   Frequency: "391",
-  Optimized_Sent_Index: "151",
-  Optimized_Voc_Index: "261",
   Furigana: "動[うご]く",
   Kana: "うごく",
   Kanji: "動く",
+  Optimized_Sent_Index: "151",
+  Optimized_Voc_Index: "261",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "69",
   Frequency: "801",
-  Optimized_Sent_Index: "195",
-  Optimized_Voc_Index: "262",
   Furigana: "働[はたら]く",
   Kana: "はたらく",
   Kanji: "働く",
+  Optimized_Sent_Index: "195",
+  Optimized_Voc_Index: "262",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "110",
   Frequency: "311",
-  Optimized_Sent_Index: "153",
-  Optimized_Voc_Index: "263",
   Furigana: "早[はや]い",
   Kana: "はやい",
   Kanji: "早い",
+  Optimized_Sent_Index: "153",
+  Optimized_Voc_Index: "263",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "176",
   Frequency: "2183",
-  Optimized_Sent_Index: "234",
-  Optimized_Voc_Index: "264",
   Furigana: "速[はや]い",
   Kana: "はやい",
   Kanji: "速い",
+  Optimized_Sent_Index: "234",
+  Optimized_Voc_Index: "264",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "174",
   Frequency: "1252",
-  Optimized_Sent_Index: "155",
-  Optimized_Voc_Index: "265",
   Furigana: "遅[おそ]い",
   Kana: "おそい",
   Kanji: "遅い",
+  Optimized_Sent_Index: "155",
+  Optimized_Voc_Index: "265",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "10",
   Frequency: "400",
-  Optimized_Sent_Index: "156",
-  Optimized_Voc_Index: "266",
   Furigana: "始[はじ]める",
   Kana: "はじめる",
   Kanji: "始める",
+  Optimized_Sent_Index: "156",
+  Optimized_Voc_Index: "266",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "232",
   Frequency: "1066",
-  Optimized_Sent_Index: "160",
-  Optimized_Voc_Index: "267",
   Furigana: "始[はじ]まる",
   Kana: "はじまる",
   Kanji: "始まる",
+  Optimized_Sent_Index: "160",
+  Optimized_Voc_Index: "267",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "63",
   Frequency: "611",
-  Optimized_Sent_Index: "251",
-  Optimized_Voc_Index: "268",
   Furigana: "終[お]わる",
   Kana: "おわる",
   Kanji: "終わる",
+  Optimized_Sent_Index: "251",
+  Optimized_Voc_Index: "268",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "218",
   Frequency: "2031",
-  Optimized_Sent_Index: "162",
-  Optimized_Voc_Index: "269",
   Furigana: "終[お]わり",
   Kana: "おわり",
   Kanji: "終わり",
+  Optimized_Sent_Index: "162",
+  Optimized_Voc_Index: "269",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "230",
   Frequency: "656",
-  Optimized_Sent_Index: "99",
-  Optimized_Voc_Index: "270",
   Furigana: "テーブル",
   Kana: "テーブル",
   Kanji: "テーブル",
+  Optimized_Sent_Index: "99",
+  Optimized_Voc_Index: "270",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "194",
   Frequency: "2474",
-  Optimized_Sent_Index: "163",
-  Optimized_Voc_Index: "271",
   Furigana: "去年[きょねん]",
   Kana: "きょねん",
   Kanji: "去年",
+  Optimized_Sent_Index: "163",
+  Optimized_Voc_Index: "271",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "172",
   Frequency: "1236",
-  Optimized_Sent_Index: "374",
-  Optimized_Voc_Index: "272",
   Furigana: "紙[かみ]",
   Kana: "かみ",
   Kanji: "紙",
+  Optimized_Sent_Index: "374",
+  Optimized_Voc_Index: "272",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "127",
   Frequency: "1799",
-  Optimized_Sent_Index: "167",
-  Optimized_Voc_Index: "273",
   Furigana: "楽[たの]しむ",
   Kana: "たのしむ",
   Kanji: "楽しむ",
+  Optimized_Sent_Index: "167",
+  Optimized_Voc_Index: "273",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "207",
   Frequency: "926",
-  Optimized_Sent_Index: "237",
-  Optimized_Voc_Index: "274",
   Furigana: "楽[たの]しい",
   Kana: "たのしい",
   Kanji: "楽しい",
+  Optimized_Sent_Index: "237",
+  Optimized_Voc_Index: "274",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "173",
   Frequency: "1695",
-  Optimized_Sent_Index: "356",
-  Optimized_Voc_Index: "275",
   Furigana: "歌[うた]う",
   Kana: "うたう",
   Kanji: "歌う",
+  Optimized_Sent_Index: "356",
+  Optimized_Voc_Index: "275",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "377",
   Frequency: "976",
-  Optimized_Sent_Index: "394",
-  Optimized_Voc_Index: "276",
   Furigana: "欲[ほ]しい",
   Kana: "ほしい",
   Kanji: "欲しい",
+  Optimized_Sent_Index: "394",
+  Optimized_Voc_Index: "276",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "128",
   Frequency: "407",
-  Optimized_Sent_Index: "171",
-  Optimized_Voc_Index: "277",
   Furigana: "色[いろ]",
   Kana: "いろ",
   Kanji: "色",
+  Optimized_Sent_Index: "171",
+  Optimized_Voc_Index: "277",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "261",
   Frequency: "5141",
-  Optimized_Sent_Index: "393",
-  Optimized_Voc_Index: "278",
   Furigana: "茶色[ちゃいろ]",
   Kana: "ちゃいろ",
   Kanji: "茶色",
+  Optimized_Sent_Index: "393",
+  Optimized_Voc_Index: "278",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "91",
   Frequency: "162",
-  Optimized_Sent_Index: "172",
-  Optimized_Voc_Index: "279",
   Furigana: "すぐ",
   Kana: "すぐ",
   Kanji: "すぐ",
+  Optimized_Sent_Index: "172",
+  Optimized_Voc_Index: "279",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "233",
   Frequency: "2307",
-  Optimized_Sent_Index: "26",
-  Optimized_Voc_Index: "280",
   Furigana: "ゲーム",
   Kana: "ゲーム",
   Kanji: "ゲーム",
+  Optimized_Sent_Index: "26",
+  Optimized_Voc_Index: "280",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "284",
   Frequency: "25047",
-  Optimized_Sent_Index: "173",
-  Optimized_Voc_Index: "281",
   Furigana: "書[か]き 直[なお]す",
   Kana: "かきなおす",
   Kanji: "書き直す",
+  Optimized_Sent_Index: "173",
+  Optimized_Voc_Index: "281",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "300",
   Frequency: "9929",
-  Optimized_Sent_Index: "174",
-  Optimized_Voc_Index: "282",
   Furigana: "直[なお]る",
   Kana: "なおる",
   Kanji: "直る",
+  Optimized_Sent_Index: "174",
+  Optimized_Voc_Index: "282",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "205",
   Frequency: "1289",
-  Optimized_Sent_Index: "176",
-  Optimized_Voc_Index: "283",
   Furigana: "線[せん]",
   Kana: "せん",
   Kanji: "線",
+  Optimized_Sent_Index: "176",
+  Optimized_Voc_Index: "283",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "248",
   Frequency: "3456",
-  Optimized_Sent_Index: "177",
-  Optimized_Voc_Index: "284",
   Furigana: "曲[ま]がる",
   Kana: "まがる",
   Kanji: "曲がる",
+  Optimized_Sent_Index: "177",
+  Optimized_Voc_Index: "284",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "22",
   Frequency: "157",
-  Optimized_Sent_Index: "288",
-  Optimized_Voc_Index: "285",
   Furigana: "同[おな]じ",
   Kana: "おなじ",
   Kanji: "同じ",
+  Optimized_Sent_Index: "288",
+  Optimized_Voc_Index: "285",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "315",
   Frequency: "298",
-  Optimized_Sent_Index: "253",
-  Optimized_Voc_Index: "286",
   Furigana: "違[ちが]う",
   Kana: "ちがう",
   Kanji: "違う",
+  Optimized_Sent_Index: "253",
+  Optimized_Voc_Index: "286",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "196",
   Frequency: "5144",
-  Optimized_Sent_Index: "183",
-  Optimized_Voc_Index: "287",
   Furigana: "図書館[としょかん]",
   Kana: "としょかん",
   Kanji: "図書館",
+  Optimized_Sent_Index: "183",
+  Optimized_Voc_Index: "287",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "245",
   Frequency: "3281",
-  Optimized_Sent_Index: "186",
-  Optimized_Voc_Index: "288",
   Furigana: "泊[と]まる",
   Kana: "とまる",
   Kanji: "泊まる",
+  Optimized_Sent_Index: "186",
+  Optimized_Voc_Index: "288",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "180",
   Frequency: "1496",
-  Optimized_Sent_Index: "271",
-  Optimized_Voc_Index: "289",
   Furigana: "遊[あそ]ぶ",
   Kana: "あそぶ",
   Kanji: "遊ぶ",
+  Optimized_Sent_Index: "271",
+  Optimized_Voc_Index: "289",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "246",
   Frequency: "276",
-  Optimized_Sent_Index: "329",
-  Optimized_Voc_Index: "290",
   Furigana: "どうして",
   Kana: "どうして",
   Kanji: "どうして",
+  Optimized_Sent_Index: "329",
+  Optimized_Voc_Index: "290",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "208",
   Frequency: "871",
-  Optimized_Sent_Index: "189",
-  Optimized_Voc_Index: "291",
   Furigana: "服[ふく]",
   Kana: "ふく",
   Kanji: "服",
+  Optimized_Sent_Index: "189",
+  Optimized_Voc_Index: "291",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "242",
   Frequency: "1267",
-  Optimized_Sent_Index: "191",
-  Optimized_Voc_Index: "292",
   Furigana: "お 父[とう]さん",
   Kana: "おとうさん",
   Kanji: "お父さん",
+  Optimized_Sent_Index: "191",
+  Optimized_Voc_Index: "292",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "358",
   Frequency: "296",
-  Optimized_Sent_Index: "192",
-  Optimized_Voc_Index: "293",
   Furigana: "父[ちち]",
   Kana: "ちち",
   Kanji: "父",
+  Optimized_Sent_Index: "192",
+  Optimized_Voc_Index: "293",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "215",
   Frequency: "1238",
-  Optimized_Sent_Index: "353",
-  Optimized_Voc_Index: "294",
   Furigana: "お 母[かあ]さん",
   Kana: "おかあさん",
   Kanji: "お母さん",
+  Optimized_Sent_Index: "353",
+  Optimized_Voc_Index: "294",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "370",
   Frequency: "356",
-  Optimized_Sent_Index: "194",
-  Optimized_Voc_Index: "295",
   Furigana: "母[はは]",
   Kana: "はは",
   Kanji: "母",
+  Optimized_Sent_Index: "194",
+  Optimized_Voc_Index: "295",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "116",
   Frequency: "959",
-  Optimized_Sent_Index: "323",
-  Optimized_Voc_Index: "296",
   Furigana: "親[おや]",
   Kana: "おや",
   Kanji: "親",
+  Optimized_Sent_Index: "323",
+  Optimized_Voc_Index: "296",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "155",
   Frequency: "1057",
-  Optimized_Sent_Index: "196",
-  Optimized_Voc_Index: "297",
   Furigana: "姉[あね]",
   Kana: "あね",
   Kanji: "姉",
+  Optimized_Sent_Index: "196",
+  Optimized_Voc_Index: "297",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "299",
   Frequency: "6069",
-  Optimized_Sent_Index: "198",
-  Optimized_Voc_Index: "298",
   Furigana: "お 姉[ねえ]さん",
   Kana: "おねえさん",
   Kanji: "お姉さん",
+  Optimized_Sent_Index: "198",
+  Optimized_Voc_Index: "298",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "331",
   Frequency: "849",
-  Optimized_Sent_Index: "200",
-  Optimized_Voc_Index: "299",
   Furigana: "妹[いもうと]",
   Kana: "いもうと",
   Kanji: "妹",
+  Optimized_Sent_Index: "200",
+  Optimized_Voc_Index: "299",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "249",
   Frequency: "7611",
-  Optimized_Sent_Index: "18",
-  Optimized_Voc_Index: "300",
   Furigana: "おなか",
   Kana: "おなか",
   Kanji: "おなか",
+  Optimized_Sent_Index: "18",
+  Optimized_Voc_Index: "300",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "111",
   Frequency: "731",
-  Optimized_Sent_Index: "331",
-  Optimized_Voc_Index: "301",
   Furigana: "兄[あに]",
   Kana: "あに",
   Kanji: "兄",
+  Optimized_Sent_Index: "331",
+  Optimized_Voc_Index: "301",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "304",
   Frequency: "6697",
-  Optimized_Sent_Index: "201",
-  Optimized_Voc_Index: "302",
   Furigana: "お 兄[にい]さん",
   Kana: "おにいさん",
   Kanji: "お兄さん",
+  Optimized_Sent_Index: "201",
+  Optimized_Voc_Index: "302",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "337",
   Frequency: "998",
-  Optimized_Sent_Index: "284",
-  Optimized_Voc_Index: "303",
   Furigana: "弟[おとうと]",
   Kana: "おとうと",
   Kanji: "弟",
+  Optimized_Sent_Index: "284",
+  Optimized_Voc_Index: "303",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "123",
   Frequency: "223",
-  Optimized_Sent_Index: "204",
-  Optimized_Voc_Index: "304",
   Furigana: "娘[むすめ]",
   Kana: "むすめ",
   Kanji: "娘",
+  Optimized_Sent_Index: "204",
+  Optimized_Voc_Index: "304",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "135",
   Frequency: "796",
-  Optimized_Sent_Index: "206",
-  Optimized_Voc_Index: "305",
   Furigana: "息子[むすこ]",
   Kana: "むすこ",
   Kanji: "息子",
+  Optimized_Sent_Index: "206",
+  Optimized_Voc_Index: "305",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "64",
   Frequency: "282",
-  Optimized_Sent_Index: "216",
-  Optimized_Voc_Index: "306",
   Furigana: "若[わか]い",
   Kana: "わかい",
   Kanji: "若い",
+  Optimized_Sent_Index: "216",
+  Optimized_Voc_Index: "306",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "46",
   Frequency: "82",
-  Optimized_Sent_Index: "214",
-  Optimized_Voc_Index: "307",
   Furigana: "彼女[かのじょ]",
   Kana: "かのじょ",
   Kanji: "彼女",
+  Optimized_Sent_Index: "214",
+  Optimized_Voc_Index: "307",
   PartOfSpeech: "Pronoun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "343",
   Frequency: "49",
-  Optimized_Sent_Index: "351",
-  Optimized_Voc_Index: "308",
   Furigana: "彼[かれ]",
   Kana: "かれ",
   Kanji: "彼",
+  Optimized_Sent_Index: "351",
+  Optimized_Voc_Index: "308",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "115",
   Frequency: "521",
-  Optimized_Sent_Index: "246",
-  Optimized_Voc_Index: "309",
   Furigana: "結婚[けっこん]",
   Kana: "けっこん",
   Kanji: "結婚",
+  Optimized_Sent_Index: "246",
+  Optimized_Voc_Index: "309",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "250",
   Frequency: "23773",
-  Optimized_Sent_Index: "161",
-  Optimized_Voc_Index: "310",
   Furigana: "ミーティング",
   Kana: "ミーティング",
   Kanji: "ミーティング",
+  Optimized_Sent_Index: "161",
+  Optimized_Voc_Index: "310",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "169",
   Frequency: "2691",
-  Optimized_Sent_Index: "248",
-  Optimized_Voc_Index: "311",
   Furigana: "自転車[じてんしゃ]",
   Kana: "じてんしゃ",
   Kanji: "自転車",
+  Optimized_Sent_Index: "248",
+  Optimized_Voc_Index: "311",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "394",
   Frequency: "56",
-  Optimized_Sent_Index: "249",
-  Optimized_Voc_Index: "312",
   Furigana: "自分[じぶん]",
   Kana: "じぶん",
   Kanji: "自分",
+  Optimized_Sent_Index: "249",
+  Optimized_Voc_Index: "312",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "392",
   Frequency: "3584",
-  Optimized_Sent_Index: "250",
-  Optimized_Voc_Index: "313",
   Furigana: "ご 主人[しゅじん]",
   Kana: "ごしゅじん",
   Kanji: "ご主人",
+  Optimized_Sent_Index: "250",
+  Optimized_Voc_Index: "313",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "350",
   Frequency: "227",
-  Optimized_Sent_Index: "254",
-  Optimized_Voc_Index: "314",
   Furigana: "答[こた]える",
   Kana: "こたえる",
   Kanji: "答える",
+  Optimized_Sent_Index: "254",
+  Optimized_Voc_Index: "314",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "62",
   Frequency: "369",
-  Optimized_Sent_Index: "255",
-  Optimized_Voc_Index: "315",
   Furigana: "別[べつ]",
   Kana: "べつ",
   Kanji: "別",
+  Optimized_Sent_Index: "255",
+  Optimized_Voc_Index: "315",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "141",
   Frequency: "1173",
-  Optimized_Sent_Index: "387",
-  Optimized_Voc_Index: "316",
   Furigana: "病気[びょうき]",
   Kana: "びょうき",
   Kanji: "病気",
+  Optimized_Sent_Index: "387",
+  Optimized_Voc_Index: "316",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "98",
   Frequency: "183",
-  Optimized_Sent_Index: "357",
-  Optimized_Voc_Index: "317",
   Furigana: "死[し]ぬ",
   Kana: "しぬ",
   Kanji: "死ぬ",
+  Optimized_Sent_Index: "357",
+  Optimized_Voc_Index: "317",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "241",
   Frequency: "1184",
-  Optimized_Sent_Index: "277",
-  Optimized_Voc_Index: "318",
   Furigana: "痛[いた]い",
   Kana: "いたい",
   Kanji: "痛い",
+  Optimized_Sent_Index: "277",
+  Optimized_Voc_Index: "318",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "153",
   Frequency: "463",
-  Optimized_Sent_Index: "264",
-  Optimized_Voc_Index: "319",
   Furigana: "酒[さけ]",
   Kana: "さけ",
   Kanji: "酒",
+  Optimized_Sent_Index: "264",
+  Optimized_Voc_Index: "319",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "268",
   Frequency: "168",
-  Optimized_Sent_Index: "67",
-  Optimized_Voc_Index: "320",
   Furigana: "つける",
   Kana: "つける",
   Kanji: "つける",
+  Optimized_Sent_Index: "67",
+  Optimized_Voc_Index: "320",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "312",
   Frequency: "5902",
-  Optimized_Sent_Index: "268",
-  Optimized_Voc_Index: "321",
   Furigana: "一杯[いっぱい]",
   Kana: "いっぱい",
   Kanji: "一杯",
+  Optimized_Sent_Index: "268",
+  Optimized_Voc_Index: "321",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "78",
   Frequency: "580",
-  Optimized_Sent_Index: "355",
-  Optimized_Voc_Index: "322",
   Furigana: "飛[と]ぶ",
   Kana: "とぶ",
   Kanji: "飛ぶ",
+  Optimized_Sent_Index: "355",
+  Optimized_Voc_Index: "322",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "139",
   Frequency: "2223",
-  Optimized_Sent_Index: "272",
-  Optimized_Voc_Index: "323",
   Furigana: "飛行機[ひこうき]",
   Kana: "ひこうき",
   Kanji: "飛行機",
+  Optimized_Sent_Index: "272",
+  Optimized_Voc_Index: "323",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "340",
   Frequency: "1014",
-  Optimized_Sent_Index: "273",
-  Optimized_Voc_Index: "324",
   Furigana: "お 願[ねが]い",
   Kana: "おねがい",
   Kanji: "お願い",
+  Optimized_Sent_Index: "273",
+  Optimized_Voc_Index: "324",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "24",
   Frequency: "677",
-  Optimized_Sent_Index: "274",
-  Optimized_Voc_Index: "325",
   Furigana: "続[つづ]く",
   Kana: "つづく",
   Kanji: "続く",
+  Optimized_Sent_Index: "274",
+  Optimized_Voc_Index: "325",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "178",
   Frequency: "2992",
-  Optimized_Sent_Index: "311",
-  Optimized_Voc_Index: "326",
   Furigana: "日記[にっき]",
   Kana: "にっき",
   Kanji: "日記",
+  Optimized_Sent_Index: "311",
+  Optimized_Voc_Index: "326",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "175",
   Frequency: "237",
-  Optimized_Sent_Index: "275",
-  Optimized_Voc_Index: "327",
   Furigana: "首[くび]",
   Kana: "くび",
   Kanji: "首",
+  Optimized_Sent_Index: "275",
+  Optimized_Voc_Index: "327",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "103",
   Frequency: "146",
-  Optimized_Sent_Index: "276",
-  Optimized_Voc_Index: "328",
   Furigana: "頭[あたま]",
   Kana: "あたま",
   Kanji: "頭",
+  Optimized_Sent_Index: "276",
+  Optimized_Voc_Index: "328",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "51",
   Frequency: "69",
-  Optimized_Sent_Index: "391",
-  Optimized_Voc_Index: "329",
   Furigana: "顔[かお]",
   Kana: "かお",
   Kanji: "顔",
+  Optimized_Sent_Index: "391",
+  Optimized_Voc_Index: "329",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "275",
   Frequency: "255",
-  Optimized_Sent_Index: "7",
-  Optimized_Voc_Index: "330",
   Furigana: "あれ",
   Kana: "あれ",
   Kanji: "あれ",
+  Optimized_Sent_Index: "7",
+  Optimized_Voc_Index: "330",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "34",
   Frequency: "206",
-  Optimized_Sent_Index: "399",
-  Optimized_Voc_Index: "331",
   Furigana: "感[かん]じる",
   Kana: "かんじる",
   Kanji: "感じる",
+  Optimized_Sent_Index: "399",
+  Optimized_Voc_Index: "331",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "171",
   Frequency: "781",
-  Optimized_Sent_Index: "278",
-  Optimized_Voc_Index: "332",
   Furigana: "探[さが]す",
   Kana: "さがす",
   Kanji: "探す",
+  Optimized_Sent_Index: "278",
+  Optimized_Voc_Index: "332",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "134",
   Frequency: "408",
-  Optimized_Sent_Index: "384",
-  Optimized_Voc_Index: "333",
   Furigana: "落[お]ちる",
   Kana: "おちる",
   Kanji: "落ちる",
+  Optimized_Sent_Index: "384",
+  Optimized_Voc_Index: "333",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "391",
   Frequency: "37293",
-  Optimized_Sent_Index: "279",
-  Optimized_Voc_Index: "334",
   Furigana: "お 手洗[てあら]い",
   Kana: "おてあらい",
   Kanji: "お手洗い",
+  Optimized_Sent_Index: "279",
+  Optimized_Voc_Index: "334",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "362",
   Frequency: "841",
-  Optimized_Sent_Index: "280",
-  Optimized_Voc_Index: "335",
   Furigana: "冷[つめ]たい",
   Kana: "つめたい",
   Kanji: "冷たい",
+  Optimized_Sent_Index: "280",
+  Optimized_Voc_Index: "335",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "262",
   Frequency: "3759",
-  Optimized_Sent_Index: "281",
-  Optimized_Voc_Index: "336",
   Furigana: "汚[きたな]い",
   Kana: "きたない",
   Kanji: "汚い",
+  Optimized_Sent_Index: "281",
+  Optimized_Voc_Index: "336",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "237",
   Frequency: "1691",
-  Optimized_Sent_Index: "282",
-  Optimized_Voc_Index: "337",
   Furigana: "太[ふと]い",
   Kana: "ふとい",
   Kanji: "太い",
+  Optimized_Sent_Index: "282",
+  Optimized_Voc_Index: "337",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "281",
   Frequency: "4850",
-  Optimized_Sent_Index: "381",
-  Optimized_Voc_Index: "338",
   Furigana: "曇[くも]る",
   Kana: "くもる",
   Kanji: "曇る",
+  Optimized_Sent_Index: "381",
+  Optimized_Voc_Index: "338",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "240",
   Frequency: "265",
-  Optimized_Sent_Index: "285",
-  Optimized_Voc_Index: "339",
   Furigana: "神[かみ]",
   Kana: "かみ",
   Kanji: "神",
+  Optimized_Sent_Index: "285",
+  Optimized_Voc_Index: "339",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "279",
   Frequency: "2137",
-  Optimized_Sent_Index: "81",
-  Optimized_Voc_Index: "340",
   Furigana: "まずい",
   Kana: "まずい",
   Kanji: "まずい",
+  Optimized_Sent_Index: "81",
+  Optimized_Voc_Index: "340",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "159",
   Frequency: "2445",
-  Optimized_Sent_Index: "286",
-  Optimized_Voc_Index: "341",
   Furigana: "建[た]てる",
   Kana: "たてる",
   Kanji: "建てる",
+  Optimized_Sent_Index: "286",
+  Optimized_Voc_Index: "341",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "66",
   Frequency: "348",
-  Optimized_Sent_Index: "290",
-  Optimized_Voc_Index: "342",
   Furigana: "置[お]く",
   Kana: "おく",
   Kanji: "置く",
+  Optimized_Sent_Index: "290",
+  Optimized_Voc_Index: "342",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "302",
   Frequency: "4715",
-  Optimized_Sent_Index: "292",
-  Optimized_Voc_Index: "343",
   Furigana: "辺[へん]",
   Kana: "へん",
   Kanji: "辺",
+  Optimized_Sent_Index: "292",
+  Optimized_Voc_Index: "343",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "256",
   Frequency: "3156",
-  Optimized_Sent_Index: "293",
-  Optimized_Voc_Index: "344",
   Furigana: "黄色[きいろ]い",
   Kana: "きいろい",
   Kanji: "黄色い",
+  Optimized_Sent_Index: "293",
+  Optimized_Voc_Index: "344",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "177",
   Frequency: "1265",
-  Optimized_Sent_Index: "296",
-  Optimized_Voc_Index: "345",
   Furigana: "一緒[いっしょ]に",
   Kana: "いっしょに",
   Kanji: "一緒に",
+  Optimized_Sent_Index: "296",
+  Optimized_Voc_Index: "345",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "198",
   Frequency: "1814",
-  Optimized_Sent_Index: "298",
-  Optimized_Voc_Index: "346",
   Furigana: "緑[みどり]",
   Kana: "みどり",
   Kanji: "緑",
+  Optimized_Sent_Index: "298",
+  Optimized_Voc_Index: "346",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "301",
   Frequency: "30266",
-  Optimized_Sent_Index: "299",
-  Optimized_Voc_Index: "347",
   Furigana: "易[やさ]しい",
   Kana: "やさしい",
   Kanji: "易しい",
+  Optimized_Sent_Index: "299",
+  Optimized_Voc_Index: "347",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "216",
   Frequency: "18155",
-  Optimized_Sent_Index: "300",
-  Optimized_Voc_Index: "348",
   Furigana: "留学生[りゅうがくせい]",
   Kana: "りゅうがくせい",
   Kanji: "留学生",
+  Optimized_Sent_Index: "300",
+  Optimized_Voc_Index: "348",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "68",
   Frequency: "249",
-  Optimized_Sent_Index: "301",
-  Optimized_Voc_Index: "349",
   Furigana: "戻[もど]る",
   Kana: "もどる",
   Kanji: "戻る",
+  Optimized_Sent_Index: "301",
+  Optimized_Voc_Index: "349",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "288",
   Frequency: "540",
-  Optimized_Sent_Index: "10",
-  Optimized_Voc_Index: "350",
   Furigana: "そば",
   Kana: "そば",
   Kanji: "そば",
+  Optimized_Sent_Index: "10",
+  Optimized_Voc_Index: "350",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "58",
   Frequency: "634",
-  Optimized_Sent_Index: "302",
-  Optimized_Voc_Index: "351",
   Furigana: "起[お]きる",
   Kana: "おきる",
   Kanji: "起きる",
+  Optimized_Sent_Index: "302",
+  Optimized_Voc_Index: "351",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "94",
   Frequency: "770",
-  Optimized_Sent_Index: "303",
-  Optimized_Voc_Index: "352",
   Furigana: "起[お]こる",
   Kana: "おこる",
   Kanji: "起こる",
+  Optimized_Sent_Index: "303",
+  Optimized_Voc_Index: "352",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "121",
   Frequency: "960",
-  Optimized_Sent_Index: "304",
-  Optimized_Voc_Index: "353",
   Furigana: "起[お]こす",
   Kana: "おこす",
   Kanji: "起こす",
+  Optimized_Sent_Index: "304",
+  Optimized_Voc_Index: "353",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "222",
   Frequency: "634",
-  Optimized_Sent_Index: "305",
-  Optimized_Voc_Index: "354",
   Furigana: "起[お]きる",
   Kana: "おきる",
   Kanji: "起きる",
+  Optimized_Sent_Index: "305",
+  Optimized_Voc_Index: "354",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "189",
   Frequency: "543",
-  Optimized_Sent_Index: "306",
-  Optimized_Voc_Index: "355",
   Furigana: "寝[ね]る",
   Kana: "ねる",
   Kanji: "寝る",
+  Optimized_Sent_Index: "306",
+  Optimized_Voc_Index: "355",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "316",
   Frequency: "1124",
-  Optimized_Sent_Index: "310",
-  Optimized_Voc_Index: "356",
   Furigana: "細[ほそ]い",
   Kana: "ほそい",
   Kanji: "細い",
+  Optimized_Sent_Index: "310",
+  Optimized_Voc_Index: "356",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "224",
   Frequency: "3547",
-  Optimized_Sent_Index: "339",
-  Optimized_Voc_Index: "357",
   Furigana: "載[の]せる",
   Kana: "のせる",
   Kanji: "載せる",
+  Optimized_Sent_Index: "339",
+  Optimized_Voc_Index: "357",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "278",
   Frequency: "5311",
-  Optimized_Sent_Index: "313",
-  Optimized_Voc_Index: "358",
   Furigana: "締[し]める",
   Kana: "しめる",
   Kanji: "締める",
+  Optimized_Sent_Index: "313",
+  Optimized_Voc_Index: "358",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "229",
   Frequency: "1544",
-  Optimized_Sent_Index: "314",
-  Optimized_Voc_Index: "359",
   Furigana: "甘[あま]い",
   Kana: "あまい",
   Kanji: "甘い",
+  Optimized_Sent_Index: "314",
+  Optimized_Voc_Index: "359",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "289",
   Frequency: "506",
-  Optimized_Sent_Index: "11",
-  Optimized_Voc_Index: "360",
   Furigana: "こっち",
   Kana: "こっち",
   Kanji: "こっち",
+  Optimized_Sent_Index: "11",
+  Optimized_Voc_Index: "360",
   PartOfSpeech: "Pronoun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "305",
   Frequency: "2085",
-  Optimized_Sent_Index: "315",
-  Optimized_Voc_Index: "361",
   Furigana: "辛[から]い",
   Kana: "からい",
   Kanji: "辛い",
+  Optimized_Sent_Index: "315",
+  Optimized_Voc_Index: "361",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "258",
   Frequency: "1326",
-  Optimized_Sent_Index: "318",
-  Optimized_Voc_Index: "362",
   Furigana: "優[やさ]しい",
   Kana: "やさしい",
   Kanji: "優しい",
+  Optimized_Sent_Index: "318",
+  Optimized_Voc_Index: "362",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "113",
   Frequency: "487",
-  Optimized_Sent_Index: "320",
-  Optimized_Voc_Index: "363",
   Furigana: "夫[おっと]",
   Kana: "おっと",
   Kanji: "夫",
+  Optimized_Sent_Index: "320",
+  Optimized_Voc_Index: "363",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "361",
   Frequency: "420",
-  Optimized_Sent_Index: "327",
-  Optimized_Voc_Index: "364",
   Furigana: "妻[つま]",
   Kana: "つま",
   Kanji: "妻",
+  Optimized_Sent_Index: "327",
+  Optimized_Voc_Index: "364",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "137",
   Frequency: "174",
-  Optimized_Sent_Index: "322",
-  Optimized_Voc_Index: "365",
   Furigana: "誰[だれ]",
   Kana: "だれ",
   Kanji: "誰",
+  Optimized_Sent_Index: "322",
+  Optimized_Voc_Index: "365",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "226",
   Frequency: "2817",
-  Optimized_Sent_Index: "324",
-  Optimized_Voc_Index: "366",
   Furigana: "愛[あい]する",
   Kana: "あいする",
   Kanji: "愛する",
+  Optimized_Sent_Index: "324",
+  Optimized_Voc_Index: "366",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "164",
   Frequency: "185",
-  Optimized_Sent_Index: "373",
-  Optimized_Voc_Index: "367",
   Furigana: "笑[わら]う",
   Kana: "わらう",
   Kanji: "笑う",
+  Optimized_Sent_Index: "373",
+  Optimized_Voc_Index: "367",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "314",
   Frequency: "20802",
-  Optimized_Sent_Index: "332",
-  Optimized_Voc_Index: "368",
   Furigana: "酸[す]っぱい",
   Kana: "すっぱい",
   Kanji: "酸っぱい",
+  Optimized_Sent_Index: "332",
+  Optimized_Voc_Index: "368",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "50",
   Frequency: "143",
-  Optimized_Sent_Index: "334",
-  Optimized_Voc_Index: "369",
   Furigana: "言葉[ことば]",
   Kana: "ことば",
   Kanji: "言葉",
+  Optimized_Sent_Index: "334",
+  Optimized_Voc_Index: "369",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "303",
   Frequency: "25",
-  Optimized_Sent_Index: "377",
-  Optimized_Voc_Index: "370",
   Furigana: "よう",
   Kana: "よう",
   Kanji: "よう",
+  Optimized_Sent_Index: "377",
+  Optimized_Voc_Index: "370",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "74",
   Frequency: "231",
-  Optimized_Sent_Index: "336",
-  Optimized_Voc_Index: "371",
   Furigana: "呼[よ]ぶ",
   Kana: "よぶ",
   Kanji: "呼ぶ",
+  Optimized_Sent_Index: "336",
+  Optimized_Voc_Index: "371",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "145",
   Frequency: "272",
-  Optimized_Sent_Index: "337",
-  Optimized_Voc_Index: "372",
   Furigana: "胸[むね]",
   Kana: "むね",
   Kanji: "胸",
+  Optimized_Sent_Index: "337",
+  Optimized_Voc_Index: "372",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "211",
   Frequency: "395",
-  Optimized_Sent_Index: "338",
-  Optimized_Voc_Index: "373",
   Furigana: "腰[こし]",
   Kana: "こし",
   Kanji: "腰",
+  Optimized_Sent_Index: "338",
+  Optimized_Voc_Index: "373",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "219",
   Frequency: "623",
-  Optimized_Sent_Index: "342",
-  Optimized_Voc_Index: "374",
   Furigana: "背[せ]",
   Kana: "せ",
   Kanji: "背",
+  Optimized_Sent_Index: "342",
+  Optimized_Voc_Index: "374",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "271",
   Frequency: "34512",
-  Optimized_Sent_Index: "345",
-  Optimized_Voc_Index: "375",
   Furigana: "片仮名[かたかな]",
   Kana: "かたかな",
   Kanji: "片仮名",
+  Optimized_Sent_Index: "345",
+  Optimized_Voc_Index: "375",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "280",
   Frequency: "41512",
-  Optimized_Sent_Index: "346",
-  Optimized_Voc_Index: "376",
   Furigana: "平仮名[ひらがな]",
   Kana: "ひらがな",
   Kanji: "平仮名",
+  Optimized_Sent_Index: "346",
+  Optimized_Voc_Index: "376",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "225",
   Frequency: "1677",
-  Optimized_Sent_Index: "347",
-  Optimized_Voc_Index: "377",
   Furigana: "悲[かな]しい",
   Kana: "かなしい",
   Kanji: "悲しい",
+  Optimized_Sent_Index: "347",
+  Optimized_Voc_Index: "377",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "118",
   Frequency: "526",
-  Optimized_Sent_Index: "348",
-  Optimized_Voc_Index: "378",
   Furigana: "美[うつく]しい",
   Kana: "うつくしい",
   Kanji: "美しい",
+  Optimized_Sent_Index: "348",
+  Optimized_Voc_Index: "378",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "166",
   Frequency: "3138",
-  Optimized_Sent_Index: "352",
-  Optimized_Voc_Index: "379",
   Furigana: "授業[じゅぎょう]",
   Kana: "じゅぎょう",
   Kanji: "授業",
+  Optimized_Sent_Index: "352",
+  Optimized_Voc_Index: "379",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "308",
   Frequency: "1268",
-  Optimized_Sent_Index: "291",
-  Optimized_Voc_Index: "380",
   Furigana: "あそこ",
   Kana: "あそこ",
   Kanji: "あそこ",
+  Optimized_Sent_Index: "291",
+  Optimized_Voc_Index: "380",
   PartOfSpeech: "Pronoun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "220",
   Frequency: "2370",
-  Optimized_Sent_Index: "354",
-  Optimized_Voc_Index: "381",
   Furigana: "手伝[てつだ]う",
   Kana: "てつだう",
   Kanji: "手伝う",
+  Optimized_Sent_Index: "354",
+  Optimized_Voc_Index: "381",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "157",
   Frequency: "1475",
-  Optimized_Sent_Index: "360",
-  Optimized_Voc_Index: "382",
   Furigana: "狭[せま]い",
   Kana: "せまい",
   Kanji: "狭い",
+  Optimized_Sent_Index: "360",
+  Optimized_Voc_Index: "382",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "282",
   Frequency: "3510",
-  Optimized_Sent_Index: "361",
-  Optimized_Voc_Index: "383",
   Furigana: "触[さわ]る",
   Kana: "さわる",
   Kanji: "触る",
+  Optimized_Sent_Index: "361",
+  Optimized_Voc_Index: "383",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "252",
   Frequency: "2018",
-  Optimized_Sent_Index: "362",
-  Optimized_Voc_Index: "384",
   Furigana: "嫌[きら]い",
   Kana: "きらい",
   Kanji: "嫌い",
+  Optimized_Sent_Index: "362",
+  Optimized_Voc_Index: "384",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "186",
   Frequency: "2346",
-  Optimized_Sent_Index: "365",
-  Optimized_Voc_Index: "385",
   Furigana: "浴[あ]びる",
   Kana: "あびる",
   Kanji: "浴びる",
+  Optimized_Sent_Index: "365",
+  Optimized_Voc_Index: "385",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "291",
   Frequency: "10341",
-  Optimized_Sent_Index: "397",
-  Optimized_Voc_Index: "386",
   Furigana: "渇[かわ]く",
   Kana: "かわく",
   Kanji: "渇く",
+  Optimized_Sent_Index: "397",
+  Optimized_Voc_Index: "386",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "267",
   Frequency: "3024",
-  Optimized_Sent_Index: "368",
-  Optimized_Voc_Index: "387",
   Furigana: "髪[かみ]の 毛[け]",
   Kana: "かみのけ",
   Kanji: "髪の毛",
+  Optimized_Sent_Index: "368",
+  Optimized_Voc_Index: "387",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "187",
   Frequency: "346",
-  Optimized_Sent_Index: "379",
-  Optimized_Voc_Index: "388",
   Furigana: "肩[かた]",
   Kana: "かた",
   Kanji: "肩",
+  Optimized_Sent_Index: "379",
+  Optimized_Voc_Index: "388",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "221",
   Frequency: "811",
-  Optimized_Sent_Index: "369",
-  Optimized_Voc_Index: "389",
   Furigana: "鼻[はな]",
   Kana: "はな",
   Kanji: "鼻",
+  Optimized_Sent_Index: "369",
+  Optimized_Voc_Index: "389",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "335",
   Frequency: "2716",
-  Optimized_Sent_Index: "335",
-  Optimized_Voc_Index: "390",
   Furigana: "おいしい",
   Kana: "おいしい",
   Kanji: "おいしい",
+  Optimized_Sent_Index: "335",
+  Optimized_Voc_Index: "390",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "199",
   Frequency: "343",
-  Optimized_Sent_Index: "370",
-  Optimized_Voc_Index: "391",
   Furigana: "腕[うで]",
   Kana: "うで",
   Kanji: "腕",
+  Optimized_Sent_Index: "370",
+  Optimized_Voc_Index: "391",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "247",
   Frequency: "1704",
-  Optimized_Sent_Index: "378",
-  Optimized_Voc_Index: "392",
   Furigana: "掛[か]ける",
   Kana: "かける",
   Kanji: "掛ける",
+  Optimized_Sent_Index: "378",
+  Optimized_Voc_Index: "392",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "376",
   Frequency: "139",
-  Optimized_Sent_Index: "380",
-  Optimized_Voc_Index: "393",
   Furigana: "僕[ぼく]",
   Kana: "ぼく",
   Kanji: "僕",
+  Optimized_Sent_Index: "380",
+  Optimized_Voc_Index: "393",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "283",
   Frequency: "1021",
-  Optimized_Sent_Index: "382",
-  Optimized_Voc_Index: "394",
   Furigana: "だめ",
   Kana: "だめ",
   Kanji: "だめ",
+  Optimized_Sent_Index: "382",
+  Optimized_Voc_Index: "394",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "355",
   Frequency: "657",
-  Optimized_Sent_Index: "386",
-  Optimized_Voc_Index: "395",
   Furigana: "大丈夫[だいじょうぶ]",
   Kana: "だいじょうぶ",
   Kanji: "大丈夫",
+  Optimized_Sent_Index: "386",
+  Optimized_Voc_Index: "395",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "257",
   Frequency: "3785",
-  Optimized_Sent_Index: "389",
-  Optimized_Voc_Index: "396",
   Furigana: "風邪[かぜ]",
   Kana: "かぜ",
   Kanji: "風邪",
+  Optimized_Sent_Index: "389",
+  Optimized_Voc_Index: "396",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "345",
   Frequency: "1138",
-  Optimized_Sent_Index: "396",
-  Optimized_Voc_Index: "397",
   Furigana: "きれい",
   Kana: "きれい",
   Kanji: "きれい",
+  Optimized_Sent_Index: "396",
+  Optimized_Voc_Index: "397",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "210",
   Frequency: "1298",
-  Optimized_Sent_Index: "398",
-  Optimized_Voc_Index: "398",
   Furigana: "嬉[うれ]しい",
   Kana: "うれしい",
   Kanji: "嬉しい",
+  Optimized_Sent_Index: "398",
+  Optimized_Voc_Index: "398",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "395",
   Frequency: "",
-  Optimized_Sent_Index: "400",
-  Optimized_Voc_Index: "399",
   Furigana: "なる",
   Kana: "なる",
   Kanji: "なる (生る)",
+  Optimized_Sent_Index: "400",
+  Optimized_Voc_Index: "399",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "396",
   Frequency: "98",
-  Optimized_Sent_Index: "257",
-  Optimized_Voc_Index: "400",
   Furigana: "ため",
   Kana: "ため",
   Kanji: "ため",
+  Optimized_Sent_Index: "257",
+  Optimized_Voc_Index: "400",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "415",
   Frequency: "119",
-  Optimized_Sent_Index: "1777",
-  Optimized_Voc_Index: "401",
   Furigana: "より",
   Kana: "より",
   Kanji: "より",
+  Optimized_Sent_Index: "1777",
+  Optimized_Voc_Index: "401",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1796",
   Frequency: "169",
-  Optimized_Sent_Index: "548",
-  Optimized_Voc_Index: "402",
   Furigana: "七[しち]",
   Kana: "しち",
   Kanji: "七",
+  Optimized_Sent_Index: "548",
+  Optimized_Voc_Index: "402",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1774",
   Frequency: "184",
-  Optimized_Sent_Index: "747",
-  Optimized_Voc_Index: "403",
   Furigana: "九[く]",
   Kana: "く",
   Kanji: "九",
+  Optimized_Sent_Index: "747",
+  Optimized_Voc_Index: "403",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1537",
   Frequency: "2153",
-  Optimized_Sent_Index: "550",
-  Optimized_Voc_Index: "404",
   Furigana: "億[おく]",
   Kana: "おく",
   Kanji: "億",
+  Optimized_Sent_Index: "550",
+  Optimized_Voc_Index: "404",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1902",
   Frequency: "1261",
-  Optimized_Sent_Index: "612",
-  Optimized_Voc_Index: "405",
   Furigana: "寺[てら]",
   Kana: "てら",
   Kanji: "寺",
+  Optimized_Sent_Index: "612",
+  Optimized_Voc_Index: "405",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "425",
   Frequency: "2778",
-  Optimized_Sent_Index: "882",
-  Optimized_Voc_Index: "406",
   Furigana: "ドル",
   Kana: "ドル",
   Kanji: "ドル",
+  Optimized_Sent_Index: "882",
+  Optimized_Voc_Index: "406",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1386",
   Frequency: "94",
-  Optimized_Sent_Index: "593",
-  Optimized_Voc_Index: "407",
   Furigana: "日[ひ]",
   Kana: "ひ",
   Kanji: "日",
+  Optimized_Sent_Index: "593",
+  Optimized_Voc_Index: "407",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1935",
   Frequency: "461",
-  Optimized_Sent_Index: "576",
-  Optimized_Voc_Index: "408",
   Furigana: "火[ひ]",
   Kana: "ひ",
   Kanji: "火",
+  Optimized_Sent_Index: "576",
+  Optimized_Voc_Index: "408",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "790",
   Frequency: "605",
-  Optimized_Sent_Index: "1682",
-  Optimized_Voc_Index: "409",
   Furigana: "木[き]",
   Kana: "き",
   Kanji: "木",
+  Optimized_Sent_Index: "1682",
+  Optimized_Voc_Index: "409",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1847",
   Frequency: "269",
-  Optimized_Sent_Index: "1027",
-  Optimized_Voc_Index: "410",
   Furigana: "金[きん]",
   Kana: "きん",
   Kanji: "金",
+  Optimized_Sent_Index: "1027",
+  Optimized_Voc_Index: "410",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "426",
   Frequency: "3228",
-  Optimized_Sent_Index: "1346",
-  Optimized_Voc_Index: "411",
   Furigana: "システム",
   Kana: "システム",
   Kanji: "システム",
+  Optimized_Sent_Index: "1346",
+  Optimized_Voc_Index: "411",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "565",
   Frequency: "1098",
-  Optimized_Sent_Index: "403",
-  Optimized_Voc_Index: "412",
   Furigana: "十分[じゅうぶん]",
   Kana: "じゅうぶん",
   Kanji: "十分",
+  Optimized_Sent_Index: "403",
+  Optimized_Voc_Index: "412",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "678",
   Frequency: "273",
-  Optimized_Sent_Index: "404",
-  Optimized_Voc_Index: "413",
   Furigana: "分[ぶん]",
   Kana: "ぶん",
   Kanji: "分",
+  Optimized_Sent_Index: "404",
+  Optimized_Voc_Index: "413",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "760",
   Frequency: "2489",
-  Optimized_Sent_Index: "1787",
-  Optimized_Voc_Index: "414",
   Furigana: "分[わ]ける",
   Kana: "わける",
   Kanji: "分ける",
+  Optimized_Sent_Index: "1787",
+  Optimized_Voc_Index: "414",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "863",
   Frequency: "6030",
-  Optimized_Sent_Index: "1104",
-  Optimized_Voc_Index: "415",
   Furigana: "分[わ]かれる",
   Kana: "わかれる",
   Kanji: "分かれる",
+  Optimized_Sent_Index: "1104",
+  Optimized_Voc_Index: "415",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "436",
   Frequency: "7035",
-  Optimized_Sent_Index: "609",
-  Optimized_Voc_Index: "416",
   Furigana: "コンピュータ",
   Kana: "コンピュータ",
   Kanji: "コンピュータ",
+  Optimized_Sent_Index: "609",
+  Optimized_Voc_Index: "416",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "917",
   Frequency: "",
-  Optimized_Sent_Index: "1274",
-  Optimized_Voc_Index: "417",
   Furigana: "何[なに]か",
   Kana: "なにか",
   Kanji: "何か",
+  Optimized_Sent_Index: "1274",
+  Optimized_Voc_Index: "417",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1909",
   Frequency: "53",
-  Optimized_Sent_Index: "691",
-  Optimized_Voc_Index: "418",
   Furigana: "何[なん]",
   Kana: "なん",
   Kanji: "何",
+  Optimized_Sent_Index: "691",
+  Optimized_Voc_Index: "418",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "484",
   Frequency: "438",
-  Optimized_Sent_Index: "1279",
-  Optimized_Voc_Index: "419",
   Furigana: "まず",
   Kana: "まず",
   Kanji: "まず",
+  Optimized_Sent_Index: "1279",
+  Optimized_Voc_Index: "419",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1096",
   Frequency: "10311",
-  Optimized_Sent_Index: "1033",
-  Optimized_Voc_Index: "420",
   Furigana: "先月[せんげつ]",
   Kana: "せんげつ",
   Kanji: "先月",
+  Optimized_Sent_Index: "1033",
+  Optimized_Voc_Index: "420",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "438",
   Frequency: "78",
-  Optimized_Sent_Index: "1667",
-  Optimized_Voc_Index: "421",
   Furigana: "やる",
   Kana: "やる",
   Kanji: "やる",
+  Optimized_Sent_Index: "1667",
+  Optimized_Voc_Index: "421",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1205",
   Frequency: "9452",
-  Optimized_Sent_Index: "426",
-  Optimized_Voc_Index: "422",
   Furigana: "先週[せんしゅう]",
   Kana: "せんしゅう",
   Kanji: "先週",
+  Optimized_Sent_Index: "426",
+  Optimized_Voc_Index: "422",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1280",
   Frequency: "919",
-  Optimized_Sent_Index: "406",
-  Optimized_Voc_Index: "423",
   Furigana: "今[いま]まで",
   Kana: "いままで",
   Kanji: "今まで",
+  Optimized_Sent_Index: "406",
+  Optimized_Voc_Index: "423",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "985",
   Frequency: "16035",
-  Optimized_Sent_Index: "669",
-  Optimized_Voc_Index: "424",
   Furigana: "来月[らいげつ]",
   Kana: "らいげつ",
   Kanji: "来月",
+  Optimized_Sent_Index: "669",
+  Optimized_Voc_Index: "424",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1440",
   Frequency: "11305",
-  Optimized_Sent_Index: "1166",
-  Optimized_Voc_Index: "425",
   Furigana: "来週[らいしゅう]",
   Kana: "らいしゅう",
   Kanji: "来週",
+  Optimized_Sent_Index: "1166",
+  Optimized_Voc_Index: "425",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "450",
   Frequency: "5782",
-  Optimized_Sent_Index: "944",
-  Optimized_Voc_Index: "426",
   Furigana: "ロボット",
   Kana: "ロボット",
   Kanji: "ロボット",
+  Optimized_Sent_Index: "944",
+  Optimized_Voc_Index: "426",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "406",
   Frequency: "523",
-  Optimized_Sent_Index: "509",
-  Optimized_Voc_Index: "427",
   Furigana: "行[おこな]う",
   Kana: "おこなう",
   Kanji: "行う",
+  Optimized_Sent_Index: "509",
+  Optimized_Voc_Index: "427",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1820",
   Frequency: "3764",
-  Optimized_Sent_Index: "1573",
-  Optimized_Voc_Index: "428",
   Furigana: "行[い]き",
   Kana: "いき",
   Kanji: "行き",
+  Optimized_Sent_Index: "1573",
+  Optimized_Voc_Index: "428",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1976",
   Frequency: "3764",
-  Optimized_Sent_Index: "1444",
-  Optimized_Voc_Index: "429",
   Furigana: "行[ゆ]き",
   Kana: "ゆき",
   Kanji: "行き",
+  Optimized_Sent_Index: "1444",
+  Optimized_Voc_Index: "429",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1162",
   Frequency: "2064",
-  Optimized_Sent_Index: "514",
-  Optimized_Voc_Index: "430",
   Furigana: "帰[かえ]り",
   Kana: "かえり",
   Kanji: "帰り",
+  Optimized_Sent_Index: "514",
+  Optimized_Voc_Index: "430",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "451",
   Frequency: "362",
-  Optimized_Sent_Index: "402",
-  Optimized_Voc_Index: "431",
   Furigana: "ほとんど",
   Kana: "ほとんど",
   Kanji: "ほとんど",
+  Optimized_Sent_Index: "402",
+  Optimized_Voc_Index: "431",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "853",
   Frequency: "2304",
-  Optimized_Sent_Index: "1827",
-  Optimized_Voc_Index: "432",
   Furigana: "大[おお]きさ",
   Kana: "おおきさ",
   Kanji: "大きさ",
+  Optimized_Sent_Index: "1827",
+  Optimized_Voc_Index: "432",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1475",
   Frequency: "4402",
-  Optimized_Sent_Index: "424",
-  Optimized_Voc_Index: "433",
   Furigana: "大分[だいぶ]",
   Kana: "だいぶ",
   Kanji: "大分",
+  Optimized_Sent_Index: "424",
+  Optimized_Voc_Index: "433",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1699",
   Frequency: "71",
-  Optimized_Sent_Index: "1811",
-  Optimized_Voc_Index: "434",
   Furigana: "中[なか]",
   Kana: "なか",
   Kanji: "中",
+  Optimized_Sent_Index: "1811",
+  Optimized_Voc_Index: "434",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "725",
   Frequency: "500",
-  Optimized_Sent_Index: "413",
-  Optimized_Voc_Index: "435",
   Furigana: "少年[しょうねん]",
   Kana: "しょうねん",
   Kanji: "少年",
+  Optimized_Sent_Index: "413",
+  Optimized_Voc_Index: "435",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "462",
   Frequency: "6138",
-  Optimized_Sent_Index: "945",
-  Optimized_Voc_Index: "436",
   Furigana: "パソコン",
   Kana: "パソコン",
   Kanji: "パソコン",
+  Optimized_Sent_Index: "945",
+  Optimized_Voc_Index: "436",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1228",
   Frequency: "3081",
-  Optimized_Sent_Index: "615",
-  Optimized_Voc_Index: "437",
   Furigana: "少[すこ]しも",
   Kana: "すこしも",
   Kanji: "少しも",
+  Optimized_Sent_Index: "615",
+  Optimized_Voc_Index: "437",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1284",
   Frequency: "2187",
-  Optimized_Sent_Index: "1465",
-  Optimized_Voc_Index: "438",
   Furigana: "少々[しょうしょう]",
   Kana: "しょうしょう",
   Kanji: "少々",
+  Optimized_Sent_Index: "1465",
+  Optimized_Voc_Index: "438",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "465",
   Frequency: "840",
-  Optimized_Sent_Index: "869",
-  Optimized_Voc_Index: "439",
   Furigana: "多[おお]く",
   Kana: "おおく",
   Kanji: "多く",
+  Optimized_Sent_Index: "869",
+  Optimized_Voc_Index: "439",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "469",
   Frequency: "793",
-  Optimized_Sent_Index: "581",
-  Optimized_Voc_Index: "440",
   Furigana: "上[あ]がる",
   Kana: "あがる",
   Kanji: "上がる",
+  Optimized_Sent_Index: "581",
+  Optimized_Voc_Index: "440",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "470",
   Frequency: "103",
-  Optimized_Sent_Index: "1093",
-  Optimized_Voc_Index: "441",
   Furigana: "もう",
   Kana: "もう",
   Kanji: "もう",
+  Optimized_Sent_Index: "1093",
+  Optimized_Voc_Index: "441",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1840",
   Frequency: "793",
-  Optimized_Sent_Index: "1025",
-  Optimized_Voc_Index: "442",
   Furigana: "上[あ]がる",
   Kana: "あがる",
   Kanji: "上がる",
+  Optimized_Sent_Index: "1025",
+  Optimized_Voc_Index: "442",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1904",
   Frequency: "4584",
-  Optimized_Sent_Index: "1028",
-  Optimized_Voc_Index: "443",
   Furigana: "年上[としうえ]",
   Kana: "としうえ",
   Kanji: "年上",
+  Optimized_Sent_Index: "1028",
+  Optimized_Voc_Index: "443",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1922",
   Frequency: "6274",
-  Optimized_Sent_Index: "523",
-  Optimized_Voc_Index: "444",
   Furigana: "上[のぼ]り",
   Kana: "のぼり",
   Kanji: "上り",
+  Optimized_Sent_Index: "523",
+  Optimized_Voc_Index: "444",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "919",
   Frequency: "1089",
-  Optimized_Sent_Index: "816",
-  Optimized_Voc_Index: "445",
   Furigana: "下[さ]げる",
   Kana: "さげる",
   Kanji: "下げる",
+  Optimized_Sent_Index: "816",
+  Optimized_Voc_Index: "445",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "487",
   Frequency: "6594",
-  Optimized_Sent_Index: "1431",
-  Optimized_Voc_Index: "446",
   Furigana: "プログラム",
   Kana: "プログラム",
   Kanji: "プログラム",
+  Optimized_Sent_Index: "1431",
+  Optimized_Voc_Index: "446",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1003",
   Frequency: "2842",
-  Optimized_Sent_Index: "600",
-  Optimized_Voc_Index: "447",
   Furigana: "下[さ]がる",
   Kana: "さがる",
   Kanji: "下がる",
+  Optimized_Sent_Index: "600",
+  Optimized_Voc_Index: "447",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1208",
   Frequency: "1798",
-  Optimized_Sent_Index: "585",
-  Optimized_Voc_Index: "448",
   Furigana: "下[お]りる",
   Kana: "おりる",
   Kanji: "下りる",
+  Optimized_Sent_Index: "585",
+  Optimized_Voc_Index: "448",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1405",
   Frequency: "1863",
-  Optimized_Sent_Index: "1798",
-  Optimized_Voc_Index: "449",
   Furigana: "下[お]ろす",
   Kana: "おろす",
   Kanji: "下ろす",
+  Optimized_Sent_Index: "1798",
+  Optimized_Voc_Index: "449",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1566",
   Frequency: "7946",
-  Optimized_Sent_Index: "805",
-  Optimized_Voc_Index: "450",
   Furigana: "下[くだ]り",
   Kana: "くだり",
   Kanji: "下り",
+  Optimized_Sent_Index: "805",
+  Optimized_Voc_Index: "450",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "498",
   Frequency: "154",
-  Optimized_Sent_Index: "1065",
-  Optimized_Voc_Index: "451",
   Furigana: "よく",
   Kana: "よく",
   Kanji: "よく",
+  Optimized_Sent_Index: "1065",
+  Optimized_Voc_Index: "451",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1580",
   Frequency: "7203",
-  Optimized_Sent_Index: "1508",
-  Optimized_Voc_Index: "452",
   Furigana: "年下[としした]",
   Kana: "としした",
   Kanji: "年下",
+  Optimized_Sent_Index: "1508",
+  Optimized_Voc_Index: "452",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1634",
   Frequency: "2145",
-  Optimized_Sent_Index: "1129",
-  Optimized_Voc_Index: "453",
   Furigana: "下[くだ]る",
   Kana: "くだる",
   Kanji: "下る",
+  Optimized_Sent_Index: "1129",
+  Optimized_Voc_Index: "453",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "424",
   Frequency: "763",
-  Optimized_Sent_Index: "525",
-  Optimized_Voc_Index: "454",
   Furigana: "一方[いっぽう]",
   Kana: "いっぽう",
   Kanji: "一方",
+  Optimized_Sent_Index: "525",
+  Optimized_Voc_Index: "454",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1835",
   Frequency: "121",
-  Optimized_Sent_Index: "779",
-  Optimized_Voc_Index: "455",
   Furigana: "方[かた]",
   Kana: "かた",
   Kanji: "方",
+  Optimized_Sent_Index: "779",
+  Optimized_Voc_Index: "455",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "502",
   Frequency: "151",
-  Optimized_Sent_Index: "517",
-  Optimized_Voc_Index: "456",
   Furigana: "まま",
   Kana: "まま",
   Kanji: "まま",
+  Optimized_Sent_Index: "517",
+  Optimized_Voc_Index: "456",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1758",
   Frequency: "",
-  Optimized_Sent_Index: "1506",
-  Optimized_Voc_Index: "457",
   Furigana: "二人[ふたり]",
   Kana: "ふたり",
   Kanji: "二人",
+  Optimized_Sent_Index: "1506",
+  Optimized_Voc_Index: "457",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1826",
   Frequency: "22423",
-  Optimized_Sent_Index: "1024",
-  Optimized_Voc_Index: "458",
   Furigana: "大人[おとな]しい",
   Kana: "おとなしい",
   Kanji: "大人しい",
+  Optimized_Sent_Index: "1024",
+  Optimized_Voc_Index: "458",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1939",
   Frequency: "492",
-  Optimized_Sent_Index: "911",
-  Optimized_Voc_Index: "459",
   Furigana: "人々[ひとびと]",
   Kana: "ひとびと",
   Kanji: "人々",
+  Optimized_Sent_Index: "911",
+  Optimized_Voc_Index: "459",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1997",
   Frequency: "",
-  Optimized_Sent_Index: "831",
-  Optimized_Voc_Index: "460",
   Furigana: "一人[ひとり]で",
   Kana: "ひとりで",
   Kanji: "一人で",
+  Optimized_Sent_Index: "831",
+  Optimized_Voc_Index: "460",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "507",
   Frequency: "1094",
-  Optimized_Sent_Index: "488",
-  Optimized_Voc_Index: "461",
   Furigana: "テレビ",
   Kana: "テレビ",
   Kanji: "テレビ",
+  Optimized_Sent_Index: "488",
+  Optimized_Voc_Index: "461",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1183",
   Frequency: "7325",
-  Optimized_Sent_Index: "638",
-  Optimized_Voc_Index: "462",
   Furigana: "外人[がいじん]",
   Kana: "がいじん",
   Kanji: "外人",
+  Optimized_Sent_Index: "638",
+  Optimized_Voc_Index: "462",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1878",
   Frequency: "262",
-  Optimized_Sent_Index: "598",
-  Optimized_Voc_Index: "463",
   Furigana: "外[そと]",
   Kana: "そと",
   Kanji: "外",
+  Optimized_Sent_Index: "598",
+  Optimized_Voc_Index: "463",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1052",
   Frequency: "8581",
-  Optimized_Sent_Index: "492",
-  Optimized_Voc_Index: "464",
   Furigana: "休日[きゅうじつ]",
   Kana: "きゅうじつ",
   Kanji: "休日",
+  Optimized_Sent_Index: "492",
+  Optimized_Voc_Index: "464",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1159",
   Frequency: "4526",
-  Optimized_Sent_Index: "513",
-  Optimized_Voc_Index: "465",
   Furigana: "休[やす]み",
   Kana: "やすみ",
   Kanji: "休み",
+  Optimized_Sent_Index: "513",
+  Optimized_Voc_Index: "465",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "534",
   Frequency: "11204",
-  Optimized_Sent_Index: "682",
-  Optimized_Voc_Index: "466",
   Furigana: "ソフト",
   Kana: "ソフト",
   Kanji: "ソフト",
+  Optimized_Sent_Index: "682",
+  Optimized_Voc_Index: "466",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "489",
   Frequency: "235",
-  Optimized_Sent_Index: "1847",
-  Optimized_Voc_Index: "467",
   Furigana: "力[ちから]",
   Kana: "ちから",
   Kanji: "力",
+  Optimized_Sent_Index: "1847",
+  Optimized_Voc_Index: "467",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "646",
   Frequency: "2064",
-  Optimized_Sent_Index: "715",
-  Optimized_Voc_Index: "468",
   Furigana: "協力[きょうりょく]",
   Kana: "きょうりょく",
   Kanji: "協力",
+  Optimized_Sent_Index: "715",
+  Optimized_Voc_Index: "468",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "736",
   Frequency: "6109",
-  Optimized_Sent_Index: "549",
-  Optimized_Voc_Index: "469",
   Furigana: "人口[じんこう]",
   Kana: "じんこう",
   Kanji: "人口",
+  Optimized_Sent_Index: "549",
+  Optimized_Voc_Index: "469",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1401",
   Frequency: "3680",
-  Optimized_Sent_Index: "423",
-  Optimized_Voc_Index: "470",
   Furigana: "出口[でぐち]",
   Kana: "でぐち",
   Kanji: "出口",
+  Optimized_Sent_Index: "423",
+  Optimized_Voc_Index: "470",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "536",
   Frequency: "158",
-  Optimized_Sent_Index: "1743",
-  Optimized_Voc_Index: "471",
   Furigana: "ただ",
   Kana: "ただ",
   Kanji: "ただ",
+  Optimized_Sent_Index: "1743",
+  Optimized_Voc_Index: "471",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1622",
   Frequency: "3549",
-  Optimized_Sent_Index: "455",
-  Optimized_Voc_Index: "472",
   Furigana: "入[い]り 口[ぐち]",
   Kana: "いりぐち",
   Kanji: "入り口",
+  Optimized_Sent_Index: "455",
+  Optimized_Voc_Index: "472",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1107",
   Frequency: "1045",
-  Optimized_Sent_Index: "502",
-  Optimized_Voc_Index: "473",
   Furigana: "右手[みぎて]",
   Kana: "みぎて",
   Kanji: "右手",
+  Optimized_Sent_Index: "502",
+  Optimized_Voc_Index: "473",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1194",
   Frequency: "1427",
-  Optimized_Sent_Index: "990",
-  Optimized_Voc_Index: "474",
   Furigana: "左手[ひだりて]",
   Kana: "ひだりて",
   Kanji: "左手",
+  Optimized_Sent_Index: "990",
+  Optimized_Voc_Index: "474",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1952",
   Frequency: "3085",
-  Optimized_Sent_Index: "827",
-  Optimized_Voc_Index: "475",
   Furigana: "下手[へた]",
   Kana: "へた",
   Kanji: "下手",
+  Optimized_Sent_Index: "827",
+  Optimized_Voc_Index: "475",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "537",
   Frequency: "1380",
-  Optimized_Sent_Index: "696",
-  Optimized_Voc_Index: "476",
   Furigana: "これら",
   Kana: "これら",
   Kanji: "これら",
+  Optimized_Sent_Index: "696",
+  Optimized_Voc_Index: "476",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1165",
   Frequency: "2084",
-  Optimized_Sent_Index: "485",
-  Optimized_Voc_Index: "477",
   Furigana: "足[た]りる",
   Kana: "たりる",
   Kanji: "足りる",
+  Optimized_Sent_Index: "485",
+  Optimized_Voc_Index: "477",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1508",
   Frequency: "6806",
-  Optimized_Sent_Index: "1984",
-  Optimized_Voc_Index: "478",
   Furigana: "足[た]す",
   Kana: "たす",
   Kanji: "足す",
+  Optimized_Sent_Index: "1984",
+  Optimized_Voc_Index: "478",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1972",
   Frequency: "380",
-  Optimized_Sent_Index: "445",
-  Optimized_Voc_Index: "479",
   Furigana: "山[やま]",
   Kana: "やま",
   Kanji: "山",
+  Optimized_Sent_Index: "445",
+  Optimized_Voc_Index: "479",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "811",
   Frequency: "744",
-  Optimized_Sent_Index: "540",
-  Optimized_Voc_Index: "480",
   Furigana: "川[かわ]",
   Kana: "かわ",
   Kanji: "川",
+  Optimized_Sent_Index: "540",
+  Optimized_Voc_Index: "480",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "545",
   Frequency: "707",
-  Optimized_Sent_Index: "506",
-  Optimized_Voc_Index: "481",
   Furigana: "いずれ",
   Kana: "いずれ",
   Kanji: "いずれ",
+  Optimized_Sent_Index: "506",
+  Optimized_Voc_Index: "481",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1364",
   Frequency: "3139",
-  Optimized_Sent_Index: "773",
-  Optimized_Voc_Index: "482",
   Furigana: "空[あ]く",
   Kana: "あく",
   Kanji: "空く",
+  Optimized_Sent_Index: "773",
+  Optimized_Voc_Index: "482",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1841",
   Frequency: "19205",
-  Optimized_Sent_Index: "1026",
-  Optimized_Voc_Index: "483",
   Furigana: "空手[からて]",
   Kana: "からて",
   Kanji: "空手",
+  Optimized_Sent_Index: "1026",
+  Optimized_Voc_Index: "483",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1882",
   Frequency: "425",
-  Optimized_Sent_Index: "843",
-  Optimized_Voc_Index: "484",
   Furigana: "空[そら]",
   Kana: "そら",
   Kanji: "空",
+  Optimized_Sent_Index: "843",
+  Optimized_Voc_Index: "484",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "732",
   Frequency: "5834",
-  Optimized_Sent_Index: "959",
-  Optimized_Voc_Index: "485",
   Furigana: "海外[かいがい]",
   Kana: "かいがい",
   Kanji: "海外",
+  Optimized_Sent_Index: "959",
+  Optimized_Voc_Index: "485",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "566",
   Frequency: "361",
-  Optimized_Sent_Index: "1633",
-  Optimized_Voc_Index: "486",
   Furigana: "あまり",
   Kana: "あまり",
   Kanji: "あまり",
+  Optimized_Sent_Index: "1633",
+  Optimized_Voc_Index: "486",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "737",
   Frequency: "493",
-  Optimized_Sent_Index: "546",
-  Optimized_Voc_Index: "487",
   Furigana: "海[うみ]",
   Kana: "うみ",
   Kanji: "海",
+  Optimized_Sent_Index: "546",
+  Optimized_Voc_Index: "487",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "766",
   Frequency: "1034",
-  Optimized_Sent_Index: "1580",
-  Optimized_Voc_Index: "488",
   Furigana: "毎日[まいにち]",
   Kana: "まいにち",
   Kanji: "毎日",
+  Optimized_Sent_Index: "1580",
+  Optimized_Voc_Index: "488",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "961",
   Frequency: "4659",
-  Optimized_Sent_Index: "870",
-  Optimized_Voc_Index: "489",
   Furigana: "毎年[まいとし]",
   Kana: "まいとし",
   Kanji: "毎年",
+  Optimized_Sent_Index: "870",
+  Optimized_Voc_Index: "489",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1022",
   Frequency: "4659",
-  Optimized_Sent_Index: "1231",
-  Optimized_Voc_Index: "490",
   Furigana: "毎年[まいねん]",
   Kana: "まいねん",
   Kanji: "毎年",
+  Optimized_Sent_Index: "1231",
+  Optimized_Voc_Index: "490",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "574",
   Frequency: "1007",
-  Optimized_Sent_Index: "533",
-  Optimized_Voc_Index: "491",
   Furigana: "なお",
   Kana: "なお",
   Kanji: "なお",
+  Optimized_Sent_Index: "533",
+  Optimized_Voc_Index: "491",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1197",
   Frequency: "12405",
-  Optimized_Sent_Index: "900",
-  Optimized_Voc_Index: "492",
   Furigana: "毎週[まいしゅう]",
   Kana: "まいしゅう",
   Kanji: "毎週",
+  Optimized_Sent_Index: "900",
+  Optimized_Voc_Index: "492",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1957",
   Frequency: "9249",
-  Optimized_Sent_Index: "1556",
-  Optimized_Voc_Index: "493",
   Furigana: "毎月[まいつき]",
   Kana: "まいつき",
   Kanji: "毎月",
+  Optimized_Sent_Index: "1556",
+  Optimized_Voc_Index: "493",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1020",
   Frequency: "566",
-  Optimized_Sent_Index: "431",
-  Optimized_Voc_Index: "494",
   Furigana: "石[いし]",
   Kana: "いし",
   Kanji: "石",
+  Optimized_Sent_Index: "431",
+  Optimized_Voc_Index: "494",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1436",
   Frequency: "17942",
-  Optimized_Sent_Index: "1350",
-  Optimized_Voc_Index: "495",
   Furigana: "田[た]んぼ",
   Kana: "たんぼ",
   Kanji: "田んぼ",
+  Optimized_Sent_Index: "1350",
+  Optimized_Voc_Index: "495",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "589",
   Frequency: "1835",
-  Optimized_Sent_Index: "794",
-  Optimized_Voc_Index: "496",
   Furigana: "ほぼ",
   Kana: "ほぼ",
   Kanji: "ほぼ",
+  Optimized_Sent_Index: "794",
+  Optimized_Voc_Index: "496",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "770",
   Frequency: "494",
-  Optimized_Sent_Index: "1576",
-  Optimized_Voc_Index: "497",
   Furigana: "花[はな]",
   Kana: "はな",
   Kanji: "花",
+  Optimized_Sent_Index: "1576",
+  Optimized_Voc_Index: "497",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1223",
   Frequency: "1498",
-  Optimized_Sent_Index: "432",
-  Optimized_Voc_Index: "498",
   Furigana: "林[はやし]",
   Kana: "はやし",
   Kanji: "林",
+  Optimized_Sent_Index: "432",
+  Optimized_Voc_Index: "498",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "997",
   Frequency: "667",
-  Optimized_Sent_Index: "538",
-  Optimized_Voc_Index: "499",
   Furigana: "森[もり]",
   Kana: "もり",
   Kanji: "森",
+  Optimized_Sent_Index: "538",
+  Optimized_Voc_Index: "499",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "690",
   Frequency: "220",
-  Optimized_Sent_Index: "500",
-  Optimized_Voc_Index: "500",
   Furigana: "子[こ]",
   Kana: "こ",
   Kanji: "子",
+  Optimized_Sent_Index: "500",
+  Optimized_Voc_Index: "500",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "609",
   Frequency: "5175",
-  Optimized_Sent_Index: "578",
-  Optimized_Voc_Index: "501",
   Furigana: "サービス",
   Kana: "サービス",
   Kanji: "サービス",
+  Optimized_Sent_Index: "578",
+  Optimized_Voc_Index: "501",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "965",
   Frequency: "754",
-  Optimized_Sent_Index: "622",
-  Optimized_Voc_Index: "502",
   Furigana: "女[おんな]の 子[こ]",
   Kana: "おんなのこ",
   Kanji: "女の子",
+  Optimized_Sent_Index: "622",
+  Optimized_Voc_Index: "502",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1111",
   Frequency: "1937",
-  Optimized_Sent_Index: "427",
-  Optimized_Voc_Index: "503",
   Furigana: "男[おとこ]の 子[こ]",
   Kana: "おとこのこ",
   Kanji: "男の子",
+  Optimized_Sent_Index: "427",
+  Optimized_Voc_Index: "503",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "842",
   Frequency: "537",
-  Optimized_Sent_Index: "1031",
-  Optimized_Voc_Index: "504",
   Furigana: "私[わたし]たち",
   Kana: "わたしたち",
   Kanji: "私たち",
+  Optimized_Sent_Index: "1031",
+  Optimized_Voc_Index: "504",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "615",
   Frequency: "4776",
-  Optimized_Sent_Index: "604",
-  Optimized_Voc_Index: "505",
   Furigana: "達[たっ]する",
   Kana: "たっする",
   Kanji: "達する",
+  Optimized_Sent_Index: "604",
+  Optimized_Voc_Index: "505",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "640",
   Frequency: "2641",
-  Optimized_Sent_Index: "668",
-  Optimized_Voc_Index: "506",
   Furigana: "グループ",
   Kana: "グループ",
   Kanji: "グループ",
+  Optimized_Sent_Index: "668",
+  Optimized_Voc_Index: "506",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "461",
   Frequency: "114",
-  Optimized_Sent_Index: "442",
-  Optimized_Voc_Index: "507",
   Furigana: "家[いえ]",
   Kana: "いえ",
   Kanji: "家",
+  Optimized_Sent_Index: "442",
+  Optimized_Voc_Index: "507",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1564",
   Frequency: "5331",
-  Optimized_Sent_Index: "1497",
-  Optimized_Voc_Index: "508",
   Furigana: "家内[かない]",
   Kana: "かない",
   Kanji: "家内",
+  Optimized_Sent_Index: "1497",
+  Optimized_Voc_Index: "508",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1846",
   Frequency: "553",
-  Optimized_Sent_Index: "939",
-  Optimized_Voc_Index: "509",
   Furigana: "客[きゃく]",
   Kana: "きゃく",
   Kanji: "客",
+  Optimized_Sent_Index: "939",
+  Optimized_Voc_Index: "509",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "715",
   Frequency: "891",
-  Optimized_Sent_Index: "443",
-  Optimized_Voc_Index: "510",
   Furigana: "空気[くうき]",
   Kana: "くうき",
   Kanji: "空気",
+  Optimized_Sent_Index: "443",
+  Optimized_Voc_Index: "510",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "651",
   Frequency: "693",
-  Optimized_Sent_Index: "763",
-  Optimized_Voc_Index: "511",
   Furigana: "ホテル",
   Kana: "ホテル",
   Kanji: "ホテル",
+  Optimized_Sent_Index: "763",
+  Optimized_Voc_Index: "511",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1269",
   Frequency: "1852",
-  Optimized_Sent_Index: "1959",
-  Optimized_Voc_Index: "512",
   Furigana: "気[き]に 入[い]る",
   Kana: "きにいる",
   Kanji: "気に入る",
+  Optimized_Sent_Index: "1959",
+  Optimized_Voc_Index: "512",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1914",
   Frequency: "2264",
-  Optimized_Sent_Index: "444",
-  Optimized_Voc_Index: "513",
   Furigana: "人気[にんき]",
   Kana: "にんき",
   Kanji: "人気",
+  Optimized_Sent_Index: "444",
+  Optimized_Voc_Index: "513",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "768",
   Frequency: "654",
-  Optimized_Sent_Index: "757",
-  Optimized_Voc_Index: "514",
   Furigana: "雨[あめ]",
   Kana: "あめ",
   Kanji: "雨",
+  Optimized_Sent_Index: "757",
+  Optimized_Voc_Index: "514",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "792",
   Frequency: "730",
-  Optimized_Sent_Index: "758",
-  Optimized_Voc_Index: "515",
   Furigana: "雪[ゆき]",
   Kana: "ゆき",
   Kanji: "雪",
+  Optimized_Sent_Index: "758",
+  Optimized_Voc_Index: "515",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "668",
   Frequency: "2578",
-  Optimized_Sent_Index: "953",
-  Optimized_Voc_Index: "516",
   Furigana: "まとめる",
   Kana: "まとめる",
   Kanji: "まとめる",
+  Optimized_Sent_Index: "953",
+  Optimized_Voc_Index: "516",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1074",
   Frequency: "1130",
-  Optimized_Sent_Index: "446",
-  Optimized_Voc_Index: "517",
   Furigana: "青[あお]い",
   Kana: "あおい",
   Kanji: "青い",
+  Optimized_Sent_Index: "446",
+  Optimized_Voc_Index: "517",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1169",
   Frequency: "1456",
-  Optimized_Sent_Index: "845",
-  Optimized_Voc_Index: "518",
   Furigana: "青[あお]",
   Kana: "あお",
   Kanji: "青",
+  Optimized_Sent_Index: "845",
+  Optimized_Voc_Index: "518",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1617",
   Frequency: "14389",
-  Optimized_Sent_Index: "447",
-  Optimized_Voc_Index: "519",
   Furigana: "晴[は]れ",
   Kana: "はれ",
   Kanji: "晴れ",
+  Optimized_Sent_Index: "447",
+  Optimized_Voc_Index: "519",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "474",
   Frequency: "948",
-  Optimized_Sent_Index: "946",
-  Optimized_Voc_Index: "520",
   Furigana: "明[あき]らか",
   Kana: "あきらか",
   Kanji: "明らか",
+  Optimized_Sent_Index: "946",
+  Optimized_Voc_Index: "520",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "697",
   Frequency: "410",
-  Optimized_Sent_Index: "1452",
-  Optimized_Voc_Index: "521",
   Furigana: "やはり",
   Kana: "やはり",
   Kanji: "やはり",
+  Optimized_Sent_Index: "1452",
+  Optimized_Voc_Index: "521",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "846",
   Frequency: "938",
-  Optimized_Sent_Index: "967",
-  Optimized_Voc_Index: "522",
   Furigana: "明[あか]るい",
   Kana: "あかるい",
   Kanji: "明るい",
+  Optimized_Sent_Index: "967",
+  Optimized_Voc_Index: "522",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1691",
   Frequency: "706",
-  Optimized_Sent_Index: "511",
-  Optimized_Voc_Index: "523",
   Furigana: "明日[あした]",
   Kana: "あした",
   Kanji: "明日",
+  Optimized_Sent_Index: "511",
+  Optimized_Voc_Index: "523",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "967",
   Frequency: "556",
-  Optimized_Sent_Index: "450",
-  Optimized_Voc_Index: "524",
   Furigana: "暗[くら]い",
   Kana: "くらい",
   Kanji: "暗い",
+  Optimized_Sent_Index: "450",
+  Optimized_Voc_Index: "524",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "416",
   Frequency: "5504",
-  Optimized_Sent_Index: "1316",
-  Optimized_Voc_Index: "525",
   Furigana: "昨年[さくねん]",
   Kana: "さくねん",
   Kanji: "昨年",
+  Optimized_Sent_Index: "1316",
+  Optimized_Voc_Index: "525",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "702",
   Frequency: "456",
-  Optimized_Sent_Index: "490",
-  Optimized_Voc_Index: "526",
   Furigana: "はっきり",
   Kana: "はっきり",
   Kanji: "はっきり",
+  Optimized_Sent_Index: "490",
+  Optimized_Voc_Index: "526",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1051",
   Frequency: "13709",
-  Optimized_Sent_Index: "873",
-  Optimized_Voc_Index: "527",
   Furigana: "一昨年[おととし]",
   Kana: "おととし",
   Kanji: "一昨年",
+  Optimized_Sent_Index: "873",
+  Optimized_Voc_Index: "527",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1768",
   Frequency: "6991",
-  Optimized_Sent_Index: "1020",
-  Optimized_Voc_Index: "528",
   Furigana: "一昨日[おととい]",
   Kana: "おととい",
   Kanji: "一昨日",
+  Optimized_Sent_Index: "1020",
+  Optimized_Voc_Index: "528",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1720",
   Frequency: "696",
-  Optimized_Sent_Index: "451",
-  Optimized_Voc_Index: "529",
   Furigana: "東[ひがし]",
   Kana: "ひがし",
   Kanji: "東",
+  Optimized_Sent_Index: "451",
+  Optimized_Voc_Index: "529",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1753",
   Frequency: "1330",
-  Optimized_Sent_Index: "1303",
-  Optimized_Voc_Index: "530",
   Furigana: "西[にし]",
   Kana: "にし",
   Kanji: "西",
+  Optimized_Sent_Index: "1303",
+  Optimized_Voc_Index: "530",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "703",
   Frequency: "342",
-  Optimized_Sent_Index: "621",
-  Optimized_Voc_Index: "531",
   Furigana: "つまり",
   Kana: "つまり",
   Kanji: "つまり",
+  Optimized_Sent_Index: "621",
+  Optimized_Voc_Index: "531",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1965",
   Frequency: "1199",
-  Optimized_Sent_Index: "639",
-  Optimized_Voc_Index: "532",
   Furigana: "南[みなみ]",
   Kana: "みなみ",
   Kanji: "南",
+  Optimized_Sent_Index: "639",
+  Optimized_Voc_Index: "532",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "923",
   Frequency: "1155",
-  Optimized_Sent_Index: "452",
-  Optimized_Voc_Index: "533",
   Furigana: "北[きた]",
   Kana: "きた",
   Kanji: "北",
+  Optimized_Sent_Index: "452",
+  Optimized_Voc_Index: "533",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "555",
   Frequency: "1375",
-  Optimized_Sent_Index: "1510",
-  Optimized_Voc_Index: "534",
   Furigana: "方向[ほうこう]",
   Kana: "ほうこう",
   Kanji: "方向",
+  Optimized_Sent_Index: "1510",
+  Optimized_Voc_Index: "534",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "636",
   Frequency: "353",
-  Optimized_Sent_Index: "510",
-  Optimized_Voc_Index: "535",
   Furigana: "向[む]かう",
   Kana: "むかう",
   Kanji: "向かう",
+  Optimized_Sent_Index: "510",
+  Optimized_Voc_Index: "535",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "723",
   Frequency: "1403",
-  Optimized_Sent_Index: "582",
-  Optimized_Voc_Index: "536",
   Furigana: "ビル",
   Kana: "ビル",
   Kanji: "ビル",
+  Optimized_Sent_Index: "582",
+  Optimized_Voc_Index: "536",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "969",
   Frequency: "892",
-  Optimized_Sent_Index: "453",
-  Optimized_Voc_Index: "537",
   Furigana: "向[む]こう",
   Kana: "むこう",
   Kanji: "向こう",
+  Optimized_Sent_Index: "453",
+  Optimized_Voc_Index: "537",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1033",
   Frequency: "935",
-  Optimized_Sent_Index: "454",
-  Optimized_Voc_Index: "538",
   Furigana: "向[む]く",
   Kana: "むく",
   Kanji: "向く",
+  Optimized_Sent_Index: "454",
+  Optimized_Voc_Index: "538",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "413",
   Frequency: "280",
-  Optimized_Sent_Index: "521",
-  Optimized_Voc_Index: "539",
   Furigana: "開[あ]く",
   Kana: "あく",
   Kanji: "開く",
+  Optimized_Sent_Index: "521",
+  Optimized_Voc_Index: "539",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "860",
   Frequency: "418",
-  Optimized_Sent_Index: "1351",
-  Optimized_Voc_Index: "540",
   Furigana: "聞[き]こえる",
   Kana: "きこえる",
   Kanji: "聞こえる",
+  Optimized_Sent_Index: "1351",
+  Optimized_Voc_Index: "540",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "727",
   Frequency: "376",
-  Optimized_Sent_Index: "1370",
-  Optimized_Voc_Index: "541",
   Furigana: "もちろん",
   Kana: "もちろん",
   Kanji: "もちろん",
+  Optimized_Sent_Index: "1370",
+  Optimized_Voc_Index: "541",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "665",
   Frequency: "1621",
-  Optimized_Sent_Index: "1361",
-  Optimized_Voc_Index: "542",
   Furigana: "年間[ねんかん]",
   Kana: "ねんかん",
   Kanji: "年間",
+  Optimized_Sent_Index: "1361",
+  Optimized_Voc_Index: "542",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1392",
   Frequency: "3418",
-  Optimized_Sent_Index: "1003",
-  Optimized_Voc_Index: "543",
   Furigana: "この 間[あいだ]",
   Kana: "このあいだ",
   Kanji: "この間",
+  Optimized_Sent_Index: "1003",
+  Optimized_Voc_Index: "543",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1814",
   Frequency: "197",
-  Optimized_Sent_Index: "1313",
-  Optimized_Voc_Index: "544",
   Furigana: "間[あいだ]",
   Kana: "あいだ",
   Kanji: "間",
+  Optimized_Sent_Index: "1313",
+  Optimized_Voc_Index: "544",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1915",
   Frequency: "140",
-  Optimized_Sent_Index: "699",
-  Optimized_Voc_Index: "545",
   Furigana: "人間[にんげん]",
   Kana: "にんげん",
   Kanji: "人間",
+  Optimized_Sent_Index: "699",
+  Optimized_Voc_Index: "545",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "730",
   Frequency: "980",
-  Optimized_Sent_Index: "1868",
-  Optimized_Voc_Index: "546",
   Furigana: "かつて",
   Kana: "かつて",
   Kanji: "かつて",
+  Optimized_Sent_Index: "1868",
+  Optimized_Voc_Index: "546",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "849",
   Frequency: "182214",
-  Optimized_Sent_Index: "1538",
-  Optimized_Voc_Index: "547",
   Furigana: "高[たか]さ",
   Kana: "たかさ",
   Kanji: "高さ",
+  Optimized_Sent_Index: "1538",
+  Optimized_Voc_Index: "547",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "516",
   Frequency: "2294",
-  Optimized_Sent_Index: "1126",
-  Optimized_Voc_Index: "548",
   Furigana: "最大[さいだい]",
   Kana: "さいだい",
   Kanji: "最大",
+  Optimized_Sent_Index: "1126",
+  Optimized_Voc_Index: "548",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "473",
   Frequency: "607",
-  Optimized_Sent_Index: "640",
-  Optimized_Voc_Index: "549",
   Furigana: "初[はじ]めて",
   Kana: "はじめて",
   Kanji: "初めて",
+  Optimized_Sent_Index: "640",
+  Optimized_Voc_Index: "549",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "603",
   Frequency: "364",
-  Optimized_Sent_Index: "489",
-  Optimized_Voc_Index: "550",
   Furigana: "最初[さいしょ]",
   Kana: "さいしょ",
   Kanji: "最初",
+  Optimized_Sent_Index: "489",
+  Optimized_Voc_Index: "550",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "752",
   Frequency: "5514",
-  Optimized_Sent_Index: "405",
-  Optimized_Voc_Index: "551",
   Furigana: "スポーツ",
   Kana: "スポーツ",
   Kanji: "スポーツ",
+  Optimized_Sent_Index: "405",
+  Optimized_Voc_Index: "551",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1928",
   Frequency: "1640",
-  Optimized_Sent_Index: "461",
-  Optimized_Voc_Index: "552",
   Furigana: "初[はじ]め",
   Kana: "はじめ",
   Kanji: "初め",
+  Optimized_Sent_Index: "461",
+  Optimized_Voc_Index: "552",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "432",
   Frequency: "2683",
-  Optimized_Sent_Index: "1142",
-  Optimized_Voc_Index: "553",
   Furigana: "今後[こんご]",
   Kana: "こんご",
   Kanji: "今後",
+  Optimized_Sent_Index: "1142",
+  Optimized_Voc_Index: "553",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "563",
   Frequency: "",
-  Optimized_Sent_Index: "1852",
-  Optimized_Voc_Index: "554",
   Furigana: "後[のち]",
   Kana: "のち",
   Kanji: "後[のち]",
+  Optimized_Sent_Index: "1852",
+  Optimized_Voc_Index: "554",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "649",
   Frequency: "347",
-  Optimized_Sent_Index: "589",
-  Optimized_Voc_Index: "555",
   Furigana: "最後[さいご]",
   Kana: "さいご",
   Kanji: "最後",
+  Optimized_Sent_Index: "589",
+  Optimized_Voc_Index: "555",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "754",
   Frequency: "293",
-  Optimized_Sent_Index: "408",
-  Optimized_Voc_Index: "556",
   Furigana: "なぜ",
   Kana: "なぜ",
   Kanji: "なぜ",
+  Optimized_Sent_Index: "408",
+  Optimized_Voc_Index: "556",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1764",
   Frequency: "9900",
-  Optimized_Sent_Index: "462",
-  Optimized_Voc_Index: "557",
   Furigana: "明後日[あさって]",
   Kana: "あさって",
   Kanji: "明後日",
+  Optimized_Sent_Index: "462",
+  Optimized_Voc_Index: "557",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1077",
   Frequency: "2134",
-  Optimized_Sent_Index: "1591",
-  Optimized_Voc_Index: "558",
   Furigana: "牛[うし]",
   Kana: "うし",
   Kanji: "牛",
+  Optimized_Sent_Index: "1591",
+  Optimized_Voc_Index: "558",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "779",
   Frequency: "952",
-  Optimized_Sent_Index: "1788",
-  Optimized_Voc_Index: "559",
   Furigana: "半分[はんぶん]",
   Kana: "はんぶん",
   Kanji: "半分",
+  Optimized_Sent_Index: "1788",
+  Optimized_Voc_Index: "559",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1400",
   Frequency: "3053",
-  Optimized_Sent_Index: "463",
-  Optimized_Voc_Index: "560",
   Furigana: "半年[はんとし]",
   Kana: "はんとし",
   Kanji: "半年",
+  Optimized_Sent_Index: "463",
+  Optimized_Voc_Index: "560",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "758",
   Frequency: "445",
-  Optimized_Sent_Index: "655",
-  Optimized_Voc_Index: "561",
   Furigana: "そのまま",
   Kana: "そのまま",
   Kanji: "そのまま",
+  Optimized_Sent_Index: "655",
+  Optimized_Voc_Index: "561",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1933",
   Frequency: "7891",
-  Optimized_Sent_Index: "464",
-  Optimized_Voc_Index: "562",
   Furigana: "半月[はんつき]",
   Kana: "はんつき",
   Kanji: "半月",
+  Optimized_Sent_Index: "464",
+  Optimized_Voc_Index: "562",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1934",
   Frequency: "8672",
-  Optimized_Sent_Index: "516",
-  Optimized_Voc_Index: "563",
   Furigana: "半日[はんにち]",
   Kana: "はんにち",
   Kanji: "半日",
+  Optimized_Sent_Index: "516",
+  Optimized_Voc_Index: "563",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1354",
   Frequency: "6784",
-  Optimized_Sent_Index: "466",
-  Optimized_Voc_Index: "564",
   Furigana: "毎朝[まいあさ]",
   Kana: "まいあさ",
   Kanji: "毎朝",
+  Optimized_Sent_Index: "466",
+  Optimized_Voc_Index: "564",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1473",
   Frequency: "2125",
-  Optimized_Sent_Index: "1194",
-  Optimized_Voc_Index: "565",
   Furigana: "今朝[けさ]",
   Kana: "けさ",
   Kanji: "今朝",
+  Optimized_Sent_Index: "1194",
+  Optimized_Voc_Index: "565",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "798",
   Frequency: "319",
-  Optimized_Sent_Index: "759",
-  Optimized_Voc_Index: "566",
   Furigana: "もし",
   Kana: "もし",
   Kanji: "もし",
+  Optimized_Sent_Index: "759",
+  Optimized_Voc_Index: "566",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1548",
   Frequency: "7948",
-  Optimized_Sent_Index: "1119",
-  Optimized_Voc_Index: "567",
   Furigana: "昼休[ひるやす]み",
   Kana: "ひるやすみ",
   Kanji: "昼休み",
+  Optimized_Sent_Index: "1119",
+  Optimized_Voc_Index: "567",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1735",
   Frequency: "18725",
-  Optimized_Sent_Index: "1059",
-  Optimized_Voc_Index: "568",
   Furigana: "昼前[ひるまえ]",
   Kana: "ひるまえ",
   Kanji: "昼前",
+  Optimized_Sent_Index: "1059",
+  Optimized_Voc_Index: "568",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1782",
   Frequency: "2646",
-  Optimized_Sent_Index: "1087",
-  Optimized_Voc_Index: "569",
   Furigana: "昼間[ひるま]",
   Kana: "ひるま",
   Kanji: "昼間",
+  Optimized_Sent_Index: "1087",
+  Optimized_Voc_Index: "569",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1368",
   Frequency: "5367",
-  Optimized_Sent_Index: "1171",
-  Optimized_Voc_Index: "570",
   Furigana: "毎晩[まいばん]",
   Kana: "まいばん",
   Kanji: "毎晩",
+  Optimized_Sent_Index: "1171",
+  Optimized_Voc_Index: "570",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "805",
   Frequency: "297",
-  Optimized_Sent_Index: "534",
-  Optimized_Voc_Index: "571",
   Furigana: "つもり",
   Kana: "つもり",
   Kanji: "つもり",
+  Optimized_Sent_Index: "534",
+  Optimized_Voc_Index: "571",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1414",
   Frequency: "958",
-  Optimized_Sent_Index: "468",
-  Optimized_Voc_Index: "572",
   Furigana: "今夜[こんや]",
   Kana: "こんや",
   Kanji: "今夜",
+  Optimized_Sent_Index: "468",
+  Optimized_Voc_Index: "572",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1975",
   Frequency: "1349",
-  Optimized_Sent_Index: "1309",
-  Optimized_Voc_Index: "573",
   Furigana: "昨夜[ゆうべ]",
   Kana: "ゆうべ",
   Kanji: "昨夜",
+  Optimized_Sent_Index: "1309",
+  Optimized_Voc_Index: "573",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1983",
   Frequency: "3254",
-  Optimized_Sent_Index: "520",
-  Optimized_Voc_Index: "574",
   Furigana: "夜中[よなか]",
   Kana: "よなか",
   Kanji: "夜中",
+  Optimized_Sent_Index: "520",
+  Optimized_Voc_Index: "574",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "906",
   Frequency: "1631",
-  Optimized_Sent_Index: "765",
-  Optimized_Voc_Index: "575",
   Furigana: "夕方[ゆうがた]",
   Kana: "ゆうがた",
   Kanji: "夕方",
+  Optimized_Sent_Index: "765",
+  Optimized_Voc_Index: "575",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "808",
   Frequency: "822",
-  Optimized_Sent_Index: "795",
-  Optimized_Voc_Index: "576",
   Furigana: "やっと",
   Kana: "やっと",
   Kanji: "やっと",
+  Optimized_Sent_Index: "795",
+  Optimized_Voc_Index: "576",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1893",
   Frequency: "4158",
-  Optimized_Sent_Index: "1741",
-  Optimized_Voc_Index: "577",
   Furigana: "昼食[ちゅうしょく]",
   Kana: "ちゅうしょく",
   Kanji: "昼食",
+  Optimized_Sent_Index: "1741",
+  Optimized_Voc_Index: "577",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1895",
   Frequency: "3306",
-  Optimized_Sent_Index: "1757",
-  Optimized_Voc_Index: "578",
   Furigana: "朝食[ちょうしょく]",
   Kana: "ちょうしょく",
   Kanji: "朝食",
+  Optimized_Sent_Index: "1757",
+  Optimized_Voc_Index: "578",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1974",
   Frequency: "2261",
-  Optimized_Sent_Index: "479",
-  Optimized_Voc_Index: "579",
   Furigana: "夕食[ゆうしょく]",
   Kana: "ゆうしょく",
   Kanji: "夕食",
+  Optimized_Sent_Index: "479",
+  Optimized_Voc_Index: "579",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1662",
   Frequency: "8536",
-  Optimized_Sent_Index: "1740",
-  Optimized_Voc_Index: "580",
   Furigana: "夕飯[ゆうはん]",
   Kana: "ゆうはん",
   Kanji: "夕飯",
+  Optimized_Sent_Index: "1740",
+  Optimized_Voc_Index: "580",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "823",
   Frequency: "2862",
-  Optimized_Sent_Index: "491",
-  Optimized_Voc_Index: "581",
   Furigana: "ニュース",
   Kana: "ニュース",
   Kanji: "ニュース",
+  Optimized_Sent_Index: "491",
+  Optimized_Voc_Index: "581",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "644",
   Frequency: "6304",
-  Optimized_Sent_Index: "1062",
-  Optimized_Voc_Index: "582",
   Furigana: "見方[みかた]",
   Kana: "みかた",
   Kanji: "見方",
+  Optimized_Sent_Index: "1062",
+  Optimized_Voc_Index: "582",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1583",
   Frequency: "15129",
-  Optimized_Sent_Index: "495",
-  Optimized_Voc_Index: "583",
   Furigana: "花見[はなみ]",
   Kana: "はなみ",
   Kanji: "花見",
+  Optimized_Sent_Index: "495",
+  Optimized_Voc_Index: "583",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1161",
   Frequency: "2333",
-  Optimized_Sent_Index: "496",
-  Optimized_Voc_Index: "584",
   Furigana: "言[い]い 方[かた]",
   Kana: "いいかた",
   Kanji: "言い方",
+  Optimized_Sent_Index: "496",
+  Optimized_Voc_Index: "584",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "467",
   Frequency: "123",
-  Optimized_Sent_Index: "832",
-  Optimized_Voc_Index: "585",
   Furigana: "話[はなし]",
   Kana: "はなし",
   Kanji: "話",
+  Optimized_Sent_Index: "832",
+  Optimized_Voc_Index: "585",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "827",
   Frequency: "404",
-  Optimized_Sent_Index: "890",
-  Optimized_Voc_Index: "586",
   Furigana: "ずっと",
   Kana: "ずっと",
   Kanji: "ずっと",
+  Optimized_Sent_Index: "890",
+  Optimized_Voc_Index: "586",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1232",
   Frequency: "10226",
-  Optimized_Sent_Index: "901",
-  Optimized_Voc_Index: "587",
   Furigana: "読[よ]み",
   Kana: "よみ",
   Kanji: "読み",
+  Optimized_Sent_Index: "901",
+  Optimized_Voc_Index: "587",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1620",
   Frequency: "23580",
-  Optimized_Sent_Index: "680",
-  Optimized_Voc_Index: "588",
   Furigana: "読[よ]み 方[かた]",
   Kana: "よみかた",
   Kanji: "読み方",
+  Optimized_Sent_Index: "680",
+  Optimized_Voc_Index: "588",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "435",
   Frequency: "680",
-  Optimized_Sent_Index: "499",
-  Optimized_Voc_Index: "589",
   Furigana: "語[かた]る",
   Kana: "かたる",
   Kanji: "語る",
+  Optimized_Sent_Index: "499",
+  Optimized_Voc_Index: "589",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "671",
   Frequency: "4325",
-  Optimized_Sent_Index: "955",
-  Optimized_Voc_Index: "590",
   Furigana: "言語[げんご]",
   Kana: "げんご",
   Kanji: "言語",
+  Optimized_Sent_Index: "955",
+  Optimized_Voc_Index: "590",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "832",
   Frequency: "4413",
-  Optimized_Sent_Index: "1621",
-  Optimized_Voc_Index: "591",
   Furigana: "ビデオ",
   Kana: "ビデオ",
   Kanji: "ビデオ",
+  Optimized_Sent_Index: "1621",
+  Optimized_Voc_Index: "591",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "775",
   Frequency: "2013",
-  Optimized_Sent_Index: "501",
-  Optimized_Voc_Index: "592",
   Furigana: "英語[えいご]",
   Kana: "えいご",
   Kanji: "英語",
+  Optimized_Sent_Index: "501",
+  Optimized_Voc_Index: "592",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "689",
   Frequency: "1331",
-  Optimized_Sent_Index: "1696",
-  Optimized_Voc_Index: "593",
   Furigana: "文字[もじ]",
   Kana: "もじ",
   Kanji: "文字",
+  Optimized_Sent_Index: "1696",
+  Optimized_Voc_Index: "593",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1647",
   Frequency: "30787",
-  Optimized_Sent_Index: "636",
-  Optimized_Voc_Index: "594",
   Furigana: "ローマ 字[じ]",
   Kana: "ろーまじ",
   Kanji: "ローマ字",
+  Optimized_Sent_Index: "636",
+  Optimized_Voc_Index: "594",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1794",
   Frequency: "1378",
-  Optimized_Sent_Index: "503",
-  Optimized_Voc_Index: "595",
   Furigana: "字[じ]",
   Kana: "じ",
   Kanji: "字",
+  Optimized_Sent_Index: "503",
+  Optimized_Voc_Index: "595",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "833",
   Frequency: "1532",
-  Optimized_Sent_Index: "965",
-  Optimized_Voc_Index: "596",
   Furigana: "マンション",
   Kana: "マンション",
   Kanji: "マンション",
+  Optimized_Sent_Index: "965",
+  Optimized_Voc_Index: "596",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1483",
   Frequency: "18290",
-  Optimized_Sent_Index: "1007",
-  Optimized_Voc_Index: "597",
   Furigana: "書[か]き 方[かた]",
   Kana: "かきかた",
   Kanji: "書き方",
+  Optimized_Sent_Index: "1007",
+  Optimized_Voc_Index: "597",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1547",
   Frequency: "3805",
-  Optimized_Sent_Index: "504",
-  Optimized_Voc_Index: "598",
   Furigana: "覚[さ]める",
   Kana: "さめる",
   Kanji: "覚める",
+  Optimized_Sent_Index: "504",
+  Optimized_Voc_Index: "598",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1608",
   Frequency: "3996",
-  Optimized_Sent_Index: "505",
-  Optimized_Voc_Index: "599",
   Furigana: "覚[さ]ます",
   Kana: "さます",
   Kanji: "覚ます",
+  Optimized_Sent_Index: "505",
+  Optimized_Voc_Index: "599",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "709",
   Frequency: "5158",
-  Optimized_Sent_Index: "1348",
-  Optimized_Voc_Index: "600",
   Furigana: "大会[たいかい]",
   Kana: "たいかい",
   Kanji: "大会",
+  Optimized_Sent_Index: "1348",
+  Optimized_Voc_Index: "600",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "848",
   Frequency: "390",
-  Optimized_Sent_Index: "422",
-  Optimized_Voc_Index: "601",
   Furigana: "しばらく",
   Kana: "しばらく",
   Kanji: "しばらく",
+  Optimized_Sent_Index: "422",
+  Optimized_Voc_Index: "601",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1290",
   Frequency: "1319",
-  Optimized_Sent_Index: "909",
-  Optimized_Voc_Index: "602",
   Furigana: "会話[かいわ]",
   Kana: "かいわ",
   Kanji: "会話",
+  Optimized_Sent_Index: "909",
+  Optimized_Voc_Index: "602",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "789",
   Frequency: "3978",
-  Optimized_Sent_Index: "508",
-  Optimized_Voc_Index: "603",
   Furigana: "話[はな]し 合[あ]う",
   Kana: "はなしあう",
   Kanji: "話し合う",
+  Optimized_Sent_Index: "508",
+  Optimized_Voc_Index: "603",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "794",
   Frequency: "601",
-  Optimized_Sent_Index: "1954",
-  Optimized_Voc_Index: "604",
   Furigana: "合[あ]う",
   Kana: "あう",
   Kanji: "合う",
+  Optimized_Sent_Index: "1954",
+  Optimized_Voc_Index: "604",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1147",
   Frequency: "3366",
-  Optimized_Sent_Index: "1656",
-  Optimized_Voc_Index: "605",
   Furigana: "間[ま]に 合[あ]う",
   Kana: "まにあう",
   Kanji: "間に合う",
+  Optimized_Sent_Index: "1656",
+  Optimized_Voc_Index: "605",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "856",
   Frequency: "4236",
-  Optimized_Sent_Index: "1319",
-  Optimized_Voc_Index: "606",
   Furigana: "ガス",
   Kana: "ガス",
   Kanji: "ガス",
+  Optimized_Sent_Index: "1319",
+  Optimized_Voc_Index: "606",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "454",
   Frequency: "705",
-  Optimized_Sent_Index: "1211",
-  Optimized_Voc_Index: "607",
   Furigana: "会社[かいしゃ]",
   Kana: "かいしゃ",
   Kanji: "会社",
+  Optimized_Sent_Index: "1211",
+  Optimized_Voc_Index: "607",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "486",
   Frequency: "1263",
-  Optimized_Sent_Index: "694",
-  Optimized_Voc_Index: "608",
   Furigana: "社会[しゃかい]",
   Kana: "しゃかい",
   Kanji: "社会",
+  Optimized_Sent_Index: "694",
+  Optimized_Voc_Index: "608",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "749",
   Frequency: "3211",
-  Optimized_Sent_Index: "1490",
-  Optimized_Voc_Index: "609",
   Furigana: "社員[しゃいん]",
   Kana: "しゃいん",
   Kanji: "社員",
+  Optimized_Sent_Index: "1490",
+  Optimized_Voc_Index: "609",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1059",
   Frequency: "918",
-  Optimized_Sent_Index: "512",
-  Optimized_Voc_Index: "610",
   Furigana: "仕方[しかた]",
   Kana: "しかた",
   Kanji: "仕方",
+  Optimized_Sent_Index: "512",
+  Optimized_Voc_Index: "610",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "866",
   Frequency: "508",
-  Optimized_Sent_Index: "1311",
-  Optimized_Voc_Index: "611",
   Furigana: "うまい",
   Kana: "うまい",
   Kanji: "うまい",
+  Optimized_Sent_Index: "1311",
+  Optimized_Voc_Index: "611",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "843",
   Frequency: "852",
-  Optimized_Sent_Index: "1647",
-  Optimized_Voc_Index: "612",
   Furigana: "食事[しょくじ]",
   Kana: "しょくじ",
   Kanji: "食事",
+  Optimized_Sent_Index: "1647",
+  Optimized_Voc_Index: "612",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1312",
   Frequency: "4297",
-  Optimized_Sent_Index: "627",
-  Optimized_Voc_Index: "613",
   Furigana: "火事[かじ]",
   Kana: "かじ",
   Kanji: "火事",
+  Optimized_Sent_Index: "627",
+  Optimized_Voc_Index: "613",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1885",
   Frequency: "1121",
-  Optimized_Sent_Index: "515",
-  Optimized_Voc_Index: "614",
   Furigana: "大事[だいじ]",
   Kana: "だいじ",
   Kanji: "大事",
+  Optimized_Sent_Index: "515",
+  Optimized_Voc_Index: "614",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "546",
   Frequency: "1886",
-  Optimized_Sent_Index: "1854",
-  Optimized_Voc_Index: "615",
   Furigana: "事故[じこ]",
   Kana: "じこ",
   Kanji: "事故",
+  Optimized_Sent_Index: "1854",
+  Optimized_Voc_Index: "615",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "869",
   Frequency: "4468",
-  Optimized_Sent_Index: "892",
-  Optimized_Voc_Index: "616",
   Furigana: "サラリーマン",
   Kana: "サラリーマン",
   Kanji: "サラリーマン",
+  Optimized_Sent_Index: "892",
+  Optimized_Voc_Index: "616",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "765",
   Frequency: "4630",
-  Optimized_Sent_Index: "815",
-  Optimized_Voc_Index: "617",
   Furigana: "工事[こうじ]",
   Kana: "こうじ",
   Kanji: "工事",
+  Optimized_Sent_Index: "815",
+  Optimized_Voc_Index: "617",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "497",
   Frequency: "2001",
-  Optimized_Sent_Index: "947",
-  Optimized_Voc_Index: "618",
   Furigana: "工場[こうじょう]",
   Kana: "こうじょう",
   Kanji: "工場",
+  Optimized_Sent_Index: "947",
+  Optimized_Voc_Index: "618",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "547",
   Frequency: "286",
-  Optimized_Sent_Index: "518",
-  Optimized_Voc_Index: "619",
   Furigana: "電話[でんわ]",
   Kana: "でんわ",
   Kanji: "電話",
+  Optimized_Sent_Index: "518",
+  Optimized_Voc_Index: "619",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "987",
   Frequency: "3376",
-  Optimized_Sent_Index: "519",
-  Optimized_Voc_Index: "620",
   Furigana: "電気[でんき]",
   Kana: "でんき",
   Kanji: "電気",
+  Optimized_Sent_Index: "519",
+  Optimized_Voc_Index: "620",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "878",
   Frequency: "1800",
-  Optimized_Sent_Index: "410",
-  Optimized_Voc_Index: "621",
   Furigana: "バス",
   Kana: "バス",
   Kanji: "バス",
+  Optimized_Sent_Index: "410",
+  Optimized_Voc_Index: "621",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "612",
   Frequency: "305",
-  Optimized_Sent_Index: "529",
-  Optimized_Voc_Index: "622",
   Furigana: "車[くるま]",
   Kana: "くるま",
   Kanji: "車",
+  Optimized_Sent_Index: "529",
+  Optimized_Voc_Index: "622",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1350",
   Frequency: "13050",
-  Optimized_Sent_Index: "524",
-  Optimized_Voc_Index: "623",
   Furigana: "駅員[えきいん]",
   Kana: "えきいん",
   Kanji: "駅員",
+  Optimized_Sent_Index: "524",
+  Optimized_Voc_Index: "623",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "835",
   Frequency: "372",
-  Optimized_Sent_Index: "526",
-  Optimized_Voc_Index: "624",
   Furigana: "通[とお]り",
   Kana: "とおり",
   Kanji: "通り",
+  Optimized_Sent_Index: "526",
+  Optimized_Voc_Index: "624",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "855",
   Frequency: "685",
-  Optimized_Sent_Index: "530",
-  Optimized_Voc_Index: "625",
   Furigana: "通[とお]る",
   Kana: "とおる",
   Kanji: "通る",
+  Optimized_Sent_Index: "530",
+  Optimized_Voc_Index: "625",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "893",
   Frequency: "1923",
-  Optimized_Sent_Index: "675",
-  Optimized_Voc_Index: "626",
   Furigana: "クラス",
   Kana: "クラス",
   Kanji: "クラス",
+  Optimized_Sent_Index: "675",
+  Optimized_Voc_Index: "626",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "912",
   Frequency: "1820",
-  Optimized_Sent_Index: "527",
-  Optimized_Voc_Index: "627",
   Furigana: "通[かよ]う",
   Kana: "かよう",
   Kanji: "通う",
+  Optimized_Sent_Index: "527",
+  Optimized_Voc_Index: "627",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1140",
   Frequency: "10411",
-  Optimized_Sent_Index: "1400",
-  Optimized_Voc_Index: "628",
   Furigana: "交通事故[こうつうじこ]",
   Kana: "こうつうじこ",
   Kanji: "交通事故",
+  Optimized_Sent_Index: "1400",
+  Optimized_Voc_Index: "628",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1247",
   Frequency: "11452",
-  Optimized_Sent_Index: "641",
-  Optimized_Voc_Index: "629",
   Furigana: "水道[すいどう]",
   Kana: "すいどう",
   Kanji: "水道",
+  Optimized_Sent_Index: "641",
+  Optimized_Voc_Index: "629",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1869",
   Frequency: "14580",
-  Optimized_Sent_Index: "792",
-  Optimized_Voc_Index: "630",
   Furigana: "車道[しゃどう]",
   Kana: "しゃどう",
   Kanji: "車道",
+  Optimized_Sent_Index: "792",
+  Optimized_Voc_Index: "630",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "895",
   Frequency: "2762",
-  Optimized_Sent_Index: "783",
-  Optimized_Voc_Index: "631",
   Furigana: "トラック",
   Kana: "トラック",
   Kanji: "トラック",
+  Optimized_Sent_Index: "783",
+  Optimized_Voc_Index: "631",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "773",
   Frequency: "1944",
-  Optimized_Sent_Index: "531",
-  Optimized_Voc_Index: "632",
   Furigana: "道路[どうろ]",
   Kana: "どうろ",
   Kanji: "道路",
+  Optimized_Sent_Index: "531",
+  Optimized_Voc_Index: "632",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "508",
   Frequency: "1028",
-  Optimized_Sent_Index: "888",
-  Optimized_Voc_Index: "633",
   Furigana: "土地[とち]",
   Kana: "とち",
   Kanji: "土地",
+  Optimized_Sent_Index: "888",
+  Optimized_Voc_Index: "633",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "962",
   Frequency: "2539",
-  Optimized_Sent_Index: "532",
-  Optimized_Voc_Index: "634",
   Furigana: "地図[ちず]",
   Kana: "ちず",
   Kanji: "地図",
+  Optimized_Sent_Index: "532",
+  Optimized_Voc_Index: "634",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "673",
   Frequency: "274",
-  Optimized_Sent_Index: "1386",
-  Optimized_Voc_Index: "635",
   Furigana: "他[た]",
   Kana: "た",
   Kanji: "他",
+  Optimized_Sent_Index: "1386",
+  Optimized_Voc_Index: "635",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "898",
   Frequency: "6557",
-  Optimized_Sent_Index: "456",
-  Optimized_Voc_Index: "636",
   Furigana: "パーティー",
   Kana: "パーティー",
   Kanji: "パーティー",
+  Optimized_Sent_Index: "456",
+  Optimized_Voc_Index: "636",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1578",
   Frequency: "652",
-  Optimized_Sent_Index: "535",
-  Optimized_Voc_Index: "637",
   Furigana: "止[と]める",
   Kana: "とめる",
   Kanji: "止める",
+  Optimized_Sent_Index: "535",
+  Optimized_Voc_Index: "637",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1751",
   Frequency: "1321",
-  Optimized_Sent_Index: "536",
-  Optimized_Voc_Index: "638",
   Furigana: "止[と]まる",
   Kana: "とまる",
   Kanji: "止まる",
+  Optimized_Sent_Index: "536",
+  Optimized_Voc_Index: "638",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1761",
   Frequency: "5131",
-  Optimized_Sent_Index: "537",
-  Optimized_Voc_Index: "639",
   Furigana: "止[や]む",
   Kana: "やむ",
   Kanji: "止む",
+  Optimized_Sent_Index: "537",
+  Optimized_Voc_Index: "639",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1388",
   Frequency: "5912",
-  Optimized_Sent_Index: "539",
-  Optimized_Voc_Index: "640",
   Furigana: "歩道[ほどう]",
   Kana: "ほどう",
   Kanji: "歩道",
+  Optimized_Sent_Index: "539",
+  Optimized_Voc_Index: "640",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "900",
   Frequency: "508",
-  Optimized_Sent_Index: "1737",
-  Optimized_Voc_Index: "641",
   Furigana: "うまい",
   Kana: "うまい",
   Kanji: "うまい",
+  Optimized_Sent_Index: "1737",
+  Optimized_Voc_Index: "641",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "951",
   Frequency: "921",
-  Optimized_Sent_Index: "974",
-  Optimized_Voc_Index: "642",
   Furigana: "渡[わた]す",
   Kana: "わたす",
   Kanji: "渡す",
+  Optimized_Sent_Index: "974",
+  Optimized_Voc_Index: "642",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1076",
   Frequency: "1078",
-  Optimized_Sent_Index: "1338",
-  Optimized_Voc_Index: "643",
   Furigana: "渡[わた]る",
   Kana: "わたる",
   Kanji: "渡る",
+  Optimized_Sent_Index: "1338",
+  Optimized_Voc_Index: "643",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "620",
   Frequency: "16954",
-  Optimized_Sent_Index: "864",
-  Optimized_Voc_Index: "644",
   Furigana: "年度[ねんど]",
   Kana: "ねんど",
   Kanji: "年度",
+  Optimized_Sent_Index: "864",
+  Optimized_Voc_Index: "644",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "759",
   Frequency: "427",
-  Optimized_Sent_Index: "541",
-  Optimized_Voc_Index: "645",
   Furigana: "今度[こんど]",
   Kana: "こんど",
   Kanji: "今度",
+  Optimized_Sent_Index: "541",
+  Optimized_Voc_Index: "645",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "903",
   Frequency: "1591",
-  Optimized_Sent_Index: "1968",
-  Optimized_Voc_Index: "646",
   Furigana: "ガラス",
   Kana: "ガラス",
   Kanji: "ガラス",
+  Optimized_Sent_Index: "1968",
+  Optimized_Voc_Index: "646",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1123",
   Frequency: "161821",
-  Optimized_Sent_Index: "579",
-  Optimized_Voc_Index: "647",
   Furigana: "何度[なんど]",
   Kana: "なんど",
   Kanji: "何度",
+  Optimized_Sent_Index: "579",
+  Optimized_Voc_Index: "647",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "431",
   Frequency: "1086",
-  Optimized_Sent_Index: "693",
-  Optimized_Voc_Index: "648",
   Furigana: "最近[さいきん]",
   Kana: "さいきん",
   Kanji: "最近",
+  Optimized_Sent_Index: "693",
+  Optimized_Voc_Index: "648",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "979",
   Frequency: "1295",
-  Optimized_Sent_Index: "1128",
-  Optimized_Voc_Index: "649",
   Furigana: "遠[とお]く",
   Kana: "とおく",
   Kanji: "遠く",
+  Optimized_Sent_Index: "1128",
+  Optimized_Voc_Index: "649",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "479",
   Frequency: "1181",
-  Optimized_Sent_Index: "544",
-  Optimized_Voc_Index: "650",
   Furigana: "社長[しゃちょう]",
   Kana: "しゃちょう",
   Kanji: "社長",
+  Optimized_Sent_Index: "544",
+  Optimized_Voc_Index: "650",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "907",
   Frequency: "3945",
-  Optimized_Sent_Index: "647",
-  Optimized_Voc_Index: "651",
   Furigana: "コース",
   Kana: "コース",
   Kanji: "コース",
+  Optimized_Sent_Index: "647",
+  Optimized_Voc_Index: "651",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "533",
   Frequency: "2939",
-  Optimized_Sent_Index: "1946",
-  Optimized_Voc_Index: "652",
   Furigana: "会長[かいちょう]",
   Kana: "かいちょう",
   Kanji: "会長",
+  Optimized_Sent_Index: "1946",
+  Optimized_Voc_Index: "652",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "892",
   Frequency: "4968",
-  Optimized_Sent_Index: "545",
-  Optimized_Voc_Index: "653",
   Furigana: "長[なが]さ",
   Kana: "ながさ",
   Kanji: "長さ",
+  Optimized_Sent_Index: "545",
+  Optimized_Voc_Index: "653",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "927",
   Frequency: "4137",
-  Optimized_Sent_Index: "971",
-  Optimized_Voc_Index: "654",
   Furigana: "長男[ちょうなん]",
   Kana: "ちょうなん",
   Kanji: "長男",
+  Optimized_Sent_Index: "971",
+  Optimized_Voc_Index: "654",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1894",
   Frequency: "9579",
-  Optimized_Sent_Index: "914",
-  Optimized_Voc_Index: "655",
   Furigana: "長女[ちょうじょ]",
   Kana: "ちょうじょ",
   Kanji: "長女",
+  Optimized_Sent_Index: "914",
+  Optimized_Voc_Index: "655",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "908",
   Frequency: "1450",
-  Optimized_Sent_Index: "970",
-  Optimized_Voc_Index: "656",
   Furigana: "アパート",
   Kana: "アパート",
   Kanji: "アパート",
+  Optimized_Sent_Index: "970",
+  Optimized_Voc_Index: "656",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "538",
   Frequency: "1652",
-  Optimized_Sent_Index: "1385",
-  Optimized_Voc_Index: "657",
   Furigana: "広[ひろ]がる",
   Kana: "ひろがる",
   Kanji: "広がる",
+  Optimized_Sent_Index: "1385",
+  Optimized_Voc_Index: "657",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1231",
   Frequency: "161821",
-  Optimized_Sent_Index: "1342",
-  Optimized_Voc_Index: "658",
   Furigana: "広[ひろ]さ",
   Kana: "ひろさ",
   Kanji: "広さ",
+  Optimized_Sent_Index: "1342",
+  Optimized_Voc_Index: "658",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "562",
   Frequency: "1372",
-  Optimized_Sent_Index: "1136",
-  Optimized_Voc_Index: "659",
   Furigana: "全体[ぜんたい]",
   Kana: "ぜんたい",
   Kanji: "全体",
+  Optimized_Sent_Index: "1136",
+  Optimized_Voc_Index: "659",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "643",
   Frequency: "850",
-  Optimized_Sent_Index: "547",
-  Optimized_Voc_Index: "660",
   Furigana: "全[まった]く",
   Kana: "まったく",
   Kanji: "全く",
+  Optimized_Sent_Index: "547",
+  Optimized_Voc_Index: "660",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "910",
   Frequency: "5552",
-  Optimized_Sent_Index: "904",
-  Optimized_Voc_Index: "661",
   Furigana: "レコード",
   Kana: "レコード",
   Kanji: "レコード",
+  Optimized_Sent_Index: "904",
+  Optimized_Voc_Index: "661",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "781",
   Frequency: "2059",
-  Optimized_Sent_Index: "929",
-  Optimized_Voc_Index: "662",
   Furigana: "安全[あんぜん]",
   Kana: "あんぜん",
   Kanji: "安全",
+  Optimized_Sent_Index: "929",
+  Optimized_Voc_Index: "662",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "475",
   Frequency: "1249",
-  Optimized_Sent_Index: "829",
-  Optimized_Voc_Index: "663",
   Furigana: "一部[いちぶ]",
   Kana: "いちぶ",
   Kanji: "一部",
+  Optimized_Sent_Index: "829",
+  Optimized_Voc_Index: "663",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "518",
   Frequency: "851",
-  Optimized_Sent_Index: "695",
-  Optimized_Voc_Index: "664",
   Furigana: "部分[ぶぶん]",
   Kana: "ぶぶん",
   Kanji: "部分",
+  Optimized_Sent_Index: "695",
+  Optimized_Voc_Index: "664",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "452",
   Frequency: "5114",
-  Optimized_Sent_Index: "1384",
-  Optimized_Voc_Index: "665",
   Furigana: "国内[こくない]",
   Kana: "こくない",
   Kanji: "国内",
+  Optimized_Sent_Index: "1384",
+  Optimized_Voc_Index: "665",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "911",
   Frequency: "2119",
-  Optimized_Sent_Index: "906",
-  Optimized_Voc_Index: "666",
   Furigana: "どんどん",
   Kana: "どんどん",
   Kanji: "どんどん",
+  Optimized_Sent_Index: "906",
+  Optimized_Voc_Index: "666",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "480",
   Frequency: "5049",
-  Optimized_Sent_Index: "775",
-  Optimized_Voc_Index: "667",
   Furigana: "全国[ぜんこく]",
   Kana: "ぜんこく",
   Kanji: "全国",
+  Optimized_Sent_Index: "775",
+  Optimized_Voc_Index: "667",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "548",
   Frequency: "2610",
-  Optimized_Sent_Index: "897",
-  Optimized_Voc_Index: "668",
   Furigana: "外国[がいこく]",
   Kana: "がいこく",
   Kanji: "外国",
+  Optimized_Sent_Index: "897",
+  Optimized_Voc_Index: "668",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "588",
   Frequency: "14767",
-  Optimized_Sent_Index: "1623",
-  Optimized_Voc_Index: "669",
   Furigana: "国会[こっかい]",
   Kana: "こっかい",
   Kanji: "国会",
+  Optimized_Sent_Index: "1623",
+  Optimized_Voc_Index: "669",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "767",
   Frequency: "3480",
-  Optimized_Sent_Index: "961",
-  Optimized_Voc_Index: "670",
   Furigana: "帰国[きこく]",
   Kana: "きこく",
   Kanji: "帰国",
+  Optimized_Sent_Index: "961",
+  Optimized_Voc_Index: "670",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "918",
   Frequency: "2193",
-  Optimized_Sent_Index: "1259",
-  Optimized_Voc_Index: "671",
   Furigana: "カメラ",
   Kana: "カメラ",
   Kanji: "カメラ",
+  Optimized_Sent_Index: "1259",
+  Optimized_Voc_Index: "671",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "772",
   Frequency: "4495",
-  Optimized_Sent_Index: "754",
-  Optimized_Voc_Index: "672",
   Furigana: "外国人[がいこくじん]",
   Kana: "がいこくじん",
   Kanji: "外国人",
+  Optimized_Sent_Index: "754",
+  Optimized_Voc_Index: "672",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1201",
   Frequency: "17985",
-  Optimized_Sent_Index: "700",
-  Optimized_Voc_Index: "673",
   Furigana: "外国語[がいこくご]",
   Kana: "がいこくご",
   Kanji: "外国語",
+  Optimized_Sent_Index: "700",
+  Optimized_Voc_Index: "673",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "433",
   Frequency: "301",
-  Optimized_Sent_Index: "868",
-  Optimized_Voc_Index: "674",
   Furigana: "世界[せかい]",
   Kana: "せかい",
   Kanji: "世界",
+  Optimized_Sent_Index: "868",
+  Optimized_Voc_Index: "674",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1872",
   Frequency: "1216",
-  Optimized_Sent_Index: "847",
-  Optimized_Voc_Index: "675",
   Furigana: "白[しろ]",
   Kana: "しろ",
   Kanji: "白",
+  Optimized_Sent_Index: "847",
+  Optimized_Voc_Index: "675",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "925",
   Frequency: "4503",
-  Optimized_Sent_Index: "1173",
-  Optimized_Voc_Index: "676",
   Furigana: "テープ",
   Kana: "テープ",
   Kanji: "テープ",
+  Optimized_Sent_Index: "1173",
+  Optimized_Voc_Index: "676",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "931",
   Frequency: "504",
-  Optimized_Sent_Index: "972",
-  Optimized_Voc_Index: "677",
   Furigana: "黒[くろ]い",
   Kana: "くろい",
   Kanji: "黒い",
+  Optimized_Sent_Index: "972",
+  Optimized_Voc_Index: "677",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1100",
   Frequency: "1117",
-  Optimized_Sent_Index: "551",
-  Optimized_Voc_Index: "678",
   Furigana: "黒[くろ]",
   Kana: "くろ",
   Kanji: "黒",
+  Optimized_Sent_Index: "551",
+  Optimized_Voc_Index: "678",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1012",
   Frequency: "7148",
-  Optimized_Sent_Index: "1824",
-  Optimized_Voc_Index: "679",
   Furigana: "赤[あか]ちゃん",
   Kana: "あかちゃん",
   Kanji: "赤ちゃん",
+  Optimized_Sent_Index: "1824",
+  Optimized_Voc_Index: "679",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1108",
   Frequency: "1154",
-  Optimized_Sent_Index: "1048",
-  Optimized_Voc_Index: "680",
   Furigana: "赤[あか]",
   Kana: "あか",
   Kanji: "赤",
+  Optimized_Sent_Index: "1048",
+  Optimized_Voc_Index: "680",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "945",
   Frequency: "1892",
-  Optimized_Sent_Index: "1635",
-  Optimized_Voc_Index: "681",
   Furigana: "ビール",
   Kana: "ビール",
   Kanji: "ビール",
+  Optimized_Sent_Index: "1635",
+  Optimized_Voc_Index: "681",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "552",
   Frequency: "1966",
-  Optimized_Sent_Index: "553",
-  Optimized_Voc_Index: "682",
   Furigana: "銀行[ぎんこう]",
   Kana: "ぎんこう",
   Kanji: "銀行",
+  Optimized_Sent_Index: "553",
+  Optimized_Voc_Index: "682",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1137",
   Frequency: "1450",
-  Optimized_Sent_Index: "984",
-  Optimized_Voc_Index: "683",
   Furigana: "銀[ぎん]",
   Kana: "ぎん",
   Kanji: "銀",
+  Optimized_Sent_Index: "984",
+  Optimized_Voc_Index: "683",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1011",
   Frequency: "7042",
-  Optimized_Sent_Index: "1213",
-  Optimized_Voc_Index: "684",
   Furigana: "地下鉄[ちかてつ]",
   Kana: "ちかてつ",
   Kanji: "地下鉄",
+  Optimized_Sent_Index: "1213",
+  Optimized_Voc_Index: "684",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "991",
   Frequency: "13401",
-  Optimized_Sent_Index: "554",
-  Optimized_Voc_Index: "685",
   Furigana: "牛肉[ぎゅうにく]",
   Kana: "ぎゅうにく",
   Kanji: "牛肉",
+  Optimized_Sent_Index: "554",
+  Optimized_Voc_Index: "685",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "948",
   Frequency: "2464",
-  Optimized_Sent_Index: "457",
-  Optimized_Voc_Index: "686",
   Furigana: "ページ",
   Kana: "ページ",
   Kanji: "ページ",
+  Optimized_Sent_Index: "457",
+  Optimized_Voc_Index: "686",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1912",
   Frequency: "1100",
-  Optimized_Sent_Index: "1567",
-  Optimized_Voc_Index: "687",
   Furigana: "肉[にく]",
   Kana: "にく",
   Kanji: "肉",
+  Optimized_Sent_Index: "1567",
+  Optimized_Voc_Index: "687",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1653",
   Frequency: "1271",
-  Optimized_Sent_Index: "556",
-  Optimized_Voc_Index: "688",
   Furigana: "魚[さかな]",
   Kana: "さかな",
   Kanji: "魚",
+  Optimized_Sent_Index: "556",
+  Optimized_Voc_Index: "688",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "453",
   Frequency: "7291",
-  Optimized_Sent_Index: "1558",
-  Optimized_Voc_Index: "689",
   Furigana: "分野[ぶんや]",
   Kana: "ぶんや",
   Kanji: "分野",
+  Optimized_Sent_Index: "1558",
+  Optimized_Voc_Index: "689",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "950",
   Frequency: "4812",
-  Optimized_Sent_Index: "557",
-  Optimized_Voc_Index: "690",
   Furigana: "野菜[やさい]",
   Kana: "やさい",
   Kanji: "野菜",
+  Optimized_Sent_Index: "557",
+  Optimized_Voc_Index: "690",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "954",
   Frequency: "24771",
-  Optimized_Sent_Index: "975",
-  Optimized_Voc_Index: "691",
   Furigana: "グラフ",
   Kana: "グラフ",
   Kanji: "グラフ",
+  Optimized_Sent_Index: "975",
+  Optimized_Voc_Index: "691",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1430",
   Frequency: "10368",
-  Optimized_Sent_Index: "558",
-  Optimized_Voc_Index: "692",
   Furigana: "本屋[ほんや]",
   Kana: "ほんや",
   Kanji: "本屋",
+  Optimized_Sent_Index: "558",
+  Optimized_Voc_Index: "692",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1541",
   Frequency: "14531",
-  Optimized_Sent_Index: "559",
-  Optimized_Voc_Index: "693",
   Furigana: "八百屋[やおや]",
   Kana: "やおや",
   Kanji: "八百屋",
+  Optimized_Sent_Index: "559",
+  Optimized_Voc_Index: "693",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1800",
   Frequency: "26827",
-  Optimized_Sent_Index: "561",
-  Optimized_Voc_Index: "694",
   Furigana: "そば 屋[や]",
   Kana: "そばや",
   Kanji: "そば屋",
+  Optimized_Sent_Index: "561",
+  Optimized_Voc_Index: "694",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1801",
   Frequency: "",
-  Optimized_Sent_Index: "562",
-  Optimized_Voc_Index: "695",
   Furigana: "たばこ 屋[や]",
   Kana: "たばこや",
   Kanji: "たばこ屋",
+  Optimized_Sent_Index: "562",
+  Optimized_Voc_Index: "695",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "966",
   Frequency: "9559",
-  Optimized_Sent_Index: "809",
-  Optimized_Voc_Index: "696",
   Furigana: "ポスト",
   Kana: "ポスト",
   Kanji: "ポスト",
+  Optimized_Sent_Index: "809",
+  Optimized_Voc_Index: "696",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1292",
   Frequency: "2244",
-  Optimized_Sent_Index: "564",
-  Optimized_Voc_Index: "697",
   Furigana: "茶[ちゃ]",
   Kana: "ちゃ",
   Kanji: "茶",
+  Optimized_Sent_Index: "564",
+  Optimized_Voc_Index: "697",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1296",
   Frequency: "1663",
-  Optimized_Sent_Index: "565",
-  Optimized_Voc_Index: "698",
   Furigana: "お 茶[ちゃ]",
   Kana: "おちゃ",
   Kanji: "お茶",
+  Optimized_Sent_Index: "565",
+  Optimized_Voc_Index: "698",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1892",
   Frequency: "20997",
-  Optimized_Sent_Index: "566",
-  Optimized_Voc_Index: "699",
   Furigana: "茶[ちゃ]わん",
   Kana: "ちゃわん",
   Kanji: "茶わん",
+  Optimized_Sent_Index: "566",
+  Optimized_Voc_Index: "699",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "937",
   Frequency: "1304",
-  Optimized_Sent_Index: "1474",
-  Optimized_Voc_Index: "700",
   Furigana: "味[あじ]",
   Kana: "あじ",
   Kanji: "味",
+  Optimized_Sent_Index: "1474",
+  Optimized_Voc_Index: "700",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "972",
   Frequency: "4846",
-  Optimized_Sent_Index: "790",
-  Optimized_Voc_Index: "701",
   Furigana: "テスト",
   Kana: "テスト",
   Kanji: "テスト",
+  Optimized_Sent_Index: "790",
+  Optimized_Voc_Index: "701",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1029",
   Frequency: "2002",
-  Optimized_Sent_Index: "1518",
-  Optimized_Voc_Index: "702",
   Furigana: "未来[みらい]",
   Kana: "みらい",
   Kanji: "未来",
+  Optimized_Sent_Index: "1518",
+  Optimized_Voc_Index: "702",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1163",
   Frequency: "10666",
-  Optimized_Sent_Index: "567",
-  Optimized_Voc_Index: "703",
   Furigana: "週末[しゅうまつ]",
   Kana: "しゅうまつ",
   Kanji: "週末",
+  Optimized_Sent_Index: "567",
+  Optimized_Voc_Index: "703",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "914",
   Frequency: "1345",
-  Optimized_Sent_Index: "1559",
-  Optimized_Voc_Index: "704",
   Furigana: "料理[りょうり]",
   Kana: "りょうり",
   Kanji: "料理",
+  Optimized_Sent_Index: "1559",
+  Optimized_Voc_Index: "704",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "921",
   Frequency: "699",
-  Optimized_Sent_Index: "569",
-  Optimized_Voc_Index: "705",
   Furigana: "無理[むり]",
   Kana: "むり",
   Kanji: "無理",
+  Optimized_Sent_Index: "569",
+  Optimized_Voc_Index: "705",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "973",
   Frequency: "1737",
-  Optimized_Sent_Index: "1582",
-  Optimized_Voc_Index: "706",
   Furigana: "あちこち",
   Kana: "あちこち",
   Kanji: "あちこち",
+  Optimized_Sent_Index: "1582",
+  Optimized_Voc_Index: "706",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1717",
   Frequency: "3659",
-  Optimized_Sent_Index: "1735",
-  Optimized_Voc_Index: "707",
   Furigana: "なくす",
   Kana: "なくす",
   Kanji: "なくす",
+  Optimized_Sent_Index: "1735",
+  Optimized_Voc_Index: "707",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1752",
   Frequency: "10746",
-  Optimized_Sent_Index: "570",
-  Optimized_Voc_Index: "708",
   Furigana: "無[な]くなる",
   Kana: "なくなる",
   Kanji: "無くなる",
+  Optimized_Sent_Index: "570",
+  Optimized_Voc_Index: "708",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1264",
   Frequency: "16994",
-  Optimized_Sent_Index: "571",
-  Optimized_Voc_Index: "709",
   Furigana: "作文[さくぶん]",
   Kana: "さくぶん",
   Kanji: "作文",
+  Optimized_Sent_Index: "571",
+  Optimized_Voc_Index: "709",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "434",
   Frequency: "2259",
-  Optimized_Sent_Index: "1728",
-  Optimized_Voc_Index: "710",
   Furigana: "用[もち]いる",
   Kana: "もちいる",
   Kanji: "用いる",
+  Optimized_Sent_Index: "1728",
+  Optimized_Voc_Index: "710",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "980",
   Frequency: "6116",
-  Optimized_Sent_Index: "922",
-  Optimized_Voc_Index: "711",
   Furigana: "ゴルフ",
   Kana: "ゴルフ",
   Kanji: "ゴルフ",
+  Optimized_Sent_Index: "922",
+  Optimized_Voc_Index: "711",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1457",
   Frequency: "3034",
-  Optimized_Sent_Index: "1832",
-  Optimized_Voc_Index: "712",
   Furigana: "用事[ようじ]",
   Kana: "ようじ",
   Kanji: "用事",
+  Optimized_Sent_Index: "1832",
+  Optimized_Voc_Index: "712",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1590",
   Frequency: "42065",
-  Optimized_Sent_Index: "575",
-  Optimized_Voc_Index: "713",
   Furigana: "交通費[こうつうひ]",
   Kana: "こうつうひ",
   Kanji: "交通費",
+  Optimized_Sent_Index: "575",
+  Optimized_Voc_Index: "713",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "519",
   Frequency: "435",
-  Optimized_Sent_Index: "1693",
-  Optimized_Voc_Index: "714",
   Furigana: "消[き]える",
   Kana: "きえる",
   Kanji: "消える",
+  Optimized_Sent_Index: "1693",
+  Optimized_Voc_Index: "714",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1695",
   Frequency: "27534",
-  Optimized_Sent_Index: "722",
-  Optimized_Voc_Index: "715",
   Furigana: "消[け]しゴム",
   Kana: "けしごむ",
   Kanji: "消しゴム",
+  Optimized_Sent_Index: "722",
+  Optimized_Voc_Index: "715",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "982",
   Frequency: "3858",
-  Optimized_Sent_Index: "976",
-  Optimized_Voc_Index: "716",
   Furigana: "ラジオ",
   Kana: "ラジオ",
   Kanji: "ラジオ",
+  Optimized_Sent_Index: "976",
+  Optimized_Voc_Index: "716",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "874",
   Frequency: "3773",
-  Optimized_Sent_Index: "590",
-  Optimized_Voc_Index: "717",
   Furigana: "売[う]れる",
   Kana: "うれる",
   Kanji: "売れる",
+  Optimized_Sent_Index: "590",
+  Optimized_Voc_Index: "717",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1170",
   Frequency: "16415",
-  Optimized_Sent_Index: "577",
-  Optimized_Voc_Index: "718",
   Furigana: "売[う]り 場[ば]",
   Kana: "うりば",
   Kanji: "売り場",
+  Optimized_Sent_Index: "577",
+  Optimized_Voc_Index: "718",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1248",
   Frequency: "4998",
-  Optimized_Sent_Index: "908",
-  Optimized_Voc_Index: "719",
   Furigana: "店員[てんいん]",
   Kana: "てんいん",
   Kanji: "店員",
+  Optimized_Sent_Index: "908",
+  Optimized_Voc_Index: "719",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1427",
   Frequency: "13766",
-  Optimized_Sent_Index: "813",
-  Optimized_Voc_Index: "720",
   Furigana: "売店[ばいてん]",
   Kana: "ばいてん",
   Kanji: "売店",
+  Optimized_Sent_Index: "813",
+  Optimized_Voc_Index: "720",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "984",
   Frequency: "1683",
-  Optimized_Sent_Index: "1598",
-  Optimized_Voc_Index: "721",
   Furigana: "タクシー",
   Kana: "タクシー",
   Kanji: "タクシー",
+  Optimized_Sent_Index: "1598",
+  Optimized_Voc_Index: "721",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "596",
   Frequency: "4373",
-  Optimized_Sent_Index: "580",
-  Optimized_Voc_Index: "722",
   Furigana: "商品[しょうひん]",
   Kana: "しょうひん",
   Kanji: "商品",
+  Optimized_Sent_Index: "580",
+  Optimized_Voc_Index: "722",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "657",
   Frequency: "956",
-  Optimized_Sent_Index: "811",
-  Optimized_Voc_Index: "723",
   Furigana: "作品[さくひん]",
   Kana: "さくひん",
   Kanji: "作品",
+  Optimized_Sent_Index: "811",
+  Optimized_Voc_Index: "723",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "420",
   Frequency: "7762",
-  Optimized_Sent_Index: "886",
-  Optimized_Voc_Index: "724",
   Furigana: "販売[はんばい]",
   Kana: "はんばい",
   Kanji: "販売",
+  Optimized_Sent_Index: "886",
+  Optimized_Voc_Index: "724",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1702",
   Frequency: "",
-  Optimized_Sent_Index: "926",
-  Optimized_Voc_Index: "725",
   Furigana: "二階[にかい]",
   Kana: "にかい",
   Kanji: "二階",
+  Optimized_Sent_Index: "926",
+  Optimized_Voc_Index: "725",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "989",
   Frequency: "471",
-  Optimized_Sent_Index: "497",
-  Optimized_Voc_Index: "726",
   Furigana: "ゆっくり",
   Kana: "ゆっくり",
   Kanji: "ゆっくり",
+  Optimized_Sent_Index: "497",
+  Optimized_Voc_Index: "726",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "594",
   Frequency: "2734",
-  Optimized_Sent_Index: "1355",
-  Optimized_Voc_Index: "727",
   Furigana: "段階[だんかい]",
   Kana: "だんかい",
   Kanji: "段階",
+  Optimized_Sent_Index: "1355",
+  Optimized_Voc_Index: "727",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1042",
   Frequency: "737",
-  Optimized_Sent_Index: "584",
-  Optimized_Voc_Index: "728",
   Furigana: "階段[かいだん]",
   Kana: "かいだん",
   Kanji: "階段",
+  Optimized_Sent_Index: "584",
+  Optimized_Voc_Index: "728",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1747",
   Frequency: "10271",
-  Optimized_Sent_Index: "823",
-  Optimized_Voc_Index: "729",
   Furigana: "段々[だんだん]",
   Kana: "だんだん",
   Kanji: "段々",
+  Optimized_Sent_Index: "823",
+  Optimized_Voc_Index: "729",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "891",
   Frequency: "4154",
-  Optimized_Sent_Index: "586",
-  Optimized_Voc_Index: "730",
   Furigana: "値段[ねだん]",
   Kana: "ねだん",
   Kanji: "値段",
+  Optimized_Sent_Index: "586",
+  Optimized_Voc_Index: "730",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1004",
   Frequency: "3446",
-  Optimized_Sent_Index: "568",
-  Optimized_Voc_Index: "731",
   Furigana: "レストラン",
   Kana: "レストラン",
   Kanji: "レストラン",
+  Optimized_Sent_Index: "568",
+  Optimized_Voc_Index: "731",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "468",
   Frequency: "10514",
-  Optimized_Sent_Index: "588",
-  Optimized_Voc_Index: "732",
   Furigana: "価格[かかく]",
   Kana: "かかく",
   Kanji: "価格",
+  Optimized_Sent_Index: "588",
+  Optimized_Voc_Index: "732",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "953",
   Frequency: "8469",
-  Optimized_Sent_Index: "930",
-  Optimized_Voc_Index: "733",
   Furigana: "合格[ごうかく]",
   Kana: "ごうかく",
   Kanji: "合格",
+  Optimized_Sent_Index: "930",
+  Optimized_Voc_Index: "733",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "960",
   Frequency: "5532",
-  Optimized_Sent_Index: "591",
-  Optimized_Voc_Index: "734",
   Furigana: "夏休[なつやす]み",
   Kana: "なつやすみ",
   Kanji: "夏休み",
+  Optimized_Sent_Index: "591",
+  Optimized_Voc_Index: "734",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1660",
   Frequency: "27247",
-  Optimized_Sent_Index: "1913",
-  Optimized_Voc_Index: "735",
   Furigana: "冬休[ふゆやす]み",
   Kana: "ふゆやすみ",
   Kanji: "冬休み",
+  Optimized_Sent_Index: "1913",
+  Optimized_Voc_Index: "735",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1006",
   Frequency: "2524",
-  Optimized_Sent_Index: "1145",
-  Optimized_Voc_Index: "736",
   Furigana: "カード",
   Kana: "カード",
   Kanji: "カード",
+  Optimized_Sent_Index: "1145",
+  Optimized_Voc_Index: "736",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1435",
   Frequency: "9233",
-  Optimized_Sent_Index: "595",
-  Optimized_Voc_Index: "737",
   Furigana: "四季[しき]",
   Kana: "しき",
   Kanji: "四季",
+  Optimized_Sent_Index: "595",
+  Optimized_Voc_Index: "737",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1293",
   Frequency: "145003",
-  Optimized_Sent_Index: "1327",
-  Optimized_Voc_Index: "738",
   Furigana: "暑[あつ]さ",
   Kana: "あつさ",
   Kanji: "暑さ",
+  Optimized_Sent_Index: "1327",
+  Optimized_Voc_Index: "738",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "890",
   Frequency: "1712",
-  Optimized_Sent_Index: "599",
-  Optimized_Voc_Index: "739",
   Furigana: "熱[ねつ]",
   Kana: "ねつ",
   Kanji: "熱",
+  Optimized_Sent_Index: "599",
+  Optimized_Voc_Index: "739",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1776",
   Frequency: "85019",
-  Optimized_Sent_Index: "1328",
-  Optimized_Voc_Index: "740",
   Furigana: "寒[さむ]さ",
   Kana: "さむさ",
   Kanji: "寒さ",
+  Optimized_Sent_Index: "1328",
+  Optimized_Voc_Index: "740",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1018",
   Frequency: "5560",
-  Optimized_Sent_Index: "923",
-  Optimized_Voc_Index: "741",
   Furigana: "アルバイト",
   Kana: "アルバイト",
   Kanji: "アルバイト",
+  Optimized_Sent_Index: "923",
+  Optimized_Voc_Index: "741",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1767",
   Frequency: "17301",
-  Optimized_Sent_Index: "602",
-  Optimized_Voc_Index: "742",
   Furigana: "暖[あたた]める",
   Kana: "あたためる",
   Kanji: "暖める",
+  Optimized_Sent_Index: "602",
+  Optimized_Voc_Index: "742",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1817",
   Frequency: "26108",
-  Optimized_Sent_Index: "603",
-  Optimized_Voc_Index: "743",
   Furigana: "暖[あたた]まる",
   Kana: "あたたまる",
   Kanji: "暖まる",
+  Optimized_Sent_Index: "603",
+  Optimized_Voc_Index: "743",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "840",
   Frequency: "7835",
-  Optimized_Sent_Index: "605",
-  Optimized_Voc_Index: "744",
   Furigana: "温度[おんど]",
   Kana: "おんど",
   Kanji: "温度",
+  Optimized_Sent_Index: "605",
+  Optimized_Voc_Index: "744",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1198",
   Frequency: "9372",
-  Optimized_Sent_Index: "606",
-  Optimized_Voc_Index: "745",
   Furigana: "気温[きおん]",
   Kana: "きおん",
   Kanji: "気温",
+  Optimized_Sent_Index: "606",
+  Optimized_Voc_Index: "745",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1024",
   Frequency: "5757",
-  Optimized_Sent_Index: "1057",
-  Optimized_Voc_Index: "746",
   Furigana: "コピー",
   Kana: "コピー",
   Kanji: "コピー",
+  Optimized_Sent_Index: "1057",
+  Optimized_Voc_Index: "746",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1884",
   Frequency: "932",
-  Optimized_Sent_Index: "614",
-  Optimized_Voc_Index: "747",
   Furigana: "台[だい]",
   Kana: "だい",
   Kanji: "台",
+  Optimized_Sent_Index: "614",
+  Optimized_Voc_Index: "747",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "844",
   Frequency: "287",
-  Optimized_Sent_Index: "683",
-  Optimized_Voc_Index: "748",
   Furigana: "風[かぜ]",
   Kana: "かぜ",
   Kanji: "風",
+  Optimized_Sent_Index: "683",
+  Optimized_Voc_Index: "748",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "977",
   Frequency: "7948",
-  Optimized_Sent_Index: "607",
-  Optimized_Voc_Index: "749",
   Furigana: "台風[たいふう]",
   Kana: "たいふう",
   Kanji: "台風",
+  Optimized_Sent_Index: "607",
+  Optimized_Voc_Index: "749",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "685",
   Frequency: "1000",
-  Optimized_Sent_Index: "608",
-  Optimized_Voc_Index: "750",
   Furigana: "事情[じじょう]",
   Kana: "じじょう",
   Kanji: "事情",
+  Optimized_Sent_Index: "608",
+  Optimized_Voc_Index: "750",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1025",
   Frequency: "1758",
-  Optimized_Sent_Index: "1340",
-  Optimized_Voc_Index: "751",
   Furigana: "ぶつかる",
   Kana: "ぶつかる",
   Kanji: "ぶつかる",
+  Optimized_Sent_Index: "1340",
+  Optimized_Voc_Index: "751",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "417",
   Frequency: "930",
-  Optimized_Sent_Index: "1224",
-  Optimized_Voc_Index: "752",
   Furigana: "情報[じょうほう]",
   Kana: "じょうほう",
   Kanji: "情報",
+  Optimized_Sent_Index: "1224",
+  Optimized_Voc_Index: "752",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "595",
   Frequency: "955",
-  Optimized_Sent_Index: "1052",
-  Optimized_Voc_Index: "753",
   Furigana: "報告[ほうこく]",
   Kana: "ほうこく",
   Kanji: "報告",
+  Optimized_Sent_Index: "1052",
+  Optimized_Voc_Index: "753",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "583",
   Frequency: "907",
-  Optimized_Sent_Index: "1343",
-  Optimized_Voc_Index: "754",
   Furigana: "新聞[しんぶん]",
   Kana: "しんぶん",
   Kanji: "新聞",
+  Optimized_Sent_Index: "1343",
+  Optimized_Voc_Index: "754",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1327",
   Frequency: "14359",
-  Optimized_Sent_Index: "611",
-  Optimized_Voc_Index: "755",
   Furigana: "新年[しんねん]",
   Kana: "しんねん",
   Kanji: "新年",
+  Optimized_Sent_Index: "611",
+  Optimized_Voc_Index: "755",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1028",
   Frequency: "6156",
-  Optimized_Sent_Index: "871",
-  Optimized_Voc_Index: "756",
   Furigana: "フィルム",
   Kana: "フィルム",
   Kanji: "フィルム",
+  Optimized_Sent_Index: "871",
+  Optimized_Voc_Index: "756",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1979",
   Frequency: "584",
-  Optimized_Sent_Index: "1156",
-  Optimized_Voc_Index: "757",
   Furigana: "良[よ]い",
   Kana: "よい",
   Kanji: "良い",
+  Optimized_Sent_Index: "1156",
+  Optimized_Voc_Index: "757",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "437",
   Frequency: "1386",
-  Optimized_Sent_Index: "1332",
-  Optimized_Voc_Index: "758",
   Furigana: "中心[ちゅうしん]",
   Kana: "ちゅうしん",
   Kanji: "中心",
+  Optimized_Sent_Index: "1332",
+  Optimized_Voc_Index: "758",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1132",
   Frequency: "1139",
-  Optimized_Sent_Index: "616",
-  Optimized_Voc_Index: "759",
   Furigana: "安心[あんしん]",
   Kana: "あんしん",
   Kanji: "安心",
+  Optimized_Sent_Index: "616",
+  Optimized_Voc_Index: "759",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "938",
   Frequency: "483",
-  Optimized_Sent_Index: "731",
-  Optimized_Voc_Index: "760",
   Furigana: "思[おも]い 出[だ]す",
   Kana: "おもいだす",
   Kanji: "思い出す",
+  Optimized_Sent_Index: "731",
+  Optimized_Voc_Index: "760",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1031",
   Frequency: "5134",
-  Optimized_Sent_Index: "1956",
-  Optimized_Voc_Index: "761",
   Furigana: "デパート",
   Kana: "デパート",
   Kanji: "デパート",
+  Optimized_Sent_Index: "1956",
+  Optimized_Voc_Index: "761",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1037",
   Frequency: "2684",
-  Optimized_Sent_Index: "872",
-  Optimized_Voc_Index: "762",
   Furigana: "思[おも]い 出[で]",
   Kana: "おもいで",
   Kanji: "思い出",
+  Optimized_Sent_Index: "872",
+  Optimized_Voc_Index: "762",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "831",
   Frequency: "615",
-  Optimized_Sent_Index: "619",
-  Optimized_Voc_Index: "763",
   Furigana: "考[かんが]え",
   Kana: "かんがえ",
   Kanji: "考え",
+  Optimized_Sent_Index: "619",
+  Optimized_Voc_Index: "763",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "463",
   Frequency: "2032",
-  Optimized_Sent_Index: "620",
-  Optimized_Voc_Index: "764",
   Furigana: "解決[かいけつ]",
   Kana: "かいけつ",
   Kanji: "解決",
+  Optimized_Sent_Index: "620",
+  Optimized_Voc_Index: "764",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1258",
   Frequency: "1868",
-  Optimized_Sent_Index: "1512",
-  Optimized_Voc_Index: "765",
   Furigana: "知[し]らせる",
   Kana: "しらせる",
   Kanji: "知らせる",
+  Optimized_Sent_Index: "1512",
+  Optimized_Voc_Index: "765",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1038",
   Frequency: "681",
-  Optimized_Sent_Index: "1401",
-  Optimized_Voc_Index: "766",
   Furigana: "ベッド",
   Kana: "ベッド",
   Kanji: "ベッド",
+  Optimized_Sent_Index: "1401",
+  Optimized_Voc_Index: "766",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "602",
   Frequency: "1395",
-  Optimized_Sent_Index: "949",
-  Optimized_Voc_Index: "767",
   Furigana: "能力[のうりょく]",
   Kana: "のうりょく",
   Kanji: "能力",
+  Optimized_Sent_Index: "949",
+  Optimized_Voc_Index: "767",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "577",
   Frequency: "1845",
-  Optimized_Sent_Index: "623",
-  Optimized_Voc_Index: "768",
   Furigana: "可能[かのう]",
   Kana: "かのう",
   Kanji: "可能",
+  Optimized_Sent_Index: "623",
+  Optimized_Voc_Index: "768",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "2000",
   Frequency: "3980",
-  Optimized_Sent_Index: "673",
-  Optimized_Voc_Index: "769",
   Furigana: "可[か]",
   Kana: "か",
   Kanji: "可",
+  Optimized_Sent_Index: "673",
+  Optimized_Voc_Index: "769",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1348",
   Frequency: "14706",
-  Optimized_Sent_Index: "654",
-  Optimized_Voc_Index: "770",
   Furigana: "郵便[ゆうびん]",
   Kana: "ゆうびん",
   Kanji: "郵便",
+  Optimized_Sent_Index: "654",
+  Optimized_Voc_Index: "770",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1044",
   Frequency: "2811",
-  Optimized_Sent_Index: "766",
-  Optimized_Voc_Index: "771",
   Furigana: "コート",
   Kana: "コート",
   Kanji: "コート",
+  Optimized_Sent_Index: "766",
+  Optimized_Voc_Index: "771",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1534",
   Frequency: "9805",
-  Optimized_Sent_Index: "624",
-  Optimized_Voc_Index: "772",
   Furigana: "不便[ふべん]",
   Kana: "ふべん",
   Kanji: "不便",
+  Optimized_Sent_Index: "624",
+  Optimized_Voc_Index: "772",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1999",
   Frequency: "",
-  Optimized_Sent_Index: "625",
-  Optimized_Voc_Index: "773",
   Furigana: "郵便屋[ゆうびんや]さん",
   Kana: "ゆうびんやさん",
   Kanji: "郵便屋さん",
+  Optimized_Sent_Index: "625",
+  Optimized_Voc_Index: "773",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1084",
   Frequency: "11321",
-  Optimized_Sent_Index: "733",
-  Optimized_Voc_Index: "774",
   Furigana: "郵便局[ゆうびんきょく]",
   Kana: "ゆうびんきょく",
   Kanji: "郵便局",
+  Optimized_Sent_Index: "733",
+  Optimized_Voc_Index: "774",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1474",
   Frequency: "12590",
-  Optimized_Sent_Index: "628",
-  Optimized_Voc_Index: "775",
   Furigana: "交番[こうばん]",
   Kana: "こうばん",
   Kanji: "交番",
+  Optimized_Sent_Index: "628",
+  Optimized_Voc_Index: "775",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1057",
   Frequency: "3433",
-  Optimized_Sent_Index: "458",
-  Optimized_Voc_Index: "776",
   Furigana: "ノート",
   Kana: "ノート",
   Kanji: "ノート",
+  Optimized_Sent_Index: "458",
+  Optimized_Voc_Index: "776",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1682",
   Frequency: "9352",
-  Optimized_Sent_Index: "1335",
-  Optimized_Voc_Index: "777",
   Furigana: "番地[ばんち]",
   Kana: "ばんち",
   Kanji: "番地",
+  Optimized_Sent_Index: "1335",
+  Optimized_Voc_Index: "777",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1071",
   Frequency: "3910",
-  Optimized_Sent_Index: "629",
-  Optimized_Voc_Index: "778",
   Furigana: "番号[ばんごう]",
   Kana: "ばんごう",
   Kanji: "番号",
+  Optimized_Sent_Index: "629",
+  Optimized_Voc_Index: "778",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "607",
   Frequency: "325",
-  Optimized_Sent_Index: "679",
-  Optimized_Voc_Index: "779",
   Furigana: "場所[ばしょ]",
   Kana: "ばしょ",
   Kanji: "場所",
+  Optimized_Sent_Index: "679",
+  Optimized_Voc_Index: "779",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "928",
   Frequency: "1907",
-  Optimized_Sent_Index: "630",
-  Optimized_Voc_Index: "780",
   Furigana: "近所[きんじょ]",
   Kana: "きんじょ",
   Kanji: "近所",
+  Optimized_Sent_Index: "630",
+  Optimized_Voc_Index: "780",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1072",
   Frequency: "4320",
-  Optimized_Sent_Index: "480",
-  Optimized_Voc_Index: "781",
   Furigana: "ワイン",
   Kana: "ワイン",
   Kanji: "ワイン",
+  Optimized_Sent_Index: "480",
+  Optimized_Voc_Index: "781",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1060",
   Frequency: "1748",
-  Optimized_Sent_Index: "899",
-  Optimized_Voc_Index: "782",
   Furigana: "台所[だいどころ]",
   Kana: "だいどころ",
   Kanji: "台所",
+  Optimized_Sent_Index: "899",
+  Optimized_Voc_Index: "782",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1204",
   Frequency: "3291",
-  Optimized_Sent_Index: "631",
-  Optimized_Voc_Index: "783",
   Furigana: "住所[じゅうしょ]",
   Kana: "じゅうしょ",
   Kanji: "住所",
+  Optimized_Sent_Index: "631",
+  Optimized_Voc_Index: "783",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1954",
   Frequency: "6177",
-  Optimized_Sent_Index: "633",
-  Optimized_Voc_Index: "784",
   Furigana: "便所[べんじょ]",
   Kana: "べんじょ",
   Kanji: "便所",
+  Optimized_Sent_Index: "633",
+  Optimized_Voc_Index: "784",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "870",
   Frequency: "1459",
-  Optimized_Sent_Index: "666",
-  Optimized_Voc_Index: "785",
   Furigana: "有名[ゆうめい]",
   Kana: "ゆうめい",
   Kanji: "有名",
+  Optimized_Sent_Index: "666",
+  Optimized_Voc_Index: "785",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1075",
   Frequency: "772",
-  Optimized_Sent_Index: "980",
-  Optimized_Voc_Index: "786",
   Furigana: "おかしい",
   Kana: "おかしい",
   Kanji: "おかしい",
+  Optimized_Sent_Index: "980",
+  Optimized_Voc_Index: "786",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1633",
   Frequency: "20172",
-  Optimized_Sent_Index: "635",
-  Optimized_Voc_Index: "787",
   Furigana: "名字[みょうじ]",
   Kana: "みょうじ",
   Kanji: "名字",
+  Optimized_Sent_Index: "635",
+  Optimized_Voc_Index: "787",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1867",
   Frequency: "16015",
-  Optimized_Sent_Index: "637",
-  Optimized_Voc_Index: "788",
   Furigana: "氏名[しめい]",
   Kana: "しめい",
   Kanji: "氏名",
+  Optimized_Sent_Index: "637",
+  Optimized_Voc_Index: "788",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "718",
   Frequency: "10697",
-  Optimized_Sent_Index: "1227",
-  Optimized_Voc_Index: "789",
   Furigana: "各国[かっこく]",
   Kana: "かっこく",
   Kanji: "各国",
+  Optimized_Sent_Index: "1227",
+  Optimized_Voc_Index: "789",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1962",
   Frequency: "313",
-  Optimized_Sent_Index: "1375",
-  Optimized_Voc_Index: "790",
   Furigana: "町[まち]",
   Kana: "まち",
   Kanji: "町",
+  Optimized_Sent_Index: "1375",
+  Optimized_Voc_Index: "790",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1087",
   Frequency: "3005",
-  Optimized_Sent_Index: "1836",
-  Optimized_Voc_Index: "791",
   Furigana: "トイレ",
   Kana: "トイレ",
   Kanji: "トイレ",
+  Optimized_Sent_Index: "1836",
+  Optimized_Voc_Index: "791",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "597",
   Frequency: "1964",
-  Optimized_Sent_Index: "642",
-  Optimized_Voc_Index: "792",
   Furigana: "都市[とし]",
   Kana: "とし",
   Kanji: "都市",
+  Optimized_Sent_Index: "642",
+  Optimized_Voc_Index: "792",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1494",
   Frequency: "2058",
-  Optimized_Sent_Index: "643",
-  Optimized_Voc_Index: "793",
   Furigana: "都合[つごう]",
   Kana: "つごう",
   Kanji: "都合",
+  Optimized_Sent_Index: "643",
+  Optimized_Voc_Index: "793",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1816",
   Frequency: "31094",
-  Optimized_Sent_Index: "644",
-  Optimized_Voc_Index: "794",
   Furigana: "朝[あさ]ご 飯[はん]",
   Kana: "あさごはん",
   Kanji: "朝ご飯",
+  Optimized_Sent_Index: "644",
+  Optimized_Voc_Index: "794",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1019",
   Frequency: "5846",
-  Optimized_Sent_Index: "898",
-  Optimized_Voc_Index: "795",
   Furigana: "買[か]い 物[もの]",
   Kana: "かいもの",
   Kanji: "買い物",
+  Optimized_Sent_Index: "898",
+  Optimized_Voc_Index: "795",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1093",
   Frequency: "7554",
-  Optimized_Sent_Index: "441",
-  Optimized_Voc_Index: "796",
   Furigana: "キャンプ",
   Kana: "キャンプ",
   Kanji: "キャンプ",
+  Optimized_Sent_Index: "441",
+  Optimized_Voc_Index: "796",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1094",
   Frequency: "1789",
-  Optimized_Sent_Index: "981",
-  Optimized_Voc_Index: "797",
   Furigana: "荷物[にもつ]",
   Kana: "にもつ",
   Kanji: "荷物",
+  Optimized_Sent_Index: "981",
+  Optimized_Voc_Index: "797",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1102",
   Frequency: "4218",
-  Optimized_Sent_Index: "844",
-  Optimized_Voc_Index: "798",
   Furigana: "品物[しなもの]",
   Kana: "しなもの",
   Kanji: "品物",
+  Optimized_Sent_Index: "844",
+  Optimized_Voc_Index: "798",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1257",
   Frequency: "2836",
-  Optimized_Sent_Index: "1511",
-  Optimized_Voc_Index: "799",
   Furigana: "見物[けんぶつ]",
   Kana: "けんぶつ",
   Kanji: "見物",
+  Optimized_Sent_Index: "1511",
+  Optimized_Voc_Index: "799",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1346",
   Frequency: "531",
-  Optimized_Sent_Index: "1002",
-  Optimized_Voc_Index: "800",
   Furigana: "物[もの]",
   Kana: "もの",
   Kanji: "物",
+  Optimized_Sent_Index: "1002",
+  Optimized_Voc_Index: "800",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1103",
   Frequency: "11058",
-  Optimized_Sent_Index: "1096",
-  Optimized_Voc_Index: "801",
   Furigana: "プラスチック",
   Kana: "プラスチック",
   Kanji: "プラスチック",
+  Optimized_Sent_Index: "1096",
+  Optimized_Voc_Index: "801",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1710",
   Frequency: "17535",
-  Optimized_Sent_Index: "678",
-  Optimized_Voc_Index: "802",
   Furigana: "忘[わす]れ 物[もの]",
   Kana: "わすれもの",
   Kanji: "忘れ物",
+  Optimized_Sent_Index: "678",
+  Optimized_Voc_Index: "802",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1128",
   Frequency: "182214",
-  Optimized_Sent_Index: "717",
-  Optimized_Voc_Index: "803",
   Furigana: "重[おも]さ",
   Kana: "おもさ",
   Kanji: "重さ",
+  Optimized_Sent_Index: "717",
+  Optimized_Voc_Index: "803",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1063",
   Frequency: "4186",
-  Optimized_Sent_Index: "1058",
-  Optimized_Voc_Index: "804",
   Furigana: "配[くば]る",
   Kana: "くばる",
   Kanji: "配る",
+  Optimized_Sent_Index: "1058",
+  Optimized_Voc_Index: "804",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1328",
   Frequency: "11799",
-  Optimized_Sent_Index: "999",
-  Optimized_Voc_Index: "805",
   Furigana: "配達[はいたつ]",
   Kana: "はいたつ",
   Kanji: "配達",
+  Optimized_Sent_Index: "999",
+  Optimized_Voc_Index: "805",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1116",
   Frequency: "9098",
-  Optimized_Sent_Index: "1843",
-  Optimized_Voc_Index: "806",
   Furigana: "カラー",
   Kana: "カラー",
   Kanji: "カラー",
+  Optimized_Sent_Index: "1843",
+  Optimized_Voc_Index: "806",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1873",
   Frequency: "436",
-  Optimized_Sent_Index: "645",
-  Optimized_Voc_Index: "807",
   Furigana: "心配[しんぱい]",
   Kana: "しんぱい",
   Kanji: "心配",
+  Optimized_Sent_Index: "645",
+  Optimized_Voc_Index: "807",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1032",
   Frequency: "2124",
-  Optimized_Sent_Index: "979",
-  Optimized_Voc_Index: "808",
   Furigana: "見送[みおく]る",
   Kana: "みおくる",
   Kanji: "見送る",
+  Optimized_Sent_Index: "979",
+  Optimized_Voc_Index: "808",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1390",
   Frequency: "10109",
-  Optimized_Sent_Index: "646",
-  Optimized_Voc_Index: "809",
   Furigana: "見送[みおく]り",
   Kana: "みおくり",
   Kanji: "見送り",
+  Optimized_Sent_Index: "646",
+  Optimized_Voc_Index: "809",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "414",
   Frequency: "302",
-  Optimized_Sent_Index: "1234",
-  Optimized_Voc_Index: "810",
   Furigana: "受[う]ける",
   Kana: "うける",
   Kanji: "受ける",
+  Optimized_Sent_Index: "1234",
+  Optimized_Voc_Index: "810",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1120",
   Frequency: "3723",
-  Optimized_Sent_Index: "688",
-  Optimized_Voc_Index: "811",
   Furigana: "ピアノ",
   Kana: "ピアノ",
   Kanji: "ピアノ",
+  Optimized_Sent_Index: "688",
+  Optimized_Voc_Index: "811",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "934",
   Frequency: "1542",
-  Optimized_Sent_Index: "973",
-  Optimized_Voc_Index: "812",
   Furigana: "受[う]け 取[と]る",
   Kana: "うけとる",
   Kanji: "受け取る",
+  Optimized_Sent_Index: "973",
+  Optimized_Voc_Index: "812",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1344",
   Frequency: "3521",
-  Optimized_Sent_Index: "649",
-  Optimized_Voc_Index: "813",
   Furigana: "取[と]れる",
   Kana: "とれる",
   Kanji: "取れる",
+  Optimized_Sent_Index: "649",
+  Optimized_Voc_Index: "813",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1831",
   Frequency: "42439",
-  Optimized_Sent_Index: "652",
-  Optimized_Voc_Index: "814",
   Furigana: "書[か]き 取[と]る",
   Kana: "かきとる",
   Kanji: "書き取る",
+  Optimized_Sent_Index: "652",
+  Optimized_Voc_Index: "814",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "696",
   Frequency: "1294",
-  Optimized_Sent_Index: "889",
-  Optimized_Voc_Index: "815",
   Furigana: "届[とど]く",
   Kana: "とどく",
   Kanji: "届く",
+  Optimized_Sent_Index: "889",
+  Optimized_Voc_Index: "815",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1130",
   Frequency: "8224",
-  Optimized_Sent_Index: "594",
-  Optimized_Voc_Index: "816",
   Furigana: "スキー",
   Kana: "スキー",
   Kanji: "スキー",
+  Optimized_Sent_Index: "594",
+  Optimized_Voc_Index: "816",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1148",
   Frequency: "3335",
-  Optimized_Sent_Index: "985",
-  Optimized_Voc_Index: "817",
   Furigana: "届[とど]ける",
   Kana: "とどける",
   Kanji: "届ける",
+  Optimized_Sent_Index: "985",
+  Optimized_Voc_Index: "817",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "410",
   Frequency: "127",
-  Optimized_Sent_Index: "656",
-  Optimized_Voc_Index: "818",
   Furigana: "持[も]つ",
   Kana: "もつ",
   Kanji: "持つ",
+  Optimized_Sent_Index: "656",
+  Optimized_Voc_Index: "818",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1172",
   Frequency: "6266",
-  Optimized_Sent_Index: "986",
-  Optimized_Voc_Index: "819",
   Furigana: "金持[かねも]ち",
   Kana: "かねもち",
   Kanji: "金持ち",
+  Optimized_Sent_Index: "986",
+  Optimized_Voc_Index: "819",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1661",
   Frequency: "",
-  Optimized_Sent_Index: "660",
-  Optimized_Voc_Index: "820",
   Furigana: "持[も]って 行[い]く",
   Kana: "もっていく",
   Kanji: "持って行く",
+  Optimized_Sent_Index: "660",
+  Optimized_Voc_Index: "820",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1134",
   Frequency: "740",
-  Optimized_Sent_Index: "653",
-  Optimized_Voc_Index: "821",
   Furigana: "なかなか",
   Kana: "なかなか",
   Kanji: "なかなか",
+  Optimized_Sent_Index: "653",
+  Optimized_Voc_Index: "821",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1742",
   Frequency: "",
-  Optimized_Sent_Index: "661",
-  Optimized_Voc_Index: "822",
   Furigana: "持[も]って 来[く]る",
   Kana: "もってくる",
   Kanji: "持って来る",
+  Optimized_Sent_Index: "661",
+  Optimized_Voc_Index: "822",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "867",
   Frequency: "552",
-  Optimized_Sent_Index: "782",
-  Optimized_Voc_Index: "823",
   Furigana: "打[う]つ",
   Kana: "うつ",
   Kanji: "打つ",
+  Optimized_Sent_Index: "782",
+  Optimized_Voc_Index: "823",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1115",
   Frequency: "1175",
-  Optimized_Sent_Index: "663",
-  Optimized_Voc_Index: "824",
   Furigana: "投[な]げる",
   Kana: "なげる",
   Kanji: "投げる",
+  Optimized_Sent_Index: "663",
+  Optimized_Voc_Index: "824",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "523",
   Frequency: "727",
-  Optimized_Sent_Index: "1503",
-  Optimized_Voc_Index: "825",
   Furigana: "生[う]まれる",
   Kana: "うまれる",
   Kanji: "生まれる",
+  Optimized_Sent_Index: "1503",
+  Optimized_Voc_Index: "825",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1136",
   Frequency: "5342",
-  Optimized_Sent_Index: "592",
-  Optimized_Voc_Index: "826",
   Furigana: "プール",
   Kana: "プール",
   Kanji: "プール",
+  Optimized_Sent_Index: "592",
+  Optimized_Voc_Index: "826",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1040",
   Frequency: "2660",
-  Optimized_Sent_Index: "1902",
-  Optimized_Voc_Index: "827",
   Furigana: "生[う]む",
   Kana: "うむ",
   Kanji: "生む",
+  Optimized_Sent_Index: "1902",
+  Optimized_Voc_Index: "827",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "460",
   Frequency: "399",
-  Optimized_Sent_Index: "664",
-  Optimized_Voc_Index: "828",
   Furigana: "女性[じょせい]",
   Kana: "じょせい",
   Kanji: "女性",
+  Optimized_Sent_Index: "664",
+  Optimized_Voc_Index: "828",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "499",
   Frequency: "5976",
-  Optimized_Sent_Index: "665",
-  Optimized_Voc_Index: "829",
   Furigana: "生産[せいさん]",
   Kana: "せいさん",
   Kanji: "生産",
+  Optimized_Sent_Index: "665",
+  Optimized_Voc_Index: "829",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1829",
   Frequency: "14977",
-  Optimized_Sent_Index: "1790",
-  Optimized_Voc_Index: "830",
   Furigana: "お 土産[みやげ]",
   Kana: "おみやげ",
   Kanji: "お土産",
+  Optimized_Sent_Index: "1790",
+  Optimized_Voc_Index: "830",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1139",
   Frequency: "4075",
-  Optimized_Sent_Index: "522",
-  Optimized_Voc_Index: "831",
   Furigana: "ホーム",
   Kana: "ホーム",
   Kanji: "ホーム",
+  Optimized_Sent_Index: "522",
+  Optimized_Voc_Index: "831",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "446",
   Frequency: "490",
-  Optimized_Sent_Index: "821",
-  Optimized_Voc_Index: "832",
   Furigana: "生活[せいかつ]",
   Kana: "せいかつ",
   Kanji: "生活",
+  Optimized_Sent_Index: "821",
+  Optimized_Voc_Index: "832",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "757",
   Frequency: "1247",
-  Optimized_Sent_Index: "667",
-  Optimized_Voc_Index: "833",
   Furigana: "生徒[せいと]",
   Kana: "せいと",
   Kanji: "生徒",
+  Optimized_Sent_Index: "667",
+  Optimized_Voc_Index: "833",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "879",
   Frequency: "2869",
-  Optimized_Sent_Index: "935",
-  Optimized_Voc_Index: "834",
   Furigana: "中学[ちゅうがく]",
   Kana: "ちゅうがく",
   Kanji: "中学",
+  Optimized_Sent_Index: "935",
+  Optimized_Voc_Index: "834",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "930",
   Frequency: "6150",
-  Optimized_Sent_Index: "917",
-  Optimized_Voc_Index: "835",
   Furigana: "入学[にゅうがく]",
   Kana: "にゅうがく",
   Kanji: "入学",
+  Optimized_Sent_Index: "917",
+  Optimized_Voc_Index: "835",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1150",
   Frequency: "2666",
-  Optimized_Sent_Index: "760",
-  Optimized_Voc_Index: "836",
   Furigana: "エレベーター",
   Kana: "エレベーター",
   Kanji: "エレベーター",
+  Optimized_Sent_Index: "760",
+  Optimized_Voc_Index: "836",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "957",
   Frequency: "4906",
-  Optimized_Sent_Index: "936",
-  Optimized_Voc_Index: "837",
   Furigana: "中学生[ちゅうがくせい]",
   Kana: "ちゅうがくせい",
   Kanji: "中学生",
+  Optimized_Sent_Index: "936",
+  Optimized_Voc_Index: "837",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1015",
   Frequency: "4979",
-  Optimized_Sent_Index: "938",
-  Optimized_Voc_Index: "838",
   Furigana: "小学生[しょうがくせい]",
   Kana: "しょうがくせい",
   Kanji: "小学生",
+  Optimized_Sent_Index: "938",
+  Optimized_Voc_Index: "838",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1144",
   Frequency: "9058",
-  Optimized_Sent_Index: "670",
-  Optimized_Voc_Index: "839",
   Furigana: "見学[けんがく]",
   Kana: "けんがく",
   Kanji: "見学",
+  Optimized_Sent_Index: "670",
+  Optimized_Voc_Index: "839",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1188",
   Frequency: "17566",
-  Optimized_Sent_Index: "671",
-  Optimized_Voc_Index: "840",
   Furigana: "通学[つうがく]",
   Kana: "つうがく",
   Kanji: "通学",
+  Optimized_Sent_Index: "671",
+  Optimized_Voc_Index: "840",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1151",
   Frequency: "3038",
-  Optimized_Sent_Index: "648",
-  Optimized_Voc_Index: "841",
   Furigana: "メモ",
   Kana: "メモ",
   Kanji: "メモ",
+  Optimized_Sent_Index: "648",
+  Optimized_Voc_Index: "841",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "764",
   Frequency: "2023",
-  Optimized_Sent_Index: "916",
-  Optimized_Voc_Index: "842",
   Furigana: "高校[こうこう]",
   Kana: "こうこう",
   Kanji: "高校",
+  Optimized_Sent_Index: "916",
+  Optimized_Voc_Index: "842",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "813",
   Frequency: "2630",
-  Optimized_Sent_Index: "674",
-  Optimized_Voc_Index: "843",
   Furigana: "小学校[しょうがっこう]",
   Kana: "しょうがっこう",
   Kanji: "小学校",
+  Optimized_Sent_Index: "674",
+  Optimized_Voc_Index: "843",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "996",
   Frequency: "8357",
-  Optimized_Sent_Index: "937",
-  Optimized_Voc_Index: "844",
   Furigana: "中学校[ちゅうがっこう]",
   Kana: "ちゅうがっこう",
   Kanji: "中学校",
+  Optimized_Sent_Index: "937",
+  Optimized_Voc_Index: "844",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1030",
   Frequency: "5552",
-  Optimized_Sent_Index: "676",
-  Optimized_Voc_Index: "845",
   Furigana: "校長[こうちょう]",
   Kana: "こうちょう",
   Kanji: "校長",
+  Optimized_Sent_Index: "676",
+  Optimized_Voc_Index: "845",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1155",
   Frequency: "2140",
-  Optimized_Sent_Index: "482",
-  Optimized_Voc_Index: "846",
   Furigana: "パン",
   Kana: "パン",
   Kanji: "パン",
+  Optimized_Sent_Index: "482",
+  Optimized_Voc_Index: "846",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1673",
   Frequency: "69165",
-  Optimized_Sent_Index: "677",
-  Optimized_Voc_Index: "847",
   Furigana: "休校[きゅうこう]",
   Kana: "きゅうこう",
   Kanji: "休校",
+  Optimized_Sent_Index: "677",
+  Optimized_Voc_Index: "847",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1027",
   Frequency: "1777",
-  Optimized_Sent_Index: "1032",
-  Optimized_Voc_Index: "848",
   Furigana: "教会[きょうかい]",
   Kana: "きょうかい",
   Kanji: "教会",
+  Optimized_Sent_Index: "1032",
+  Optimized_Voc_Index: "848",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "672",
   Frequency: "2316",
-  Optimized_Sent_Index: "956",
-  Optimized_Voc_Index: "849",
   Furigana: "教育[きょういく]",
   Kana: "きょういく",
   Kanji: "教育",
+  Optimized_Sent_Index: "956",
+  Optimized_Voc_Index: "849",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "839",
   Frequency: "2615",
-  Optimized_Sent_Index: "966",
-  Optimized_Voc_Index: "850",
   Furigana: "育[そだ]てる",
   Kana: "そだてる",
   Kanji: "育てる",
+  Optimized_Sent_Index: "966",
+  Optimized_Voc_Index: "850",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1156",
   Frequency: "",
-  Optimized_Sent_Index: "817",
-  Optimized_Voc_Index: "851",
   Furigana: "びっくりする",
   Kana: "びっくりする",
   Kanji: "びっくりする",
+  Optimized_Sent_Index: "817",
+  Optimized_Voc_Index: "851",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1016",
   Frequency: "2362",
-  Optimized_Sent_Index: "681",
-  Optimized_Voc_Index: "852",
   Furigana: "育[そだ]つ",
   Kana: "そだつ",
   Kanji: "育つ",
+  Optimized_Sent_Index: "681",
+  Optimized_Voc_Index: "852",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "542",
   Frequency: "4944",
-  Optimized_Sent_Index: "788",
-  Optimized_Voc_Index: "853",
   Furigana: "制度[せいど]",
   Kana: "せいど",
   Kanji: "制度",
+  Optimized_Sent_Index: "788",
+  Optimized_Voc_Index: "853",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1066",
   Frequency: "137227",
-  Optimized_Sent_Index: "1680",
-  Optimized_Voc_Index: "854",
   Furigana: "強[つよ]さ",
   Kana: "つよさ",
   Kanji: "強さ",
+  Optimized_Sent_Index: "1680",
+  Optimized_Voc_Index: "854",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "674",
   Frequency: "6077",
-  Optimized_Sent_Index: "685",
-  Optimized_Voc_Index: "855",
   Furigana: "取引[とりひき]",
   Kana: "とりひき",
   Kanji: "取引",
+  Optimized_Sent_Index: "685",
+  Optimized_Voc_Index: "855",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1164",
   Frequency: "2842",
-  Optimized_Sent_Index: "1295",
-  Optimized_Voc_Index: "856",
   Furigana: "ズボン",
   Kana: "ズボン",
   Kanji: "ズボン",
+  Optimized_Sent_Index: "1295",
+  Optimized_Voc_Index: "856",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1584",
   Frequency: "8516",
-  Optimized_Sent_Index: "1810",
-  Optimized_Voc_Index: "857",
   Furigana: "引[ひ]き 出[だ]し",
   Kana: "ひきだし",
   Kanji: "引き出し",
+  Optimized_Sent_Index: "1810",
+  Optimized_Voc_Index: "857",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1256",
   Frequency: "2269",
-  Optimized_Sent_Index: "687",
-  Optimized_Voc_Index: "858",
   Furigana: "押[お]さえる",
   Kana: "おさえる",
   Kanji: "押さえる",
+  Optimized_Sent_Index: "687",
+  Optimized_Voc_Index: "858",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1501",
   Frequency: "16739",
-  Optimized_Sent_Index: "1809",
-  Optimized_Voc_Index: "859",
   Furigana: "押[お]し 入[い]れ",
   Kana: "おしいれ",
   Kanji: "押し入れ",
+  Optimized_Sent_Index: "1809",
+  Optimized_Voc_Index: "859",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1065",
   Frequency: "2943",
-  Optimized_Sent_Index: "931",
-  Optimized_Voc_Index: "860",
   Furigana: "練習[れんしゅう]",
   Kana: "れんしゅう",
   Kanji: "練習",
+  Optimized_Sent_Index: "931",
+  Optimized_Voc_Index: "860",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1171",
   Frequency: "9827",
-  Optimized_Sent_Index: "1040",
-  Optimized_Voc_Index: "861",
   Furigana: "おもちゃ",
   Kana: "おもちゃ",
   Kanji: "おもちゃ",
+  Optimized_Sent_Index: "1040",
+  Optimized_Voc_Index: "861",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1191",
   Frequency: "4760",
-  Optimized_Sent_Index: "989",
-  Optimized_Voc_Index: "862",
   Furigana: "習[なら]う",
   Kana: "ならう",
   Kanji: "習う",
+  Optimized_Sent_Index: "989",
+  Optimized_Voc_Index: "862",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "993",
   Frequency: "1694",
-  Optimized_Sent_Index: "689",
-  Optimized_Voc_Index: "863",
   Furigana: "慣[な]れる",
   Kana: "なれる",
   Kanji: "慣れる",
+  Optimized_Sent_Index: "689",
+  Optimized_Voc_Index: "863",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1114",
   Frequency: "2807",
-  Optimized_Sent_Index: "690",
-  Optimized_Voc_Index: "864",
   Furigana: "習慣[しゅうかん]",
   Kana: "しゅうかん",
   Kanji: "習慣",
+  Optimized_Sent_Index: "690",
+  Optimized_Voc_Index: "864",
   PartOfSpeech: "None"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "423",
   Frequency: "1054",
-  Optimized_Sent_Index: "1317",
-  Optimized_Voc_Index: "865",
   Furigana: "研究[けんきゅう]",
   Kana: "けんきゅう",
   Kanji: "研究",
+  Optimized_Sent_Index: "1317",
+  Optimized_Voc_Index: "865",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1174",
   Frequency: "11670",
-  Optimized_Sent_Index: "555",
-  Optimized_Voc_Index: "866",
   Furigana: "グラム",
   Kana: "グラム",
   Kanji: "グラム",
+  Optimized_Sent_Index: "555",
+  Optimized_Voc_Index: "866",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "976",
   Frequency: "3940",
-  Optimized_Sent_Index: "1865",
-  Optimized_Voc_Index: "867",
   Furigana: "試験[しけん]",
   Kana: "しけん",
   Kanji: "試験",
+  Optimized_Sent_Index: "1865",
+  Optimized_Voc_Index: "867",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "401",
   Frequency: "314",
-  Optimized_Sent_Index: "692",
-  Optimized_Voc_Index: "868",
   Furigana: "問題[もんだい]",
   Kana: "もんだい",
   Kanji: "問題",
+  Optimized_Sent_Index: "692",
+  Optimized_Voc_Index: "868",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "666",
   Frequency: "815",
-  Optimized_Sent_Index: "697",
-  Optimized_Voc_Index: "869",
   Furigana: "簡単[かんたん]",
   Kana: "かんたん",
   Kanji: "簡単",
+  Optimized_Sent_Index: "697",
+  Optimized_Voc_Index: "869",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "762",
   Frequency: "2303",
-  Optimized_Sent_Index: "698",
-  Optimized_Voc_Index: "870",
   Furigana: "複雑[ふくざつ]",
   Kana: "ふくざつ",
   Kanji: "複雑",
+  Optimized_Sent_Index: "698",
+  Optimized_Voc_Index: "870",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1175",
   Frequency: "1564",
-  Optimized_Sent_Index: "481",
-  Optimized_Voc_Index: "871",
   Furigana: "コーヒー",
   Kana: "コーヒー",
   Kanji: "コーヒー",
+  Optimized_Sent_Index: "481",
+  Optimized_Voc_Index: "871",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "807",
   Frequency: "3255",
-  Optimized_Sent_Index: "1455",
-  Optimized_Voc_Index: "872",
   Furigana: "数字[すうじ]",
   Kana: "すうじ",
   Kanji: "数字",
+  Optimized_Sent_Index: "1455",
+  Optimized_Voc_Index: "872",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "929",
   Frequency: "7234",
-  Optimized_Sent_Index: "921",
-  Optimized_Voc_Index: "873",
   Furigana: "数学[すうがく]",
   Kana: "すうがく",
   Kanji: "数学",
+  Optimized_Sent_Index: "921",
+  Optimized_Voc_Index: "873",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1017",
   Frequency: "2881",
-  Optimized_Sent_Index: "701",
-  Optimized_Voc_Index: "874",
   Furigana: "数[かぞ]える",
   Kana: "かぞえる",
   Kanji: "数える",
+  Optimized_Sent_Index: "701",
+  Optimized_Voc_Index: "874",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "492",
   Frequency: "1493",
-  Optimized_Sent_Index: "1643",
-  Optimized_Voc_Index: "875",
   Furigana: "今回[こんかい]",
   Kana: "こんかい",
   Kanji: "今回",
+  Optimized_Sent_Index: "1643",
+  Optimized_Voc_Index: "875",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1178",
   Frequency: "4453",
-  Optimized_Sent_Index: "1691",
-  Optimized_Voc_Index: "876",
   Furigana: "テント",
   Kana: "テント",
   Kanji: "テント",
+  Optimized_Sent_Index: "1691",
+  Optimized_Voc_Index: "876",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "763",
   Frequency: "1168",
-  Optimized_Sent_Index: "1310",
-  Optimized_Voc_Index: "877",
   Furigana: "回[まわ]る",
   Kana: "まわる",
   Kanji: "回る",
+  Optimized_Sent_Index: "1310",
+  Optimized_Voc_Index: "877",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1023",
   Frequency: "1951",
-  Optimized_Sent_Index: "702",
-  Optimized_Voc_Index: "878",
   Furigana: "回[まわ]す",
   Kana: "まわす",
   Kanji: "回す",
+  Optimized_Sent_Index: "702",
+  Optimized_Voc_Index: "878",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "641",
   Frequency: "2009",
-  Optimized_Sent_Index: "1101",
-  Optimized_Voc_Index: "879",
   Furigana: "個人[こじん]",
   Kana: "こじん",
   Kanji: "個人",
+  Optimized_Sent_Index: "1101",
+  Optimized_Voc_Index: "879",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "647",
   Frequency: "2423",
-  Optimized_Sent_Index: "703",
-  Optimized_Voc_Index: "880",
   Furigana: "担当[たんとう]",
   Kana: "たんとう",
   Kanji: "担当",
+  Optimized_Sent_Index: "703",
+  Optimized_Voc_Index: "880",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1179",
   Frequency: "3106",
-  Optimized_Sent_Index: "1269",
-  Optimized_Voc_Index: "881",
   Furigana: "ボート",
   Kana: "ボート",
   Kanji: "ボート",
+  Optimized_Sent_Index: "1269",
+  Optimized_Voc_Index: "881",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "683",
   Frequency: "1596",
-  Optimized_Sent_Index: "1193",
-  Optimized_Voc_Index: "882",
   Furigana: "当[あ]たる",
   Kana: "あたる",
   Kanji: "当たる",
+  Optimized_Sent_Index: "1193",
+  Optimized_Voc_Index: "882",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "713",
   Frequency: "666",
-  Optimized_Sent_Index: "958",
-  Optimized_Voc_Index: "883",
   Furigana: "当時[とうじ]",
   Kana: "とうじ",
   Kanji: "当時",
+  Optimized_Sent_Index: "958",
+  Optimized_Voc_Index: "883",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1956",
   Frequency: "816",
-  Optimized_Sent_Index: "704",
-  Optimized_Voc_Index: "884",
   Furigana: "本当[ほんとう]",
   Kana: "ほんとう",
   Kanji: "本当",
+  Optimized_Sent_Index: "704",
+  Optimized_Voc_Index: "884",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "664",
   Frequency: "575",
-  Optimized_Sent_Index: "1494",
-  Optimized_Voc_Index: "885",
   Furigana: "当然[とうぜん]",
   Kana: "とうぜん",
   Kanji: "当然",
+  Optimized_Sent_Index: "1494",
+  Optimized_Voc_Index: "885",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1181",
   Frequency: "3363",
-  Optimized_Sent_Index: "987",
-  Optimized_Voc_Index: "886",
   Furigana: "ボール",
   Kana: "ボール",
   Kanji: "ボール",
+  Optimized_Sent_Index: "987",
+  Optimized_Voc_Index: "886",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1305",
   Frequency: "1352",
-  Optimized_Sent_Index: "834",
-  Optimized_Voc_Index: "887",
   Furigana: "全然[ぜんぜん]",
   Kana: "ぜんぜん",
   Kanji: "全然",
+  Optimized_Sent_Index: "834",
+  Optimized_Voc_Index: "887",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "429",
   Frequency: "839",
-  Optimized_Sent_Index: "705",
-  Optimized_Voc_Index: "888",
   Furigana: "方法[ほうほう]",
   Kana: "ほうほう",
   Kanji: "方法",
+  Optimized_Sent_Index: "705",
+  Optimized_Voc_Index: "888",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "824",
   Frequency: "4409",
-  Optimized_Sent_Index: "706",
-  Optimized_Voc_Index: "889",
   Furigana: "法律[ほうりつ]",
   Kana: "ほうりつ",
   Kanji: "法律",
+  Optimized_Sent_Index: "706",
+  Optimized_Voc_Index: "889",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "978",
   Frequency: "6828",
-  Optimized_Sent_Index: "1326",
-  Optimized_Voc_Index: "890",
   Furigana: "規則[きそく]",
   Kana: "きそく",
   Kanji: "規則",
+  Optimized_Sent_Index: "1326",
+  Optimized_Voc_Index: "890",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1182",
   Frequency: "12098",
-  Optimized_Sent_Index: "988",
-  Optimized_Voc_Index: "891",
   Furigana: "オートバイ",
   Kana: "オートバイ",
   Kanji: "オートバイ",
+  Optimized_Sent_Index: "988",
+  Optimized_Voc_Index: "891",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "601",
   Frequency: "1144",
-  Optimized_Sent_Index: "707",
-  Optimized_Voc_Index: "892",
   Furigana: "経験[けいけん]",
   Kana: "けいけん",
   Kanji: "経験",
+  Optimized_Sent_Index: "707",
+  Optimized_Voc_Index: "892",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "769",
   Frequency: "1779",
-  Optimized_Sent_Index: "708",
-  Optimized_Voc_Index: "893",
   Furigana: "経[た]つ",
   Kana: "たつ",
   Kanji: "経つ",
+  Optimized_Sent_Index: "708",
+  Optimized_Voc_Index: "893",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "444",
   Frequency: "3852",
-  Optimized_Sent_Index: "709",
-  Optimized_Voc_Index: "894",
   Furigana: "経済[けいざい]",
   Kana: "けいざい",
   Kanji: "経済",
+  Optimized_Sent_Index: "709",
+  Optimized_Voc_Index: "894",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "567",
   Frequency: "3235",
-  Optimized_Sent_Index: "1515",
-  Optimized_Voc_Index: "895",
   Furigana: "経営[けいえい]",
   Kana: "けいえい",
   Kanji: "経営",
+  Optimized_Sent_Index: "1515",
+  Optimized_Voc_Index: "895",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1195",
   Frequency: "430",
-  Optimized_Sent_Index: "1979",
-  Optimized_Voc_Index: "896",
   Furigana: "ひどい",
   Kana: "ひどい",
   Kanji: "ひどい",
+  Optimized_Sent_Index: "1979",
+  Optimized_Voc_Index: "896",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "559",
   Frequency: "5970",
-  Optimized_Sent_Index: "789",
-  Optimized_Voc_Index: "897",
   Furigana: "株[かぶ]",
   Kana: "かぶ",
   Kanji: "株",
+  Optimized_Sent_Index: "789",
+  Optimized_Voc_Index: "897",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "405",
   Frequency: "4239",
-  Optimized_Sent_Index: "942",
-  Optimized_Voc_Index: "898",
   Furigana: "企業[きぎょう]",
   Kana: "きぎょう",
   Kanji: "企業",
+  Optimized_Sent_Index: "942",
+  Optimized_Voc_Index: "898",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "495",
   Frequency: "1575",
-  Optimized_Sent_Index: "714",
-  Optimized_Voc_Index: "899",
   Furigana: "作業[さぎょう]",
   Kana: "さぎょう",
   Kanji: "作業",
+  Optimized_Sent_Index: "714",
+  Optimized_Voc_Index: "899",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "621",
   Frequency: "6813",
-  Optimized_Sent_Index: "1075",
-  Optimized_Voc_Index: "900",
   Furigana: "産業[さんぎょう]",
   Kana: "さんぎょう",
   Kanji: "産業",
+  Optimized_Sent_Index: "1075",
+  Optimized_Voc_Index: "900",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1211",
   Frequency: "118",
-  Optimized_Sent_Index: "420",
-  Optimized_Voc_Index: "901",
   Furigana: "あなた",
   Kana: "あなた",
   Kanji: "あなた",
+  Optimized_Sent_Index: "420",
+  Optimized_Voc_Index: "901",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "868",
   Frequency: "10336",
-  Optimized_Sent_Index: "710",
-  Optimized_Voc_Index: "902",
   Furigana: "工業[こうぎょう]",
   Kana: "こうぎょう",
   Kanji: "工業",
+  Optimized_Sent_Index: "710",
+  Optimized_Voc_Index: "902",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1129",
   Frequency: "13385",
-  Optimized_Sent_Index: "1729",
-  Optimized_Voc_Index: "903",
   Furigana: "商業[しょうぎょう]",
   Kana: "しょうぎょう",
   Kanji: "商業",
+  Optimized_Sent_Index: "1729",
+  Optimized_Voc_Index: "903",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "408",
   Frequency: "1441",
-  Optimized_Sent_Index: "875",
-  Optimized_Voc_Index: "904",
   Furigana: "利用[りよう]",
   Kana: "りよう",
   Kanji: "利用",
+  Optimized_Sent_Index: "875",
+  Optimized_Voc_Index: "904",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1157",
   Frequency: "5306",
-  Optimized_Sent_Index: "711",
-  Optimized_Voc_Index: "905",
   Furigana: "便利[べんり]",
   Kana: "べんり",
   Kanji: "便利",
+  Optimized_Sent_Index: "711",
+  Optimized_Voc_Index: "905",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1219",
   Frequency: "3204",
-  Optimized_Sent_Index: "993",
-  Optimized_Voc_Index: "906",
   Furigana: "スイッチ",
   Kana: "スイッチ",
   Kanji: "スイッチ",
+  Optimized_Sent_Index: "993",
+  Optimized_Voc_Index: "906",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "501",
   Frequency: "1885",
-  Optimized_Sent_Index: "1153",
-  Optimized_Voc_Index: "907",
   Furigana: "技術[ぎじゅつ]",
   Kana: "ぎじゅつ",
   Kanji: "技術",
+  Optimized_Sent_Index: "1153",
+  Optimized_Voc_Index: "907",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "784",
   Frequency: "3449",
-  Optimized_Sent_Index: "1605",
-  Optimized_Voc_Index: "908",
   Furigana: "手術[しゅじゅつ]",
   Kana: "しゅじゅつ",
   Kanji: "手術",
+  Optimized_Sent_Index: "1605",
+  Optimized_Voc_Index: "908",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "742",
   Frequency: "7057",
-  Optimized_Sent_Index: "712",
-  Optimized_Voc_Index: "909",
   Furigana: "製造[せいぞう]",
   Kana: "せいぞう",
   Kanji: "製造",
+  Optimized_Sent_Index: "712",
+  Optimized_Voc_Index: "909",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "806",
   Frequency: "996",
-  Optimized_Sent_Index: "764",
-  Optimized_Voc_Index: "910",
   Furigana: "必[かなら]ず",
   Kana: "かならず",
   Kanji: "必ず",
+  Optimized_Sent_Index: "764",
+  Optimized_Voc_Index: "910",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1224",
   Frequency: "5492",
-  Optimized_Sent_Index: "1526",
-  Optimized_Voc_Index: "911",
   Furigana: "プレゼント",
   Kana: "プレゼント",
   Kanji: "プレゼント",
+  Optimized_Sent_Index: "1526",
+  Optimized_Voc_Index: "911",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "404",
   Frequency: "279",
-  Optimized_Sent_Index: "713",
-  Optimized_Voc_Index: "912",
   Furigana: "必要[ひつよう]",
   Kana: "ひつよう",
   Kanji: "必要",
+  Optimized_Sent_Index: "713",
+  Optimized_Voc_Index: "912",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "482",
   Frequency: "1582",
-  Optimized_Sent_Index: "849",
-  Optimized_Voc_Index: "913",
   Furigana: "重要[じゅうよう]",
   Kana: "じゅうよう",
   Kanji: "重要",
+  Optimized_Sent_Index: "849",
+  Optimized_Voc_Index: "913",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "624",
   Frequency: "1746",
-  Optimized_Sent_Index: "951",
-  Optimized_Voc_Index: "914",
   Furigana: "要求[ようきゅう]",
   Kana: "ようきゅう",
   Kanji: "要求",
+  Optimized_Sent_Index: "951",
+  Optimized_Voc_Index: "914",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1737",
   Frequency: "30129",
-  Optimized_Sent_Index: "1663",
-  Optimized_Voc_Index: "915",
   Furigana: "目覚[めざ]まし 時計[どけい]",
   Kana: "めざましどけい",
   Kanji: "目覚まし時計",
+  Optimized_Sent_Index: "1663",
+  Optimized_Voc_Index: "915",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1226",
   Frequency: "",
-  Optimized_Sent_Index: "409",
-  Optimized_Voc_Index: "916",
   Furigana: "いつでも",
   Kana: "いつでも",
   Kanji: "いつでも",
+  Optimized_Sent_Index: "409",
+  Optimized_Voc_Index: "916",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "575",
   Frequency: "2399",
-  Optimized_Sent_Index: "863",
-  Optimized_Voc_Index: "917",
   Furigana: "計算[けいさん]",
   Kana: "けいさん",
   Kanji: "計算",
+  Optimized_Sent_Index: "863",
+  Optimized_Voc_Index: "917",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1734",
   Frequency: "55415",
-  Optimized_Sent_Index: "933",
-  Optimized_Voc_Index: "918",
   Furigana: "引[ひ]き 算[ざん]",
   Kana: "ひきざん",
   Kanji: "引き算",
+  Optimized_Sent_Index: "933",
+  Optimized_Voc_Index: "918",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1746",
   Frequency: "51834",
-  Optimized_Sent_Index: "934",
-  Optimized_Voc_Index: "919",
   Furigana: "足[た]し 算[ざん]",
   Kana: "たしざん",
   Kanji: "足し算",
+  Optimized_Sent_Index: "934",
+  Optimized_Voc_Index: "919",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1545",
   Frequency: "9611",
-  Optimized_Sent_Index: "859",
-  Optimized_Voc_Index: "920",
   Furigana: "交差点[こうさてん]",
   Kana: "こうさてん",
   Kanji: "交差点",
+  Optimized_Sent_Index: "859",
+  Optimized_Voc_Index: "920",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1230",
   Frequency: "13046",
-  Optimized_Sent_Index: "994",
-  Optimized_Voc_Index: "921",
   Furigana: "テニス",
   Kana: "テニス",
   Kanji: "テニス",
+  Optimized_Sent_Index: "994",
+  Optimized_Voc_Index: "921",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1085",
   Frequency: "2520",
-  Optimized_Sent_Index: "1608",
-  Optimized_Voc_Index: "922",
   Furigana: "割[わ]る",
   Kana: "わる",
   Kanji: "割る",
+  Optimized_Sent_Index: "1608",
+  Optimized_Voc_Index: "922",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1349",
   Frequency: "3400",
-  Optimized_Sent_Index: "1275",
-  Optimized_Voc_Index: "923",
   Furigana: "割[わ]れる",
   Kana: "われる",
   Kanji: "割れる",
+  Optimized_Sent_Index: "1275",
+  Optimized_Voc_Index: "923",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1812",
   Frequency: "84451",
-  Optimized_Sent_Index: "718",
-  Optimized_Voc_Index: "924",
   Furigana: "割[わ]り 算[ざん]",
   Kana: "わりざん",
   Kanji: "割り算",
+  Optimized_Sent_Index: "718",
+  Optimized_Voc_Index: "924",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "593",
   Frequency: "394",
-  Optimized_Sent_Index: "719",
-  Optimized_Voc_Index: "925",
   Furigana: "残[のこ]る",
   Kana: "のこる",
   Kanji: "残る",
+  Optimized_Sent_Index: "719",
+  Optimized_Voc_Index: "925",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1236",
   Frequency: "338",
-  Optimized_Sent_Index: "1434",
-  Optimized_Voc_Index: "926",
   Furigana: "こちら",
   Kana: "こちら",
   Kanji: "こちら",
+  Optimized_Sent_Index: "1434",
+  Optimized_Voc_Index: "926",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "670",
   Frequency: "629",
-  Optimized_Sent_Index: "954",
-  Optimized_Voc_Index: "927",
   Furigana: "残[のこ]す",
   Kana: "のこす",
   Kanji: "残す",
+  Optimized_Sent_Index: "954",
+  Optimized_Voc_Index: "927",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "995",
   Frequency: "659",
-  Optimized_Sent_Index: "876",
-  Optimized_Voc_Index: "928",
   Furigana: "返[かえ]す",
   Kana: "かえす",
   Kanji: "返す",
+  Optimized_Sent_Index: "876",
+  Optimized_Voc_Index: "928",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1953",
   Frequency: "741",
-  Optimized_Sent_Index: "810",
-  Optimized_Voc_Index: "929",
   Furigana: "返事[へんじ]",
   Kana: "へんじ",
   Kanji: "返事",
+  Optimized_Sent_Index: "810",
+  Optimized_Voc_Index: "929",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "850",
   Frequency: "1195",
-  Optimized_Sent_Index: "968",
-  Optimized_Voc_Index: "930",
   Furigana: "借[か]りる",
   Kana: "かりる",
   Kanji: "借りる",
+  Optimized_Sent_Index: "968",
+  Optimized_Voc_Index: "930",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1238",
   Frequency: "2770",
-  Optimized_Sent_Index: "686",
-  Optimized_Voc_Index: "931",
   Furigana: "ボタン",
   Kana: "ボタン",
   Kanji: "ボタン",
+  Optimized_Sent_Index: "686",
+  Optimized_Voc_Index: "931",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1104",
   Frequency: "1689",
-  Optimized_Sent_Index: "982",
-  Optimized_Voc_Index: "932",
   Furigana: "貸[か]す",
   Kana: "かす",
   Kanji: "貸す",
+  Optimized_Sent_Index: "982",
+  Optimized_Voc_Index: "932",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1406",
   Frequency: "46186",
-  Optimized_Sent_Index: "721",
-  Optimized_Voc_Index: "933",
   Furigana: "貸[か]し 出[だ]す",
   Kana: "かしだす",
   Kanji: "貸し出す",
+  Optimized_Sent_Index: "721",
+  Optimized_Voc_Index: "933",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1267",
   Frequency: "11078",
-  Optimized_Sent_Index: "997",
-  Optimized_Voc_Index: "934",
   Furigana: "申[もう]し 込[こ]む",
   Kana: "もうしこむ",
   Kanji: "申し込む",
+  Optimized_Sent_Index: "997",
+  Optimized_Voc_Index: "934",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "488",
   Frequency: "1188",
-  Optimized_Sent_Index: "724",
-  Optimized_Voc_Index: "935",
   Furigana: "期待[きたい]",
   Kana: "きたい",
   Kanji: "期待",
+  Optimized_Sent_Index: "724",
+  Optimized_Voc_Index: "935",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1241",
   Frequency: "772",
-  Optimized_Sent_Index: "995",
-  Optimized_Voc_Index: "936",
   Furigana: "おかしい",
   Kana: "おかしい",
   Kanji: "おかしい",
+  Optimized_Sent_Index: "995",
+  Optimized_Voc_Index: "936",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "693",
   Frequency: "4667",
-  Optimized_Sent_Index: "725",
-  Optimized_Voc_Index: "937",
   Furigana: "期間[きかん]",
   Kana: "きかん",
   Kanji: "期間",
+  Optimized_Sent_Index: "725",
+  Optimized_Voc_Index: "937",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "741",
   Frequency: "1651",
-  Optimized_Sent_Index: "726",
-  Optimized_Voc_Index: "938",
   Furigana: "時期[じき]",
   Kana: "じき",
   Kanji: "時期",
+  Optimized_Sent_Index: "726",
+  Optimized_Voc_Index: "938",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "731",
   Frequency: "1594",
-  Optimized_Sent_Index: "727",
-  Optimized_Voc_Index: "939",
   Furigana: "限[かぎ]る",
   Kana: "かぎる",
   Kanji: "限る",
+  Optimized_Sent_Index: "727",
+  Optimized_Voc_Index: "939",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "804",
   Frequency: "857",
-  Optimized_Sent_Index: "728",
-  Optimized_Voc_Index: "940",
   Furigana: "急[いそ]ぐ",
   Kana: "いそぐ",
   Kanji: "急ぐ",
+  Optimized_Sent_Index: "728",
+  Optimized_Voc_Index: "940",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1243",
   Frequency: "2811",
-  Optimized_Sent_Index: "610",
-  Optimized_Voc_Index: "941",
   Furigana: "コート",
   Kana: "コート",
   Kanji: "コート",
+  Optimized_Sent_Index: "610",
+  Optimized_Voc_Index: "941",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "964",
   Frequency: "59483",
-  Optimized_Sent_Index: "729",
-  Optimized_Voc_Index: "942",
   Furigana: "急[きゅう]に",
   Kana: "きゅうに",
   Kanji: "急に",
+  Optimized_Sent_Index: "729",
+  Optimized_Voc_Index: "942",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "988",
   Frequency: "525",
-  Optimized_Sent_Index: "1686",
-  Optimized_Voc_Index: "943",
   Furigana: "急[きゅう]",
   Kana: "きゅう",
   Kanji: "急",
+  Optimized_Sent_Index: "1686",
+  Optimized_Voc_Index: "943",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1544",
   Frequency: "8803",
-  Optimized_Sent_Index: "730",
-  Optimized_Voc_Index: "944",
   Furigana: "急行[きゅうこう]",
   Kana: "きゅうこう",
   Kanji: "急行",
+  Optimized_Sent_Index: "730",
+  Optimized_Voc_Index: "944",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "974",
   Frequency: "1211",
-  Optimized_Sent_Index: "732",
-  Optimized_Voc_Index: "945",
   Furigana: "切[き]れる",
   Kana: "きれる",
   Kanji: "切れる",
+  Optimized_Sent_Index: "732",
+  Optimized_Voc_Index: "945",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1245",
   Frequency: "6153",
-  Optimized_Sent_Index: "493",
-  Optimized_Voc_Index: "946",
   Furigana: "ドラマ",
   Kana: "ドラマ",
   Kanji: "ドラマ",
+  Optimized_Sent_Index: "493",
+  Optimized_Voc_Index: "946",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1352",
   Frequency: "15403",
-  Optimized_Sent_Index: "735",
-  Optimized_Voc_Index: "947",
   Furigana: "切手[きって]",
   Kana: "きって",
   Kanji: "切手",
+  Optimized_Sent_Index: "735",
+  Optimized_Voc_Index: "947",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1500",
   Frequency: "39733",
-  Optimized_Sent_Index: "853",
-  Optimized_Voc_Index: "948",
   Furigana: "売[う]り 切[き]れる",
   Kana: "うりきれる",
   Kanji: "売り切れる",
+  Optimized_Sent_Index: "853",
+  Optimized_Voc_Index: "948",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1727",
   Frequency: "59086",
-  Optimized_Sent_Index: "737",
-  Optimized_Voc_Index: "949",
   Furigana: "売[う]り 切[き]れ",
   Kana: "うりきれ",
   Kanji: "売り切れ",
+  Optimized_Sent_Index: "737",
+  Optimized_Voc_Index: "949",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1886",
   Frequency: "1813",
-  Optimized_Sent_Index: "1380",
-  Optimized_Voc_Index: "950",
   Furigana: "大切[たいせつ]",
   Kana: "たいせつ",
   Kanji: "大切",
+  Optimized_Sent_Index: "1380",
+  Optimized_Voc_Index: "950",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1246",
   Frequency: "30430",
-  Optimized_Sent_Index: "672",
-  Optimized_Voc_Index: "951",
   Furigana: "ビザ",
   Kana: "ビザ",
   Kanji: "ビザ",
+  Optimized_Sent_Index: "672",
+  Optimized_Voc_Index: "951",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1281",
   Frequency: "6392",
-  Optimized_Sent_Index: "738",
-  Optimized_Voc_Index: "952",
   Furigana: "切符[きっぷ]",
   Kana: "きっぷ",
   Kanji: "切符",
+  Optimized_Sent_Index: "738",
+  Optimized_Voc_Index: "952",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1602",
   Frequency: "36062",
-  Optimized_Sent_Index: "739",
-  Optimized_Voc_Index: "953",
   Furigana: "入場券[にゅうじょうけん]",
   Kana: "にゅうじょうけん",
   Kanji: "入場券",
+  Optimized_Sent_Index: "739",
+  Optimized_Voc_Index: "953",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1054",
   Frequency: "10267",
-  Optimized_Sent_Index: "740",
-  Optimized_Voc_Index: "954",
   Furigana: "家賃[やちん]",
   Kana: "やちん",
   Kanji: "家賃",
+  Optimized_Sent_Index: "740",
+  Optimized_Voc_Index: "954",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "740",
   Frequency: "511",
-  Optimized_Sent_Index: "741",
-  Optimized_Voc_Index: "955",
   Furigana: "時代[じだい]",
   Kana: "じだい",
   Kanji: "時代",
+  Optimized_Sent_Index: "741",
+  Optimized_Voc_Index: "955",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1250",
   Frequency: "1126",
-  Optimized_Sent_Index: "1805",
-  Optimized_Voc_Index: "956",
   Furigana: "ポケット",
   Kana: "ポケット",
   Kanji: "ポケット",
+  Optimized_Sent_Index: "1805",
+  Optimized_Voc_Index: "956",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "876",
   Frequency: "4884",
-  Optimized_Sent_Index: "1648",
-  Optimized_Voc_Index: "957",
   Furigana: "代[か]わる",
   Kana: "かわる",
   Kanji: "代わる",
+  Optimized_Sent_Index: "1648",
+  Optimized_Voc_Index: "957",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1543",
   Frequency: "12705",
-  Optimized_Sent_Index: "774",
-  Optimized_Voc_Index: "958",
   Furigana: "代[か]える",
   Kana: "かえる",
   Kanji: "代える",
+  Optimized_Sent_Index: "774",
+  Optimized_Voc_Index: "958",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1977",
   Frequency: "578",
-  Optimized_Sent_Index: "1302",
-  Optimized_Voc_Index: "959",
   Furigana: "指[ゆび]",
   Kana: "ゆび",
   Kanji: "指",
+  Optimized_Sent_Index: "1302",
+  Optimized_Voc_Index: "959",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "554",
   Frequency: "2533",
-  Optimized_Sent_Index: "1051",
-  Optimized_Voc_Index: "960",
   Furigana: "決定[けってい]",
   Kana: "けってい",
   Kanji: "決定",
+  Optimized_Sent_Index: "1051",
+  Optimized_Voc_Index: "960",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1253",
   Frequency: "1478",
-  Optimized_Sent_Index: "791",
-  Optimized_Voc_Index: "961",
   Furigana: "そろそろ",
   Kana: "そろそろ",
   Kanji: "そろそろ",
+  Optimized_Sent_Index: "791",
+  Optimized_Voc_Index: "961",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "694",
   Frequency: "5562",
-  Optimized_Sent_Index: "1141",
-  Optimized_Voc_Index: "962",
   Furigana: "一定[いってい]",
   Kana: "いってい",
   Kanji: "一定",
+  Optimized_Sent_Index: "1141",
+  Optimized_Voc_Index: "962",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1630",
   Frequency: "40273",
-  Optimized_Sent_Index: "742",
-  Optimized_Voc_Index: "963",
   Furigana: "定期券[ていきけん]",
   Kana: "ていきけん",
   Kanji: "定期券",
+  Optimized_Sent_Index: "742",
+  Optimized_Voc_Index: "963",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "496",
   Frequency: "1755",
-  Optimized_Sent_Index: "743",
-  Optimized_Voc_Index: "964",
   Furigana: "予定[よてい]",
   Kana: "よてい",
   Kanji: "予定",
+  Optimized_Sent_Index: "743",
+  Optimized_Voc_Index: "964",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1437",
   Frequency: "21544",
-  Optimized_Sent_Index: "744",
-  Optimized_Voc_Index: "965",
   Furigana: "天気予報[てんきよほう]",
   Kana: "てんきよほう",
   Kanji: "天気予報",
+  Optimized_Sent_Index: "744",
+  Optimized_Voc_Index: "965",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1254",
   Frequency: "18026",
-  Optimized_Sent_Index: "433",
-  Optimized_Voc_Index: "966",
   Furigana: "ぶどう",
   Kana: "ぶどう",
   Kanji: "ぶどう",
+  Optimized_Sent_Index: "433",
+  Optimized_Voc_Index: "966",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1738",
   Frequency: "38466",
-  Optimized_Sent_Index: "746",
-  Optimized_Voc_Index: "967",
   Furigana: "予習[よしゅう]",
   Kana: "よしゅう",
   Kanji: "予習",
+  Optimized_Sent_Index: "746",
+  Optimized_Voc_Index: "967",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1050",
   Frequency: "7011",
-  Optimized_Sent_Index: "748",
-  Optimized_Voc_Index: "968",
   Furigana: "予約[よやく]",
   Kana: "よやく",
   Kanji: "予約",
+  Optimized_Sent_Index: "748",
+  Optimized_Voc_Index: "968",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "884",
   Frequency: "773",
-  Optimized_Sent_Index: "1394",
-  Optimized_Voc_Index: "969",
   Furigana: "約束[やくそく]",
   Kana: "やくそく",
   Kanji: "約束",
+  Optimized_Sent_Index: "1394",
+  Optimized_Voc_Index: "969",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "478",
   Frequency: "501",
-  Optimized_Sent_Index: "1045",
-  Optimized_Voc_Index: "970",
   Furigana: "変[か]わる",
   Kana: "かわる",
   Kanji: "変わる",
+  Optimized_Sent_Index: "1045",
+  Optimized_Voc_Index: "970",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1261",
   Frequency: "4581",
-  Optimized_Sent_Index: "1495",
-  Optimized_Voc_Index: "971",
   Furigana: "めったに",
   Kana: "めったに",
   Kanji: "めったに",
+  Optimized_Sent_Index: "1495",
+  Optimized_Voc_Index: "971",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "825",
   Frequency: "874",
-  Optimized_Sent_Index: "1399",
-  Optimized_Voc_Index: "972",
   Furigana: "大変[たいへん]",
   Kana: "たいへん",
   Kanji: "大変",
+  Optimized_Sent_Index: "1399",
+  Optimized_Voc_Index: "972",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1439",
   Frequency: "947",
-  Optimized_Sent_Index: "819",
-  Optimized_Voc_Index: "973",
   Furigana: "変[へん]",
   Kana: "へん",
   Kanji: "変",
+  Optimized_Sent_Index: "819",
+  Optimized_Voc_Index: "973",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "504",
   Frequency: "1225",
-  Optimized_Sent_Index: "750",
-  Optimized_Voc_Index: "974",
   Furigana: "変化[へんか]",
   Kana: "へんか",
   Kanji: "変化",
+  Optimized_Sent_Index: "750",
+  Optimized_Voc_Index: "974",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "580",
   Frequency: "6294",
-  Optimized_Sent_Index: "751",
-  Optimized_Voc_Index: "975",
   Furigana: "強化[きょうか]",
   Kana: "きょうか",
   Kanji: "強化",
+  Optimized_Sent_Index: "751",
+  Optimized_Voc_Index: "975",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1270",
   Frequency: "4731",
-  Optimized_Sent_Index: "470",
-  Optimized_Voc_Index: "976",
   Furigana: "クリスマス",
   Kana: "クリスマス",
   Kanji: "クリスマス",
+  Optimized_Sent_Index: "470",
+  Optimized_Voc_Index: "976",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "660",
   Frequency: "1900",
-  Optimized_Sent_Index: "752",
-  Optimized_Voc_Index: "977",
   Furigana: "文化[ぶんか]",
   Kana: "ぶんか",
   Kanji: "文化",
+  Optimized_Sent_Index: "752",
+  Optimized_Voc_Index: "977",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "442",
   Frequency: "2527",
-  Optimized_Sent_Index: "753",
-  Optimized_Voc_Index: "978",
   Furigana: "増[ふ]える",
   Kana: "ふえる",
   Kanji: "増える",
+  Optimized_Sent_Index: "753",
+  Optimized_Voc_Index: "978",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "838",
   Frequency: "9722",
-  Optimized_Sent_Index: "1373",
-  Optimized_Voc_Index: "979",
   Furigana: "増[ふ]やす",
   Kana: "ふやす",
   Kanji: "増やす",
+  Optimized_Sent_Index: "1373",
+  Optimized_Voc_Index: "979",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "509",
   Frequency: "3009",
-  Optimized_Sent_Index: "755",
-  Optimized_Voc_Index: "980",
   Furigana: "減[へ]る",
   Kana: "へる",
   Kanji: "減る",
+  Optimized_Sent_Index: "755",
+  Optimized_Voc_Index: "980",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1271",
   Frequency: "4862",
-  Optimized_Sent_Index: "893",
-  Optimized_Voc_Index: "981",
   Furigana: "ネクタイ",
   Kana: "ネクタイ",
   Kanji: "ネクタイ",
+  Optimized_Sent_Index: "893",
+  Optimized_Voc_Index: "981",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "882",
   Frequency: "10589",
-  Optimized_Sent_Index: "756",
-  Optimized_Voc_Index: "982",
   Furigana: "減[へ]らす",
   Kana: "へらす",
   Kanji: "減らす",
+  Optimized_Sent_Index: "756",
+  Optimized_Voc_Index: "982",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1453",
   Frequency: "17056",
-  Optimized_Sent_Index: "1041",
-  Optimized_Voc_Index: "983",
   Furigana: "乗[の]り 物[もの]",
   Kana: "のりもの",
   Kanji: "乗り物",
+  Optimized_Sent_Index: "1041",
+  Optimized_Voc_Index: "983",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "998",
   Frequency: "684",
-  Optimized_Sent_Index: "776",
-  Optimized_Voc_Index: "984",
   Furigana: "降[お]りる",
   Kana: "おりる",
   Kanji: "降りる",
+  Optimized_Sent_Index: "776",
+  Optimized_Voc_Index: "984",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1624",
   Frequency: "5955",
-  Optimized_Sent_Index: "1014",
-  Optimized_Voc_Index: "985",
   Furigana: "降[お]ろす",
   Kana: "おろす",
   Kanji: "降ろす",
+  Optimized_Sent_Index: "1014",
+  Optimized_Voc_Index: "985",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1277",
   Frequency: "23019",
-  Optimized_Sent_Index: "998",
-  Optimized_Voc_Index: "986",
   Furigana: "バイオリン",
   Kana: "バイオリン",
   Kanji: "バイオリン",
+  Optimized_Sent_Index: "998",
+  Optimized_Voc_Index: "986",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1949",
   Frequency: "1417",
-  Optimized_Sent_Index: "1676",
-  Optimized_Voc_Index: "987",
   Furigana: "降[ふ]る",
   Kana: "ふる",
   Kanji: "降る",
+  Optimized_Sent_Index: "1676",
+  Optimized_Voc_Index: "987",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "877",
   Frequency: "775",
-  Optimized_Sent_Index: "1950",
-  Optimized_Voc_Index: "988",
   Furigana: "着[つ]く",
   Kana: "つく",
   Kanji: "着く",
+  Optimized_Sent_Index: "1950",
+  Optimized_Voc_Index: "988",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1202",
   Frequency: "1986",
-  Optimized_Sent_Index: "991",
-  Optimized_Voc_Index: "989",
   Furigana: "着物[きもの]",
   Kana: "きもの",
   Kanji: "着物",
+  Optimized_Sent_Index: "991",
+  Optimized_Voc_Index: "989",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1359",
   Frequency: "3959",
-  Optimized_Sent_Index: "1281",
-  Optimized_Voc_Index: "990",
   Furigana: "下着[したぎ]",
   Kana: "したぎ",
   Kanji: "下着",
+  Optimized_Sent_Index: "1281",
+  Optimized_Voc_Index: "990",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1278",
   Frequency: "12345",
-  Optimized_Sent_Index: "494",
-  Optimized_Voc_Index: "991",
   Furigana: "パスポート",
   Kana: "パスポート",
   Kanji: "パスポート",
+  Optimized_Sent_Index: "494",
+  Optimized_Voc_Index: "991",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1481",
   Frequency: "3819",
-  Optimized_Sent_Index: "770",
-  Optimized_Voc_Index: "992",
   Furigana: "上着[うわぎ]",
   Kana: "うわぎ",
   Kanji: "上着",
+  Optimized_Sent_Index: "770",
+  Optimized_Voc_Index: "992",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1539",
   Frequency: "4907",
-  Optimized_Sent_Index: "1524",
-  Optimized_Voc_Index: "993",
   Furigana: "着[き]せる",
   Kana: "きせる",
   Kanji: "着せる",
+  Optimized_Sent_Index: "1524",
+  Optimized_Voc_Index: "993",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1451",
   Frequency: "1729",
-  Optimized_Sent_Index: "1960",
-  Optimized_Voc_Index: "994",
   Furigana: "脱[ぬ]ぐ",
   Kana: "ぬぐ",
   Kanji: "脱ぐ",
+  Optimized_Sent_Index: "1960",
+  Optimized_Voc_Index: "994",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "570",
   Frequency: "1221",
-  Optimized_Sent_Index: "1039",
-  Optimized_Voc_Index: "995",
   Furigana: "立場[たちば]",
   Kana: "たちば",
   Kanji: "立場",
+  Optimized_Sent_Index: "1039",
+  Optimized_Voc_Index: "995",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1279",
   Frequency: "3208",
-  Optimized_Sent_Index: "657",
-  Optimized_Voc_Index: "996",
   Furigana: "バッグ",
   Kana: "バッグ",
   Kanji: "バッグ",
+  Optimized_Sent_Index: "657",
+  Optimized_Voc_Index: "996",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "585",
   Frequency: "2282",
-  Optimized_Sent_Index: "1886",
-  Optimized_Voc_Index: "997",
   Furigana: "目立[めだ]つ",
   Kana: "めだつ",
   Kanji: "目立つ",
+  Optimized_Sent_Index: "1886",
+  Optimized_Voc_Index: "997",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "858",
   Frequency: "507",
-  Optimized_Sent_Index: "969",
-  Optimized_Voc_Index: "998",
   Furigana: "立[た]てる",
   Kana: "たてる",
   Kanji: "立てる",
+  Optimized_Sent_Index: "969",
+  Optimized_Voc_Index: "998",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1455",
   Frequency: "2642",
-  Optimized_Sent_Index: "771",
-  Optimized_Voc_Index: "999",
   Furigana: "役[やく]に 立[た]つ",
   Kana: "やくにたつ",
   Kanji: "役に立つ",
+  Optimized_Sent_Index: "771",
+  Optimized_Voc_Index: "999",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "771",
   Frequency: "4382",
-  Optimized_Sent_Index: "1056",
-  Optimized_Voc_Index: "1000",
   Furigana: "出席[しゅっせき]",
   Kana: "しゅっせき",
   Kanji: "出席",
+  Optimized_Sent_Index: "1056",
+  Optimized_Voc_Index: "1000",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1282",
   Frequency: "6578",
-  Optimized_Sent_Index: "1477",
-  Optimized_Voc_Index: "1001",
   Furigana: "ゴム",
   Kana: "ゴム",
   Kanji: "ゴム",
+  Optimized_Sent_Index: "1477",
+  Optimized_Voc_Index: "1001",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "889",
   Frequency: "734",
-  Optimized_Sent_Index: "772",
-  Optimized_Voc_Index: "1002",
   Furigana: "席[せき]",
   Kana: "せき",
   Kanji: "席",
+  Optimized_Sent_Index: "772",
+  Optimized_Voc_Index: "1002",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1218",
   Frequency: "16576",
-  Optimized_Sent_Index: "1918",
-  Optimized_Voc_Index: "1003",
   Furigana: "欠席[けっせき]",
   Kana: "けっせき",
   Kanji: "欠席",
+  Optimized_Sent_Index: "1918",
+  Optimized_Voc_Index: "1003",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1299",
   Frequency: "7913",
-  Optimized_Sent_Index: "777",
-  Optimized_Voc_Index: "1004",
   Furigana: "次男[じなん]",
   Kana: "じなん",
   Kanji: "次男",
+  Optimized_Sent_Index: "777",
+  Optimized_Voc_Index: "1004",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1316",
   Frequency: "19481",
-  Optimized_Sent_Index: "778",
-  Optimized_Voc_Index: "1005",
   Furigana: "次女[じじょ]",
   Kana: "じじょ",
   Kanji: "次女",
+  Optimized_Sent_Index: "778",
+  Optimized_Voc_Index: "1005",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1291",
   Frequency: "9606",
-  Optimized_Sent_Index: "1561",
-  Optimized_Voc_Index: "1006",
   Furigana: "ギター",
   Kana: "ギター",
   Kanji: "ギター",
+  Optimized_Sent_Index: "1561",
+  Optimized_Voc_Index: "1006",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "761",
   Frequency: "628",
-  Optimized_Sent_Index: "780",
-  Optimized_Voc_Index: "1007",
   Furigana: "運[はこ]ぶ",
   Kana: "はこぶ",
   Kanji: "運ぶ",
+  Optimized_Sent_Index: "780",
+  Optimized_Voc_Index: "1007",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "847",
   Frequency: "2801",
-  Optimized_Sent_Index: "891",
-  Optimized_Voc_Index: "1008",
   Furigana: "運転[うんてん]",
   Kana: "うんてん",
   Kanji: "運転",
+  Optimized_Sent_Index: "891",
+  Optimized_Voc_Index: "1008",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1026",
   Frequency: "2184",
-  Optimized_Sent_Index: "978",
-  Optimized_Voc_Index: "1009",
   Furigana: "運転手[うんてんしゅ]",
   Kana: "うんてんしゅ",
   Kanji: "運転手",
+  Optimized_Sent_Index: "978",
+  Optimized_Voc_Index: "1009",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1555",
   Frequency: "5733",
-  Optimized_Sent_Index: "1923",
-  Optimized_Voc_Index: "1010",
   Furigana: "転[ころ]ぶ",
   Kana: "ころぶ",
   Kanji: "転ぶ",
+  Optimized_Sent_Index: "1923",
+  Optimized_Voc_Index: "1010",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1300",
   Frequency: "6879",
-  Optimized_Sent_Index: "1292",
-  Optimized_Voc_Index: "1011",
   Furigana: "セーター",
   Kana: "セーター",
   Kanji: "セーター",
+  Optimized_Sent_Index: "1292",
+  Optimized_Voc_Index: "1011",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "800",
   Frequency: "1667",
-  Optimized_Sent_Index: "963",
-  Optimized_Voc_Index: "1012",
   Furigana: "移[うつ]る",
   Kana: "うつる",
   Kanji: "移る",
+  Optimized_Sent_Index: "963",
+  Optimized_Voc_Index: "1012",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "872",
   Frequency: "2081",
-  Optimized_Sent_Index: "1845",
-  Optimized_Voc_Index: "1013",
   Furigana: "移[うつ]す",
   Kana: "うつす",
   Kanji: "移す",
+  Optimized_Sent_Index: "1845",
+  Optimized_Voc_Index: "1013",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "466",
   Frequency: "876",
-  Optimized_Sent_Index: "1167",
-  Optimized_Voc_Index: "1014",
   Furigana: "動[うご]き",
   Kana: "うごき",
   Kanji: "動き",
+  Optimized_Sent_Index: "1167",
+  Optimized_Voc_Index: "1014",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "608",
   Frequency: "2340",
-  Optimized_Sent_Index: "950",
-  Optimized_Voc_Index: "1015",
   Furigana: "運動[うんどう]",
   Kana: "うんどう",
   Kanji: "運動",
+  Optimized_Sent_Index: "950",
+  Optimized_Voc_Index: "1015",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1306",
   Frequency: "582",
-  Optimized_Sent_Index: "874",
-  Optimized_Voc_Index: "1016",
   Furigana: "やっぱり",
   Kana: "やっぱり",
   Kanji: "やっぱり",
+  Optimized_Sent_Index: "874",
+  Optimized_Voc_Index: "1016",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "692",
   Frequency: "2105",
-  Optimized_Sent_Index: "1547",
-  Optimized_Voc_Index: "1017",
   Furigana: "活動[かつどう]",
   Kana: "かつどう",
   Kanji: "活動",
+  Optimized_Sent_Index: "1547",
+  Optimized_Voc_Index: "1017",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "793",
   Frequency: "1609",
-  Optimized_Sent_Index: "784",
-  Optimized_Voc_Index: "1018",
   Furigana: "動物[どうぶつ]",
   Kana: "どうぶつ",
   Kanji: "動物",
+  Optimized_Sent_Index: "784",
+  Optimized_Voc_Index: "1018",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "886",
   Frequency: "866",
-  Optimized_Sent_Index: "1108",
-  Optimized_Voc_Index: "1019",
   Furigana: "動[うご]かす",
   Kana: "うごかす",
   Kanji: "動かす",
+  Optimized_Sent_Index: "1108",
+  Optimized_Voc_Index: "1019",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1998",
   Frequency: "15511",
-  Optimized_Sent_Index: "896",
-  Optimized_Voc_Index: "1020",
   Furigana: "不動産屋[ふどうさんや]",
   Kana: "ふどうさんや",
   Kanji: "不動産屋",
+  Optimized_Sent_Index: "896",
+  Optimized_Voc_Index: "1020",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1311",
   Frequency: "2528",
-  Optimized_Sent_Index: "465",
-  Optimized_Voc_Index: "1021",
   Furigana: "カーテン",
   Kana: "カーテン",
   Kanji: "カーテン",
+  Optimized_Sent_Index: "465",
+  Optimized_Voc_Index: "1021",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "845",
   Frequency: "32424",
-  Optimized_Sent_Index: "785",
-  Optimized_Voc_Index: "1022",
   Furigana: "早[はや]く",
   Kana: "はやく",
   Kanji: "早く",
+  Optimized_Sent_Index: "785",
+  Optimized_Voc_Index: "1022",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1593",
   Frequency: "5779",
-  Optimized_Sent_Index: "1012",
-  Optimized_Voc_Index: "1023",
   Furigana: "早口[はやくち]",
   Kana: "はやくち",
   Kanji: "早口",
+  Optimized_Sent_Index: "1012",
+  Optimized_Voc_Index: "1023",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1222",
   Frequency: "117780",
-  Optimized_Sent_Index: "1572",
-  Optimized_Voc_Index: "1024",
   Furigana: "速[はや]さ",
   Kana: "はやさ",
   Kanji: "速さ",
+  Optimized_Sent_Index: "1572",
+  Optimized_Voc_Index: "1024",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1732",
   Frequency: "27275",
-  Optimized_Sent_Index: "786",
-  Optimized_Voc_Index: "1025",
   Furigana: "速達[そくたつ]",
   Kana: "そくたつ",
   Kanji: "速達",
+  Optimized_Sent_Index: "786",
+  Optimized_Voc_Index: "1025",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1313",
   Frequency: "2826",
-  Optimized_Sent_Index: "716",
-  Optimized_Voc_Index: "1026",
   Furigana: "シャツ",
   Kana: "シャツ",
   Kanji: "シャツ",
+  Optimized_Sent_Index: "716",
+  Optimized_Voc_Index: "1026",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "797",
   Frequency: "2114",
-  Optimized_Sent_Index: "962",
-  Optimized_Voc_Index: "1027",
   Furigana: "遅[おく]れる",
   Kana: "おくれる",
   Kanji: "遅れる",
+  Optimized_Sent_Index: "962",
+  Optimized_Voc_Index: "1027",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "513",
   Frequency: "2235",
-  Optimized_Sent_Index: "787",
-  Optimized_Voc_Index: "1028",
   Furigana: "開始[かいし]",
   Kana: "かいし",
   Kanji: "開始",
+  Optimized_Sent_Index: "787",
+  Optimized_Voc_Index: "1028",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1996",
   Frequency: "",
-  Optimized_Sent_Index: "793",
-  Optimized_Voc_Index: "1029",
   Furigana: "始[はじ]めに",
   Kana: "はじめに",
   Kanji: "始めに",
+  Optimized_Sent_Index: "793",
+  Optimized_Voc_Index: "1029",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "407",
   Frequency: "820",
-  Optimized_Sent_Index: "796",
-  Optimized_Voc_Index: "1030",
   Furigana: "現在[げんざい]",
   Kana: "げんざい",
   Kanji: "現在",
+  Optimized_Sent_Index: "796",
+  Optimized_Voc_Index: "1030",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1314",
   Frequency: "1646",
-  Optimized_Sent_Index: "734",
-  Optimized_Voc_Index: "1031",
   Furigana: "ナイフ",
   Kana: "ナイフ",
   Kanji: "ナイフ",
+  Optimized_Sent_Index: "734",
+  Optimized_Voc_Index: "1031",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "464",
   Frequency: "3495",
-  Optimized_Sent_Index: "1531",
-  Optimized_Voc_Index: "1032",
   Furigana: "実現[じつげん]",
   Kana: "じつげん",
   Kanji: "実現",
+  Optimized_Sent_Index: "1531",
+  Optimized_Voc_Index: "1032",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "512",
   Frequency: "9793",
-  Optimized_Sent_Index: "797",
-  Optimized_Voc_Index: "1033",
   Furigana: "実施[じっし]",
   Kana: "じっし",
   Kanji: "実施",
+  Optimized_Sent_Index: "797",
+  Optimized_Voc_Index: "1033",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "553",
   Frequency: "498",
-  Optimized_Sent_Index: "798",
-  Optimized_Voc_Index: "1034",
   Furigana: "事実[じじつ]",
   Kana: "じじつ",
   Kanji: "事実",
+  Optimized_Sent_Index: "798",
+  Optimized_Voc_Index: "1034",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "629",
   Frequency: "2682",
-  Optimized_Sent_Index: "952",
-  Optimized_Voc_Index: "1035",
   Furigana: "実行[じっこう]",
   Kana: "じっこう",
   Kanji: "実行",
+  Optimized_Sent_Index: "952",
+  Optimized_Voc_Index: "1035",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1318",
   Frequency: "6262",
-  Optimized_Sent_Index: "924",
-  Optimized_Voc_Index: "1036",
   Furigana: "バイク",
   Kana: "バイク",
   Kanji: "バイク",
+  Optimized_Sent_Index: "924",
+  Optimized_Voc_Index: "1036",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "720",
   Frequency: "3041",
-  Optimized_Sent_Index: "1654",
-  Optimized_Voc_Index: "1037",
   Furigana: "実験[じっけん]",
   Kana: "じっけん",
   Kanji: "実験",
+  Optimized_Sent_Index: "1654",
+  Optimized_Voc_Index: "1037",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "704",
   Frequency: "3666",
-  Optimized_Sent_Index: "799",
-  Optimized_Voc_Index: "1038",
   Furigana: "通過[つうか]",
   Kana: "つうか",
   Kanji: "通過",
+  Optimized_Sent_Index: "799",
+  Optimized_Voc_Index: "1038",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "818",
   Frequency: "583",
-  Optimized_Sent_Index: "800",
-  Optimized_Voc_Index: "1039",
   Furigana: "過[す]ぎる",
   Kana: "すぎる",
   Kanji: "過ぎる",
+  Optimized_Sent_Index: "800",
+  Optimized_Voc_Index: "1039",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1942",
   Frequency: "14591",
-  Optimized_Sent_Index: "1029",
-  Optimized_Voc_Index: "1040",
   Furigana: "昼過[ひるす]ぎ",
   Kana: "ひるすぎ",
   Kanji: "昼過ぎ",
+  Optimized_Sent_Index: "1029",
+  Optimized_Voc_Index: "1040",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1320",
   Frequency: "1230",
-  Optimized_Sent_Index: "1846",
-  Optimized_Voc_Index: "1041",
   Furigana: "いつか",
   Kana: "いつか",
   Kanji: "いつか",
+  Optimized_Sent_Index: "1846",
+  Optimized_Voc_Index: "1041",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "656",
   Frequency: "1307",
-  Optimized_Sent_Index: "801",
-  Optimized_Voc_Index: "1042",
   Furigana: "過去[かこ]",
   Kana: "かこ",
   Kanji: "過去",
+  Optimized_Sent_Index: "801",
+  Optimized_Voc_Index: "1042",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "402",
   Frequency: "2798",
-  Optimized_Sent_Index: "1060",
-  Optimized_Voc_Index: "1043",
   Furigana: "開発[かいはつ]",
   Kana: "かいはつ",
   Kanji: "開発",
+  Optimized_Sent_Index: "1060",
+  Optimized_Voc_Index: "1043",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "591",
   Frequency: "2318",
-  Optimized_Sent_Index: "802",
-  Optimized_Voc_Index: "1044",
   Furigana: "発生[はっせい]",
   Kana: "はっせい",
   Kanji: "発生",
+  Optimized_Sent_Index: "802",
+  Optimized_Voc_Index: "1044",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "686",
   Frequency: "3129",
-  Optimized_Sent_Index: "1055",
-  Optimized_Voc_Index: "1045",
   Furigana: "発言[はつげん]",
   Kana: "はつげん",
   Kanji: "発言",
+  Optimized_Sent_Index: "1055",
+  Optimized_Voc_Index: "1045",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1321",
   Frequency: "9985",
-  Optimized_Sent_Index: "434",
-  Optimized_Voc_Index: "1046",
   Furigana: "オレンジ",
   Kana: "オレンジ",
   Kanji: "オレンジ",
+  Optimized_Sent_Index: "434",
+  Optimized_Voc_Index: "1046",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "712",
   Frequency: "751",
-  Optimized_Sent_Index: "1306",
-  Optimized_Voc_Index: "1047",
   Furigana: "発見[はっけん]",
   Kana: "はっけん",
   Kanji: "発見",
+  Optimized_Sent_Index: "1306",
+  Optimized_Voc_Index: "1047",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "885",
   Frequency: "1476",
-  Optimized_Sent_Index: "803",
-  Optimized_Voc_Index: "1048",
   Furigana: "出発[しゅっぱつ]",
   Kana: "しゅっぱつ",
   Kanji: "出発",
+  Optimized_Sent_Index: "803",
+  Optimized_Voc_Index: "1048",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1512",
   Frequency: "11086",
-  Optimized_Sent_Index: "804",
-  Optimized_Voc_Index: "1049",
   Furigana: "発車[はっしゃ]",
   Kana: "はっしゃ",
   Kanji: "発車",
+  Optimized_Sent_Index: "804",
+  Optimized_Voc_Index: "1049",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "412",
   Frequency: "1893",
-  Optimized_Sent_Index: "940",
-  Optimized_Voc_Index: "1050",
   Furigana: "発表[はっぴょう]",
   Kana: "はっぴょう",
   Kanji: "発表",
+  Optimized_Sent_Index: "940",
+  Optimized_Voc_Index: "1050",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1323",
   Frequency: "2923",
-  Optimized_Sent_Index: "414",
-  Optimized_Voc_Index: "1051",
   Furigana: "きつい",
   Kana: "きつい",
   Kanji: "きつい",
+  Optimized_Sent_Index: "414",
+  Optimized_Voc_Index: "1051",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "494",
   Frequency: "1537",
-  Optimized_Sent_Index: "1038",
-  Optimized_Voc_Index: "1052",
   Furigana: "表現[ひょうげん]",
   Kana: "ひょうげん",
   Kanji: "表現",
+  Optimized_Sent_Index: "1038",
+  Optimized_Voc_Index: "1052",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "557",
   Frequency: "2635",
-  Optimized_Sent_Index: "948",
-  Optimized_Voc_Index: "1053",
   Furigana: "代表[だいひょう]",
   Kana: "だいひょう",
   Kanji: "代表",
+  Optimized_Sent_Index: "948",
+  Optimized_Voc_Index: "1053",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1830",
   Frequency: "1410",
-  Optimized_Sent_Index: "806",
-  Optimized_Voc_Index: "1054",
   Furigana: "表[おもて]",
   Kana: "おもて",
   Kanji: "表",
+  Optimized_Sent_Index: "806",
+  Optimized_Voc_Index: "1054",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1941",
   Frequency: "1410",
-  Optimized_Sent_Index: "807",
-  Optimized_Voc_Index: "1055",
   Furigana: "表[ひょう]",
   Kana: "ひょう",
   Kanji: "表",
+  Optimized_Sent_Index: "807",
+  Optimized_Voc_Index: "1055",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1333",
   Frequency: "495",
-  Optimized_Sent_Index: "1165",
-  Optimized_Voc_Index: "1056",
   Furigana: "さっき",
   Kana: "さっき",
   Kanji: "さっき",
+  Optimized_Sent_Index: "1165",
+  Optimized_Voc_Index: "1056",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "782",
   Frequency: "509",
-  Optimized_Sent_Index: "808",
-  Optimized_Voc_Index: "1057",
   Furigana: "手紙[てがみ]",
   Kana: "てがみ",
   Kanji: "手紙",
+  Optimized_Sent_Index: "808",
+  Optimized_Voc_Index: "1057",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1009",
   Frequency: "778",
-  Optimized_Sent_Index: "830",
-  Optimized_Voc_Index: "1058",
   Furigana: "絵[え]",
   Kana: "え",
   Kanji: "絵",
+  Optimized_Sent_Index: "830",
+  Optimized_Voc_Index: "1058",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "841",
   Frequency: "1688",
-  Optimized_Sent_Index: "812",
-  Optimized_Voc_Index: "1059",
   Furigana: "雑誌[ざっし]",
   Kana: "ざっし",
   Kanji: "雑誌",
+  Optimized_Sent_Index: "812",
+  Optimized_Voc_Index: "1059",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "708",
   Frequency: "186",
-  Optimized_Sent_Index: "814",
-  Optimized_Voc_Index: "1060",
   Furigana: "音[おと]",
   Kana: "おと",
   Kanji: "音",
+  Optimized_Sent_Index: "814",
+  Optimized_Voc_Index: "1060",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1335",
   Frequency: "14868",
-  Optimized_Sent_Index: "498",
-  Optimized_Voc_Index: "1061",
   Furigana: "テキスト",
   Kana: "テキスト",
   Kanji: "テキスト",
+  Optimized_Sent_Index: "498",
+  Optimized_Voc_Index: "1061",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1995",
   Frequency: "186",
-  Optimized_Sent_Index: "820",
-  Optimized_Voc_Index: "1062",
   Furigana: "音[おと]",
   Kana: "おと",
   Kanji: "音",
+  Optimized_Sent_Index: "820",
+  Optimized_Voc_Index: "1062",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "810",
   Frequency: "1568",
-  Optimized_Sent_Index: "822",
-  Optimized_Voc_Index: "1063",
   Furigana: "音楽[おんがく]",
   Kana: "おんがく",
   Kanji: "音楽",
+  Optimized_Sent_Index: "822",
+  Optimized_Voc_Index: "1063",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1021",
   Frequency: "1435",
-  Optimized_Sent_Index: "824",
-  Optimized_Voc_Index: "1064",
   Furigana: "薬[くすり]",
   Kana: "くすり",
   Kanji: "薬",
+  Optimized_Sent_Index: "824",
+  Optimized_Voc_Index: "1064",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "880",
   Frequency: "805",
-  Optimized_Sent_Index: "825",
-  Optimized_Voc_Index: "1065",
   Furigana: "歌[うた]",
   Kana: "うた",
   Kanji: "歌",
+  Optimized_Sent_Index: "825",
+  Optimized_Voc_Index: "1065",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1336",
   Frequency: "12519",
-  Optimized_Sent_Index: "1800",
-  Optimized_Voc_Index: "1066",
   Furigana: "ビニール 袋[ぶくろ]",
   Kana: "ビニールぶくろ",
   Kanji: "ビニール袋",
+  Optimized_Sent_Index: "1800",
+  Optimized_Voc_Index: "1066",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1833",
   Frequency: "7818",
-  Optimized_Sent_Index: "826",
-  Optimized_Voc_Index: "1067",
   Furigana: "歌手[かしゅ]",
   Kana: "かしゅ",
   Kanji: "歌手",
+  Optimized_Sent_Index: "826",
+  Optimized_Voc_Index: "1067",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1618",
   Frequency: "",
-  Optimized_Sent_Index: "828",
-  Optimized_Voc_Index: "1068",
   Furigana: "欲[ほ]しがる",
   Kana: "ほしがる",
   Kanji: "欲しがる",
+  Optimized_Sent_Index: "828",
+  Optimized_Voc_Index: "1068",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "440",
   Frequency: "1033",
-  Optimized_Sent_Index: "943",
-  Optimized_Voc_Index: "1069",
   Furigana: "計画[けいかく]",
   Kana: "けいかく",
   Kanji: "計画",
+  Optimized_Sent_Index: "943",
+  Optimized_Voc_Index: "1069",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "755",
   Frequency: "1190",
-  Optimized_Sent_Index: "960",
-  Optimized_Voc_Index: "1070",
   Furigana: "映画[えいが]",
   Kana: "えいが",
   Kanji: "映画",
+  Optimized_Sent_Index: "960",
+  Optimized_Voc_Index: "1070",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1337",
   Frequency: "16818",
-  Optimized_Sent_Index: "401",
-  Optimized_Voc_Index: "1071",
   Furigana: "りんご",
   Kana: "りんご",
   Kanji: "りんご",
+  Optimized_Sent_Index: "401",
+  Optimized_Voc_Index: "1071",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1013",
   Frequency: "893",
-  Optimized_Sent_Index: "833",
-  Optimized_Voc_Index: "1072",
   Furigana: "面白[おもしろ]い",
   Kana: "おもしろい",
   Kanji: "面白い",
+  Optimized_Sent_Index: "833",
+  Optimized_Voc_Index: "1072",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1303",
   Frequency: "6756",
-  Optimized_Sent_Index: "836",
-  Optimized_Voc_Index: "1073",
   Furigana: "写[うつ]る",
   Kana: "うつる",
   Kanji: "写る",
+  Optimized_Sent_Index: "836",
+  Optimized_Voc_Index: "1073",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1458",
   Frequency: "7101",
-  Optimized_Sent_Index: "1066",
-  Optimized_Voc_Index: "1074",
   Furigana: "写[うつ]す",
   Kana: "うつす",
   Kanji: "写す",
+  Optimized_Sent_Index: "1066",
+  Optimized_Voc_Index: "1074",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "569",
   Frequency: "661",
-  Optimized_Sent_Index: "837",
-  Optimized_Voc_Index: "1075",
   Furigana: "写真[しゃしん]",
   Kana: "しゃしん",
   Kanji: "写真",
+  Optimized_Sent_Index: "837",
+  Optimized_Voc_Index: "1075",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1338",
   Frequency: "10074",
-  Optimized_Sent_Index: "1000",
-  Optimized_Voc_Index: "1076",
   Furigana: "アルバム",
   Kana: "アルバム",
   Kanji: "アルバム",
+  Optimized_Sent_Index: "1000",
+  Optimized_Voc_Index: "1076",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1200",
   Frequency: "2982",
-  Optimized_Sent_Index: "1195",
-  Optimized_Voc_Index: "1077",
   Furigana: "真[ま]っ 赤[か]",
   Kana: "まっか",
   Kanji: "真っ赤",
+  Optimized_Sent_Index: "1195",
+  Optimized_Voc_Index: "1077",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1266",
   Frequency: "2957",
-  Optimized_Sent_Index: "996",
-  Optimized_Voc_Index: "1078",
   Furigana: "真面目[まじめ]",
   Kana: "まじめ",
   Kanji: "真面目",
+  Optimized_Sent_Index: "996",
+  Optimized_Voc_Index: "1078",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1369",
   Frequency: "3705",
-  Optimized_Sent_Index: "838",
-  Optimized_Voc_Index: "1079",
   Furigana: "真[ま]ん 中[なか]",
   Kana: "まんなか",
   Kanji: "真ん中",
+  Optimized_Sent_Index: "838",
+  Optimized_Voc_Index: "1079",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1403",
   Frequency: "5829",
-  Optimized_Sent_Index: "839",
-  Optimized_Voc_Index: "1080",
   Furigana: "真[ま]っ 白[しろ]",
   Kana: "まっしろ",
   Kanji: "真っ白",
+  Optimized_Sent_Index: "839",
+  Optimized_Voc_Index: "1080",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1343",
   Frequency: "3343",
-  Optimized_Sent_Index: "1001",
-  Optimized_Voc_Index: "1081",
   Furigana: "スカート",
   Kana: "スカート",
   Kanji: "スカート",
+  Optimized_Sent_Index: "1001",
+  Optimized_Voc_Index: "1081",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1498",
   Frequency: "6567",
-  Optimized_Sent_Index: "840",
-  Optimized_Voc_Index: "1082",
   Furigana: "真[ま]っ 暗[くら]",
   Kana: "まっくら",
   Kanji: "真っ暗",
+  Optimized_Sent_Index: "840",
+  Optimized_Voc_Index: "1082",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1550",
   Frequency: "8388",
-  Optimized_Sent_Index: "841",
-  Optimized_Voc_Index: "1083",
   Furigana: "真[ま]っ 黒[くろ]",
   Kana: "まっくろ",
   Kanji: "真っ黒",
+  Optimized_Sent_Index: "841",
+  Optimized_Voc_Index: "1083",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1707",
   Frequency: "10542",
-  Optimized_Sent_Index: "842",
-  Optimized_Voc_Index: "1084",
   Furigana: "真[ま]っ 青[さお]",
   Kana: "まっさお",
   Kanji: "真っ青",
+  Optimized_Sent_Index: "842",
+  Optimized_Voc_Index: "1084",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1623",
   Frequency: "2864",
-  Optimized_Sent_Index: "1013",
-  Optimized_Voc_Index: "1085",
   Furigana: "色々[いろいろ]",
   Kana: "いろいろ",
   Kanji: "色々",
+  Optimized_Sent_Index: "1013",
+  Optimized_Voc_Index: "1085",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1345",
   Frequency: "5393",
-  Optimized_Sent_Index: "720",
-  Optimized_Voc_Index: "1086",
   Furigana: "ペン",
   Kana: "ペン",
   Kanji: "ペン",
+  Optimized_Sent_Index: "720",
+  Optimized_Voc_Index: "1086",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1135",
   Frequency: "1645",
-  Optimized_Sent_Index: "983",
-  Optimized_Voc_Index: "1087",
   Furigana: "人形[にんぎょう]",
   Kana: "にんぎょう",
   Kanji: "人形",
+  Optimized_Sent_Index: "983",
+  Optimized_Voc_Index: "1087",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1836",
   Frequency: "519",
-  Optimized_Sent_Index: "1991",
-  Optimized_Voc_Index: "1088",
   Furigana: "形[かたち]",
   Kana: "かたち",
   Kanji: "形",
+  Optimized_Sent_Index: "1991",
+  Optimized_Voc_Index: "1088",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "743",
   Frequency: "4392",
-  Optimized_Sent_Index: "848",
-  Optimized_Voc_Index: "1089",
   Furigana: "大型[おおがた]",
   Kana: "おおがた",
   Kanji: "大型",
+  Optimized_Sent_Index: "848",
+  Optimized_Voc_Index: "1089",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "579",
   Frequency: "2226",
-  Optimized_Sent_Index: "850",
-  Optimized_Voc_Index: "1090",
   Furigana: "種類[しゅるい]",
   Kana: "しゅるい",
   Kanji: "種類",
+  Optimized_Sent_Index: "850",
+  Optimized_Voc_Index: "1090",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1351",
   Frequency: "4842",
-  Optimized_Sent_Index: "918",
-  Optimized_Voc_Index: "1091",
   Furigana: "おしゃべり",
   Kana: "おしゃべり",
   Kanji: "おしゃべり",
+  Optimized_Sent_Index: "918",
+  Optimized_Voc_Index: "1091",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "637",
   Frequency: "1455",
-  Optimized_Sent_Index: "851",
-  Optimized_Voc_Index: "1092",
   Furigana: "直[なお]す",
   Kana: "なおす",
   Kanji: "直す",
+  Optimized_Sent_Index: "851",
+  Optimized_Voc_Index: "1092",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1479",
   Frequency: "8147",
-  Optimized_Sent_Index: "852",
-  Optimized_Voc_Index: "1093",
   Furigana: "真[ま]っ 直[す]ぐ",
   Kana: "まっすぐ",
   Kanji: "真っ直ぐ",
+  Optimized_Sent_Index: "852",
+  Optimized_Voc_Index: "1093",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "658",
   Frequency: "1491",
-  Optimized_Sent_Index: "1144",
-  Optimized_Voc_Index: "1094",
   Furigana: "直接[ちょくせつ]",
   Kana: "ちょくせつ",
   Kanji: "直接",
+  Optimized_Sent_Index: "1144",
+  Optimized_Voc_Index: "1094",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1597",
   Frequency: "1358",
-  Optimized_Sent_Index: "860",
-  Optimized_Voc_Index: "1095",
   Furigana: "角[かど]",
   Kana: "かど",
   Kanji: "角",
+  Optimized_Sent_Index: "860",
+  Optimized_Voc_Index: "1095",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1357",
   Frequency: "450",
-  Optimized_Sent_Index: "761",
-  Optimized_Voc_Index: "1096",
   Furigana: "きっと",
   Kana: "きっと",
   Kanji: "きっと",
+  Optimized_Sent_Index: "761",
+  Optimized_Voc_Index: "1096",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1599",
   Frequency: "10769",
-  Optimized_Sent_Index: "854",
-  Optimized_Voc_Index: "1097",
   Furigana: "三角[さんかく]",
   Kana: "さんかく",
   Kanji: "三角",
+  Optimized_Sent_Index: "854",
+  Optimized_Voc_Index: "1097",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1627",
   Frequency: "12324",
-  Optimized_Sent_Index: "855",
-  Optimized_Voc_Index: "1098",
   Furigana: "四角[しかく]",
   Kana: "しかく",
   Kanji: "四角",
+  Optimized_Sent_Index: "855",
+  Optimized_Voc_Index: "1098",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1628",
   Frequency: "6802",
-  Optimized_Sent_Index: "856",
-  Optimized_Voc_Index: "1099",
   Furigana: "四角[しかく]い",
   Kana: "しかくい",
   Kanji: "四角い",
+  Optimized_Sent_Index: "856",
+  Optimized_Voc_Index: "1099",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1982",
   Frequency: "40997",
-  Optimized_Sent_Index: "861",
-  Optimized_Voc_Index: "1100",
   Furigana: "四[よ]つ 角[かど]",
   Kana: "よつかど",
   Kanji: "四つ角",
+  Optimized_Sent_Index: "861",
+  Optimized_Voc_Index: "1100",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1375",
   Frequency: "7660",
-  Optimized_Sent_Index: "1367",
-  Optimized_Voc_Index: "1101",
   Furigana: "メニュー",
   Kana: "メニュー",
   Kanji: "メニュー",
+  Optimized_Sent_Index: "1367",
+  Optimized_Voc_Index: "1101",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "999",
   Frequency: "1557",
-  Optimized_Sent_Index: "857",
-  Optimized_Voc_Index: "1102",
   Furigana: "曲[きょく]",
   Kana: "きょく",
   Kanji: "曲",
+  Optimized_Sent_Index: "857",
+  Optimized_Voc_Index: "1102",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1355",
   Frequency: "4689",
-  Optimized_Sent_Index: "858",
-  Optimized_Voc_Index: "1103",
   Furigana: "曲[ま]げる",
   Kana: "まげる",
   Kanji: "曲げる",
+  Optimized_Sent_Index: "858",
+  Optimized_Voc_Index: "1103",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1986",
   Frequency: "18547",
-  Optimized_Sent_Index: "862",
-  Optimized_Voc_Index: "1104",
   Furigana: "曲[ま]がり 角[かど]",
   Kana: "まがりかど",
   Kanji: "曲がり角",
+  Optimized_Sent_Index: "862",
+  Optimized_Voc_Index: "1104",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "681",
   Frequency: "1311",
-  Optimized_Sent_Index: "957",
-  Optimized_Voc_Index: "1105",
   Furigana: "同様[どうよう]",
   Kana: "どうよう",
   Kanji: "同様",
+  Optimized_Sent_Index: "957",
+  Optimized_Voc_Index: "1105",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1376",
   Frequency: "12533",
-  Optimized_Sent_Index: "928",
-  Optimized_Voc_Index: "1106",
   Furigana: "アイスクリーム",
   Kana: "アイスクリーム",
   Kanji: "アイスクリーム",
+  Optimized_Sent_Index: "928",
+  Optimized_Voc_Index: "1106",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1210",
   Frequency: "1209",
-  Optimized_Sent_Index: "865",
-  Optimized_Voc_Index: "1107",
   Furigana: "間違[まちが]い",
   Kana: "まちがい",
   Kanji: "間違い",
+  Optimized_Sent_Index: "865",
+  Optimized_Voc_Index: "1107",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1374",
   Frequency: "4641",
-  Optimized_Sent_Index: "866",
-  Optimized_Voc_Index: "1108",
   Furigana: "間違[まちが]える",
   Kana: "まちがえる",
   Kanji: "間違える",
+  Optimized_Sent_Index: "866",
+  Optimized_Voc_Index: "1108",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1444",
   Frequency: "2749",
-  Optimized_Sent_Index: "867",
-  Optimized_Voc_Index: "1109",
   Furigana: "間違[まちが]う",
   Kana: "まちがう",
   Kanji: "間違う",
+  Optimized_Sent_Index: "867",
+  Optimized_Voc_Index: "1109",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1994",
   Frequency: "",
-  Optimized_Sent_Index: "905",
-  Optimized_Voc_Index: "1110",
   Furigana: "似[に]ている",
   Kana: "にている",
   Kanji: "似ている",
+  Optimized_Sent_Index: "905",
+  Optimized_Voc_Index: "1110",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1377",
   Frequency: "14089",
-  Optimized_Sent_Index: "428",
-  Optimized_Voc_Index: "1111",
   Furigana: "おしゃれ",
   Kana: "おしゃれ",
   Kanji: "おしゃれ",
+  Optimized_Sent_Index: "428",
+  Optimized_Voc_Index: "1111",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "430",
   Frequency: "251",
-  Optimized_Sent_Index: "1122",
-  Optimized_Voc_Index: "1112",
   Furigana: "以上[いじょう]",
   Kana: "いじょう",
   Kanji: "以上",
+  Optimized_Sent_Index: "1122",
+  Optimized_Voc_Index: "1112",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "809",
   Frequency: "1589",
-  Optimized_Sent_Index: "964",
-  Optimized_Voc_Index: "1113",
   Furigana: "旅行[りょこう]",
   Kana: "りょこう",
   Kanji: "旅行",
+  Optimized_Sent_Index: "964",
+  Optimized_Voc_Index: "1113",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "896",
   Frequency: "9270",
-  Optimized_Sent_Index: "1212",
-  Optimized_Voc_Index: "1114",
   Furigana: "大使館[たいしかん]",
   Kana: "たいしかん",
   Kanji: "大使館",
+  Optimized_Sent_Index: "1212",
+  Optimized_Voc_Index: "1114",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1153",
   Frequency: "3321",
-  Optimized_Sent_Index: "878",
-  Optimized_Voc_Index: "1115",
   Furigana: "旅館[りょかん]",
   Kana: "りょかん",
   Kanji: "旅館",
+  Optimized_Sent_Index: "878",
+  Optimized_Voc_Index: "1115",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1380",
   Frequency: "8151",
-  Optimized_Sent_Index: "1461",
-  Optimized_Voc_Index: "1116",
   Furigana: "ジュース",
   Kana: "ジュース",
   Kanji: "ジュース",
+  Optimized_Sent_Index: "1461",
+  Optimized_Voc_Index: "1116",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1212",
   Frequency: "8950",
-  Optimized_Sent_Index: "992",
-  Optimized_Voc_Index: "1117",
   Furigana: "映画館[えいがかん]",
   Kana: "えいがかん",
   Kanji: "映画館",
+  Optimized_Sent_Index: "992",
+  Optimized_Voc_Index: "1117",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1334",
   Frequency: "10531",
-  Optimized_Sent_Index: "1371",
-  Optimized_Voc_Index: "1118",
   Furigana: "宿題[しゅくだい]",
   Kana: "しゅくだい",
   Kanji: "宿題",
+  Optimized_Sent_Index: "1371",
+  Optimized_Voc_Index: "1118",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1832",
   Frequency: "8536",
-  Optimized_Sent_Index: "879",
-  Optimized_Voc_Index: "1119",
   Furigana: "泊[と]める",
   Kana: "とめる",
   Kanji: "泊める",
+  Optimized_Sent_Index: "879",
+  Optimized_Voc_Index: "1119",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1000",
   Frequency: "1465",
-  Optimized_Sent_Index: "1149",
-  Optimized_Voc_Index: "1120",
   Furigana: "遊[あそ]び",
   Kana: "あそび",
   Kanji: "遊び",
+  Optimized_Sent_Index: "1149",
+  Optimized_Voc_Index: "1120",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1382",
   Frequency: "5177",
-  Optimized_Sent_Index: "528",
-  Optimized_Voc_Index: "1121",
   Furigana: "ゼロ",
   Kana: "ゼロ",
   Kanji: "ゼロ",
+  Optimized_Sent_Index: "528",
+  Optimized_Voc_Index: "1121",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1239",
   Frequency: "5191",
-  Optimized_Sent_Index: "883",
-  Optimized_Voc_Index: "1122",
   Furigana: "洋服[ようふく]",
   Kana: "ようふく",
   Kanji: "洋服",
+  Optimized_Sent_Index: "883",
+  Optimized_Voc_Index: "1122",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "902",
   Frequency: "1753",
-  Optimized_Sent_Index: "884",
-  Optimized_Voc_Index: "1123",
   Furigana: "教室[きょうしつ]",
   Kana: "きょうしつ",
   Kanji: "教室",
+  Optimized_Sent_Index: "884",
+  Optimized_Voc_Index: "1123",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1601",
   Frequency: "12187",
-  Optimized_Sent_Index: "885",
-  Optimized_Voc_Index: "1124",
   Furigana: "図書室[としょしつ]",
   Kana: "としょしつ",
   Kanji: "図書室",
+  Optimized_Sent_Index: "885",
+  Optimized_Voc_Index: "1124",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "830",
   Frequency: "402",
-  Optimized_Sent_Index: "887",
-  Optimized_Voc_Index: "1125",
   Furigana: "窓[まど]",
   Kana: "まど",
   Kanji: "窓",
+  Optimized_Sent_Index: "887",
+  Optimized_Voc_Index: "1125",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1394",
   Frequency: "5643",
-  Optimized_Sent_Index: "932",
-  Optimized_Voc_Index: "1126",
   Furigana: "ピンク",
   Kana: "ピンク",
   Kanji: "ピンク",
+  Optimized_Sent_Index: "932",
+  Optimized_Voc_Index: "1126",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1070",
   Frequency: "1979",
-  Optimized_Sent_Index: "1599",
-  Optimized_Voc_Index: "1127",
   Furigana: "親[した]しい",
   Kana: "したしい",
   Kanji: "親しい",
+  Optimized_Sent_Index: "1599",
+  Optimized_Voc_Index: "1127",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1186",
   Frequency: "2274",
-  Optimized_Sent_Index: "907",
-  Optimized_Voc_Index: "1128",
   Furigana: "親切[しんせつ]",
   Kana: "しんせつ",
   Kanji: "親切",
+  Optimized_Sent_Index: "907",
+  Optimized_Voc_Index: "1128",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1785",
   Frequency: "36704",
-  Optimized_Sent_Index: "910",
-  Optimized_Voc_Index: "1129",
   Furigana: "不親切[ふしんせつ]",
   Kana: "ふしんせつ",
   Kanji: "不親切",
+  Optimized_Sent_Index: "910",
+  Optimized_Voc_Index: "1129",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "520",
   Frequency: "950",
-  Optimized_Sent_Index: "912",
-  Optimized_Voc_Index: "1130",
   Furigana: "家族[かぞく]",
   Kana: "かぞく",
   Kanji: "家族",
+  Optimized_Sent_Index: "912",
+  Optimized_Voc_Index: "1130",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1395",
   Frequency: "1817",
-  Optimized_Sent_Index: "1387",
-  Optimized_Voc_Index: "1131",
   Furigana: "グラス",
   Kana: "グラス",
   Kanji: "グラス",
+  Optimized_Sent_Index: "1387",
+  Optimized_Voc_Index: "1131",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1681",
   Frequency: "15524",
-  Optimized_Sent_Index: "913",
-  Optimized_Voc_Index: "1132",
   Furigana: "万歳[ばんざい]",
   Kana: "ばんざい",
   Kanji: "万歳",
+  Optimized_Sent_Index: "913",
+  Optimized_Voc_Index: "1132",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1719",
   Frequency: "7804",
-  Optimized_Sent_Index: "920",
-  Optimized_Voc_Index: "1133",
   Furigana: "二十歳[はたち]",
   Kana: "はたち",
   Kanji: "二十歳",
+  Optimized_Sent_Index: "920",
+  Optimized_Voc_Index: "1133",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1919",
   Frequency: "3156",
-  Optimized_Sent_Index: "915",
-  Optimized_Voc_Index: "1134",
   Furigana: "姉[ねえ]さん",
   Kana: "ねえさん",
   Kanji: "姉さん",
+  Optimized_Sent_Index: "915",
+  Optimized_Voc_Index: "1134",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1910",
   Frequency: "2047",
-  Optimized_Sent_Index: "927",
-  Optimized_Voc_Index: "1135",
   Furigana: "兄[にい]さん",
   Kana: "にいさん",
   Kanji: "兄さん",
+  Optimized_Sent_Index: "927",
+  Optimized_Voc_Index: "1135",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1398",
   Frequency: "5272",
-  Optimized_Sent_Index: "1004",
-  Optimized_Voc_Index: "1136",
   Furigana: "ダンス",
   Kana: "ダンス",
   Kanji: "ダンス",
+  Optimized_Sent_Index: "1004",
+  Optimized_Voc_Index: "1136",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "990",
   Frequency: "1987",
-  Optimized_Sent_Index: "977",
-  Optimized_Voc_Index: "1137",
   Furigana: "兄弟[きょうだい]",
   Kana: "きょうだい",
   Kanji: "兄弟",
+  Optimized_Sent_Index: "977",
+  Optimized_Voc_Index: "1137",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "600",
   Frequency: "6661",
-  Optimized_Sent_Index: "1478",
-  Optimized_Voc_Index: "1138",
   Furigana: "業者[ぎょうしゃ]",
   Kana: "ぎょうしゃ",
   Kanji: "業者",
+  Optimized_Sent_Index: "1478",
+  Optimized_Voc_Index: "1138",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "677",
   Frequency: "1129",
-  Optimized_Sent_Index: "941",
-  Optimized_Voc_Index: "1139",
   Furigana: "若者[わかもの]",
   Kana: "わかもの",
   Kanji: "若者",
+  Optimized_Sent_Index: "941",
+  Optimized_Voc_Index: "1139",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "724",
   Frequency: "252",
-  Optimized_Sent_Index: "1185",
-  Optimized_Voc_Index: "1140",
   Furigana: "彼[かれ]ら",
   Kana: "かれら",
   Kanji: "彼ら",
+  Optimized_Sent_Index: "1185",
+  Optimized_Voc_Index: "1140",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1404",
   Frequency: "7426",
-  Optimized_Sent_Index: "1215",
-  Optimized_Voc_Index: "1141",
   Furigana: "おじ",
   Kana: "おじ",
   Kanji: "おじ",
+  Optimized_Sent_Index: "1215",
+  Optimized_Voc_Index: "1141",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "750",
   Frequency: "10918",
-  Optimized_Sent_Index: "1030",
-  Optimized_Voc_Index: "1142",
   Furigana: "結合[けつごう]",
   Kana: "けつごう",
   Kanji: "結合",
+  Optimized_Sent_Index: "1030",
+  Optimized_Voc_Index: "1142",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "561",
   Frequency: "676",
-  Optimized_Sent_Index: "1034",
-  Optimized_Voc_Index: "1143",
   Furigana: "結果[けっか]",
   Kana: "けっか",
   Kanji: "結果",
+  Optimized_Sent_Index: "1034",
+  Optimized_Voc_Index: "1143",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1209",
   Frequency: "6752",
-  Optimized_Sent_Index: "1035",
-  Optimized_Voc_Index: "1144",
   Furigana: "果物[くだもの]",
   Kana: "くだもの",
   Kanji: "果物",
+  Optimized_Sent_Index: "1035",
+  Optimized_Voc_Index: "1144",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "679",
   Frequency: "9029",
-  Optimized_Sent_Index: "1036",
-  Optimized_Voc_Index: "1145",
   Furigana: "課題[かだい]",
   Kana: "かだい",
   Kanji: "課題",
+  Optimized_Sent_Index: "1036",
+  Optimized_Voc_Index: "1145",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1407",
   Frequency: "9770",
-  Optimized_Sent_Index: "1186",
-  Optimized_Voc_Index: "1146",
   Furigana: "サッカー",
   Kana: "サッカー",
   Kanji: "サッカー",
+  Optimized_Sent_Index: "1186",
+  Optimized_Voc_Index: "1146",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1048",
   Frequency: "3703",
-  Optimized_Sent_Index: "1037",
-  Optimized_Voc_Index: "1147",
   Furigana: "課[か]",
   Kana: "か",
   Kanji: "課",
+  Optimized_Sent_Index: "1037",
+  Optimized_Voc_Index: "1147",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "698",
   Frequency: "2160",
-  Optimized_Sent_Index: "1606",
-  Optimized_Voc_Index: "1148",
   Furigana: "効果[こうか]",
   Kana: "こうか",
   Kanji: "効果",
+  Optimized_Sent_Index: "1606",
+  Optimized_Voc_Index: "1148",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "675",
   Frequency: "2290",
-  Optimized_Sent_Index: "1235",
-  Optimized_Voc_Index: "1149",
   Furigana: "自動車[じどうしゃ]",
   Kana: "じどうしゃ",
   Kanji: "自動車",
+  Optimized_Sent_Index: "1235",
+  Optimized_Voc_Index: "1149",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "751",
   Frequency: "900",
-  Optimized_Sent_Index: "1391",
-  Optimized_Voc_Index: "1150",
   Furigana: "自然[しぜん]",
   Kana: "しぜん",
   Kanji: "自然",
+  Optimized_Sent_Index: "1391",
+  Optimized_Voc_Index: "1150",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1415",
   Frequency: "6052",
-  Optimized_Sent_Index: "902",
-  Optimized_Voc_Index: "1151",
   Furigana: "スープ",
   Kana: "スープ",
   Kanji: "スープ",
+  Optimized_Sent_Index: "902",
+  Optimized_Voc_Index: "1151",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "828",
   Frequency: "900",
-  Optimized_Sent_Index: "1393",
-  Optimized_Voc_Index: "1152",
   Furigana: "自然[しぜん]",
   Kana: "しぜん",
   Kanji: "自然",
+  Optimized_Sent_Index: "1393",
+  Optimized_Voc_Index: "1152",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1714",
   Frequency: "37115",
-  Optimized_Sent_Index: "1042",
-  Optimized_Voc_Index: "1153",
   Furigana: "自習[じしゅう]",
   Kana: "じしゅう",
   Kanji: "自習",
+  Optimized_Sent_Index: "1042",
+  Optimized_Voc_Index: "1153",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "527",
   Frequency: "449",
-  Optimized_Sent_Index: "1043",
-  Optimized_Voc_Index: "1154",
   Furigana: "理由[りゆう]",
   Kana: "りゆう",
   Kanji: "理由",
+  Optimized_Sent_Index: "1043",
+  Optimized_Voc_Index: "1154",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "550",
   Frequency: "1106",
-  Optimized_Sent_Index: "1044",
-  Optimized_Voc_Index: "1155",
   Furigana: "自由[じゆう]",
   Kana: "じゆう",
   Kanji: "自由",
+  Optimized_Sent_Index: "1044",
+  Optimized_Voc_Index: "1155",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1416",
   Frequency: "11957",
-  Optimized_Sent_Index: "471",
-  Optimized_Voc_Index: "1156",
   Furigana: "バナナ",
   Kana: "バナナ",
   Kanji: "バナナ",
+  Optimized_Sent_Index: "471",
+  Optimized_Voc_Index: "1156",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "916",
   Frequency: "382",
-  Optimized_Sent_Index: "1046",
-  Optimized_Voc_Index: "1157",
   Furigana: "信[しん]じる",
   Kana: "しんじる",
   Kanji: "信じる",
+  Optimized_Sent_Index: "1046",
+  Optimized_Voc_Index: "1157",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1008",
   Frequency: "5322",
-  Optimized_Sent_Index: "1047",
-  Optimized_Voc_Index: "1158",
   Furigana: "信号[しんごう]",
   Kana: "しんごう",
   Kanji: "信号",
+  Optimized_Sent_Index: "1047",
+  Optimized_Voc_Index: "1158",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "932",
   Frequency: "622",
-  Optimized_Sent_Index: "1049",
-  Optimized_Voc_Index: "1159",
   Furigana: "頼[たの]む",
   Kana: "たのむ",
   Kanji: "頼む",
+  Optimized_Sent_Index: "1049",
+  Optimized_Voc_Index: "1159",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "625",
   Frequency: "2941",
-  Optimized_Sent_Index: "1050",
-  Optimized_Voc_Index: "1160",
   Furigana: "市民[しみん]",
   Kana: "しみん",
   Kanji: "市民",
+  Optimized_Sent_Index: "1050",
+  Optimized_Voc_Index: "1160",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1417",
   Frequency: "2360",
-  Optimized_Sent_Index: "818",
-  Optimized_Voc_Index: "1161",
   Furigana: "うるさい",
   Kana: "うるさい",
   Kanji: "うるさい",
+  Optimized_Sent_Index: "818",
+  Optimized_Voc_Index: "1161",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "695",
   Frequency: "4085",
-  Optimized_Sent_Index: "1548",
-  Optimized_Voc_Index: "1162",
   Furigana: "住民[じゅうみん]",
   Kana: "じゅうみん",
   Kanji: "住民",
+  Optimized_Sent_Index: "1548",
+  Optimized_Voc_Index: "1162",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1696",
   Frequency: "765",
-  Optimized_Sent_Index: "1396",
-  Optimized_Voc_Index: "1163",
   Furigana: "主人[しゅじん]",
   Kana: "しゅじん",
   Kanji: "主人",
+  Optimized_Sent_Index: "1396",
+  Optimized_Voc_Index: "1163",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "605",
   Frequency: "6208",
-  Optimized_Sent_Index: "1053",
-  Optimized_Voc_Index: "1164",
   Furigana: "議員[ぎいん]",
   Kana: "ぎいん",
   Kanji: "議員",
+  Optimized_Sent_Index: "1053",
+  Optimized_Voc_Index: "1164",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "616",
   Frequency: "2093",
-  Optimized_Sent_Index: "1054",
-  Optimized_Voc_Index: "1165",
   Furigana: "会議[かいぎ]",
   Kana: "かいぎ",
   Kanji: "会議",
+  Optimized_Sent_Index: "1054",
+  Optimized_Voc_Index: "1165",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1419",
   Frequency: "6540",
-  Optimized_Sent_Index: "1412",
-  Optimized_Voc_Index: "1166",
   Furigana: "パトカー",
   Kana: "パトカー",
   Kanji: "パトカー",
+  Optimized_Sent_Index: "1412",
+  Optimized_Voc_Index: "1166",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "428",
   Frequency: "20459",
-  Optimized_Sent_Index: "1064",
-  Optimized_Voc_Index: "1167",
   Furigana: "対[たい]する",
   Kana: "たいする",
   Kanji: "対する",
+  Optimized_Sent_Index: "1064",
+  Optimized_Voc_Index: "1167",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "526",
   Frequency: "4889",
-  Optimized_Sent_Index: "1061",
-  Optimized_Voc_Index: "1168",
   Furigana: "対立[たいりつ]",
   Kana: "たいりつ",
   Kanji: "対立",
+  Optimized_Sent_Index: "1061",
+  Optimized_Voc_Index: "1168",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "676",
   Frequency: "1316",
-  Optimized_Sent_Index: "1063",
-  Optimized_Voc_Index: "1169",
   Furigana: "反対[はんたい]",
   Kana: "はんたい",
   Kanji: "反対",
+  Optimized_Sent_Index: "1063",
+  Optimized_Voc_Index: "1169",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1853",
   Frequency: "1495",
-  Optimized_Sent_Index: "1067",
-  Optimized_Voc_Index: "1170",
   Furigana: "答[こた]え",
   Kana: "こたえ",
   Kanji: "答え",
+  Optimized_Sent_Index: "1067",
+  Optimized_Voc_Index: "1170",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1420",
   Frequency: "17475",
-  Optimized_Sent_Index: "483",
-  Optimized_Voc_Index: "1171",
   Furigana: "ハンバーガー",
   Kana: "ハンバーガー",
   Kanji: "ハンバーガー",
+  Optimized_Sent_Index: "483",
+  Optimized_Voc_Index: "1171",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "719",
   Frequency: "1079",
-  Optimized_Sent_Index: "1068",
-  Optimized_Voc_Index: "1172",
   Furigana: "特[とく]に",
   Kana: "とくに",
   Kanji: "特に",
+  Optimized_Sent_Index: "1068",
+  Optimized_Voc_Index: "1172",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1613",
   Frequency: "13359",
-  Optimized_Sent_Index: "1069",
-  Optimized_Voc_Index: "1173",
   Furigana: "特急[とっきゅう]",
   Kana: "とっきゅう",
   Kanji: "特急",
+  Optimized_Sent_Index: "1069",
+  Optimized_Voc_Index: "1173",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "901",
   Frequency: "1369",
-  Optimized_Sent_Index: "1070",
-  Optimized_Voc_Index: "1174",
   Furigana: "特別[とくべつ]",
   Kana: "とくべつ",
   Kanji: "特別",
+  Optimized_Sent_Index: "1070",
+  Optimized_Voc_Index: "1174",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1196",
   Frequency: "10218",
-  Optimized_Sent_Index: "1071",
-  Optimized_Voc_Index: "1175",
   Furigana: "別々[べつべつ]",
   Kana: "べつべつ",
   Kanji: "別々",
+  Optimized_Sent_Index: "1071",
+  Optimized_Voc_Index: "1175",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1422",
   Frequency: "23097",
-  Optimized_Sent_Index: "583",
-  Optimized_Voc_Index: "1176",
   Furigana: "エスカレーター",
   Kana: "エスカレーター",
   Kanji: "エスカレーター",
+  Optimized_Sent_Index: "583",
+  Optimized_Voc_Index: "1176",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1363",
   Frequency: "1296",
-  Optimized_Sent_Index: "1072",
-  Optimized_Voc_Index: "1177",
   Furigana: "別[わか]れる",
   Kana: "わかれる",
   Kanji: "別れる",
+  Optimized_Sent_Index: "1072",
+  Optimized_Voc_Index: "1177",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "491",
   Frequency: "2154",
-  Optimized_Sent_Index: "1073",
-  Optimized_Voc_Index: "1178",
   Furigana: "一般[いっぱん]",
   Kana: "いっぱん",
   Kanji: "一般",
+  Optimized_Sent_Index: "1073",
+  Optimized_Voc_Index: "1178",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "549",
   Frequency: "912",
-  Optimized_Sent_Index: "1074",
-  Optimized_Voc_Index: "1179",
   Furigana: "目的[もくてき]",
   Kana: "もくてき",
   Kanji: "目的",
+  Optimized_Sent_Index: "1074",
+  Optimized_Voc_Index: "1179",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "777",
   Frequency: "782",
-  Optimized_Sent_Index: "1076",
-  Optimized_Voc_Index: "1180",
   Furigana: "普通[ふつう]",
   Kana: "ふつう",
   Kanji: "普通",
+  Optimized_Sent_Index: "1076",
+  Optimized_Voc_Index: "1180",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1424",
   Frequency: "4354",
-  Optimized_Sent_Index: "1196",
-  Optimized_Voc_Index: "1181",
   Furigana: "タオル",
   Kana: "タオル",
   Kanji: "タオル",
+  Optimized_Sent_Index: "1196",
+  Optimized_Voc_Index: "1181",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "756",
   Frequency: "1110",
-  Optimized_Sent_Index: "1077",
-  Optimized_Voc_Index: "1182",
   Furigana: "並[なら]ぶ",
   Kana: "ならぶ",
   Kanji: "並ぶ",
+  Optimized_Sent_Index: "1077",
+  Optimized_Voc_Index: "1182",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "933",
   Frequency: "2062",
-  Optimized_Sent_Index: "1078",
-  Optimized_Voc_Index: "1183",
   Furigana: "並[なら]べる",
   Kana: "ならべる",
   Kanji: "並べる",
+  Optimized_Sent_Index: "1078",
+  Optimized_Voc_Index: "1183",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "795",
   Frequency: "2478",
-  Optimized_Sent_Index: "1080",
-  Optimized_Voc_Index: "1184",
   Furigana: "平和[へいわ]",
   Kana: "へいわ",
   Kanji: "平和",
+  Optimized_Sent_Index: "1080",
+  Optimized_Voc_Index: "1184",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1546",
   Frequency: "17589",
-  Optimized_Sent_Index: "1233",
-  Optimized_Voc_Index: "1185",
   Furigana: "高等学校[こうとうがっこう]",
   Kana: "こうとうがっこう",
   Kanji: "高等学校",
+  Optimized_Sent_Index: "1233",
+  Optimized_Voc_Index: "1185",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1428",
   Frequency: "10482",
-  Optimized_Sent_Index: "1005",
-  Optimized_Voc_Index: "1186",
   Furigana: "パチンコ",
   Kana: "パチンコ",
   Kanji: "パチンコ",
+  Optimized_Sent_Index: "1005",
+  Optimized_Voc_Index: "1186",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "598",
   Frequency: "803",
-  Optimized_Sent_Index: "1081",
-  Optimized_Voc_Index: "1187",
   Furigana: "病院[びょういん]",
   Kana: "びょういん",
   Kanji: "病院",
+  Optimized_Sent_Index: "1081",
+  Optimized_Voc_Index: "1187",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "837",
   Frequency: "3596",
-  Optimized_Sent_Index: "1082",
-  Optimized_Voc_Index: "1188",
   Furigana: "入院[にゅういん]",
   Kana: "にゅういん",
   Kanji: "入院",
+  Optimized_Sent_Index: "1082",
+  Optimized_Voc_Index: "1188",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1122",
   Frequency: "20286",
-  Optimized_Sent_Index: "1205",
-  Optimized_Voc_Index: "1189",
   Furigana: "大学院[だいがくいん]",
   Kana: "だいがくいん",
   Kanji: "大学院",
+  Optimized_Sent_Index: "1205",
+  Optimized_Voc_Index: "1189",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1005",
   Frequency: "1191",
-  Optimized_Sent_Index: "1169",
-  Optimized_Voc_Index: "1190",
   Furigana: "医者[いしゃ]",
   Kana: "いしゃ",
   Kanji: "医者",
+  Optimized_Sent_Index: "1169",
+  Optimized_Voc_Index: "1190",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1431",
   Frequency: "15681",
-  Optimized_Sent_Index: "1425",
-  Optimized_Voc_Index: "1191",
   Furigana: "みかん",
   Kana: "みかん",
   Kanji: "みかん",
+  Optimized_Sent_Index: "1425",
+  Optimized_Voc_Index: "1191",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1988",
   Frequency: "11768",
-  Optimized_Sent_Index: "1083",
-  Optimized_Voc_Index: "1192",
   Furigana: "お 医者[いしゃ]さん",
   Kana: "おいしゃさん",
   Kanji: "お医者さん",
+  Optimized_Sent_Index: "1083",
+  Optimized_Voc_Index: "1192",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1657",
   Frequency: "22351",
-  Optimized_Sent_Index: "1706",
-  Optimized_Voc_Index: "1193",
   Furigana: "歯医者[はいしゃ]",
   Kana: "はいしゃ",
   Kanji: "歯医者",
+  Optimized_Sent_Index: "1706",
+  Optimized_Voc_Index: "1193",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1733",
   Frequency: "1244",
-  Optimized_Sent_Index: "1907",
-  Optimized_Voc_Index: "1194",
   Furigana: "歯[は]",
   Kana: "は",
   Kanji: "歯",
+  Optimized_Sent_Index: "1907",
+  Optimized_Voc_Index: "1194",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1755",
   Frequency: "27452",
-  Optimized_Sent_Index: "1084",
-  Optimized_Voc_Index: "1195",
   Furigana: "歯[は]ブラシ",
   Kana: "はぶらし",
   Kanji: "歯ブラシ",
+  Optimized_Sent_Index: "1084",
+  Optimized_Voc_Index: "1195",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1433",
   Frequency: "6636",
-  Optimized_Sent_Index: "1528",
-  Optimized_Voc_Index: "1196",
   Furigana: "ケーキ",
   Kana: "ケーキ",
   Kanji: "ケーキ",
+  Optimized_Sent_Index: "1528",
+  Optimized_Voc_Index: "1196",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "883",
   Frequency: "3270",
-  Optimized_Sent_Index: "1203",
-  Optimized_Voc_Index: "1197",
   Furigana: "科学[かがく]",
   Kana: "かがく",
   Kanji: "科学",
+  Optimized_Sent_Index: "1203",
+  Optimized_Voc_Index: "1197",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "986",
   Frequency: "6846",
-  Optimized_Sent_Index: "1085",
-  Optimized_Voc_Index: "1198",
   Furigana: "教科書[きょうかしょ]",
   Kana: "きょうかしょ",
   Kanji: "教科書",
+  Optimized_Sent_Index: "1085",
+  Optimized_Voc_Index: "1198",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1358",
   Frequency: "23303",
-  Optimized_Sent_Index: "1562",
-  Optimized_Voc_Index: "1199",
   Furigana: "理科[りか]",
   Kana: "りか",
   Kanji: "理科",
+  Optimized_Sent_Index: "1562",
+  Optimized_Voc_Index: "1199",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "897",
   Frequency: "1903",
-  Optimized_Sent_Index: "1086",
-  Optimized_Voc_Index: "1200",
   Furigana: "亡[な]くなる",
   Kana: "なくなる",
   Kanji: "亡くなる",
+  Optimized_Sent_Index: "1086",
+  Optimized_Voc_Index: "1200",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1434",
   Frequency: "3624",
-  Optimized_Sent_Index: "1094",
-  Optimized_Voc_Index: "1201",
   Furigana: "コップ",
   Kana: "コップ",
   Kanji: "コップ",
+  Optimized_Sent_Index: "1094",
+  Optimized_Voc_Index: "1201",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "970",
   Frequency: "1833",
-  Optimized_Sent_Index: "1658",
-  Optimized_Voc_Index: "1202",
   Furigana: "忙[いそが]しい",
   Kana: "いそがしい",
   Kanji: "忙しい",
+  Optimized_Sent_Index: "1658",
+  Optimized_Voc_Index: "1202",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1110",
   Frequency: "1158",
-  Optimized_Sent_Index: "1088",
-  Optimized_Voc_Index: "1203",
   Furigana: "疲[つか]れる",
   Kana: "つかれる",
   Kanji: "疲れる",
+  Optimized_Sent_Index: "1088",
+  Optimized_Voc_Index: "1203",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1298",
   Frequency: "25704",
-  Optimized_Sent_Index: "1090",
-  Optimized_Voc_Index: "1204",
   Furigana: "禁煙[きんえん]",
   Kana: "きんえん",
   Kanji: "禁煙",
+  Optimized_Sent_Index: "1090",
+  Optimized_Voc_Index: "1204",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1663",
   Frequency: "18185",
-  Optimized_Sent_Index: "1091",
-  Optimized_Voc_Index: "1205",
   Furigana: "酔[よ]っ 払[ぱら]い",
   Kana: "よっぱらい",
   Kanji: "酔っ払い",
+  Optimized_Sent_Index: "1091",
+  Optimized_Voc_Index: "1205",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1438",
   Frequency: "26108",
-  Optimized_Sent_Index: "1433",
-  Optimized_Voc_Index: "1206",
   Furigana: "ナイロン",
   Kana: "ナイロン",
   Kanji: "ナイロン",
+  Optimized_Sent_Index: "1433",
+  Optimized_Voc_Index: "1206",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1709",
   Frequency: "14272",
-  Optimized_Sent_Index: "1092",
-  Optimized_Voc_Index: "1207",
   Furigana: "酔[よ]っ 払[ぱら]う",
   Kana: "よっぱらう",
   Kanji: "酔っ払う",
+  Optimized_Sent_Index: "1092",
+  Optimized_Voc_Index: "1207",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1331",
   Frequency: "3246",
-  Optimized_Sent_Index: "1095",
-  Optimized_Voc_Index: "1208",
   Furigana: "危[あぶ]ない",
   Kana: "あぶない",
   Kanji: "危ない",
+  Optimized_Sent_Index: "1095",
+  Optimized_Voc_Index: "1208",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "776",
   Frequency: "749",
-  Optimized_Sent_Index: "1549",
-  Optimized_Voc_Index: "1209",
   Furigana: "危険[きけん]",
   Kana: "きけん",
   Kanji: "危険",
+  Optimized_Sent_Index: "1549",
+  Optimized_Voc_Index: "1209",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "505",
   Frequency: "401",
-  Optimized_Sent_Index: "1305",
-  Optimized_Voc_Index: "1210",
   Furigana: "存在[そんざい]",
   Kana: "そんざい",
   Kanji: "存在",
+  Optimized_Sent_Index: "1305",
+  Optimized_Voc_Index: "1210",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1447",
   Frequency: "2779",
-  Optimized_Sent_Index: "460",
-  Optimized_Voc_Index: "1211",
   Furigana: "スーツ",
   Kana: "スーツ",
   Kanji: "スーツ",
+  Optimized_Sent_Index: "460",
+  Optimized_Voc_Index: "1211",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "655",
   Frequency: "3870",
-  Optimized_Sent_Index: "1097",
-  Optimized_Voc_Index: "1212",
   Furigana: "注目[ちゅうもく]",
   Kana: "ちゅうもく",
   Kanji: "注目",
+  Optimized_Sent_Index: "1097",
+  Optimized_Voc_Index: "1212",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1053",
   Frequency: "2436",
-  Optimized_Sent_Index: "1098",
-  Optimized_Voc_Index: "1213",
   Furigana: "注文[ちゅうもん]",
   Kana: "ちゅうもん",
   Kanji: "注文",
+  Optimized_Sent_Index: "1098",
+  Optimized_Voc_Index: "1213",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "439",
   Frequency: "270",
-  Optimized_Sent_Index: "1099",
-  Optimized_Voc_Index: "1214",
   Furigana: "意味[いみ]",
   Kana: "いみ",
   Kanji: "意味",
+  Optimized_Sent_Index: "1099",
+  Optimized_Voc_Index: "1214",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "581",
   Frequency: "1128",
-  Optimized_Sent_Index: "1100",
-  Optimized_Voc_Index: "1215",
   Furigana: "意見[いけん]",
   Kana: "いけん",
   Kanji: "意見",
+  Optimized_Sent_Index: "1100",
+  Optimized_Voc_Index: "1215",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1448",
   Frequency: "12104",
-  Optimized_Sent_Index: "1117",
-  Optimized_Voc_Index: "1216",
   Furigana: "チケット",
   Kana: "チケット",
   Kanji: "チケット",
+  Optimized_Sent_Index: "1117",
+  Optimized_Voc_Index: "1216",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "780",
   Frequency: "1111",
-  Optimized_Sent_Index: "1102",
-  Optimized_Voc_Index: "1217",
   Furigana: "注意[ちゅうい]",
   Kana: "ちゅうい",
   Kanji: "注意",
+  Optimized_Sent_Index: "1102",
+  Optimized_Voc_Index: "1217",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "822",
   Frequency: "972",
-  Optimized_Sent_Index: "1103",
-  Optimized_Voc_Index: "1218",
   Furigana: "用意[ようい]",
   Kana: "ようい",
   Kanji: "用意",
+  Optimized_Sent_Index: "1103",
+  Optimized_Voc_Index: "1218",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "992",
   Frequency: "1044",
-  Optimized_Sent_Index: "1483",
-  Optimized_Voc_Index: "1219",
   Furigana: "確[たし]か",
   Kana: "たしか",
   Kanji: "確か",
+  Optimized_Sent_Index: "1483",
+  Optimized_Voc_Index: "1219",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "700",
   Frequency: "1067",
-  Optimized_Sent_Index: "1105",
-  Optimized_Voc_Index: "1220",
   Furigana: "確認[かくにん]",
   Kana: "かくにん",
   Kanji: "確認",
+  Optimized_Sent_Index: "1105",
+  Optimized_Voc_Index: "1220",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1449",
   Frequency: "7838",
-  Optimized_Sent_Index: "919",
-  Optimized_Voc_Index: "1221",
   Furigana: "チョコレート",
   Kana: "チョコレート",
   Kanji: "チョコレート",
+  Optimized_Sent_Index: "919",
+  Optimized_Voc_Index: "1221",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "422",
   Frequency: "3024",
-  Optimized_Sent_Index: "1106",
-  Optimized_Voc_Index: "1222",
   Furigana: "機能[きのう]",
   Kana: "きのう",
   Kanji: "機能",
+  Optimized_Sent_Index: "1106",
+  Optimized_Voc_Index: "1222",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1283",
   Frequency: "24907",
-  Optimized_Sent_Index: "1124",
-  Optimized_Voc_Index: "1223",
   Furigana: "ジェット 機[き]",
   Kana: "ジェットき",
   Kanji: "ジェット機",
+  Optimized_Sent_Index: "1124",
+  Optimized_Voc_Index: "1223",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "654",
   Frequency: "1876",
-  Optimized_Sent_Index: "1258",
-  Optimized_Voc_Index: "1224",
   Furigana: "機械[きかい]",
   Kana: "きかい",
   Kanji: "機械",
+  Optimized_Sent_Index: "1258",
+  Optimized_Voc_Index: "1224",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "623",
   Frequency: "3487",
-  Optimized_Sent_Index: "1107",
-  Optimized_Voc_Index: "1225",
   Furigana: "材料[ざいりょう]",
   Kana: "ざいりょう",
   Kanji: "材料",
+  Optimized_Sent_Index: "1107",
+  Optimized_Voc_Index: "1225",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1461",
   Frequency: "12830",
-  Optimized_Sent_Index: "749",
-  Optimized_Voc_Index: "1226",
   Furigana: "チャンネル",
   Kana: "チャンネル",
   Kanji: "チャンネル",
+  Optimized_Sent_Index: "749",
+  Optimized_Voc_Index: "1226",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "638",
   Frequency: "3130",
-  Optimized_Sent_Index: "1445",
-  Optimized_Voc_Index: "1227",
   Furigana: "具体的[ぐたいてき]",
   Kana: "ぐたいてき",
   Kanji: "具体的",
+  Optimized_Sent_Index: "1445",
+  Optimized_Voc_Index: "1227",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "642",
   Frequency: "8649",
-  Optimized_Sent_Index: "1109",
-  Optimized_Voc_Index: "1228",
   Furigana: "基[もと]づく",
   Kana: "もとづく",
   Kanji: "基づく",
+  Optimized_Sent_Index: "1109",
+  Optimized_Voc_Index: "1228",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "710",
   Frequency: "4597",
-  Optimized_Sent_Index: "1110",
-  Optimized_Voc_Index: "1229",
   Furigana: "基本[きほん]",
   Kana: "きほん",
   Kanji: "基本",
+  Optimized_Sent_Index: "1110",
+  Optimized_Voc_Index: "1229",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "738",
   Frequency: "8750",
-  Optimized_Sent_Index: "1357",
-  Optimized_Voc_Index: "1230",
   Furigana: "基準[きじゅん]",
   Kana: "きじゅん",
   Kanji: "基準",
+  Optimized_Sent_Index: "1357",
+  Optimized_Voc_Index: "1230",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1462",
   Frequency: "2913",
-  Optimized_Sent_Index: "1006",
-  Optimized_Voc_Index: "1231",
   Furigana: "つまらない",
   Kana: "つまらない",
   Kanji: "つまらない",
+  Optimized_Sent_Index: "1006",
+  Optimized_Voc_Index: "1231",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "514",
   Frequency: "3331",
-  Optimized_Sent_Index: "1255",
-  Optimized_Voc_Index: "1232",
   Furigana: "備[そな]える",
   Kana: "そなえる",
   Kanji: "備える",
+  Optimized_Sent_Index: "1255",
+  Optimized_Voc_Index: "1232",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "785",
   Frequency: "1409",
-  Optimized_Sent_Index: "1111",
-  Optimized_Voc_Index: "1233",
   Furigana: "準備[じゅんび]",
   Kana: "じゅんび",
   Kanji: "準備",
+  Optimized_Sent_Index: "1111",
+  Optimized_Voc_Index: "1233",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "586",
   Frequency: "5842",
-  Optimized_Sent_Index: "1127",
-  Optimized_Voc_Index: "1234",
   Furigana: "設計[せっけい]",
   Kana: "せっけい",
   Kanji: "設計",
+  Optimized_Sent_Index: "1127",
+  Optimized_Voc_Index: "1234",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "661",
   Frequency: "4241",
-  Optimized_Sent_Index: "1112",
-  Optimized_Voc_Index: "1235",
   Furigana: "施設[しせつ]",
   Kana: "しせつ",
   Kanji: "施設",
+  Optimized_Sent_Index: "1112",
+  Optimized_Voc_Index: "1235",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1463",
   Frequency: "5926",
-  Optimized_Sent_Index: "658",
-  Optimized_Voc_Index: "1236",
   Furigana: "マッチ",
   Kana: "マッチ",
   Kanji: "マッチ",
+  Optimized_Sent_Index: "658",
+  Optimized_Voc_Index: "1236",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "716",
   Frequency: "4379",
-  Optimized_Sent_Index: "1653",
-  Optimized_Voc_Index: "1237",
   Furigana: "設[もう]ける",
   Kana: "もうける",
   Kanji: "設ける",
+  Optimized_Sent_Index: "1653",
+  Optimized_Voc_Index: "1237",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "778",
   Frequency: "512",
-  Optimized_Sent_Index: "1113",
-  Optimized_Voc_Index: "1238",
   Furigana: "説明[せつめい]",
   Kana: "せつめい",
   Kanji: "説明",
+  Optimized_Sent_Index: "1113",
+  Optimized_Voc_Index: "1238",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "909",
   Frequency: "953",
-  Optimized_Sent_Index: "1422",
-  Optimized_Voc_Index: "1239",
   Furigana: "小説[しょうせつ]",
   Kana: "しょうせつ",
   Kanji: "小説",
+  Optimized_Sent_Index: "1422",
+  Optimized_Voc_Index: "1239",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "635",
   Frequency: "9352",
-  Optimized_Sent_Index: "1114",
-  Optimized_Voc_Index: "1240",
   Furigana: "公開[こうかい]",
   Kana: "こうかい",
   Kanji: "公開",
+  Optimized_Sent_Index: "1114",
+  Optimized_Voc_Index: "1240",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1464",
   Frequency: "9586",
-  Optimized_Sent_Index: "1221",
-  Optimized_Voc_Index: "1241",
   Furigana: "いとこ",
   Kana: "いとこ",
   Kanji: "いとこ",
+  Optimized_Sent_Index: "1221",
+  Optimized_Voc_Index: "1241",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "955",
   Frequency: "2049",
-  Optimized_Sent_Index: "1115",
-  Optimized_Voc_Index: "1242",
   Furigana: "公園[こうえん]",
   Kana: "こうえん",
   Kanji: "公園",
+  Optimized_Sent_Index: "1115",
+  Optimized_Voc_Index: "1242",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1329",
   Frequency: "11561",
-  Optimized_Sent_Index: "1116",
-  Optimized_Voc_Index: "1243",
   Furigana: "動物園[どうぶつえん]",
   Kana: "どうぶつえん",
   Kanji: "動物園",
+  Optimized_Sent_Index: "1116",
+  Optimized_Voc_Index: "1243",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1167",
   Frequency: "5023",
-  Optimized_Sent_Index: "1120",
-  Optimized_Voc_Index: "1244",
   Furigana: "祭[まつ]り",
   Kana: "まつり",
   Kanji: "祭り",
+  Optimized_Sent_Index: "1120",
+  Optimized_Voc_Index: "1244",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "604",
   Frequency: "5605",
-  Optimized_Sent_Index: "1121",
-  Optimized_Voc_Index: "1245",
   Furigana: "国際[こくさい]",
   Kana: "こくさい",
   Kanji: "国際",
+  Optimized_Sent_Index: "1121",
+  Optimized_Voc_Index: "1245",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1468",
   Frequency: "8425",
-  Optimized_Sent_Index: "574",
-  Optimized_Voc_Index: "1246",
   Furigana: "ストーブ",
   Kana: "ストーブ",
   Kanji: "ストーブ",
+  Optimized_Sent_Index: "574",
+  Optimized_Voc_Index: "1246",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "663",
   Frequency: "785",
-  Optimized_Sent_Index: "1614",
-  Optimized_Voc_Index: "1247",
   Furigana: "実際[じっさい]",
   Kana: "じっさい",
   Kanji: "実際",
+  Optimized_Sent_Index: "1614",
+  Optimized_Voc_Index: "1247",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1206",
   Frequency: "8743",
-  Optimized_Sent_Index: "1123",
-  Optimized_Voc_Index: "1248",
   Furigana: "飛行場[ひこうじょう]",
   Kana: "ひこうじょう",
   Kanji: "飛行場",
+  Optimized_Sent_Index: "1123",
+  Optimized_Voc_Index: "1248",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1675",
   Frequency: "53169",
-  Optimized_Sent_Index: "1125",
-  Optimized_Voc_Index: "1249",
   Furigana: "航空便[こうくうびん]",
   Kana: "こうくうびん",
   Kanji: "航空便",
+  Optimized_Sent_Index: "1125",
+  Optimized_Voc_Index: "1249",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1947",
   Frequency: "58274",
-  Optimized_Sent_Index: "1130",
-  Optimized_Voc_Index: "1250",
   Furigana: "船便[ふなびん]",
   Kana: "ふなびん",
   Kanji: "船便",
+  Optimized_Sent_Index: "1130",
+  Optimized_Voc_Index: "1250",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1471",
   Frequency: "32520",
-  Optimized_Sent_Index: "543",
-  Optimized_Voc_Index: "1251",
   Furigana: "ガソリンスタンド",
   Kana: "ガソリンスタンド",
   Kanji: "ガソリンスタンド",
+  Optimized_Sent_Index: "543",
+  Optimized_Voc_Index: "1251",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1948",
   Frequency: "486",
-  Optimized_Sent_Index: "1131",
-  Optimized_Voc_Index: "1252",
   Furigana: "船[ふね]",
   Kana: "ふね",
   Kanji: "船",
+  Optimized_Sent_Index: "1131",
+  Optimized_Voc_Index: "1252",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "802",
   Frequency: "3536",
-  Optimized_Sent_Index: "1132",
-  Optimized_Voc_Index: "1253",
   Furigana: "空港[くうこう]",
   Kana: "くうこう",
   Kanji: "空港",
+  Optimized_Sent_Index: "1132",
+  Optimized_Voc_Index: "1253",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1964",
   Frequency: "2381",
-  Optimized_Sent_Index: "1133",
-  Optimized_Voc_Index: "1254",
   Furigana: "港[みなと]",
   Kana: "みなと",
   Kanji: "港",
+  Optimized_Sent_Index: "1133",
+  Optimized_Voc_Index: "1254",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "829",
   Frequency: "647",
-  Optimized_Sent_Index: "1134",
-  Optimized_Voc_Index: "1255",
   Furigana: "島[しま]",
   Kana: "しま",
   Kanji: "島",
+  Optimized_Sent_Index: "1134",
+  Optimized_Voc_Index: "1255",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1477",
   Frequency: "4865",
-  Optimized_Sent_Index: "1118",
-  Optimized_Voc_Index: "1256",
   Furigana: "デート",
   Kana: "デート",
   Kanji: "デート",
+  Optimized_Sent_Index: "1118",
+  Optimized_Voc_Index: "1256",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "503",
   Frequency: "2541",
-  Optimized_Sent_Index: "1135",
-  Optimized_Voc_Index: "1257",
   Furigana: "完成[かんせい]",
   Kana: "かんせい",
   Kanji: "完成",
+  Optimized_Sent_Index: "1135",
+  Optimized_Voc_Index: "1257",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1951",
   Frequency: "5643",
-  Optimized_Sent_Index: "1137",
-  Optimized_Voc_Index: "1258",
   Furigana: "平成[へいせい]",
   Kana: "へいせい",
   Kanji: "平成",
+  Optimized_Sent_Index: "1137",
+  Optimized_Voc_Index: "1258",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "662",
   Frequency: "1347",
-  Optimized_Sent_Index: "1138",
-  Optimized_Voc_Index: "1259",
   Furigana: "成功[せいこう]",
   Kana: "せいこう",
   Kanji: "成功",
+  Optimized_Sent_Index: "1138",
+  Optimized_Voc_Index: "1259",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "568",
   Frequency: "1393",
-  Optimized_Sent_Index: "1139",
-  Optimized_Voc_Index: "1260",
   Furigana: "原因[げんいん]",
   Kana: "げんいん",
   Kanji: "原因",
+  Optimized_Sent_Index: "1139",
+  Optimized_Voc_Index: "1260",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1478",
   Frequency: "",
-  Optimized_Sent_Index: "459",
-  Optimized_Voc_Index: "1261",
   Furigana: "ふすま",
   Kana: "ふすま",
   Kanji: "ふすま",
+  Optimized_Sent_Index: "459",
+  Optimized_Voc_Index: "1261",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "551",
   Frequency: "5918",
-  Optimized_Sent_Index: "1554",
-  Optimized_Voc_Index: "1262",
   Furigana: "資金[しきん]",
   Kana: "しきん",
   Kanji: "資金",
+  Optimized_Sent_Index: "1554",
+  Optimized_Voc_Index: "1262",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "576",
   Frequency: "12673",
-  Optimized_Sent_Index: "1140",
-  Optimized_Voc_Index: "1263",
   Furigana: "投資[とうし]",
   Kana: "とうし",
   Kanji: "投資",
+  Optimized_Sent_Index: "1140",
+  Optimized_Voc_Index: "1263",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "639",
   Frequency: "1635",
-  Optimized_Sent_Index: "1143",
-  Optimized_Voc_Index: "1264",
   Furigana: "願[ねが]う",
   Kana: "ねがう",
   Kanji: "願う",
+  Optimized_Sent_Index: "1143",
+  Optimized_Voc_Index: "1264",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "865",
   Frequency: "1534",
-  Optimized_Sent_Index: "1147",
-  Optimized_Voc_Index: "1265",
   Furigana: "正確[せいかく]",
   Kana: "せいかく",
   Kanji: "正確",
+  Optimized_Sent_Index: "1147",
+  Optimized_Voc_Index: "1265",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1480",
   Frequency: "9813",
-  Optimized_Sent_Index: "1930",
-  Optimized_Voc_Index: "1266",
   Furigana: "レモン",
   Kana: "レモン",
   Kanji: "レモン",
+  Optimized_Sent_Index: "1930",
+  Optimized_Voc_Index: "1266",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "873",
   Frequency: "1212",
-  Optimized_Sent_Index: "1148",
-  Optimized_Voc_Index: "1267",
   Furigana: "正[ただ]しい",
   Kana: "ただしい",
   Kanji: "正しい",
+  Optimized_Sent_Index: "1148",
+  Optimized_Voc_Index: "1267",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1117",
   Frequency: "3875",
-  Optimized_Sent_Index: "1228",
-  Optimized_Voc_Index: "1268",
   Furigana: "正月[しょうがつ]",
   Kana: "しょうがつ",
   Kanji: "正月",
+  Optimized_Sent_Index: "1228",
+  Optimized_Voc_Index: "1268",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1244",
   Frequency: "1492",
-  Optimized_Sent_Index: "1150",
-  Optimized_Voc_Index: "1269",
   Furigana: "正直[しょうじき]",
   Kana: "しょうじき",
   Kanji: "正直",
+  Optimized_Sent_Index: "1150",
+  Optimized_Voc_Index: "1269",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "745",
   Frequency: "2699",
-  Optimized_Sent_Index: "1151",
-  Optimized_Voc_Index: "1270",
   Furigana: "異[こと]なる",
   Kana: "ことなる",
   Kanji: "異なる",
+  Optimized_Sent_Index: "1151",
+  Optimized_Voc_Index: "1270",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1485",
   Frequency: "9900",
-  Optimized_Sent_Index: "736",
-  Optimized_Voc_Index: "1271",
   Furigana: "チーズ",
   Kana: "チーズ",
   Kanji: "チーズ",
+  Optimized_Sent_Index: "736",
+  Optimized_Voc_Index: "1271",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "680",
   Frequency: "4544",
-  Optimized_Sent_Index: "1152",
-  Optimized_Voc_Index: "1272",
   Furigana: "通常[つうじょう]",
   Kana: "つうじょう",
   Kanji: "通常",
+  Optimized_Sent_Index: "1152",
+  Optimized_Voc_Index: "1272",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "796",
   Frequency: "1348",
-  Optimized_Sent_Index: "1154",
-  Optimized_Voc_Index: "1273",
   Furigana: "非常[ひじょう]に",
   Kana: "ひじょうに",
   Kanji: "非常に",
+  Optimized_Sent_Index: "1154",
+  Optimized_Voc_Index: "1273",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "540",
   Frequency: "665",
-  Optimized_Sent_Index: "1207",
-  Optimized_Voc_Index: "1274",
   Furigana: "調[しら]べる",
   Kana: "しらべる",
   Kanji: "調べる",
+  Optimized_Sent_Index: "1207",
+  Optimized_Voc_Index: "1274",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "541",
   Frequency: "5629",
-  Optimized_Sent_Index: "1155",
-  Optimized_Voc_Index: "1275",
   Furigana: "強調[きょうちょう]",
   Kana: "きょうちょう",
   Kanji: "強調",
+  Optimized_Sent_Index: "1155",
+  Optimized_Voc_Index: "1275",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1486",
   Frequency: "9406",
-  Optimized_Sent_Index: "1781",
-  Optimized_Voc_Index: "1276",
   Furigana: "ドライブ",
   Kana: "ドライブ",
   Kanji: "ドライブ",
+  Optimized_Sent_Index: "1781",
+  Optimized_Voc_Index: "1276",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "944",
   Frequency: "3101",
-  Optimized_Sent_Index: "1157",
-  Optimized_Voc_Index: "1277",
   Furigana: "季節[きせつ]",
   Kana: "きせつ",
   Kanji: "季節",
+  Optimized_Sent_Index: "1157",
+  Optimized_Voc_Index: "1277",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "476",
   Frequency: "1721",
-  Optimized_Sent_Index: "1158",
-  Optimized_Voc_Index: "1278",
   Furigana: "調査[ちょうさ]",
   Kana: "ちょうさ",
   Kanji: "調査",
+  Optimized_Sent_Index: "1158",
+  Optimized_Voc_Index: "1278",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "535",
   Frequency: "4393",
-  Optimized_Sent_Index: "1159",
-  Optimized_Voc_Index: "1279",
   Furigana: "提供[ていきょう]",
   Kana: "ていきょう",
   Kanji: "提供",
+  Optimized_Sent_Index: "1159",
+  Optimized_Voc_Index: "1279",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "648",
   Frequency: "3098",
-  Optimized_Sent_Index: "1160",
-  Optimized_Voc_Index: "1280",
   Furigana: "提案[ていあん]",
   Kana: "ていあん",
   Kanji: "提案",
+  Optimized_Sent_Index: "1160",
+  Optimized_Voc_Index: "1280",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1488",
   Frequency: "32520",
-  Optimized_Sent_Index: "486",
-  Optimized_Voc_Index: "1281",
   Furigana: "ラケット",
   Kana: "ラケット",
   Kanji: "ラケット",
+  Optimized_Sent_Index: "486",
+  Optimized_Voc_Index: "1281",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1092",
   Frequency: "1322",
-  Optimized_Sent_Index: "1161",
-  Optimized_Voc_Index: "1282",
   Furigana: "案内[あんない]",
   Kana: "あんない",
   Kanji: "案内",
+  Optimized_Sent_Index: "1161",
+  Optimized_Voc_Index: "1282",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "418",
   Frequency: "660",
-  Optimized_Sent_Index: "1677",
-  Optimized_Voc_Index: "1283",
   Furigana: "示[しめ]す",
   Kana: "しめす",
   Kanji: "示す",
+  Optimized_Sent_Index: "1677",
+  Optimized_Voc_Index: "1283",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1992",
   Frequency: "",
-  Optimized_Sent_Index: "1162",
-  Optimized_Voc_Index: "1284",
   Furigana: "連[つ]れて 行[い]く",
   Kana: "つれていく",
   Kanji: "連れて行く",
+  Optimized_Sent_Index: "1162",
+  Optimized_Voc_Index: "1284",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1993",
   Frequency: "",
-  Optimized_Sent_Index: "1163",
-  Optimized_Voc_Index: "1285",
   Furigana: "連[つ]れて 来[く]る",
   Kana: "つれてくる",
   Kanji: "連れて来る",
+  Optimized_Sent_Index: "1163",
+  Optimized_Voc_Index: "1285",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1493",
   Frequency: "17023",
-  Optimized_Sent_Index: "1008",
-  Optimized_Voc_Index: "1286",
   Furigana: "スチュワーデス",
   Kana: "スチュワーデス",
   Kanji: "スチュワーデス",
+  Optimized_Sent_Index: "1008",
+  Optimized_Voc_Index: "1286",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "449",
   Frequency: "381",
-  Optimized_Sent_Index: "1164",
-  Optimized_Voc_Index: "1287",
   Furigana: "続[つづ]ける",
   Kana: "つづける",
   Kanji: "続ける",
+  Optimized_Sent_Index: "1164",
+  Optimized_Voc_Index: "1287",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "590",
   Frequency: "212",
-  Optimized_Sent_Index: "1517",
-  Optimized_Voc_Index: "1288",
   Furigana: "相手[あいて]",
   Kana: "あいて",
   Kanji: "相手",
+  Optimized_Sent_Index: "1517",
+  Optimized_Voc_Index: "1288",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "532",
   Frequency: "9412",
-  Optimized_Sent_Index: "1612",
-  Optimized_Voc_Index: "1289",
   Furigana: "会談[かいだん]",
   Kana: "かいだん",
   Kanji: "会談",
+  Optimized_Sent_Index: "1612",
+  Optimized_Voc_Index: "1289",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "821",
   Frequency: "1210",
-  Optimized_Sent_Index: "1168",
-  Optimized_Voc_Index: "1290",
   Furigana: "相談[そうだん]",
   Kana: "そうだん",
   Kanji: "相談",
+  Optimized_Sent_Index: "1168",
+  Optimized_Voc_Index: "1290",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1495",
   Frequency: "24615",
-  Optimized_Sent_Index: "1665",
-  Optimized_Voc_Index: "1291",
   Furigana: "テープレコーダー",
   Kana: "テープレコーダー",
   Kanji: "テープレコーダー",
+  Optimized_Sent_Index: "1665",
+  Optimized_Voc_Index: "1291",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "606",
   Frequency: "3073",
-  Optimized_Sent_Index: "1170",
-  Optimized_Voc_Index: "1292",
   Furigana: "記者[きしゃ]",
   Kana: "きしゃ",
   Kanji: "記者",
+  Optimized_Sent_Index: "1170",
+  Optimized_Voc_Index: "1292",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "619",
   Frequency: "1791",
-  Optimized_Sent_Index: "1172",
-  Optimized_Voc_Index: "1293",
   Furigana: "記録[きろく]",
   Kana: "きろく",
   Kanji: "記録",
+  Optimized_Sent_Index: "1172",
+  Optimized_Voc_Index: "1293",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1160",
   Frequency: "9032",
-  Optimized_Sent_Index: "1200",
-  Optimized_Voc_Index: "1294",
   Furigana: "録音[ろくおん]",
   Kana: "ろくおん",
   Kanji: "録音",
+  Optimized_Sent_Index: "1200",
+  Optimized_Voc_Index: "1294",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1402",
   Frequency: "1526",
-  Optimized_Sent_Index: "1539",
-  Optimized_Voc_Index: "1295",
   Furigana: "登[のぼ]る",
   Kana: "のぼる",
   Kanji: "登る",
+  Optimized_Sent_Index: "1539",
+  Optimized_Voc_Index: "1295",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1496",
   Frequency: "",
-  Optimized_Sent_Index: "894",
-  Optimized_Voc_Index: "1296",
   Furigana: "ひげ",
   Kana: "ひげ",
   Kanji: "ひげ",
+  Optimized_Sent_Index: "894",
+  Optimized_Voc_Index: "1296",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "455",
   Frequency: "72261",
-  Optimized_Sent_Index: "1174",
-  Optimized_Voc_Index: "1297",
   Furigana: "関[かん]する",
   Kana: "かんする",
   Kanji: "関する",
+  Optimized_Sent_Index: "1174",
+  Optimized_Voc_Index: "1297",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "747",
   Frequency: "5186",
-  Optimized_Sent_Index: "1175",
-  Optimized_Voc_Index: "1298",
   Furigana: "関連[かんれん]",
   Kana: "かんれん",
   Kanji: "関連",
+  Optimized_Sent_Index: "1175",
+  Optimized_Voc_Index: "1298",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "448",
   Frequency: "366",
-  Optimized_Sent_Index: "1240",
-  Optimized_Voc_Index: "1299",
   Furigana: "関係[かんけい]",
   Kana: "かんけい",
   Kanji: "関係",
+  Optimized_Sent_Index: "1240",
+  Optimized_Voc_Index: "1299",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "699",
   Frequency: "922",
-  Optimized_Sent_Index: "1176",
-  Optimized_Voc_Index: "1300",
   Furigana: "状況[じょうきょう]",
   Kana: "じょうきょう",
   Kanji: "状況",
+  Optimized_Sent_Index: "1176",
+  Optimized_Voc_Index: "1300",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1503",
   Frequency: "8612",
-  Optimized_Sent_Index: "1402",
-  Optimized_Voc_Index: "1301",
   Furigana: "ぐっすり",
   Kana: "ぐっすり",
   Kanji: "ぐっすり",
+  Optimized_Sent_Index: "1402",
+  Optimized_Voc_Index: "1301",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "456",
   Frequency: "668",
-  Optimized_Sent_Index: "1177",
-  Optimized_Voc_Index: "1302",
   Furigana: "状態[じょうたい]",
   Kana: "じょうたい",
   Kanji: "状態",
+  Optimized_Sent_Index: "1177",
+  Optimized_Voc_Index: "1302",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "421",
   Frequency: "5043",
-  Optimized_Sent_Index: "1178",
-  Optimized_Voc_Index: "1303",
   Furigana: "治[なお]る",
   Kana: "なおる",
   Kanji: "治る",
+  Optimized_Sent_Index: "1178",
+  Optimized_Voc_Index: "1303",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "511",
   Frequency: "2044",
-  Optimized_Sent_Index: "1179",
-  Optimized_Voc_Index: "1304",
   Furigana: "政治[せいじ]",
   Kana: "せいじ",
   Kanji: "政治",
+  Optimized_Sent_Index: "1179",
+  Optimized_Voc_Index: "1304",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1581",
   Frequency: "9611",
-  Optimized_Sent_Index: "1920",
-  Optimized_Voc_Index: "1305",
   Furigana: "治[なお]す",
   Kana: "なおす",
   Kanji: "治す",
+  Optimized_Sent_Index: "1920",
+  Optimized_Voc_Index: "1305",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1506",
   Frequency: "13525",
-  Optimized_Sent_Index: "1501",
-  Optimized_Voc_Index: "1306",
   Furigana: "ソース",
   Kana: "ソース",
   Kanji: "ソース",
+  Optimized_Sent_Index: "1501",
+  Optimized_Voc_Index: "1306",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "411",
   Frequency: "1855",
-  Optimized_Sent_Index: "1180",
-  Optimized_Voc_Index: "1307",
   Furigana: "政府[せいふ]",
   Kana: "せいふ",
   Kanji: "政府",
+  Optimized_Sent_Index: "1180",
+  Optimized_Voc_Index: "1307",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "477",
   Frequency: "3997",
-  Optimized_Sent_Index: "1181",
-  Optimized_Voc_Index: "1308",
   Furigana: "党[とう]",
   Kana: "とう",
   Kanji: "党",
+  Optimized_Sent_Index: "1181",
+  Optimized_Voc_Index: "1308",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "571",
   Frequency: "6606",
-  Optimized_Sent_Index: "1369",
-  Optimized_Voc_Index: "1309",
   Furigana: "対策[たいさく]",
   Kana: "たいさく",
   Kanji: "対策",
+  Optimized_Sent_Index: "1369",
+  Optimized_Voc_Index: "1309",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "611",
   Frequency: "6699",
-  Optimized_Sent_Index: "1182",
-  Optimized_Voc_Index: "1310",
   Furigana: "政策[せいさく]",
   Kana: "せいさく",
   Kanji: "政策",
+  Optimized_Sent_Index: "1182",
+  Optimized_Voc_Index: "1310",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1507",
   Frequency: "21480",
-  Optimized_Sent_Index: "903",
-  Optimized_Voc_Index: "1311",
   Furigana: "タイプライター",
   Kana: "タイプライター",
   Kanji: "タイプライター",
+  Optimized_Sent_Index: "903",
+  Optimized_Voc_Index: "1311",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "443",
   Frequency: "872",
-  Optimized_Sent_Index: "1183",
-  Optimized_Voc_Index: "1312",
   Furigana: "選[えら]ぶ",
   Kana: "えらぶ",
   Kanji: "選ぶ",
+  Optimized_Sent_Index: "1183",
+  Optimized_Voc_Index: "1312",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "707",
   Frequency: "2949",
-  Optimized_Sent_Index: "1184",
-  Optimized_Voc_Index: "1313",
   Furigana: "選手[せんしゅ]",
   Kana: "せんしゅ",
   Kanji: "選手",
+  Optimized_Sent_Index: "1184",
+  Optimized_Voc_Index: "1313",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "525",
   Frequency: "7927",
-  Optimized_Sent_Index: "1188",
-  Optimized_Voc_Index: "1314",
   Furigana: "選挙[せんきょ]",
   Kana: "せんきょ",
   Kanji: "選挙",
+  Optimized_Sent_Index: "1188",
+  Optimized_Voc_Index: "1314",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "706",
   Frequency: "9479",
-  Optimized_Sent_Index: "1189",
-  Optimized_Voc_Index: "1315",
   Furigana: "候補[こうほ]",
   Kana: "こうほ",
   Kanji: "候補",
+  Optimized_Sent_Index: "1189",
+  Optimized_Voc_Index: "1315",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1509",
   Frequency: "13359",
-  Optimized_Sent_Index: "435",
-  Optimized_Voc_Index: "1316",
   Furigana: "トマト",
   Kana: "トマト",
   Kanji: "トマト",
+  Optimized_Sent_Index: "435",
+  Optimized_Voc_Index: "1316",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "409",
   Frequency: "4091",
-  Optimized_Sent_Index: "1190",
-  Optimized_Voc_Index: "1317",
   Furigana: "首相[しゅしょう]",
   Kana: "しゅしょう",
   Kanji: "首相",
+  Optimized_Sent_Index: "1190",
+  Optimized_Voc_Index: "1317",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "819",
   Frequency: "5953",
-  Optimized_Sent_Index: "1191",
-  Optimized_Voc_Index: "1318",
   Furigana: "首都[しゅと]",
   Kana: "しゅと",
   Kanji: "首都",
+  Optimized_Sent_Index: "1191",
+  Optimized_Voc_Index: "1318",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "531",
   Frequency: "9846",
-  Optimized_Sent_Index: "1197",
-  Optimized_Voc_Index: "1319",
   Furigana: "改革[かいかく]",
   Kana: "かいかく",
   Kanji: "改革",
+  Optimized_Sent_Index: "1197",
+  Optimized_Voc_Index: "1319",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1502",
   Frequency: "4874",
-  Optimized_Sent_Index: "1198",
-  Optimized_Voc_Index: "1320",
   Furigana: "革[かわ]",
   Kana: "かわ",
   Kanji: "革",
+  Optimized_Sent_Index: "1198",
+  Optimized_Voc_Index: "1320",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1511",
   Frequency: "9981",
-  Optimized_Sent_Index: "472",
-  Optimized_Voc_Index: "1321",
   Furigana: "バター",
   Kana: "バター",
   Kanji: "バター",
+  Optimized_Sent_Index: "472",
+  Optimized_Voc_Index: "1321",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "564",
   Frequency: "964",
-  Optimized_Sent_Index: "1220",
-  Optimized_Voc_Index: "1322",
   Furigana: "命令[めいれい]",
   Kana: "めいれい",
   Kanji: "命令",
+  Optimized_Sent_Index: "1220",
+  Optimized_Voc_Index: "1322",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "875",
   Frequency: "4771",
-  Optimized_Sent_Index: "1199",
-  Optimized_Voc_Index: "1323",
   Furigana: "番組[ばんぐみ]",
   Kana: "ばんぐみ",
   Kanji: "番組",
+  Optimized_Sent_Index: "1199",
+  Optimized_Voc_Index: "1323",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1192",
   Frequency: "12874",
-  Optimized_Sent_Index: "1724",
-  Optimized_Voc_Index: "1324",
   Furigana: "組[く]み 立[た]てる",
   Kana: "くみたてる",
   Kanji: "組み立てる",
+  Optimized_Sent_Index: "1724",
+  Optimized_Voc_Index: "1324",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "631",
   Frequency: "1904",
-  Optimized_Sent_Index: "1201",
-  Optimized_Voc_Index: "1325",
   Furigana: "組織[そしき]",
   Kana: "そしき",
   Kanji: "組織",
+  Optimized_Sent_Index: "1201",
+  Optimized_Voc_Index: "1325",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1513",
   Frequency: "35660",
-  Optimized_Sent_Index: "1563",
-  Optimized_Voc_Index: "1326",
   Furigana: "バレーボール",
   Kana: "バレーボール",
   Kanji: "バレーボール",
+  Optimized_Sent_Index: "1563",
+  Optimized_Voc_Index: "1326",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "447",
   Frequency: "1965",
-  Optimized_Sent_Index: "1652",
-  Optimized_Voc_Index: "1327",
   Furigana: "進[すす]める",
   Kana: "すすめる",
   Kanji: "進める",
+  Optimized_Sent_Index: "1652",
+  Optimized_Voc_Index: "1327",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "614",
   Frequency: "536",
-  Optimized_Sent_Index: "1202",
-  Optimized_Voc_Index: "1328",
   Furigana: "進[すす]む",
   Kana: "すすむ",
   Kanji: "進む",
+  Optimized_Sent_Index: "1202",
+  Optimized_Voc_Index: "1328",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1086",
   Frequency: "12583",
-  Optimized_Sent_Index: "1204",
-  Optimized_Voc_Index: "1329",
   Furigana: "進学[しんがく]",
   Kana: "しんがく",
   Kanji: "進学",
+  Optimized_Sent_Index: "1204",
+  Optimized_Voc_Index: "1329",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "613",
   Frequency: "5067",
-  Optimized_Sent_Index: "1206",
-  Optimized_Voc_Index: "1330",
   Furigana: "拡大[かくだい]",
   Kana: "かくだい",
   Kanji: "拡大",
+  Optimized_Sent_Index: "1206",
+  Optimized_Voc_Index: "1330",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1514",
   Frequency: "11459",
-  Optimized_Sent_Index: "484",
-  Optimized_Voc_Index: "1331",
   Furigana: "おかず",
   Kana: "おかず",
   Kanji: "おかず",
+  Optimized_Sent_Index: "484",
+  Optimized_Voc_Index: "1331",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "729",
   Frequency: "1494",
-  Optimized_Sent_Index: "1208",
-  Optimized_Voc_Index: "1332",
   Furigana: "責任[せきにん]",
   Kana: "せきにん",
   Kanji: "責任",
+  Optimized_Sent_Index: "1208",
+  Optimized_Voc_Index: "1332",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1058",
   Frequency: "3991",
-  Optimized_Sent_Index: "1209",
-  Optimized_Voc_Index: "1333",
   Furigana: "辞[や]める",
   Kana: "やめる",
   Kanji: "辞める",
+  Optimized_Sent_Index: "1209",
+  Optimized_Voc_Index: "1333",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1576",
   Frequency: "10858",
-  Optimized_Sent_Index: "1210",
-  Optimized_Voc_Index: "1334",
   Furigana: "辞書[じしょ]",
   Kana: "じしょ",
   Kanji: "辞書",
+  Optimized_Sent_Index: "1210",
+  Optimized_Voc_Index: "1334",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1056",
   Frequency: "17206",
-  Optimized_Sent_Index: "1214",
-  Optimized_Voc_Index: "1335",
   Furigana: "通勤[つうきん]",
   Kana: "つうきん",
   Kanji: "通勤",
+  Optimized_Sent_Index: "1214",
+  Optimized_Voc_Index: "1335",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1515",
   Frequency: "16205",
-  Optimized_Sent_Index: "745",
-  Optimized_Voc_Index: "1336",
   Furigana: "カレンダー",
   Kana: "カレンダー",
   Kanji: "カレンダー",
+  Optimized_Sent_Index: "745",
+  Optimized_Voc_Index: "1336",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1900",
   Frequency: "2675",
-  Optimized_Sent_Index: "1216",
-  Optimized_Voc_Index: "1337",
   Furigana: "勤[つと]める",
   Kana: "つとめる",
   Kanji: "勤める",
+  Optimized_Sent_Index: "1216",
+  Optimized_Voc_Index: "1337",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "728",
   Frequency: "1932",
-  Optimized_Sent_Index: "1217",
-  Optimized_Voc_Index: "1338",
   Furigana: "事務所[じむしょ]",
   Kana: "じむしょ",
   Kanji: "事務所",
+  Optimized_Sent_Index: "1217",
+  Optimized_Voc_Index: "1338",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1445",
   Frequency: "8950",
-  Optimized_Sent_Index: "1218",
-  Optimized_Voc_Index: "1339",
   Furigana: "事務室[じむしつ]",
   Kana: "じむしつ",
   Kanji: "事務室",
+  Optimized_Sent_Index: "1218",
+  Optimized_Voc_Index: "1339",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "544",
   Frequency: "7092",
-  Optimized_Sent_Index: "1219",
-  Optimized_Voc_Index: "1340",
   Furigana: "従来[じゅうらい]",
   Kana: "じゅうらい",
   Kanji: "従来",
+  Optimized_Sent_Index: "1219",
+  Optimized_Voc_Index: "1340",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1520",
   Frequency: "8142",
-  Optimized_Sent_Index: "617",
-  Optimized_Voc_Index: "1341",
   Furigana: "ハンドバッグ",
   Kana: "ハンドバッグ",
   Kanji: "ハンドバッグ",
+  Optimized_Sent_Index: "617",
+  Optimized_Voc_Index: "1341",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "940",
   Frequency: "4645",
-  Optimized_Sent_Index: "1222",
-  Optimized_Voc_Index: "1342",
   Furigana: "成績[せいせき]",
   Kana: "せいせき",
   Kanji: "成績",
+  Optimized_Sent_Index: "1222",
+  Optimized_Voc_Index: "1342",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "471",
   Frequency: "1293",
-  Optimized_Sent_Index: "1225",
-  Optimized_Voc_Index: "1343",
   Furigana: "集[あつ]める",
   Kana: "あつめる",
   Kanji: "集める",
+  Optimized_Sent_Index: "1225",
+  Optimized_Voc_Index: "1343",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "610",
   Frequency: "1133",
-  Optimized_Sent_Index: "1226",
-  Optimized_Voc_Index: "1344",
   Furigana: "集[あつ]まる",
   Kana: "あつまる",
   Kanji: "集まる",
+  Optimized_Sent_Index: "1226",
+  Optimized_Voc_Index: "1344",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "592",
   Frequency: "5167",
-  Optimized_Sent_Index: "1229",
-  Optimized_Voc_Index: "1345",
   Furigana: "採用[さいよう]",
   Kana: "さいよう",
   Kanji: "採用",
+  Optimized_Sent_Index: "1229",
+  Optimized_Voc_Index: "1345",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1521",
   Frequency: "1842",
-  Optimized_Sent_Index: "1821",
-  Optimized_Voc_Index: "1346",
   Furigana: "ベル",
   Kana: "ベル",
   Kanji: "ベル",
+  Optimized_Sent_Index: "1821",
+  Optimized_Voc_Index: "1346",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "971",
   Frequency: "5506",
-  Optimized_Sent_Index: "1230",
-  Optimized_Voc_Index: "1347",
   Furigana: "給料[きゅうりょう]",
   Kana: "きゅうりょう",
   Kanji: "給料",
+  Optimized_Sent_Index: "1230",
+  Optimized_Voc_Index: "1347",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "799",
   Frequency: "2882",
-  Optimized_Sent_Index: "1232",
-  Optimized_Voc_Index: "1348",
   Furigana: "卒業[そつぎょう]",
   Kana: "そつぎょう",
   Kanji: "卒業",
+  Optimized_Sent_Index: "1232",
+  Optimized_Voc_Index: "1348",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "852",
   Frequency: "6877",
-  Optimized_Sent_Index: "1236",
-  Optimized_Voc_Index: "1349",
   Furigana: "就職[しゅうしょく]",
   Kana: "しゅうしょく",
   Kanji: "就職",
+  Optimized_Sent_Index: "1236",
+  Optimized_Voc_Index: "1349",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1126",
   Frequency: "7979",
-  Optimized_Sent_Index: "1237",
-  Optimized_Voc_Index: "1350",
   Furigana: "退院[たいいん]",
   Kana: "たいいん",
   Kanji: "退院",
+  Optimized_Sent_Index: "1237",
+  Optimized_Voc_Index: "1350",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1523",
   Frequency: "11699",
-  Optimized_Sent_Index: "487",
-  Optimized_Voc_Index: "1351",
   Furigana: "インク",
   Kana: "インク",
   Kanji: "インク",
+  Optimized_Sent_Index: "487",
+  Optimized_Voc_Index: "1351",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "711",
   Frequency: "3248",
-  Optimized_Sent_Index: "1238",
-  Optimized_Voc_Index: "1352",
   Furigana: "契約[けいやく]",
   Kana: "けいやく",
   Kanji: "契約",
+  Optimized_Sent_Index: "1238",
+  Optimized_Voc_Index: "1352",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "560",
   Frequency: "2740",
-  Optimized_Sent_Index: "1239",
-  Optimized_Voc_Index: "1353",
   Furigana: "交渉[こうしょう]",
   Kana: "こうしょう",
   Kanji: "交渉",
+  Optimized_Sent_Index: "1239",
+  Optimized_Voc_Index: "1353",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "403",
   Frequency: "303",
-  Optimized_Sent_Index: "1264",
-  Optimized_Voc_Index: "1354",
   Furigana: "事件[じけん]",
   Kana: "じけん",
   Kanji: "事件",
+  Optimized_Sent_Index: "1264",
+  Optimized_Voc_Index: "1354",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "733",
   Frequency: "1788",
-  Optimized_Sent_Index: "1325",
-  Optimized_Voc_Index: "1355",
   Furigana: "条件[じょうけん]",
   Kana: "じょうけん",
   Kanji: "条件",
+  Optimized_Sent_Index: "1325",
+  Optimized_Voc_Index: "1355",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1527",
   Frequency: "17870",
-  Optimized_Sent_Index: "596",
-  Optimized_Voc_Index: "1356",
   Furigana: "クーラー",
   Kana: "クーラー",
   Kanji: "クーラー",
+  Optimized_Sent_Index: "596",
+  Optimized_Voc_Index: "1356",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "506",
   Frequency: "2275",
-  Optimized_Sent_Index: "1242",
-  Optimized_Voc_Index: "1357",
   Furigana: "参加[さんか]",
   Kana: "さんか",
   Kanji: "参加",
+  Optimized_Sent_Index: "1242",
+  Optimized_Voc_Index: "1357",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "530",
   Frequency: "11377",
-  Optimized_Sent_Index: "1243",
-  Optimized_Voc_Index: "1358",
   Furigana: "増加[ぞうか]",
   Kana: "ぞうか",
   Kanji: "増加",
+  Optimized_Sent_Index: "1243",
+  Optimized_Voc_Index: "1358",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "578",
   Frequency: "1423",
-  Optimized_Sent_Index: "1464",
-  Optimized_Voc_Index: "1359",
   Furigana: "加[くわ]える",
   Kana: "くわえる",
   Kanji: "加える",
+  Optimized_Sent_Index: "1464",
+  Optimized_Voc_Index: "1359",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "628",
   Frequency: "15673",
-  Optimized_Sent_Index: "1244",
-  Optimized_Voc_Index: "1360",
   Furigana: "加工[かこう]",
   Kana: "かこう",
   Kanji: "加工",
+  Optimized_Sent_Index: "1244",
+  Optimized_Voc_Index: "1360",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1535",
   Frequency: "7435",
-  Optimized_Sent_Index: "552",
-  Optimized_Voc_Index: "1361",
   Furigana: "ミルク",
   Kana: "ミルク",
   Kanji: "ミルク",
+  Optimized_Sent_Index: "552",
+  Optimized_Voc_Index: "1361",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "522",
   Frequency: "2143",
-  Optimized_Sent_Index: "1246",
-  Optimized_Voc_Index: "1362",
   Furigana: "比[くら]べる",
   Kana: "くらべる",
   Kanji: "比べる",
+  Optimized_Sent_Index: "1246",
+  Optimized_Voc_Index: "1362",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "659",
   Frequency: "3533",
-  Optimized_Sent_Index: "1848",
-  Optimized_Voc_Index: "1363",
   Furigana: "批判[ひはん]",
   Kana: "ひはん",
   Kanji: "批判",
+  Optimized_Sent_Index: "1848",
+  Optimized_Voc_Index: "1363",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "573",
   Frequency: "3283",
-  Optimized_Sent_Index: "1247",
-  Optimized_Voc_Index: "1364",
   Furigana: "評価[ひょうか]",
   Kana: "ひょうか",
   Kanji: "評価",
+  Optimized_Sent_Index: "1247",
+  Optimized_Voc_Index: "1364",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "458",
   Frequency: "2721",
-  Optimized_Sent_Index: "1248",
-  Optimized_Voc_Index: "1365",
   Furigana: "対象[たいしょう]",
   Kana: "たいしょう",
   Kanji: "対象",
+  Optimized_Sent_Index: "1248",
+  Optimized_Voc_Index: "1365",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1540",
   Frequency: "12194",
-  Optimized_Sent_Index: "473",
-  Optimized_Voc_Index: "1366",
   Furigana: "サラダ",
   Kana: "サラダ",
   Kanji: "サラダ",
+  Optimized_Sent_Index: "473",
+  Optimized_Voc_Index: "1366",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "946",
   Frequency: "7629",
-  Optimized_Sent_Index: "1291",
-  Optimized_Voc_Index: "1367",
   Furigana: "故障[こしょう]",
   Kana: "こしょう",
   Kanji: "故障",
+  Optimized_Sent_Index: "1291",
+  Optimized_Voc_Index: "1367",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1010",
   Frequency: "5111",
-  Optimized_Sent_Index: "1249",
-  Optimized_Voc_Index: "1368",
   Furigana: "修理[しゅうり]",
   Kana: "しゅうり",
   Kanji: "修理",
+  Optimized_Sent_Index: "1249",
+  Optimized_Voc_Index: "1368",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1426",
   Frequency: "14808",
-  Optimized_Sent_Index: "1250",
-  Optimized_Voc_Index: "1369",
   Furigana: "乗[の]り 換[か]える",
   Kana: "のりかえる",
   Kanji: "乗り換える",
+  Optimized_Sent_Index: "1250",
+  Optimized_Voc_Index: "1369",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1639",
   Frequency: "36414",
-  Optimized_Sent_Index: "1252",
-  Optimized_Voc_Index: "1370",
   Furigana: "乗[の]り 換[か]え",
   Kana: "のりかえ",
   Kanji: "乗り換え",
+  Optimized_Sent_Index: "1252",
+  Optimized_Voc_Index: "1370",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1542",
   Frequency: "2206",
-  Optimized_Sent_Index: "507",
-  Optimized_Voc_Index: "1371",
   Furigana: "おじさん",
   Kana: "おじさん",
   Kanji: "おじさん",
+  Optimized_Sent_Index: "507",
+  Optimized_Voc_Index: "1371",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1769",
   Frequency: "9334",
-  Optimized_Sent_Index: "1253",
-  Optimized_Voc_Index: "1372",
   Furigana: "換[か]える",
   Kana: "かえる",
   Kanji: "換える",
+  Optimized_Sent_Index: "1253",
+  Optimized_Voc_Index: "1372",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1844",
   Frequency: "4393",
-  Optimized_Sent_Index: "1254",
-  Optimized_Voc_Index: "1373",
   Furigana: "着替[きが]える",
   Kana: "きがえる",
   Kanji: "着替える",
+  Optimized_Sent_Index: "1254",
+  Optimized_Voc_Index: "1373",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1838",
   Frequency: "5353",
-  Optimized_Sent_Index: "1888",
-  Optimized_Voc_Index: "1374",
   Furigana: "被[かぶ]る",
   Kana: "かぶる",
   Kanji: "被る",
+  Optimized_Sent_Index: "1888",
+  Optimized_Voc_Index: "1374",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1098",
   Frequency: "1707",
-  Optimized_Sent_Index: "1256",
-  Optimized_Voc_Index: "1375",
   Furigana: "破[やぶ]る",
   Kana: "やぶる",
   Kanji: "破る",
+  Optimized_Sent_Index: "1256",
+  Optimized_Voc_Index: "1375",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1549",
   Frequency: "4496",
-  Optimized_Sent_Index: "1544",
-  Optimized_Voc_Index: "1376",
   Furigana: "ベルト",
   Kana: "ベルト",
   Kanji: "ベルト",
+  Optimized_Sent_Index: "1544",
+  Optimized_Voc_Index: "1376",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1456",
   Frequency: "4548",
-  Optimized_Sent_Index: "1257",
-  Optimized_Voc_Index: "1377",
   Furigana: "破[やぶ]れる",
   Kana: "やぶれる",
   Kanji: "破れる",
+  Optimized_Sent_Index: "1257",
+  Optimized_Voc_Index: "1377",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1146",
   Frequency: "4099",
-  Optimized_Sent_Index: "1260",
-  Optimized_Voc_Index: "1378",
   Furigana: "壊[こわ]す",
   Kana: "こわす",
   Kanji: "壊す",
+  Optimized_Sent_Index: "1260",
+  Optimized_Voc_Index: "1378",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1858",
   Frequency: "3654",
-  Optimized_Sent_Index: "1261",
-  Optimized_Voc_Index: "1379",
   Furigana: "壊[こわ]れる",
   Kana: "こわれる",
   Kanji: "壊れる",
+  Optimized_Sent_Index: "1261",
+  Optimized_Voc_Index: "1379",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1207",
   Frequency: "6543",
-  Optimized_Sent_Index: "1600",
-  Optimized_Voc_Index: "1380",
   Furigana: "救急車[きゅうきゅうしゃ]",
   Kana: "きゅうきゅうしゃ",
   Kanji: "救急車",
+  Optimized_Sent_Index: "1600",
+  Optimized_Voc_Index: "1380",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1552",
   Frequency: "10669",
-  Optimized_Sent_Index: "474",
-  Optimized_Voc_Index: "1381",
   Furigana: "ラーメン",
   Kana: "ラーメン",
   Kanji: "ラーメン",
+  Optimized_Sent_Index: "474",
+  Optimized_Voc_Index: "1381",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1888",
   Frequency: "915",
-  Optimized_Sent_Index: "1670",
-  Optimized_Voc_Index: "1382",
   Furigana: "助[たす]ける",
   Kana: "たすける",
   Kanji: "助ける",
+  Optimized_Sent_Index: "1670",
+  Optimized_Voc_Index: "1382",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1152",
   Frequency: "1253",
-  Optimized_Sent_Index: "1262",
-  Optimized_Voc_Index: "1383",
   Furigana: "立派[りっぱ]",
   Kana: "りっぱ",
   Kanji: "立派",
+  Optimized_Sent_Index: "1262",
+  Optimized_Voc_Index: "1383",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "633",
   Frequency: "587",
-  Optimized_Sent_Index: "1596",
-  Optimized_Voc_Index: "1384",
   Furigana: "警察[けいさつ]",
   Kana: "けいさつ",
   Kanji: "警察",
+  Optimized_Sent_Index: "1596",
+  Optimized_Voc_Index: "1384",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "529",
   Frequency: "4124",
-  Optimized_Sent_Index: "1263",
-  Optimized_Voc_Index: "1385",
   Furigana: "管理[かんり]",
   Kana: "かんり",
   Kanji: "管理",
+  Optimized_Sent_Index: "1263",
+  Optimized_Voc_Index: "1385",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1553",
   Frequency: "5268",
-  Optimized_Sent_Index: "618",
-  Optimized_Voc_Index: "1386",
   Furigana: "ライター",
   Kana: "ライター",
   Kanji: "ライター",
+  Optimized_Sent_Index: "618",
+  Optimized_Voc_Index: "1386",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1119",
   Frequency: "1933",
-  Optimized_Sent_Index: "1519",
-  Optimized_Voc_Index: "1387",
   Furigana: "盗[ぬす]む",
   Kana: "ぬすむ",
   Kanji: "盗む",
+  Optimized_Sent_Index: "1519",
+  Optimized_Voc_Index: "1387",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "861",
   Frequency: "214",
-  Optimized_Sent_Index: "1704",
-  Optimized_Voc_Index: "1388",
   Furigana: "殺[ころ]す",
   Kana: "ころす",
   Kanji: "殺す",
+  Optimized_Sent_Index: "1704",
+  Optimized_Voc_Index: "1388",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "746",
   Frequency: "2288",
-  Optimized_Sent_Index: "1265",
-  Optimized_Voc_Index: "1389",
   Furigana: "逮捕[たいほ]",
   Kana: "たいほ",
   Kanji: "逮捕",
+  Optimized_Sent_Index: "1265",
+  Optimized_Voc_Index: "1389",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "817",
   Frequency: "468",
-  Optimized_Sent_Index: "1659",
-  Optimized_Voc_Index: "1390",
   Furigana: "逃[に]げる",
   Kana: "にげる",
   Kanji: "逃げる",
+  Optimized_Sent_Index: "1659",
+  Optimized_Voc_Index: "1390",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1554",
   Frequency: "9749",
-  Optimized_Sent_Index: "1009",
-  Optimized_Voc_Index: "1391",
   Furigana: "ワイシャツ",
   Kana: "ワイシャツ",
   Kanji: "ワイシャツ",
+  Optimized_Sent_Index: "1009",
+  Optimized_Voc_Index: "1391",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "826",
   Frequency: "838",
-  Optimized_Sent_Index: "1266",
-  Optimized_Voc_Index: "1392",
   Furigana: "戦争[せんそう]",
   Kana: "せんそう",
   Kanji: "戦争",
+  Optimized_Sent_Index: "1266",
+  Optimized_Voc_Index: "1392",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "517",
   Frequency: "7732",
-  Optimized_Sent_Index: "1509",
-  Optimized_Voc_Index: "1393",
   Furigana: "競争[きょうそう]",
   Kana: "きょうそう",
   Kanji: "競争",
+  Optimized_Sent_Index: "1509",
+  Optimized_Voc_Index: "1393",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1341",
   Frequency: "8421",
-  Optimized_Sent_Index: "723",
-  Optimized_Voc_Index: "1394",
   Furigana: "混[こ]む",
   Kana: "こむ",
   Kanji: "混む",
+  Optimized_Sent_Index: "723",
+  Optimized_Voc_Index: "1394",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "457",
   Frequency: "4685",
-  Optimized_Sent_Index: "1516",
-  Optimized_Voc_Index: "1395",
   Furigana: "大統領[だいとうりょう]",
   Kana: "だいとうりょう",
   Kanji: "大統領",
+  Optimized_Sent_Index: "1516",
+  Optimized_Voc_Index: "1395",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1557",
   Frequency: "4898",
-  Optimized_Sent_Index: "1742",
-  Optimized_Voc_Index: "1396",
   Furigana: "シャワー",
   Kana: "シャワー",
   Kanji: "シャワー",
+  Optimized_Sent_Index: "1742",
+  Optimized_Voc_Index: "1396",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "871",
   Frequency: "780",
-  Optimized_Sent_Index: "1267",
-  Optimized_Voc_Index: "1397",
   Furigana: "捨[す]てる",
   Kana: "すてる",
   Kanji: "捨てる",
+  Optimized_Sent_Index: "1267",
+  Optimized_Voc_Index: "1397",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1166",
   Frequency: "1728",
-  Optimized_Sent_Index: "1804",
-  Optimized_Voc_Index: "1398",
   Furigana: "拾[ひろ]う",
   Kana: "ひろう",
   Kanji: "拾う",
+  Optimized_Sent_Index: "1804",
+  Optimized_Voc_Index: "1398",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1121",
   Frequency: "1952",
-  Optimized_Sent_Index: "1972",
-  Optimized_Voc_Index: "1399",
   Furigana: "池[いけ]",
   Kana: "いけ",
   Kanji: "池",
+  Optimized_Sent_Index: "1972",
+  Optimized_Voc_Index: "1399",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1249",
   Frequency: "19497",
-  Optimized_Sent_Index: "1270",
-  Optimized_Voc_Index: "1400",
   Furigana: "電池[でんち]",
   Kana: "でんち",
   Kanji: "電池",
+  Optimized_Sent_Index: "1270",
+  Optimized_Voc_Index: "1400",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1561",
   Frequency: "11441",
-  Optimized_Sent_Index: "475",
-  Optimized_Voc_Index: "1401",
   Furigana: "うどん",
   Kana: "うどん",
   Kanji: "うどん",
+  Optimized_Sent_Index: "475",
+  Optimized_Voc_Index: "1401",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "705",
   Frequency: "374",
-  Optimized_Sent_Index: "1271",
-  Optimized_Voc_Index: "1402",
   Furigana: "深[ふか]い",
   Kana: "ふかい",
   Kanji: "深い",
+  Optimized_Sent_Index: "1271",
+  Optimized_Voc_Index: "1402",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1784",
   Frequency: "",
-  Optimized_Sent_Index: "1272",
-  Optimized_Voc_Index: "1403",
   Furigana: "深[ふか]さ",
   Kana: "ふかさ",
   Kanji: "深さ",
+  Optimized_Sent_Index: "1272",
+  Optimized_Voc_Index: "1403",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1143",
   Frequency: "3238",
-  Optimized_Sent_Index: "1273",
-  Optimized_Voc_Index: "1404",
   Furigana: "浅[あさ]い",
   Kana: "あさい",
   Kanji: "浅い",
+  Optimized_Sent_Index: "1273",
+  Optimized_Voc_Index: "1404",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "905",
   Frequency: "927",
-  Optimized_Sent_Index: "1803",
-  Optimized_Voc_Index: "1405",
   Furigana: "落[お]とす",
   Kana: "おとす",
   Kanji: "落とす",
+  Optimized_Sent_Index: "1803",
+  Optimized_Voc_Index: "1405",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1569",
   Frequency: "16217",
-  Optimized_Sent_Index: "407",
-  Optimized_Voc_Index: "1406",
   Furigana: "ごみ",
   Kana: "ごみ",
   Kanji: "ごみ",
+  Optimized_Sent_Index: "407",
+  Optimized_Voc_Index: "1406",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1112",
   Frequency: "3165",
-  Optimized_Sent_Index: "1276",
-  Optimized_Voc_Index: "1407",
   Furigana: "泳[およ]ぐ",
   Kana: "およぐ",
   Kanji: "泳ぐ",
+  Optimized_Sent_Index: "1276",
+  Optimized_Voc_Index: "1407",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1340",
   Frequency: "16480",
-  Optimized_Sent_Index: "1619",
-  Optimized_Voc_Index: "1408",
   Furigana: "水泳[すいえい]",
   Kana: "すいえい",
   Kanji: "水泳",
+  Optimized_Sent_Index: "1619",
+  Optimized_Voc_Index: "1408",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "815",
   Frequency: "635",
-  Optimized_Sent_Index: "1634",
-  Optimized_Voc_Index: "1409",
   Furigana: "流[なが]れる",
   Kana: "ながれる",
   Kanji: "流れる",
+  Optimized_Sent_Index: "1634",
+  Optimized_Voc_Index: "1409",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1803",
   Frequency: "11033",
-  Optimized_Sent_Index: "1278",
-  Optimized_Voc_Index: "1410",
   Furigana: "流行[はや]る",
   Kana: "はやる",
   Kanji: "流行る",
+  Optimized_Sent_Index: "1278",
+  Optimized_Voc_Index: "1410",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1571",
   Frequency: "24313",
-  Optimized_Sent_Index: "1241",
-  Optimized_Voc_Index: "1411",
   Furigana: "スーパーマーケット",
   Kana: "スーパーマーケット",
   Kanji: "スーパーマーケット",
+  Optimized_Sent_Index: "1241",
+  Optimized_Voc_Index: "1411",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1080",
   Frequency: "1618",
-  Optimized_Sent_Index: "1280",
-  Optimized_Voc_Index: "1412",
   Furigana: "洗[あら]う",
   Kana: "あらう",
   Kanji: "洗う",
+  Optimized_Sent_Index: "1280",
+  Optimized_Voc_Index: "1412",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1745",
   Frequency: "10626",
-  Optimized_Sent_Index: "1282",
-  Optimized_Voc_Index: "1413",
   Furigana: "洗面所[せんめんじょ]",
   Kana: "せんめんじょ",
   Kanji: "洗面所",
+  Optimized_Sent_Index: "1282",
+  Optimized_Voc_Index: "1413",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1240",
   Frequency: "3114",
-  Optimized_Sent_Index: "1283",
-  Optimized_Voc_Index: "1414",
   Furigana: "油[あぶら]",
   Kana: "あぶら",
   Kanji: "油",
+  Optimized_Sent_Index: "1283",
+  Optimized_Voc_Index: "1414",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1105",
   Frequency: "1429",
-  Optimized_Sent_Index: "1284",
-  Optimized_Voc_Index: "1415",
   Furigana: "沈[しず]む",
   Kana: "しずむ",
   Kanji: "沈む",
+  Optimized_Sent_Index: "1284",
+  Optimized_Voc_Index: "1415",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1572",
   Frequency: "3554",
-  Optimized_Sent_Index: "425",
-  Optimized_Voc_Index: "1416",
   Furigana: "ハンカチ",
   Kana: "ハンカチ",
   Kanji: "ハンカチ",
+  Optimized_Sent_Index: "425",
+  Optimized_Voc_Index: "1416",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1067",
   Frequency: "4446",
-  Optimized_Sent_Index: "1285",
-  Optimized_Voc_Index: "1417",
   Furigana: "久[ひさ]しぶり",
   Kana: "ひさしぶり",
   Kanji: "久しぶり",
+  Optimized_Sent_Index: "1285",
+  Optimized_Voc_Index: "1417",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1078",
   Frequency: "2091",
-  Optimized_Sent_Index: "1286",
-  Optimized_Voc_Index: "1418",
   Furigana: "氷[こおり]",
   Kana: "こおり",
   Kanji: "氷",
+  Optimized_Sent_Index: "1286",
+  Optimized_Voc_Index: "1418",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1393",
   Frequency: "3895",
-  Optimized_Sent_Index: "1287",
-  Optimized_Voc_Index: "1419",
   Furigana: "冷[ひ]える",
   Kana: "ひえる",
   Kanji: "冷える",
+  Optimized_Sent_Index: "1287",
+  Optimized_Voc_Index: "1419",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1465",
   Frequency: "9406",
-  Optimized_Sent_Index: "1288",
-  Optimized_Voc_Index: "1420",
   Furigana: "冷[ひ]やす",
   Kana: "ひやす",
   Kanji: "冷やす",
+  Optimized_Sent_Index: "1288",
+  Optimized_Voc_Index: "1420",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1573",
   Frequency: "22073",
-  Optimized_Sent_Index: "659",
-  Optimized_Voc_Index: "1421",
   Furigana: "ビデオテープ",
   Kana: "ビデオテープ",
   Kanji: "ビデオテープ",
+  Optimized_Sent_Index: "659",
+  Optimized_Voc_Index: "1421",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1556",
   Frequency: "7423",
-  Optimized_Sent_Index: "1289",
-  Optimized_Voc_Index: "1422",
   Furigana: "冷[さ]める",
   Kana: "さめる",
   Kanji: "冷める",
+  Optimized_Sent_Index: "1289",
+  Optimized_Voc_Index: "1422",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1568",
   Frequency: "5582",
-  Optimized_Sent_Index: "1290",
-  Optimized_Voc_Index: "1423",
   Furigana: "凍[こお]る",
   Kana: "こおる",
   Kanji: "凍る",
+  Optimized_Sent_Index: "1290",
+  Optimized_Voc_Index: "1423",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1268",
   Frequency: "4984",
-  Optimized_Sent_Index: "1293",
-  Optimized_Voc_Index: "1424",
   Furigana: "冷蔵庫[れいぞうこ]",
   Kana: "れいぞうこ",
   Kanji: "冷蔵庫",
+  Optimized_Sent_Index: "1293",
+  Optimized_Voc_Index: "1424",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1360",
   Frequency: "6086",
-  Optimized_Sent_Index: "1294",
-  Optimized_Voc_Index: "1425",
   Furigana: "涼[すず]しい",
   Kana: "すずしい",
   Kanji: "涼しい",
+  Optimized_Sent_Index: "1294",
+  Optimized_Voc_Index: "1425",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1574",
   Frequency: "5672",
-  Optimized_Sent_Index: "632",
-  Optimized_Voc_Index: "1426",
   Furigana: "ぶらぶら",
   Kana: "ぶらぶら",
   Kanji: "ぶらぶら",
+  Optimized_Sent_Index: "632",
+  Optimized_Voc_Index: "1426",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1708",
   Frequency: "6306",
-  Optimized_Sent_Index: "1296",
-  Optimized_Voc_Index: "1427",
   Furigana: "汚[よご]す",
   Kana: "よごす",
   Kanji: "汚す",
+  Optimized_Sent_Index: "1296",
+  Optimized_Voc_Index: "1427",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1811",
   Frequency: "7665",
-  Optimized_Sent_Index: "1963",
-  Optimized_Voc_Index: "1428",
   Furigana: "汚[よご]れ",
   Kana: "よごれ",
   Kanji: "汚れ",
+  Optimized_Sent_Index: "1963",
+  Optimized_Voc_Index: "1428",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1981",
   Frequency: "2827",
-  Optimized_Sent_Index: "1297",
-  Optimized_Voc_Index: "1429",
   Furigana: "汚[よご]れる",
   Kana: "よごれる",
   Kanji: "汚れる",
+  Optimized_Sent_Index: "1297",
+  Optimized_Voc_Index: "1429",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1851",
   Frequency: "3646",
-  Optimized_Sent_Index: "1298",
-  Optimized_Voc_Index: "1430",
   Furigana: "景色[けしき]",
   Kana: "けしき",
   Kanji: "景色",
+  Optimized_Sent_Index: "1298",
+  Optimized_Voc_Index: "1430",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1575",
   Frequency: "12295",
-  Optimized_Sent_Index: "436",
-  Optimized_Voc_Index: "1431",
   Furigana: "アナウンサー",
   Kana: "アナウンサー",
   Kanji: "アナウンサー",
+  Optimized_Sent_Index: "436",
+  Optimized_Voc_Index: "1431",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "441",
   Frequency: "1924",
-  Optimized_Sent_Index: "1299",
-  Optimized_Voc_Index: "1432",
   Furigana: "影響[えいきょう]",
   Kana: "えいきょう",
   Kanji: "影響",
+  Optimized_Sent_Index: "1299",
+  Optimized_Voc_Index: "1432",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1106",
   Frequency: "1097",
-  Optimized_Sent_Index: "1300",
-  Optimized_Voc_Index: "1433",
   Furigana: "光[ひか]る",
   Kana: "ひかる",
   Kanji: "光る",
+  Optimized_Sent_Index: "1300",
+  Optimized_Voc_Index: "1433",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1361",
   Frequency: "4036",
-  Optimized_Sent_Index: "1301",
-  Optimized_Voc_Index: "1434",
   Furigana: "太[ふと]る",
   Kana: "ふとる",
   Kanji: "太る",
+  Optimized_Sent_Index: "1301",
+  Optimized_Voc_Index: "1434",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "935",
   Frequency: "1400",
-  Optimized_Sent_Index: "1860",
-  Optimized_Voc_Index: "1435",
   Furigana: "太陽[たいよう]",
   Kana: "たいよう",
   Kanji: "太陽",
+  Optimized_Sent_Index: "1860",
+  Optimized_Voc_Index: "1435",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1579",
   Frequency: "8357",
-  Optimized_Sent_Index: "476",
-  Optimized_Voc_Index: "1436",
   Furigana: "スプーン",
   Kana: "スプーン",
   Kanji: "スプーン",
+  Optimized_Sent_Index: "476",
+  Optimized_Voc_Index: "1436",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1955",
   Frequency: "983",
-  Optimized_Sent_Index: "1308",
-  Optimized_Voc_Index: "1437",
   Furigana: "星[ほし]",
   Kana: "ほし",
   Kanji: "星",
+  Optimized_Sent_Index: "1308",
+  Optimized_Voc_Index: "1437",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "774",
   Frequency: "1443",
-  Optimized_Sent_Index: "1699",
-  Optimized_Voc_Index: "1438",
   Furigana: "地球[ちきゅう]",
   Kana: "ちきゅう",
   Kanji: "地球",
+  Optimized_Sent_Index: "1699",
+  Optimized_Voc_Index: "1438",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "975",
   Frequency: "3118",
-  Optimized_Sent_Index: "1312",
-  Optimized_Voc_Index: "1439",
   Furigana: "野球[やきゅう]",
   Kana: "やきゅう",
   Kanji: "野球",
+  Optimized_Sent_Index: "1312",
+  Optimized_Voc_Index: "1439",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1849",
   Frequency: "1022",
-  Optimized_Sent_Index: "1314",
-  Optimized_Voc_Index: "1440",
   Furigana: "雲[くも]",
   Kana: "くも",
   Kanji: "雲",
+  Optimized_Sent_Index: "1314",
+  Optimized_Voc_Index: "1440",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1585",
   Frequency: "8418",
-  Optimized_Sent_Index: "1010",
-  Optimized_Voc_Index: "1441",
   Furigana: "ブラウス",
   Kana: "ブラウス",
   Kanji: "ブラウス",
+  Optimized_Sent_Index: "1010",
+  Optimized_Voc_Index: "1441",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1652",
   Frequency: "20113",
-  Optimized_Sent_Index: "1315",
-  Optimized_Voc_Index: "1442",
   Furigana: "曇[くも]り",
   Kana: "くもり",
   Kanji: "曇り",
+  Optimized_Sent_Index: "1315",
+  Optimized_Voc_Index: "1442",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "788",
   Frequency: "5960",
-  Optimized_Sent_Index: "1318",
-  Optimized_Voc_Index: "1443",
   Furigana: "地震[じしん]",
   Kana: "じしん",
   Kanji: "地震",
+  Optimized_Sent_Index: "1318",
+  Optimized_Voc_Index: "1443",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1309",
   Frequency: "1232",
-  Optimized_Sent_Index: "1320",
-  Optimized_Voc_Index: "1444",
   Furigana: "震[ふる]える",
   Kana: "ふるえる",
   Kanji: "震える",
+  Optimized_Sent_Index: "1320",
+  Optimized_Voc_Index: "1444",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "904",
   Frequency: "429",
-  Optimized_Sent_Index: "1669",
-  Optimized_Voc_Index: "1445",
   Furigana: "振[ふ]る",
   Kana: "ふる",
   Kanji: "振る",
+  Optimized_Sent_Index: "1669",
+  Optimized_Voc_Index: "1445",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1587",
   Frequency: "6209",
-  Optimized_Sent_Index: "1439",
-  Optimized_Voc_Index: "1446",
   Furigana: "リボン",
   Kana: "リボン",
   Kanji: "リボン",
+  Optimized_Sent_Index: "1439",
+  Optimized_Voc_Index: "1446",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1034",
   Frequency: "1653",
-  Optimized_Sent_Index: "1321",
-  Optimized_Voc_Index: "1447",
   Furigana: "揺[ゆ]れる",
   Kana: "ゆれる",
   Kanji: "揺れる",
+  Optimized_Sent_Index: "1321",
+  Optimized_Voc_Index: "1447",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1259",
   Frequency: "1989",
-  Optimized_Sent_Index: "1323",
-  Optimized_Voc_Index: "1448",
   Furigana: "神社[じんじゃ]",
   Kana: "じんじゃ",
   Kanji: "神社",
+  Optimized_Sent_Index: "1323",
+  Optimized_Voc_Index: "1448",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "913",
   Frequency: "1041",
-  Optimized_Sent_Index: "1324",
-  Optimized_Voc_Index: "1449",
   Furigana: "秘密[ひみつ]",
   Kana: "ひみつ",
   Kanji: "秘密",
+  Optimized_Sent_Index: "1324",
+  Optimized_Voc_Index: "1449",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1845",
   Frequency: "2177",
-  Optimized_Sent_Index: "1650",
-  Optimized_Voc_Index: "1450",
   Furigana: "厳[きび]しい",
   Kana: "きびしい",
   Kanji: "厳しい",
+  Optimized_Sent_Index: "1650",
+  Optimized_Voc_Index: "1450",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1588",
   Frequency: "3176",
-  Optimized_Sent_Index: "1245",
-  Optimized_Voc_Index: "1451",
   Furigana: "いかが",
   Kana: "いかが",
   Kanji: "いかが",
+  Optimized_Sent_Index: "1245",
+  Optimized_Voc_Index: "1451",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "936",
   Frequency: "4465",
-  Optimized_Sent_Index: "1329",
-  Optimized_Voc_Index: "1452",
   Furigana: "年寄[としよ]り",
   Kana: "としより",
   Kanji: "年寄り",
+  Optimized_Sent_Index: "1329",
+  Optimized_Voc_Index: "1452",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "717",
   Frequency: "1323",
-  Optimized_Sent_Index: "1678",
-  Optimized_Voc_Index: "1453",
   Furigana: "歴史[れきし]",
   Kana: "れきし",
   Kanji: "歴史",
+  Optimized_Sent_Index: "1678",
+  Optimized_Voc_Index: "1453",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "626",
   Frequency: "2218",
-  Optimized_Sent_Index: "1330",
-  Optimized_Voc_Index: "1454",
   Furigana: "世紀[せいき]",
   Kana: "せいき",
   Kanji: "世紀",
+  Optimized_Sent_Index: "1330",
+  Optimized_Voc_Index: "1454",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "419",
   Frequency: "3801",
-  Optimized_Sent_Index: "1331",
-  Optimized_Voc_Index: "1455",
   Furigana: "建設[けんせつ]",
   Kana: "けんせつ",
   Kanji: "建設",
+  Optimized_Sent_Index: "1331",
+  Optimized_Voc_Index: "1455",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1591",
   Frequency: "19205",
-  Optimized_Sent_Index: "1011",
-  Optimized_Voc_Index: "1456",
   Furigana: "ステレオ",
   Kana: "ステレオ",
   Kanji: "ステレオ",
+  Optimized_Sent_Index: "1011",
+  Optimized_Voc_Index: "1456",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "722",
   Frequency: "1040",
-  Optimized_Sent_Index: "1333",
-  Optimized_Voc_Index: "1457",
   Furigana: "建物[たてもの]",
   Kana: "たてもの",
   Kanji: "建物",
+  Optimized_Sent_Index: "1333",
+  Optimized_Voc_Index: "1457",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1061",
   Frequency: "4363",
-  Optimized_Sent_Index: "1334",
-  Optimized_Voc_Index: "1458",
   Furigana: "建[た]つ",
   Kana: "たつ",
   Kanji: "建つ",
+  Optimized_Sent_Index: "1334",
+  Optimized_Voc_Index: "1458",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "528",
   Frequency: "3967",
-  Optimized_Sent_Index: "1336",
-  Optimized_Voc_Index: "1459",
   Furigana: "構成[こうせい]",
   Kana: "こうせい",
   Kanji: "構成",
+  Optimized_Sent_Index: "1336",
+  Optimized_Voc_Index: "1459",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "587",
   Frequency: "3441",
-  Optimized_Sent_Index: "1337",
-  Optimized_Voc_Index: "1460",
   Furigana: "構造[こうぞう]",
   Kana: "こうぞう",
   Kanji: "構造",
+  Optimized_Sent_Index: "1337",
+  Optimized_Voc_Index: "1460",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1594",
   Frequency: "8317",
-  Optimized_Sent_Index: "1590",
-  Optimized_Voc_Index: "1461",
   Furigana: "フォーク",
   Kana: "フォーク",
   Kanji: "フォーク",
+  Optimized_Sent_Index: "1590",
+  Optimized_Voc_Index: "1461",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1927",
   Frequency: "1201",
-  Optimized_Sent_Index: "1339",
-  Optimized_Voc_Index: "1462",
   Furigana: "橋[はし]",
   Kana: "はし",
   Kanji: "橋",
+  Optimized_Sent_Index: "1339",
+  Optimized_Voc_Index: "1462",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1929",
   Frequency: "1975",
-  Optimized_Sent_Index: "1341",
-  Optimized_Voc_Index: "1463",
   Furigana: "柱[はしら]",
   Kana: "はしら",
   Kanji: "柱",
+  Optimized_Sent_Index: "1341",
+  Optimized_Voc_Index: "1463",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "701",
   Frequency: "1166",
-  Optimized_Sent_Index: "1344",
-  Optimized_Voc_Index: "1464",
   Furigana: "位置[いち]",
   Kana: "いち",
   Kanji: "位置",
+  Optimized_Sent_Index: "1344",
+  Optimized_Voc_Index: "1464",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1014",
   Frequency: "3577",
-  Optimized_Sent_Index: "1345",
-  Optimized_Voc_Index: "1465",
   Furigana: "離婚[りこん]",
   Kana: "りこん",
   Kanji: "離婚",
+  Optimized_Sent_Index: "1345",
+  Optimized_Voc_Index: "1465",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1596",
   Frequency: "8631",
-  Optimized_Sent_Index: "1952",
-  Optimized_Voc_Index: "1466",
   Furigana: "おば",
   Kana: "おば",
   Kanji: "おば",
+  Optimized_Sent_Index: "1952",
+  Optimized_Voc_Index: "1466",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1469",
   Frequency: "8452",
-  Optimized_Sent_Index: "1681",
-  Optimized_Voc_Index: "1467",
   Furigana: "停車[ていしゃ]",
   Kana: "ていしゃ",
   Kanji: "停車",
+  Optimized_Sent_Index: "1681",
+  Optimized_Voc_Index: "1467",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1642",
   Frequency: "15461",
-  Optimized_Sent_Index: "1347",
-  Optimized_Voc_Index: "1468",
   Furigana: "バス 停[てい]",
   Kana: "ばすてい",
   Kanji: "バス停",
+  Optimized_Sent_Index: "1347",
+  Optimized_Voc_Index: "1468",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "744",
   Frequency: "2889",
-  Optimized_Sent_Index: "1349",
-  Optimized_Voc_Index: "1469",
   Furigana: "周辺[しゅうへん]",
   Kana: "しゅうへん",
   Kanji: "周辺",
+  Optimized_Sent_Index: "1349",
+  Optimized_Voc_Index: "1469",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "894",
   Frequency: "1039",
-  Optimized_Sent_Index: "1668",
-  Optimized_Voc_Index: "1470",
   Furigana: "隣[となり]",
   Kana: "となり",
   Kanji: "隣",
+  Optimized_Sent_Index: "1668",
+  Optimized_Voc_Index: "1470",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1598",
   Frequency: "6371",
-  Optimized_Sent_Index: "1307",
-  Optimized_Voc_Index: "1471",
   Furigana: "きらきら",
   Kana: "きらきら",
   Kanji: "きらきら",
+  Optimized_Sent_Index: "1307",
+  Optimized_Voc_Index: "1471",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1730",
   Frequency: "5118",
-  Optimized_Sent_Index: "1352",
-  Optimized_Voc_Index: "1472",
   Furigana: "黄色[きいろ]",
   Kana: "きいろ",
   Kanji: "黄色",
+  Optimized_Sent_Index: "1352",
+  Optimized_Voc_Index: "1472",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "942",
   Frequency: "462",
-  Optimized_Sent_Index: "1353",
-  Optimized_Voc_Index: "1473",
   Furigana: "横[よこ]",
   Kana: "よこ",
   Kanji: "横",
+  Optimized_Sent_Index: "1353",
+  Optimized_Voc_Index: "1473",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1788",
   Frequency: "39517",
-  Optimized_Sent_Index: "1354",
-  Optimized_Voc_Index: "1474",
   Furigana: "横書[よこが]き",
   Kana: "よこがき",
   Kanji: "横書き",
+  Optimized_Sent_Index: "1354",
+  Optimized_Voc_Index: "1474",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "630",
   Frequency: "1146",
-  Optimized_Sent_Index: "1356",
-  Optimized_Voc_Index: "1475",
   Furigana: "判断[はんだん]",
   Kana: "はんだん",
   Kanji: "判断",
+  Optimized_Sent_Index: "1356",
+  Optimized_Voc_Index: "1475",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1600",
   Frequency: "1153",
-  Optimized_Sent_Index: "1597",
-  Optimized_Voc_Index: "1476",
   Furigana: "どうぞ",
   Kana: "どうぞ",
   Kanji: "どうぞ",
+  Optimized_Sent_Index: "1597",
+  Optimized_Voc_Index: "1476",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1101",
   Frequency: "2368",
-  Optimized_Sent_Index: "1358",
-  Optimized_Voc_Index: "1477",
   Furigana: "断[ことわ]る",
   Kana: "ことわる",
   Kanji: "断る",
+  Optimized_Sent_Index: "1358",
+  Optimized_Voc_Index: "1477",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1666",
   Frequency: "22721",
-  Optimized_Sent_Index: "1359",
-  Optimized_Voc_Index: "1478",
   Furigana: "横断歩道[おうだんほどう]",
   Kana: "おうだんほどう",
   Kanji: "横断歩道",
+  Optimized_Sent_Index: "1359",
+  Optimized_Voc_Index: "1478",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "627",
   Frequency: "12210",
-  Optimized_Sent_Index: "1360",
-  Optimized_Voc_Index: "1479",
   Furigana: "大幅[おおはば]",
   Kana: "おおはば",
   Kanji: "大幅",
+  Optimized_Sent_Index: "1360",
+  Optimized_Voc_Index: "1479",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "721",
   Frequency: "1461",
-  Optimized_Sent_Index: "1362",
-  Optimized_Voc_Index: "1480",
   Furigana: "訪[おとず]れる",
   Kana: "おとずれる",
   Kanji: "訪れる",
+  Optimized_Sent_Index: "1362",
+  Optimized_Voc_Index: "1480",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1603",
   Frequency: "14344",
-  Optimized_Sent_Index: "1505",
-  Optimized_Voc_Index: "1481",
   Furigana: "ネックレス",
   Kana: "ネックレス",
   Kanji: "ネックレス",
+  Optimized_Sent_Index: "1505",
+  Optimized_Voc_Index: "1481",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "924",
   Frequency: "1401",
-  Optimized_Sent_Index: "1363",
-  Optimized_Voc_Index: "1482",
   Furigana: "訪[たず]ねる",
   Kana: "たずねる",
   Kanji: "訪ねる",
+  Optimized_Sent_Index: "1363",
+  Optimized_Voc_Index: "1482",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1362",
   Frequency: "19741",
-  Optimized_Sent_Index: "1364",
-  Optimized_Voc_Index: "1483",
   Furigana: "冷房[れいぼう]",
   Kana: "れいぼう",
   Kanji: "冷房",
+  Optimized_Sent_Index: "1364",
+  Optimized_Voc_Index: "1483",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1408",
   Frequency: "17381",
-  Optimized_Sent_Index: "1365",
-  Optimized_Voc_Index: "1484",
   Furigana: "暖房[だんぼう]",
   Kana: "だんぼう",
   Kanji: "暖房",
+  Optimized_Sent_Index: "1365",
+  Optimized_Voc_Index: "1484",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1685",
   Frequency: "31563",
-  Optimized_Sent_Index: "1366",
-  Optimized_Voc_Index: "1485",
   Furigana: "文房具[ぶんぼうぐ]",
   Kana: "ぶんぼうぐ",
   Kanji: "文房具",
+  Optimized_Sent_Index: "1366",
+  Optimized_Voc_Index: "1485",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1604",
   Frequency: "7955",
-  Optimized_Sent_Index: "767",
-  Optimized_Voc_Index: "1486",
   Furigana: "パジャマ",
   Kana: "パジャマ",
   Kanji: "パジャマ",
+  Optimized_Sent_Index: "767",
+  Optimized_Voc_Index: "1486",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "726",
   Frequency: "6784",
-  Optimized_Sent_Index: "1368",
-  Optimized_Voc_Index: "1487",
   Furigana: "諸国[しょこく]",
   Kana: "しょこく",
   Kanji: "諸国",
+  Optimized_Sent_Index: "1368",
+  Optimized_Voc_Index: "1487",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1353",
   Frequency: "3928",
-  Optimized_Sent_Index: "1374",
-  Optimized_Voc_Index: "1488",
   Furigana: "緑色[みどりいろ]",
   Kana: "みどりいろ",
   Kanji: "緑色",
+  Optimized_Sent_Index: "1374",
+  Optimized_Voc_Index: "1488",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "748",
   Frequency: "8624",
-  Optimized_Sent_Index: "1376",
-  Optimized_Voc_Index: "1489",
   Furigana: "貿易[ぼうえき]",
   Kana: "ぼうえき",
   Kanji: "貿易",
+  Optimized_Sent_Index: "1376",
+  Optimized_Voc_Index: "1489",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "515",
   Frequency: "8824",
-  Optimized_Sent_Index: "1377",
-  Optimized_Voc_Index: "1490",
   Furigana: "輸入[ゆにゅう]",
   Kana: "ゆにゅう",
   Kanji: "輸入",
+  Optimized_Sent_Index: "1377",
+  Optimized_Voc_Index: "1490",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1605",
   Frequency: "13010",
-  Optimized_Sent_Index: "634",
-  Optimized_Voc_Index: "1491",
   Furigana: "ボールペン",
   Kana: "ボールペン",
   Kanji: "ボールペン",
+  Optimized_Sent_Index: "634",
+  Optimized_Voc_Index: "1491",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "632",
   Frequency: "12681",
-  Optimized_Sent_Index: "1378",
-  Optimized_Voc_Index: "1492",
   Furigana: "輸出[ゆしゅつ]",
   Kana: "ゆしゅつ",
   Kanji: "輸出",
+  Optimized_Sent_Index: "1378",
+  Optimized_Voc_Index: "1492",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1370",
   Frequency: "3928",
-  Optimized_Sent_Index: "1379",
-  Optimized_Voc_Index: "1493",
   Furigana: "指輪[ゆびわ]",
   Kana: "ゆびわ",
   Kanji: "指輪",
+  Optimized_Sent_Index: "1379",
+  Optimized_Voc_Index: "1493",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1068",
   Frequency: "5955",
-  Optimized_Sent_Index: "1381",
-  Optimized_Voc_Index: "1494",
   Furigana: "往復[おうふく]",
   Kana: "おうふく",
   Kanji: "往復",
+  Optimized_Sent_Index: "1381",
+  Optimized_Voc_Index: "1494",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1945",
   Frequency: "30022",
-  Optimized_Sent_Index: "1382",
-  Optimized_Voc_Index: "1495",
   Furigana: "復習[ふくしゅう]",
   Kana: "ふくしゅう",
   Kanji: "復習",
+  Optimized_Sent_Index: "1382",
+  Optimized_Voc_Index: "1495",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1609",
   Frequency: "73328",
-  Optimized_Sent_Index: "1638",
-  Optimized_Voc_Index: "1496",
   Furigana: "すいか",
   Kana: "すいか",
   Kanji: "すいか",
+  Optimized_Sent_Index: "1638",
+  Optimized_Voc_Index: "1496",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "572",
   Frequency: "1535",
-  Optimized_Sent_Index: "1383",
-  Optimized_Voc_Index: "1497",
   Furigana: "繰[く]り 返[かえ]す",
   Kana: "くりかえす",
   Kanji: "繰り返す",
+  Optimized_Sent_Index: "1383",
+  Optimized_Voc_Index: "1497",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "920",
   Frequency: "8365",
-  Optimized_Sent_Index: "1388",
-  Optimized_Voc_Index: "1498",
   Furigana: "留学[りゅうがく]",
   Kana: "りゅうがく",
   Kanji: "留学",
+  Optimized_Sent_Index: "1388",
+  Optimized_Voc_Index: "1498",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1655",
   Frequency: "18743",
-  Optimized_Sent_Index: "1389",
-  Optimized_Voc_Index: "1499",
   Furigana: "停留所[ていりゅうじょ]",
   Kana: "ていりゅうじょ",
   Kanji: "停留所",
+  Optimized_Sent_Index: "1389",
+  Optimized_Voc_Index: "1499",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1770",
   Frequency: "54727",
-  Optimized_Sent_Index: "1390",
-  Optimized_Voc_Index: "1500",
   Furigana: "書留[かきとめ]",
   Kana: "かきとめ",
   Kanji: "書留",
+  Optimized_Sent_Index: "1390",
+  Optimized_Voc_Index: "1500",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1610",
   Frequency: "2271",
-  Optimized_Sent_Index: "768",
-  Optimized_Voc_Index: "1501",
   Furigana: "そちら",
   Kana: "そちら",
   Kanji: "そちら",
+  Optimized_Sent_Index: "768",
+  Optimized_Voc_Index: "1501",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "786",
   Frequency: "726",
-  Optimized_Sent_Index: "1392",
-  Optimized_Voc_Index: "1502",
   Furigana: "守[まも]る",
   Kana: "まもる",
   Kanji: "守る",
+  Optimized_Sent_Index: "1392",
+  Optimized_Voc_Index: "1502",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1410",
   Frequency: "3149",
-  Optimized_Sent_Index: "1395",
-  Optimized_Voc_Index: "1503",
   Furigana: "留守[るす]",
   Kana: "るす",
   Kanji: "留守",
+  Optimized_Sent_Index: "1395",
+  Optimized_Voc_Index: "1503",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "556",
   Frequency: "7859",
-  Optimized_Sent_Index: "1404",
-  Optimized_Voc_Index: "1504",
   Furigana: "住宅[じゅうたく]",
   Kana: "じゅうたく",
   Kanji: "住宅",
+  Optimized_Sent_Index: "1404",
+  Optimized_Voc_Index: "1504",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "714",
   Frequency: "2420",
-  Optimized_Sent_Index: "1397",
-  Optimized_Voc_Index: "1505",
   Furigana: "自宅[じたく]",
   Kana: "じたく",
   Kanji: "自宅",
+  Optimized_Sent_Index: "1397",
+  Optimized_Voc_Index: "1505",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1611",
   Frequency: "540",
-  Optimized_Sent_Index: "477",
-  Optimized_Voc_Index: "1506",
   Furigana: "そば",
   Kana: "そば",
   Kanji: "そば",
+  Optimized_Sent_Index: "477",
+  Optimized_Voc_Index: "1506",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1668",
   Frequency: "16576",
-  Optimized_Sent_Index: "1398",
-  Optimized_Voc_Index: "1507",
   Furigana: "お 宅[たく]",
   Kana: "おたく",
   Kanji: "お宅",
+  Optimized_Sent_Index: "1398",
+  Optimized_Voc_Index: "1507",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1659",
   Frequency: "15286",
-  Optimized_Sent_Index: "1912",
-  Optimized_Voc_Index: "1508",
   Furigana: "早起[はやお]き",
   Kana: "はやおき",
   Kanji: "早起き",
+  Optimized_Sent_Index: "1912",
+  Optimized_Voc_Index: "1508",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1533",
   Frequency: "10469",
-  Optimized_Sent_Index: "1403",
-  Optimized_Voc_Index: "1509",
   Furigana: "昼寝[ひるね]",
   Kana: "ひるね",
   Kanji: "昼寝",
+  Optimized_Sent_Index: "1403",
+  Optimized_Voc_Index: "1509",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "862",
   Frequency: "1048",
-  Optimized_Sent_Index: "1405",
-  Optimized_Voc_Index: "1510",
   Furigana: "静[しず]か",
   Kana: "しずか",
   Kanji: "静か",
+  Optimized_Sent_Index: "1405",
+  Optimized_Voc_Index: "1510",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1614",
   Frequency: "1968",
-  Optimized_Sent_Index: "846",
-  Optimized_Voc_Index: "1511",
   Furigana: "どっち",
   Kana: "どっち",
   Kanji: "どっち",
+  Optimized_Sent_Index: "846",
+  Optimized_Voc_Index: "1511",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1756",
   Frequency: "1815",
-  Optimized_Sent_Index: "1406",
-  Optimized_Voc_Index: "1512",
   Furigana: "暇[ひま]",
   Kana: "ひま",
   Kanji: "暇",
+  Optimized_Sent_Index: "1406",
+  Optimized_Voc_Index: "1512",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1118",
   Frequency: "2176",
-  Optimized_Sent_Index: "1407",
-  Optimized_Voc_Index: "1513",
   Furigana: "趣味[しゅみ]",
   Kana: "しゅみ",
   Kanji: "趣味",
+  Optimized_Sent_Index: "1407",
+  Optimized_Voc_Index: "1513",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "968",
   Frequency: "3567",
-  Optimized_Sent_Index: "1408",
-  Optimized_Voc_Index: "1514",
   Furigana: "両方[りょうほう]",
   Kana: "りょうほう",
   Kanji: "両方",
+  Optimized_Sent_Index: "1408",
+  Optimized_Voc_Index: "1514",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1690",
   Frequency: "35894",
-  Optimized_Sent_Index: "1409",
-  Optimized_Voc_Index: "1515",
   Furigana: "両替[りょうがえ]",
   Kana: "りょうがえ",
   Kanji: "両替",
+  Optimized_Sent_Index: "1409",
+  Optimized_Voc_Index: "1515",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1616",
   Frequency: "44363",
-  Optimized_Sent_Index: "1187",
-  Optimized_Voc_Index: "1516",
   Furigana: "バスケットボール",
   Kana: "バスケットボール",
   Kanji: "バスケットボール",
+  Optimized_Sent_Index: "1187",
+  Optimized_Voc_Index: "1516",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1984",
   Frequency: "1604",
-  Optimized_Sent_Index: "1953",
-  Optimized_Voc_Index: "1517",
   Furigana: "両親[りょうしん]",
   Kana: "りょうしん",
   Kanji: "両親",
+  Optimized_Sent_Index: "1953",
+  Optimized_Voc_Index: "1517",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1472",
   Frequency: "29912",
-  Optimized_Sent_Index: "1410",
-  Optimized_Voc_Index: "1518",
   Furigana: "片道[かたみち]",
   Kana: "かたみち",
   Kanji: "片道",
+  Optimized_Sent_Index: "1410",
+  Optimized_Voc_Index: "1518",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1113",
   Frequency: "2407",
-  Optimized_Sent_Index: "1411",
-  Optimized_Voc_Index: "1519",
   Furigana: "内側[うちがわ]",
   Kana: "うちがわ",
   Kanji: "内側",
+  Optimized_Sent_Index: "1411",
+  Optimized_Voc_Index: "1519",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1536",
   Frequency: "5595",
-  Optimized_Sent_Index: "1413",
-  Optimized_Voc_Index: "1520",
   Furigana: "向[む]こう 側[がわ]",
   Kana: "むこうがわ",
   Kanji: "向こう側",
+  Optimized_Sent_Index: "1413",
+  Optimized_Voc_Index: "1520",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1626",
   Frequency: "11553",
-  Optimized_Sent_Index: "467",
-  Optimized_Voc_Index: "1521",
   Furigana: "サンドイッチ",
   Kana: "サンドイッチ",
   Kanji: "サンドイッチ",
+  Optimized_Sent_Index: "467",
+  Optimized_Voc_Index: "1521",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1799",
   Frequency: "5479",
-  Optimized_Sent_Index: "1414",
-  Optimized_Voc_Index: "1522",
   Furigana: "外側[そとがわ]",
   Kana: "そとがわ",
   Kanji: "外側",
+  Optimized_Sent_Index: "1414",
+  Optimized_Voc_Index: "1522",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1804",
   Frequency: "5067",
-  Optimized_Sent_Index: "1415",
-  Optimized_Voc_Index: "1523",
   Furigana: "左側[ひだりがわ]",
   Kana: "ひだりがわ",
   Kanji: "左側",
+  Optimized_Sent_Index: "1415",
+  Optimized_Voc_Index: "1523",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1808",
   Frequency: "4819",
-  Optimized_Sent_Index: "1416",
-  Optimized_Voc_Index: "1524",
   Furigana: "右側[みぎがわ]",
   Kana: "みぎがわ",
   Kanji: "右側",
+  Optimized_Sent_Index: "1416",
+  Optimized_Voc_Index: "1524",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "947",
   Frequency: "1157",
-  Optimized_Sent_Index: "1417",
-  Optimized_Voc_Index: "1525",
   Furigana: "裏[うら]",
   Kana: "うら",
   Kanji: "裏",
+  Optimized_Sent_Index: "1417",
+  Optimized_Voc_Index: "1525",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1631",
   Frequency: "5970",
-  Optimized_Sent_Index: "1015",
-  Optimized_Voc_Index: "1526",
   Furigana: "にこにこ",
   Kana: "にこにこ",
   Kanji: "にこにこ",
+  Optimized_Sent_Index: "1015",
+  Optimized_Voc_Index: "1526",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1595",
   Frequency: "15664",
-  Optimized_Sent_Index: "1418",
-  Optimized_Voc_Index: "1527",
   Furigana: "裏返[うらがえ]す",
   Kana: "うらがえす",
   Kanji: "裏返す",
+  Optimized_Sent_Index: "1418",
+  Optimized_Voc_Index: "1527",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1307",
   Frequency: "5458",
-  Optimized_Sent_Index: "1419",
-  Optimized_Voc_Index: "1528",
   Furigana: "週刊誌[しゅうかんし]",
   Kana: "しゅうかんし",
   Kanji: "週刊誌",
+  Optimized_Sent_Index: "1419",
+  Optimized_Voc_Index: "1528",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1383",
   Frequency: "12785",
-  Optimized_Sent_Index: "1420",
-  Optimized_Voc_Index: "1529",
   Furigana: "朝刊[ちょうかん]",
   Kana: "ちょうかん",
   Kanji: "朝刊",
+  Optimized_Sent_Index: "1420",
+  Optimized_Voc_Index: "1529",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1391",
   Frequency: "9729",
-  Optimized_Sent_Index: "1421",
-  Optimized_Voc_Index: "1530",
   Furigana: "夕刊[ゆうかん]",
   Kana: "ゆうかん",
   Kanji: "夕刊",
+  Optimized_Sent_Index: "1421",
+  Optimized_Voc_Index: "1530",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1635",
   Frequency: "31927",
-  Optimized_Sent_Index: "601",
-  Optimized_Voc_Index: "1531",
   Furigana: "ウール",
   Kana: "ウール",
   Kanji: "ウール",
+  Optimized_Sent_Index: "601",
+  Optimized_Voc_Index: "1531",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "864",
   Frequency: "3290",
-  Optimized_Sent_Index: "1423",
-  Optimized_Voc_Index: "1532",
   Furigana: "詳[くわ]しい",
   Kana: "くわしい",
   Kanji: "詳しい",
+  Optimized_Sent_Index: "1423",
+  Optimized_Voc_Index: "1532",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "939",
   Frequency: "4234",
-  Optimized_Sent_Index: "1424",
-  Optimized_Voc_Index: "1533",
   Furigana: "細[こま]かい",
   Kana: "こまかい",
   Kanji: "細かい",
+  Optimized_Sent_Index: "1424",
+  Optimized_Voc_Index: "1533",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1989",
   Frequency: "10146",
-  Optimized_Sent_Index: "1426",
-  Optimized_Voc_Index: "1534",
   Furigana: "細[こま]か",
   Kana: "こまか",
   Kanji: "細か",
+  Optimized_Sent_Index: "1426",
+  Optimized_Voc_Index: "1534",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1399",
   Frequency: "11312",
-  Optimized_Sent_Index: "1427",
-  Optimized_Voc_Index: "1535",
   Furigana: "積[つ]もる",
   Kana: "つもる",
   Kanji: "積もる",
+  Optimized_Sent_Index: "1427",
+  Optimized_Voc_Index: "1535",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1636",
   Frequency: "10705",
-  Optimized_Sent_Index: "925",
-  Optimized_Voc_Index: "1536",
   Furigana: "コーラ",
   Kana: "コーラ",
   Kanji: "コーラ",
+  Optimized_Sent_Index: "925",
+  Optimized_Voc_Index: "1536",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1586",
   Frequency: "1350",
-  Optimized_Sent_Index: "1428",
-  Optimized_Voc_Index: "1537",
   Furigana: "訳[やく]",
   Kana: "やく",
   Kanji: "訳",
+  Optimized_Sent_Index: "1428",
+  Optimized_Voc_Index: "1537",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1687",
   Frequency: "9183",
-  Optimized_Sent_Index: "1429",
-  Optimized_Voc_Index: "1538",
   Furigana: "訳[やく]す",
   Kana: "やくす",
   Kanji: "訳す",
+  Optimized_Sent_Index: "1429",
+  Optimized_Voc_Index: "1538",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "510",
   Frequency: "5022",
-  Optimized_Sent_Index: "1430",
-  Optimized_Voc_Index: "1539",
   Furigana: "検討[けんとう]",
   Kana: "けんとう",
   Kanji: "検討",
+  Optimized_Sent_Index: "1430",
+  Optimized_Voc_Index: "1539",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1193",
   Frequency: "2933",
-  Optimized_Sent_Index: "1697",
-  Optimized_Voc_Index: "1540",
   Furigana: "塗[ぬ]る",
   Kana: "ぬる",
   Kanji: "塗る",
+  Optimized_Sent_Index: "1697",
+  Optimized_Voc_Index: "1540",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1637",
   Frequency: "40199",
-  Optimized_Sent_Index: "1251",
-  Optimized_Voc_Index: "1541",
   Furigana: "トイレットペーパー",
   Kana: "トイレットペーパー",
   Kanji: "トイレットペーパー",
+  Optimized_Sent_Index: "1251",
+  Optimized_Voc_Index: "1541",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1127",
   Frequency: "1834",
-  Optimized_Sent_Index: "1958",
-  Optimized_Voc_Index: "1542",
   Furigana: "付[つ]く",
   Kana: "つく",
   Kanji: "付く",
+  Optimized_Sent_Index: "1958",
+  Optimized_Voc_Index: "1542",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1190",
   Frequency: "2488",
-  Optimized_Sent_Index: "1432",
-  Optimized_Voc_Index: "1543",
   Furigana: "付[つ]ける",
   Kana: "つける",
   Kanji: "付ける",
+  Optimized_Sent_Index: "1432",
+  Optimized_Voc_Index: "1543",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1273",
   Frequency: "28372",
-  Optimized_Sent_Index: "1435",
-  Optimized_Voc_Index: "1544",
   Furigana: "受[う]け 付[つ]ける",
   Kana: "うけつける",
   Kanji: "受け付ける",
+  Optimized_Sent_Index: "1435",
+  Optimized_Voc_Index: "1544",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1466",
   Frequency: "6216",
-  Optimized_Sent_Index: "1436",
-  Optimized_Voc_Index: "1545",
   Furigana: "片付[かたづ]ける",
   Kana: "かたづける",
   Kanji: "片付ける",
+  Optimized_Sent_Index: "1436",
+  Optimized_Voc_Index: "1545",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1638",
   Frequency: "4953",
-  Optimized_Sent_Index: "1487",
-  Optimized_Voc_Index: "1546",
   Furigana: "どなた",
   Kana: "どなた",
   Kanji: "どなた",
+  Optimized_Sent_Index: "1487",
+  Optimized_Voc_Index: "1546",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1489",
   Frequency: "5864",
-  Optimized_Sent_Index: "1437",
-  Optimized_Voc_Index: "1547",
   Furigana: "受付[うけつけ]",
   Kana: "うけつけ",
   Kanji: "受付",
+  Optimized_Sent_Index: "1437",
+  Optimized_Voc_Index: "1547",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1518",
   Frequency: "6335",
-  Optimized_Sent_Index: "1438",
-  Optimized_Voc_Index: "1548",
   Furigana: "近付[ちかづ]く",
   Kana: "ちかづく",
   Kanji: "近付く",
+  Optimized_Sent_Index: "1438",
+  Optimized_Voc_Index: "1548",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1693",
   Frequency: "17312",
-  Optimized_Sent_Index: "1440",
-  Optimized_Voc_Index: "1549",
   Furigana: "片付[かたづ]く",
   Kana: "かたづく",
   Kanji: "片付く",
+  Optimized_Sent_Index: "1440",
+  Optimized_Voc_Index: "1549",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1743",
   Frequency: "",
-  Optimized_Sent_Index: "1441",
-  Optimized_Voc_Index: "1550",
   Furigana: "気[き]を 付[つ]ける",
   Kana: "きをつける",
   Kanji: "気を付ける",
+  Optimized_Sent_Index: "1441",
+  Optimized_Voc_Index: "1550",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1640",
   Frequency: "34408",
-  Optimized_Sent_Index: "449",
-  Optimized_Voc_Index: "1551",
   Furigana: "ハイキング",
   Kana: "ハイキング",
   Kanji: "ハイキング",
+  Optimized_Sent_Index: "449",
+  Optimized_Voc_Index: "1551",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1931",
   Frequency: "2781",
-  Optimized_Sent_Index: "1723",
-  Optimized_Voc_Index: "1552",
   Furigana: "貼[は]る",
   Kana: "はる",
   Kanji: "貼る",
+  Optimized_Sent_Index: "1723",
+  Optimized_Voc_Index: "1552",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1565",
   Frequency: "24988",
-  Optimized_Sent_Index: "1442",
-  Optimized_Voc_Index: "1553",
   Furigana: "記念日[きねんび]",
   Kana: "きねんび",
   Kanji: "記念日",
+  Optimized_Sent_Index: "1442",
+  Optimized_Voc_Index: "1553",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1864",
   Frequency: "1447",
-  Optimized_Sent_Index: "1443",
-  Optimized_Voc_Index: "1554",
   Furigana: "残念[ざんねん]",
   Kana: "ざんねん",
   Kanji: "残念",
+  Optimized_Sent_Index: "1443",
+  Optimized_Voc_Index: "1554",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "812",
   Frequency: "3444",
-  Optimized_Sent_Index: "1446",
-  Optimized_Voc_Index: "1555",
   Furigana: "例[たと]えば",
   Kana: "たとえば",
   Kanji: "例えば",
+  Optimized_Sent_Index: "1446",
+  Optimized_Voc_Index: "1555",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1643",
   Frequency: "11761",
-  Optimized_Sent_Index: "1640",
-  Optimized_Voc_Index: "1556",
   Furigana: "ハム",
   Kana: "ハム",
   Kanji: "ハム",
+  Optimized_Sent_Index: "1640",
+  Optimized_Voc_Index: "1556",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1646",
   Frequency: "63509",
-  Optimized_Sent_Index: "1447",
-  Optimized_Voc_Index: "1557",
   Furigana: "例文[れいぶん]",
   Kana: "れいぶん",
   Kanji: "例文",
+  Optimized_Sent_Index: "1447",
+  Optimized_Voc_Index: "1557",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1664",
   Frequency: "599",
-  Optimized_Sent_Index: "1448",
-  Optimized_Voc_Index: "1558",
   Furigana: "例[れい]",
   Kana: "れい",
   Kanji: "例",
+  Optimized_Sent_Index: "1448",
+  Optimized_Voc_Index: "1558",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1242",
   Frequency: "7039",
-  Optimized_Sent_Index: "1449",
-  Optimized_Voc_Index: "1559",
   Furigana: "余[あま]る",
   Kana: "あまる",
   Kanji: "余る",
+  Optimized_Sent_Index: "1449",
+  Optimized_Voc_Index: "1559",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "490",
   Frequency: "3394",
-  Optimized_Sent_Index: "1450",
-  Optimized_Voc_Index: "1560",
   Furigana: "除[のぞ]く",
   Kana: "のぞく",
   Kanji: "除く",
+  Optimized_Sent_Index: "1450",
+  Optimized_Voc_Index: "1560",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1644",
   Frequency: "17641",
-  Optimized_Sent_Index: "437",
-  Optimized_Voc_Index: "1561",
   Furigana: "ボーイフレンド",
   Kana: "ボーイフレンド",
   Kanji: "ボーイフレンド",
+  Optimized_Sent_Index: "437",
+  Optimized_Voc_Index: "1561",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1324",
   Frequency: "5297",
-  Optimized_Sent_Index: "1451",
-  Optimized_Voc_Index: "1562",
   Furigana: "削[けず]る",
   Kana: "けずる",
   Kanji: "削る",
+  Optimized_Sent_Index: "1451",
+  Optimized_Voc_Index: "1562",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1559",
   Frequency: "9214",
-  Optimized_Sent_Index: "1453",
-  Optimized_Voc_Index: "1563",
   Furigana: "遅刻[ちこく]",
   Kana: "ちこく",
   Kanji: "遅刻",
+  Optimized_Sent_Index: "1453",
+  Optimized_Voc_Index: "1563",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1978",
   Frequency: "18468",
-  Optimized_Sent_Index: "1454",
-  Optimized_Voc_Index: "1564",
   Furigana: "緩[ゆる]い",
   Kana: "ゆるい",
   Kanji: "緩い",
+  Optimized_Sent_Index: "1454",
+  Optimized_Voc_Index: "1564",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "915",
   Frequency: "1473",
-  Optimized_Sent_Index: "1456",
-  Optimized_Voc_Index: "1565",
   Furigana: "苦[くる]しい",
   Kana: "くるしい",
   Kanji: "苦しい",
+  Optimized_Sent_Index: "1456",
+  Optimized_Voc_Index: "1565",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1648",
   Frequency: "20172",
-  Optimized_Sent_Index: "1016",
-  Optimized_Voc_Index: "1566",
   Furigana: "アイロン",
   Kana: "アイロン",
   Kanji: "アイロン",
+  Optimized_Sent_Index: "1016",
+  Optimized_Voc_Index: "1566",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1276",
   Frequency: "4985",
-  Optimized_Sent_Index: "1457",
-  Optimized_Voc_Index: "1567",
   Furigana: "苦[にが]い",
   Kana: "にがい",
   Kanji: "苦い",
+  Optimized_Sent_Index: "1457",
+  Optimized_Voc_Index: "1567",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1385",
   Frequency: "4436",
-  Optimized_Sent_Index: "1458",
-  Optimized_Voc_Index: "1568",
   Furigana: "苦手[にがて]",
   Kana: "にがて",
   Kanji: "苦手",
+  Optimized_Sent_Index: "1458",
+  Optimized_Voc_Index: "1568",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "854",
   Frequency: "567",
-  Optimized_Sent_Index: "1459",
-  Optimized_Voc_Index: "1569",
   Furigana: "困[こま]る",
   Kana: "こまる",
   Kanji: "困る",
+  Optimized_Sent_Index: "1459",
+  Optimized_Voc_Index: "1569",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1373",
   Frequency: "4081",
-  Optimized_Sent_Index: "1460",
-  Optimized_Voc_Index: "1570",
   Furigana: "貧乏[びんぼう]",
   Kana: "びんぼう",
   Kanji: "貧乏",
+  Optimized_Sent_Index: "1460",
+  Optimized_Voc_Index: "1570",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1650",
   Frequency: "26983",
-  Optimized_Sent_Index: "429",
-  Optimized_Voc_Index: "1571",
   Furigana: "カレーライス",
   Kana: "カレーライス",
   Kanji: "カレーライス",
+  Optimized_Sent_Index: "429",
+  Optimized_Voc_Index: "1571",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1124",
   Frequency: "1464",
-  Optimized_Sent_Index: "1462",
-  Optimized_Voc_Index: "1572",
   Furigana: "不幸[ふこう]",
   Kana: "ふこう",
   Kanji: "不幸",
+  Optimized_Sent_Index: "1462",
+  Optimized_Voc_Index: "1572",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1141",
   Frequency: "1869",
-  Optimized_Sent_Index: "1463",
-  Optimized_Voc_Index: "1573",
   Furigana: "幸[しあわ]せ",
   Kana: "しあわせ",
   Kanji: "幸せ",
+  Optimized_Sent_Index: "1463",
+  Optimized_Voc_Index: "1573",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1654",
   Frequency: "3972",
-  Optimized_Sent_Index: "1466",
-  Optimized_Voc_Index: "1574",
   Furigana: "塩[しお]",
   Kana: "しお",
   Kanji: "塩",
+  Optimized_Sent_Index: "1466",
+  Optimized_Voc_Index: "1574",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1795",
   Frequency: "42616",
-  Optimized_Sent_Index: "1467",
-  Optimized_Voc_Index: "1575",
   Furigana: "塩辛[しおから]い",
   Kana: "しおからい",
   Kanji: "塩辛い",
+  Optimized_Sent_Index: "1467",
+  Optimized_Voc_Index: "1575",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1651",
   Frequency: "38927",
-  Optimized_Sent_Index: "415",
-  Optimized_Voc_Index: "1576",
   Furigana: "キャッシュカード",
   Kana: "キャッシュカード",
   Kanji: "キャッシュカード",
+  Optimized_Sent_Index: "415",
+  Optimized_Voc_Index: "1576",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1158",
   Frequency: "6254",
-  Optimized_Sent_Index: "1469",
-  Optimized_Voc_Index: "1577",
   Furigana: "砂糖[さとう]",
   Kana: "さとう",
   Kanji: "砂糖",
+  Optimized_Sent_Index: "1469",
+  Optimized_Voc_Index: "1577",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "599",
   Frequency: "5974",
-  Optimized_Sent_Index: "1470",
-  Optimized_Voc_Index: "1578",
   Furigana: "規模[きぼ]",
   Kana: "きぼ",
   Kanji: "規模",
+  Optimized_Sent_Index: "1470",
+  Optimized_Voc_Index: "1578",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "801",
   Frequency: "9770",
-  Optimized_Sent_Index: "1471",
-  Optimized_Voc_Index: "1579",
   Furigana: "農業[のうぎょう]",
   Kana: "のうぎょう",
   Kanji: "農業",
+  Optimized_Sent_Index: "1471",
+  Optimized_Voc_Index: "1579",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1145",
   Frequency: "1884",
-  Optimized_Sent_Index: "1472",
-  Optimized_Voc_Index: "1580",
   Furigana: "濃[こ]い",
   Kana: "こい",
   Kanji: "濃い",
+  Optimized_Sent_Index: "1472",
+  Optimized_Voc_Index: "1580",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1665",
   Frequency: "25154",
-  Optimized_Sent_Index: "1017",
-  Optimized_Voc_Index: "1581",
   Furigana: "イヤリング",
   Kana: "イヤリング",
   Kanji: "イヤリング",
+  Optimized_Sent_Index: "1017",
+  Optimized_Voc_Index: "1581",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "881",
   Frequency: "1457",
-  Optimized_Sent_Index: "1473",
-  Optimized_Voc_Index: "1582",
   Furigana: "薄[うす]い",
   Kana: "うすい",
   Kanji: "薄い",
+  Optimized_Sent_Index: "1473",
+  Optimized_Voc_Index: "1582",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "994",
   Frequency: "2309",
-  Optimized_Sent_Index: "1475",
-  Optimized_Voc_Index: "1583",
   Furigana: "厚[あつ]い",
   Kana: "あつい",
   Kanji: "厚い",
+  Optimized_Sent_Index: "1475",
+  Optimized_Voc_Index: "1583",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1272",
   Frequency: "",
-  Optimized_Sent_Index: "1586",
-  Optimized_Voc_Index: "1584",
   Furigana: "厚[あつ]さ",
   Kana: "あつさ",
   Kanji: "厚さ",
+  Optimized_Sent_Index: "1586",
+  Optimized_Voc_Index: "1584",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "667",
   Frequency: "1370",
-  Optimized_Sent_Index: "1476",
-  Optimized_Voc_Index: "1585",
   Furigana: "迫[せま]る",
   Kana: "せまる",
   Kanji: "迫る",
+  Optimized_Sent_Index: "1476",
+  Optimized_Voc_Index: "1585",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1669",
   Frequency: "23427",
-  Optimized_Sent_Index: "1018",
-  Optimized_Voc_Index: "1586",
   Furigana: "ガールフレンド",
   Kana: "ガールフレンド",
   Kanji: "ガールフレンド",
+  Optimized_Sent_Index: "1018",
+  Optimized_Voc_Index: "1586",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "859",
   Frequency: "2017",
-  Optimized_Sent_Index: "1767",
-  Optimized_Voc_Index: "1587",
   Furigana: "伸[の]びる",
   Kana: "のびる",
   Kanji: "伸びる",
+  Optimized_Sent_Index: "1767",
+  Optimized_Voc_Index: "1587",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1301",
   Frequency: "8111",
-  Optimized_Sent_Index: "1951",
-  Optimized_Voc_Index: "1588",
   Furigana: "引[ひ]っ 越[こ]す",
   Kana: "ひっこす",
   Kanji: "引っ越す",
+  Optimized_Sent_Index: "1951",
+  Optimized_Voc_Index: "1588",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1325",
   Frequency: "1500",
-  Optimized_Sent_Index: "1479",
-  Optimized_Voc_Index: "1589",
   Furigana: "越[こ]える",
   Kana: "こえる",
   Kanji: "越える",
+  Optimized_Sent_Index: "1479",
+  Optimized_Voc_Index: "1589",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1387",
   Frequency: "12254",
-  Optimized_Sent_Index: "1480",
-  Optimized_Voc_Index: "1590",
   Furigana: "引[ひ]っ 越[こ]し",
   Kana: "ひっこし",
   Kanji: "引っ越し",
+  Optimized_Sent_Index: "1480",
+  Optimized_Voc_Index: "1590",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1670",
   Frequency: "39314",
-  Optimized_Sent_Index: "613",
-  Optimized_Voc_Index: "1591",
   Furigana: "カセットテープ",
   Kana: "カセットテープ",
   Kanji: "カセットテープ",
+  Optimized_Sent_Index: "613",
+  Optimized_Voc_Index: "1591",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1562",
   Frequency: "15814",
-  Optimized_Sent_Index: "1481",
-  Optimized_Voc_Index: "1592",
   Furigana: "追[お]い 越[こ]す",
   Kana: "おいこす",
   Kanji: "追い越す",
+  Optimized_Sent_Index: "1481",
+  Optimized_Voc_Index: "1592",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "653",
   Frequency: "5649",
-  Optimized_Sent_Index: "1482",
-  Optimized_Voc_Index: "1593",
   Furigana: "上昇[じょうしょう]",
   Kana: "じょうしょう",
   Kanji: "上昇",
+  Optimized_Sent_Index: "1482",
+  Optimized_Voc_Index: "1593",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1525",
   Frequency: "13004",
-  Optimized_Sent_Index: "1484",
-  Optimized_Voc_Index: "1594",
   Furigana: "改札口[かいさつぐち]",
   Kana: "かいさつぐち",
   Kanji: "改札口",
+  Optimized_Sent_Index: "1484",
+  Optimized_Voc_Index: "1594",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1529",
   Frequency: "1690",
-  Optimized_Sent_Index: "1485",
-  Optimized_Voc_Index: "1595",
   Furigana: "失礼[しつれい]",
   Kana: "しつれい",
   Kanji: "失礼",
+  Optimized_Sent_Index: "1485",
+  Optimized_Voc_Index: "1595",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1671",
   Frequency: "21544",
-  Optimized_Sent_Index: "1615",
-  Optimized_Voc_Index: "1596",
   Furigana: "かゆい",
   Kana: "かゆい",
   Kanji: "かゆい",
+  Optimized_Sent_Index: "1615",
+  Optimized_Voc_Index: "1596",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1538",
   Frequency: "3127",
-  Optimized_Sent_Index: "1486",
-  Optimized_Voc_Index: "1597",
   Furigana: "お 礼[れい]",
   Kana: "おれい",
   Kanji: "お礼",
+  Optimized_Sent_Index: "1486",
+  Optimized_Voc_Index: "1597",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1432",
   Frequency: "3109",
-  Optimized_Sent_Index: "1488",
-  Optimized_Voc_Index: "1598",
   Furigana: "謝[あやま]る",
   Kana: "あやまる",
   Kanji: "謝る",
+  Optimized_Sent_Index: "1488",
+  Optimized_Voc_Index: "1598",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1260",
   Frequency: "8100",
-  Optimized_Sent_Index: "1489",
-  Optimized_Voc_Index: "1599",
   Furigana: "注射[ちゅうしゃ]",
   Kana: "ちゅうしゃ",
   Kanji: "注射",
+  Optimized_Sent_Index: "1489",
+  Optimized_Voc_Index: "1599",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "682",
   Frequency: "1091",
-  Optimized_Sent_Index: "1906",
-  Optimized_Voc_Index: "1600",
   Furigana: "程度[ていど]",
   Kana: "ていど",
   Kanji: "程度",
+  Optimized_Sent_Index: "1906",
+  Optimized_Voc_Index: "1600",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1674",
   Frequency: "16042",
-  Optimized_Sent_Index: "1322",
-  Optimized_Voc_Index: "1601",
   Furigana: "ぐらぐら",
   Kana: "ぐらぐら",
   Kanji: "ぐらぐら",
+  Optimized_Sent_Index: "1322",
+  Optimized_Voc_Index: "1601",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1731",
   Frequency: "1608",
-  Optimized_Sent_Index: "1491",
-  Optimized_Voc_Index: "1602",
   Furigana: "誘[さそ]う",
   Kana: "さそう",
   Kanji: "誘う",
+  Optimized_Sent_Index: "1491",
+  Optimized_Voc_Index: "1602",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "445",
   Frequency: "12447",
-  Optimized_Sent_Index: "1492",
-  Optimized_Voc_Index: "1603",
   Furigana: "導入[どうにゅう]",
   Kana: "どうにゅう",
   Kanji: "導入",
+  Optimized_Sent_Index: "1492",
+  Optimized_Voc_Index: "1603",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "783",
   Frequency: "1551",
-  Optimized_Sent_Index: "1493",
-  Optimized_Voc_Index: "1604",
   Furigana: "努力[どりょく]",
   Kana: "どりょく",
   Kanji: "努力",
+  Optimized_Sent_Index: "1493",
+  Optimized_Voc_Index: "1604",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1490",
   Frequency: "791",
-  Optimized_Sent_Index: "1937",
-  Optimized_Voc_Index: "1605",
   Furigana: "怒[おこ]る",
   Kana: "おこる",
   Kanji: "怒る",
+  Optimized_Sent_Index: "1937",
+  Optimized_Voc_Index: "1605",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1676",
   Frequency: "12763",
-  Optimized_Sent_Index: "572",
-  Optimized_Voc_Index: "1606",
   Furigana: "ジャム",
   Kana: "ジャム",
   Kanji: "ジャム",
+  Optimized_Sent_Index: "572",
+  Optimized_Voc_Index: "1606",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1275",
   Frequency: "5347",
-  Optimized_Sent_Index: "1496",
-  Optimized_Voc_Index: "1607",
   Furigana: "独身[どくしん]",
   Kana: "どくしん",
   Kanji: "独身",
+  Optimized_Sent_Index: "1496",
+  Optimized_Voc_Index: "1607",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "669",
   Frequency: "3900",
-  Optimized_Sent_Index: "1543",
-  Optimized_Voc_Index: "1608",
   Furigana: "占[し]める",
   Kana: "しめる",
   Kanji: "占める",
+  Optimized_Sent_Index: "1543",
+  Optimized_Voc_Index: "1608",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "459",
   Frequency: "3252",
-  Optimized_Sent_Index: "1498",
-  Optimized_Voc_Index: "1609",
   Furigana: "処理[しょり]",
   Kana: "しょり",
   Kanji: "処理",
+  Optimized_Sent_Index: "1498",
+  Optimized_Voc_Index: "1609",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "887",
   Frequency: "1488",
-  Optimized_Sent_Index: "1499",
-  Optimized_Voc_Index: "1610",
   Furigana: "紹介[しょうかい]",
   Kana: "しょうかい",
   Kanji: "紹介",
+  Optimized_Sent_Index: "1499",
+  Optimized_Voc_Index: "1610",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1677",
   Frequency: "10327",
-  Optimized_Sent_Index: "1675",
-  Optimized_Voc_Index: "1611",
   Furigana: "スリッパ",
   Kana: "スリッパ",
   Kanji: "スリッパ",
+  Optimized_Sent_Index: "1675",
+  Optimized_Voc_Index: "1611",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "650",
   Frequency: "2462",
-  Optimized_Sent_Index: "1500",
-  Optimized_Voc_Index: "1612",
   Furigana: "招[まね]く",
   Kana: "まねく",
   Kanji: "招く",
+  Optimized_Sent_Index: "1500",
+  Optimized_Voc_Index: "1612",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1043",
   Frequency: "4981",
-  Optimized_Sent_Index: "1502",
-  Optimized_Voc_Index: "1613",
   Furigana: "招待[しょうたい]",
   Kana: "しょうたい",
   Kanji: "招待",
+  Optimized_Sent_Index: "1502",
+  Optimized_Voc_Index: "1613",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "857",
   Frequency: "1140",
-  Optimized_Sent_Index: "1504",
-  Optimized_Voc_Index: "1614",
   Furigana: "夫婦[ふうふ]",
   Kana: "ふうふ",
   Kanji: "夫婦",
+  Optimized_Sent_Index: "1504",
+  Optimized_Voc_Index: "1614",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1001",
   Frequency: "515",
-  Optimized_Sent_Index: "1721",
-  Optimized_Voc_Index: "1615",
   Furigana: "奥[おく]",
   Kana: "おく",
   Kanji: "奥",
+  Optimized_Sent_Index: "1721",
+  Optimized_Voc_Index: "1615",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1680",
   Frequency: "10550",
-  Optimized_Sent_Index: "880",
-  Optimized_Voc_Index: "1616",
   Furigana: "トランプ",
   Kana: "トランプ",
   Kanji: "トランプ",
+  Optimized_Sent_Index: "880",
+  Optimized_Voc_Index: "1616",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1041",
   Frequency: "994",
-  Optimized_Sent_Index: "1507",
-  Optimized_Voc_Index: "1617",
   Furigana: "奥[おく]さん",
   Kana: "おくさん",
   Kanji: "奥さん",
+  Optimized_Sent_Index: "1507",
+  Optimized_Voc_Index: "1617",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1315",
   Frequency: "3415",
-  Optimized_Sent_Index: "1513",
-  Optimized_Voc_Index: "1618",
   Furigana: "皆[みな]さん",
   Kana: "みなさん",
   Kanji: "皆さん",
+  Optimized_Sent_Index: "1513",
+  Optimized_Voc_Index: "1618",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1551",
   Frequency: "9950",
-  Optimized_Sent_Index: "1514",
-  Optimized_Voc_Index: "1619",
   Furigana: "皆様[みなさま]",
   Kana: "みなさま",
   Kanji: "皆様",
+  Optimized_Sent_Index: "1514",
+  Optimized_Voc_Index: "1619",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1890",
   Frequency: "1419",
-  Optimized_Sent_Index: "1520",
-  Optimized_Voc_Index: "1620",
   Furigana: "誰[だれ]か",
   Kana: "だれか",
   Kanji: "誰か",
+  Optimized_Sent_Index: "1520",
+  Optimized_Voc_Index: "1620",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1688",
   Frequency: "1141",
-  Optimized_Sent_Index: "1687",
-  Optimized_Voc_Index: "1621",
   Furigana: "よろしい",
   Kana: "よろしい",
   Kanji: "よろしい",
+  Optimized_Sent_Index: "1687",
+  Optimized_Voc_Index: "1621",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1235",
   Frequency: "16638",
-  Optimized_Sent_Index: "1521",
-  Optimized_Voc_Index: "1622",
   Furigana: "国籍[こくせき]",
   Kana: "こくせき",
   Kanji: "国籍",
+  Optimized_Sent_Index: "1521",
+  Optimized_Voc_Index: "1622",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1099",
   Frequency: "985",
-  Optimized_Sent_Index: "1522",
-  Optimized_Voc_Index: "1623",
   Furigana: "愛[あい]",
   Kana: "あい",
   Kanji: "愛",
+  Optimized_Sent_Index: "1522",
+  Optimized_Voc_Index: "1623",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1332",
   Frequency: "1824",
-  Optimized_Sent_Index: "1523",
-  Optimized_Voc_Index: "1624",
   Furigana: "可愛[かわい]い",
   Kana: "かわいい",
   Kanji: "可愛い",
+  Optimized_Sent_Index: "1523",
+  Optimized_Voc_Index: "1624",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1262",
   Frequency: "1521",
-  Optimized_Sent_Index: "1525",
-  Optimized_Voc_Index: "1625",
   Furigana: "恋人[こいびと]",
   Kana: "こいびと",
   Kanji: "恋人",
+  Optimized_Sent_Index: "1525",
+  Optimized_Voc_Index: "1625",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1689",
   Frequency: "53169",
-  Optimized_Sent_Index: "1708",
-  Optimized_Voc_Index: "1626",
   Furigana: "ラッシュアワー",
   Kana: "ラッシュアワー",
   Kanji: "ラッシュアワー",
+  Optimized_Sent_Index: "1708",
+  Optimized_Voc_Index: "1626",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1274",
   Frequency: "5554",
-  Optimized_Sent_Index: "1527",
-  Optimized_Voc_Index: "1627",
   Furigana: "誕生日[たんじょうび]",
   Kana: "たんじょうび",
   Kanji: "誕生日",
+  Optimized_Sent_Index: "1527",
+  Optimized_Voc_Index: "1627",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1777",
   Frequency: "32157",
-  Optimized_Sent_Index: "1529",
-  Optimized_Voc_Index: "1628",
   Furigana: "祝日[しゅくじつ]",
   Kana: "しゅくじつ",
   Kanji: "祝日",
+  Optimized_Sent_Index: "1529",
+  Optimized_Voc_Index: "1628",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1823",
   Frequency: "9961",
-  Optimized_Sent_Index: "1530",
-  Optimized_Voc_Index: "1629",
   Furigana: "お 祝[いわ]い",
   Kana: "おいわい",
   Kanji: "お祝い",
+  Optimized_Sent_Index: "1530",
+  Optimized_Voc_Index: "1629",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "816",
   Frequency: "440",
-  Optimized_Sent_Index: "1714",
-  Optimized_Voc_Index: "1630",
   Furigana: "夢[ゆめ]",
   Kana: "ゆめ",
   Kanji: "夢",
+  Optimized_Sent_Index: "1714",
+  Optimized_Voc_Index: "1630",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1694",
   Frequency: "4279",
-  Optimized_Sent_Index: "417",
-  Optimized_Voc_Index: "1631",
   Furigana: "カップ",
   Kana: "カップ",
   Kanji: "カップ",
+  Optimized_Sent_Index: "417",
+  Optimized_Voc_Index: "1631",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1090",
   Frequency: "544",
-  Optimized_Sent_Index: "1532",
-  Optimized_Voc_Index: "1632",
   Furigana: "泣[な]く",
   Kana: "なく",
   Kanji: "泣く",
+  Optimized_Sent_Index: "1532",
+  Optimized_Voc_Index: "1632",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "941",
   Frequency: "641",
-  Optimized_Sent_Index: "1533",
-  Optimized_Voc_Index: "1633",
   Furigana: "涙[なみだ]",
   Kana: "なみだ",
   Kanji: "涙",
+  Optimized_Sent_Index: "1533",
+  Optimized_Voc_Index: "1633",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "836",
   Frequency: "1275",
-  Optimized_Sent_Index: "1535",
-  Optimized_Voc_Index: "1634",
   Furigana: "喜[よろこ]ぶ",
   Kana: "よろこぶ",
   Kanji: "喜ぶ",
+  Optimized_Sent_Index: "1535",
+  Optimized_Voc_Index: "1634",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1237",
   Frequency: "1715",
-  Optimized_Sent_Index: "1536",
-  Optimized_Voc_Index: "1635",
   Furigana: "恥[は]ずかしい",
   Kana: "はずかしい",
   Kanji: "恥ずかしい",
+  Optimized_Sent_Index: "1536",
+  Optimized_Voc_Index: "1635",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1697",
   Frequency: "33845",
-  Optimized_Sent_Index: "1268",
-  Optimized_Voc_Index: "1636",
   Furigana: "スケート",
   Kana: "スケート",
   Kanji: "スケート",
+  Optimized_Sent_Index: "1268",
+  Optimized_Voc_Index: "1636",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1225",
   Frequency: "4787",
-  Optimized_Sent_Index: "1537",
-  Optimized_Voc_Index: "1637",
   Furigana: "弁当[べんとう]",
   Kana: "べんとう",
   Kanji: "弁当",
+  Optimized_Sent_Index: "1537",
+  Optimized_Voc_Index: "1637",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "981",
   Frequency: "22256",
-  Optimized_Sent_Index: "1540",
-  Optimized_Voc_Index: "1638",
   Furigana: "看護師[かんごし]",
   Kana: "かんごし",
   Kanji: "看護師",
+  Optimized_Sent_Index: "1540",
+  Optimized_Voc_Index: "1638",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "753",
   Frequency: "1854",
-  Optimized_Sent_Index: "1823",
-  Optimized_Voc_Index: "1639",
   Furigana: "患者[かんじゃ]",
   Kana: "かんじゃ",
   Kanji: "患者",
+  Optimized_Sent_Index: "1823",
+  Optimized_Voc_Index: "1639",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "691",
   Frequency: "1329",
-  Optimized_Sent_Index: "1646",
-  Optimized_Voc_Index: "1640",
   Furigana: "述[の]べる",
   Kana: "のべる",
   Kanji: "述べる",
+  Optimized_Sent_Index: "1646",
+  Optimized_Voc_Index: "1640",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1698",
   Frequency: "896",
-  Optimized_Sent_Index: "1277",
-  Optimized_Voc_Index: "1641",
   Furigana: "たくさん",
   Kana: "たくさん",
   Kanji: "たくさん",
+  Optimized_Sent_Index: "1277",
+  Optimized_Voc_Index: "1641",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "684",
   Frequency: "2045",
-  Optimized_Sent_Index: "1541",
-  Optimized_Voc_Index: "1642",
   Furigana: "訴[うった]える",
   Kana: "うったえる",
   Kanji: "訴える",
+  Optimized_Sent_Index: "1541",
+  Optimized_Voc_Index: "1642",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1255",
   Frequency: "1660",
-  Optimized_Sent_Index: "1542",
-  Optimized_Voc_Index: "1643",
   Furigana: "迷[まよ]う",
   Kana: "まよう",
   Kanji: "迷う",
+  Optimized_Sent_Index: "1542",
+  Optimized_Voc_Index: "1643",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1095",
   Frequency: "2260",
-  Optimized_Sent_Index: "1545",
-  Optimized_Voc_Index: "1644",
   Furigana: "迷惑[めいわく]",
   Kana: "めいわく",
   Kanji: "迷惑",
+  Optimized_Sent_Index: "1545",
+  Optimized_Voc_Index: "1644",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "481",
   Frequency: "3623",
-  Optimized_Sent_Index: "1546",
-  Optimized_Voc_Index: "1645",
   Furigana: "地域[ちいき]",
   Kana: "ちいき",
   Kanji: "地域",
+  Optimized_Sent_Index: "1546",
+  Optimized_Voc_Index: "1645",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1706",
   Frequency: "21518",
-  Optimized_Sent_Index: "411",
-  Optimized_Voc_Index: "1646",
   Furigana: "ピクニック",
   Kana: "ピクニック",
   Kanji: "ピクニック",
+  Optimized_Sent_Index: "411",
+  Optimized_Voc_Index: "1646",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "500",
   Frequency: "7715",
-  Optimized_Sent_Index: "1550",
-  Optimized_Voc_Index: "1647",
   Furigana: "政権[せいけん]",
   Kana: "せいけん",
   Kanji: "政権",
+  Optimized_Sent_Index: "1550",
+  Optimized_Voc_Index: "1647",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "952",
   Frequency: "4288",
-  Optimized_Sent_Index: "1551",
-  Optimized_Voc_Index: "1648",
   Furigana: "贈[おく]る",
   Kana: "おくる",
   Kanji: "贈る",
+  Optimized_Sent_Index: "1551",
+  Optimized_Voc_Index: "1648",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1460",
   Frequency: "8249",
-  Optimized_Sent_Index: "1552",
-  Optimized_Voc_Index: "1649",
   Furigana: "贈[おく]り 物[もの]",
   Kana: "おくりもの",
   Kanji: "贈り物",
+  Optimized_Sent_Index: "1552",
+  Optimized_Voc_Index: "1649",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "524",
   Frequency: "524",
-  Optimized_Sent_Index: "1553",
-  Optimized_Voc_Index: "1650",
   Furigana: "与[あた]える",
   Kana: "あたえる",
   Kanji: "与える",
+  Optimized_Sent_Index: "1553",
+  Optimized_Voc_Index: "1650",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1711",
   Frequency: "3248",
-  Optimized_Sent_Index: "412",
-  Optimized_Voc_Index: "1651",
   Furigana: "あちら",
   Kana: "あちら",
   Kanji: "あちら",
+  Optimized_Sent_Index: "412",
+  Optimized_Voc_Index: "1651",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1317",
   Frequency: "12026",
-  Optimized_Sent_Index: "1555",
-  Optimized_Voc_Index: "1652",
   Furigana: "貯金[ちょきん]",
   Kana: "ちょきん",
   Kanji: "貯金",
+  Optimized_Sent_Index: "1555",
+  Optimized_Voc_Index: "1652",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1189",
   Frequency: "3462",
-  Optimized_Sent_Index: "1734",
-  Optimized_Voc_Index: "1653",
   Furigana: "預[あず]ける",
   Kana: "あずける",
   Kanji: "預ける",
+  Optimized_Sent_Index: "1734",
+  Optimized_Voc_Index: "1653",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1319",
   Frequency: "6323",
-  Optimized_Sent_Index: "1557",
-  Optimized_Voc_Index: "1654",
   Furigana: "預[あず]かる",
   Kana: "あずかる",
   Kanji: "預かる",
+  Optimized_Sent_Index: "1557",
+  Optimized_Voc_Index: "1654",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1002",
   Frequency: "2554",
-  Optimized_Sent_Index: "1560",
-  Optimized_Voc_Index: "1655",
   Furigana: "得意[とくい]",
   Kana: "とくい",
   Kanji: "得意",
+  Optimized_Sent_Index: "1560",
+  Optimized_Voc_Index: "1655",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1716",
   Frequency: "12681",
-  Optimized_Sent_Index: "1019",
-  Optimized_Voc_Index: "1656",
   Furigana: "どきどき",
   Kana: "どきどき",
   Kanji: "どきどき",
+  Optimized_Sent_Index: "1019",
+  Optimized_Voc_Index: "1656",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1045",
   Frequency: "1359",
-  Optimized_Sent_Index: "1564",
-  Optimized_Voc_Index: "1657",
   Furigana: "燃[も]える",
   Kana: "もえる",
   Kanji: "燃える",
+  Optimized_Sent_Index: "1564",
+  Optimized_Voc_Index: "1657",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1288",
   Frequency: "2861",
-  Optimized_Sent_Index: "1565",
-  Optimized_Voc_Index: "1658",
   Furigana: "焼[や]ける",
   Kana: "やける",
   Kanji: "焼ける",
+  Optimized_Sent_Index: "1565",
+  Optimized_Voc_Index: "1658",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1778",
   Frequency: "47902",
-  Optimized_Sent_Index: "1566",
-  Optimized_Voc_Index: "1659",
   Furigana: "すき 焼[や]き",
   Kana: "すきやき",
   Kanji: "すき焼き",
+  Optimized_Sent_Index: "1566",
+  Optimized_Voc_Index: "1659",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1970",
   Frequency: "1518",
-  Optimized_Sent_Index: "1568",
-  Optimized_Voc_Index: "1660",
   Furigana: "焼[や]く",
   Kana: "やく",
   Kanji: "焼く",
+  Optimized_Sent_Index: "1568",
+  Optimized_Voc_Index: "1660",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1721",
   Frequency: "7410",
-  Optimized_Sent_Index: "1223",
-  Optimized_Voc_Index: "1661",
   Furigana: "まあまあ",
   Kana: "まあまあ",
   Kanji: "まあまあ",
+  Optimized_Sent_Index: "1223",
+  Optimized_Voc_Index: "1661",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1442",
   Frequency: "2562",
-  Optimized_Sent_Index: "1747",
-  Optimized_Voc_Index: "1662",
   Furigana: "乾[かわ]く",
   Kana: "かわく",
   Kanji: "乾く",
+  Optimized_Sent_Index: "1747",
+  Optimized_Voc_Index: "1662",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1467",
   Frequency: "8361",
-  Optimized_Sent_Index: "1569",
-  Optimized_Voc_Index: "1663",
   Furigana: "乾杯[かんぱい]",
   Kana: "かんぱい",
   Kanji: "乾杯",
+  Optimized_Sent_Index: "1569",
+  Optimized_Voc_Index: "1663",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1672",
   Frequency: "17126",
-  Optimized_Sent_Index: "1570",
-  Optimized_Voc_Index: "1664",
   Furigana: "乾[かわ]かす",
   Kana: "かわかす",
   Kanji: "乾かす",
+  Optimized_Sent_Index: "1570",
+  Optimized_Voc_Index: "1664",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1039",
   Frequency: "8042",
-  Optimized_Sent_Index: "1571",
-  Optimized_Voc_Index: "1665",
   Furigana: "新幹線[しんかんせん]",
   Kana: "しんかんせん",
   Kanji: "新幹線",
+  Optimized_Sent_Index: "1571",
+  Optimized_Voc_Index: "1665",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1722",
   Frequency: "13264",
-  Optimized_Sent_Index: "1192",
-  Optimized_Voc_Index: "1666",
   Furigana: "マフラー",
   Kana: "マフラー",
   Kanji: "マフラー",
+  Optimized_Sent_Index: "1192",
+  Optimized_Voc_Index: "1666",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1381",
   Frequency: "3879",
-  Optimized_Sent_Index: "1574",
-  Optimized_Voc_Index: "1667",
   Furigana: "素晴[すば]らしい",
   Kana: "すばらしい",
   Kanji: "素晴らしい",
+  Optimized_Sent_Index: "1574",
+  Optimized_Voc_Index: "1667",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "963",
   Frequency: "3056",
-  Optimized_Sent_Index: "1581",
-  Optimized_Voc_Index: "1668",
   Furigana: "海岸[かいがん]",
   Kana: "かいがん",
   Kanji: "海岸",
+  Optimized_Sent_Index: "1581",
+  Optimized_Voc_Index: "1668",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "734",
   Frequency: "2040",
-  Optimized_Sent_Index: "1575",
-  Optimized_Voc_Index: "1669",
   Furigana: "家庭[かてい]",
   Kana: "かてい",
   Kanji: "家庭",
+  Optimized_Sent_Index: "1575",
+  Optimized_Voc_Index: "1669",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1802",
   Frequency: "833",
-  Optimized_Sent_Index: "1584",
-  Optimized_Voc_Index: "1670",
   Furigana: "庭[にわ]",
   Kana: "にわ",
   Kanji: "庭",
+  Optimized_Sent_Index: "1584",
+  Optimized_Voc_Index: "1670",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1724",
   Frequency: "18443",
-  Optimized_Sent_Index: "1710",
-  Optimized_Voc_Index: "1671",
   Furigana: "アクセサリー",
   Kana: "アクセサリー",
   Kanji: "アクセサリー",
+  Optimized_Sent_Index: "1710",
+  Optimized_Voc_Index: "1671",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1176",
   Frequency: "968",
-  Optimized_Sent_Index: "1578",
-  Optimized_Voc_Index: "1672",
   Furigana: "桜[さくら]",
   Kana: "さくら",
   Kanji: "桜",
+  Optimized_Sent_Index: "1578",
+  Optimized_Voc_Index: "1672",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1088",
   Frequency: "3119",
-  Optimized_Sent_Index: "1577",
-  Optimized_Voc_Index: "1673",
   Furigana: "咲[さ]く",
   Kana: "さく",
   Kanji: "咲く",
+  Optimized_Sent_Index: "1577",
+  Optimized_Voc_Index: "1673",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1007",
   Frequency: "899",
-  Optimized_Sent_Index: "1579",
-  Optimized_Voc_Index: "1674",
   Furigana: "吹[ふ]く",
   Kana: "ふく",
   Kanji: "吹く",
+  Optimized_Sent_Index: "1579",
+  Optimized_Voc_Index: "1674",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1055",
   Frequency: "2670",
-  Optimized_Sent_Index: "1908",
-  Optimized_Voc_Index: "1675",
   Furigana: "散歩[さんぽ]",
   Kana: "さんぽ",
   Kanji: "散歩",
+  Optimized_Sent_Index: "1908",
+  Optimized_Voc_Index: "1675",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1725",
   Frequency: "9843",
-  Optimized_Sent_Index: "895",
-  Optimized_Voc_Index: "1676",
   Furigana: "あくび",
   Kana: "あくび",
   Kanji: "あくび",
+  Optimized_Sent_Index: "895",
+  Optimized_Voc_Index: "1676",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1233",
   Frequency: "5166",
-  Optimized_Sent_Index: "1583",
-  Optimized_Voc_Index: "1677",
   Furigana: "植[う]える",
   Kana: "うえる",
   Kanji: "植える",
+  Optimized_Sent_Index: "1583",
+  Optimized_Voc_Index: "1677",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1091",
   Frequency: "1709",
-  Optimized_Sent_Index: "1585",
-  Optimized_Voc_Index: "1678",
   Furigana: "屋根[やね]",
   Kana: "やね",
   Kanji: "屋根",
+  Optimized_Sent_Index: "1585",
+  Optimized_Voc_Index: "1678",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1397",
   Frequency: "12513",
-  Optimized_Sent_Index: "1587",
-  Optimized_Voc_Index: "1679",
   Furigana: "黒板[こくばん]",
   Kana: "こくばん",
   Kanji: "黒板",
+  Optimized_Sent_Index: "1587",
+  Optimized_Voc_Index: "1679",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1567",
   Frequency: "16599",
-  Optimized_Sent_Index: "1588",
-  Optimized_Voc_Index: "1680",
   Furigana: "掲示板[けいじばん]",
   Kana: "けいじばん",
   Kanji: "掲示板",
+  Optimized_Sent_Index: "1588",
+  Optimized_Voc_Index: "1680",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1729",
   Frequency: "14439",
-  Optimized_Sent_Index: "1981",
-  Optimized_Voc_Index: "1681",
   Furigana: "からから",
   Kana: "からから",
   Kanji: "からから",
+  Optimized_Sent_Index: "1981",
+  Optimized_Voc_Index: "1681",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1216",
   Frequency: "1376",
-  Optimized_Sent_Index: "1592",
-  Optimized_Voc_Index: "1682",
   Furigana: "草[くさ]",
   Kana: "くさ",
   Kanji: "草",
+  Optimized_Sent_Index: "1592",
+  Optimized_Voc_Index: "1682",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1149",
   Frequency: "1248",
-  Optimized_Sent_Index: "1593",
-  Optimized_Voc_Index: "1683",
   Furigana: "葉[は]",
   Kana: "は",
   Kanji: "葉",
+  Optimized_Sent_Index: "1593",
+  Optimized_Voc_Index: "1683",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1766",
   Frequency: "25594",
-  Optimized_Sent_Index: "1594",
-  Optimized_Voc_Index: "1684",
   Furigana: "絵葉書[えはがき]",
   Kana: "えはがき",
   Kanji: "絵葉書",
+  Optimized_Sent_Index: "1594",
+  Optimized_Voc_Index: "1684",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1780",
   Frequency: "32555",
-  Optimized_Sent_Index: "1595",
-  Optimized_Voc_Index: "1685",
   Furigana: "はがき",
   Kana: "はがき",
   Kanji: "はがき",
+  Optimized_Sent_Index: "1595",
+  Optimized_Voc_Index: "1685",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1736",
   Frequency: "5805",
-  Optimized_Sent_Index: "1089",
-  Optimized_Voc_Index: "1686",
   Furigana: "ふらふら",
   Kana: "ふらふら",
   Kanji: "ふらふら",
+  Optimized_Sent_Index: "1089",
+  Optimized_Voc_Index: "1686",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1142",
   Frequency: "1408",
-  Optimized_Sent_Index: "1602",
-  Optimized_Voc_Index: "1687",
   Furigana: "吸[す]う",
   Kana: "すう",
   Kanji: "吸う",
+  Optimized_Sent_Index: "1602",
+  Optimized_Voc_Index: "1687",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "493",
   Frequency: "11966",
-  Optimized_Sent_Index: "1604",
-  Optimized_Voc_Index: "1688",
   Furigana: "普及[ふきゅう]",
   Kana: "ふきゅう",
   Kanji: "普及",
+  Optimized_Sent_Index: "1604",
+  Optimized_Voc_Index: "1688",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1294",
   Frequency: "4557",
-  Optimized_Sent_Index: "1607",
-  Optimized_Voc_Index: "1689",
   Furigana: "胃[い]",
   Kana: "い",
   Kanji: "胃",
+  Optimized_Sent_Index: "1607",
+  Optimized_Voc_Index: "1689",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1443",
   Frequency: "2200",
-  Optimized_Sent_Index: "1609",
-  Optimized_Voc_Index: "1690",
   Furigana: "皿[さら]",
   Kana: "さら",
   Kanji: "皿",
+  Optimized_Sent_Index: "1609",
+  Optimized_Voc_Index: "1690",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1739",
   Frequency: "4035",
-  Optimized_Sent_Index: "1738",
-  Optimized_Voc_Index: "1691",
   Furigana: "こぼす",
   Kana: "こぼす",
   Kanji: "こぼす",
+  Optimized_Sent_Index: "1738",
+  Optimized_Voc_Index: "1691",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1891",
   Frequency: "414",
-  Optimized_Sent_Index: "1610",
-  Optimized_Voc_Index: "1692",
   Furigana: "血[ち]",
   Kana: "ち",
   Kanji: "血",
+  Optimized_Sent_Index: "1610",
+  Optimized_Voc_Index: "1692",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "521",
   Frequency: "1288",
-  Optimized_Sent_Index: "1611",
-  Optimized_Voc_Index: "1693",
   Furigana: "内容[ないよう]",
   Kana: "ないよう",
   Kanji: "内容",
+  Optimized_Sent_Index: "1611",
+  Optimized_Voc_Index: "1693",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "622",
   Frequency: "3784",
-  Optimized_Sent_Index: "1613",
-  Optimized_Voc_Index: "1694",
   Furigana: "背景[はいけい]",
   Kana: "はいけい",
   Kanji: "背景",
+  Optimized_Sent_Index: "1613",
+  Optimized_Voc_Index: "1694",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1807",
   Frequency: "1346",
-  Optimized_Sent_Index: "1617",
-  Optimized_Voc_Index: "1695",
   Furigana: "骨[ほね]",
   Kana: "ほね",
   Kanji: "骨",
+  Optimized_Sent_Index: "1617",
+  Optimized_Voc_Index: "1695",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1740",
   Frequency: "9690",
-  Optimized_Sent_Index: "1372",
-  Optimized_Voc_Index: "1696",
   Furigana: "ランチ",
   Kana: "ランチ",
   Kanji: "ランチ",
+  Optimized_Sent_Index: "1372",
+  Optimized_Voc_Index: "1696",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1592",
   Frequency: "3524",
-  Optimized_Sent_Index: "1616",
-  Optimized_Voc_Index: "1697",
   Furigana: "滑[すべ]る",
   Kana: "すべる",
   Kanji: "滑る",
+  Optimized_Sent_Index: "1616",
+  Optimized_Voc_Index: "1697",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1389",
   Frequency: "2194",
-  Optimized_Sent_Index: "1727",
-  Optimized_Voc_Index: "1698",
   Furigana: "折[お]れる",
   Kana: "おれる",
   Kanji: "折れる",
+  Optimized_Sent_Index: "1727",
+  Optimized_Voc_Index: "1698",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1413",
   Frequency: "2596",
-  Optimized_Sent_Index: "1911",
-  Optimized_Voc_Index: "1699",
   Furigana: "折[お]る",
   Kana: "おる",
   Kanji: "折る",
+  Optimized_Sent_Index: "1911",
+  Optimized_Voc_Index: "1699",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "834",
   Frequency: "2798",
-  Optimized_Sent_Index: "1618",
-  Optimized_Voc_Index: "1700",
   Furigana: "健康[けんこう]",
   Kana: "けんこう",
   Kanji: "健康",
+  Optimized_Sent_Index: "1618",
+  Optimized_Voc_Index: "1700",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1741",
   Frequency: "37876",
-  Optimized_Sent_Index: "1812",
-  Optimized_Voc_Index: "1701",
   Furigana: "レシート",
   Kana: "レシート",
   Kanji: "レシート",
+  Optimized_Sent_Index: "1812",
+  Optimized_Voc_Index: "1701",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "803",
   Frequency: "1309",
-  Optimized_Sent_Index: "1620",
-  Optimized_Voc_Index: "1702",
   Furigana: "珍[めずら]しい",
   Kana: "めずらしい",
   Kanji: "珍しい",
+  Optimized_Sent_Index: "1620",
+  Optimized_Voc_Index: "1702",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "959",
   Frequency: "2607",
-  Optimized_Sent_Index: "1622",
-  Optimized_Voc_Index: "1703",
   Furigana: "撮[と]る",
   Kana: "とる",
   Kanji: "撮る",
+  Optimized_Sent_Index: "1622",
+  Optimized_Voc_Index: "1703",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "652",
   Frequency: "742",
-  Optimized_Sent_Index: "1624",
-  Optimized_Voc_Index: "1704",
   Furigana: "再[ふたた]び",
   Kana: "ふたたび",
   Kanji: "再び",
+  Optimized_Sent_Index: "1624",
+  Optimized_Voc_Index: "1704",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1516",
   Frequency: "60517",
-  Optimized_Sent_Index: "1625",
-  Optimized_Voc_Index: "1705",
   Furigana: "再来年[さらいねん]",
   Kana: "さらいねん",
   Kanji: "再来年",
+  Optimized_Sent_Index: "1625",
+  Optimized_Voc_Index: "1705",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1748",
   Frequency: "22554",
-  Optimized_Sent_Index: "1589",
-  Optimized_Voc_Index: "1706",
   Furigana: "チョーク",
   Kana: "チョーク",
   Kanji: "チョーク",
+  Optimized_Sent_Index: "1589",
+  Optimized_Voc_Index: "1706",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1861",
   Frequency: "98300",
-  Optimized_Sent_Index: "1626",
-  Optimized_Voc_Index: "1707",
   Furigana: "再来月[さらいげつ]",
   Kana: "さらいげつ",
   Kanji: "再来月",
+  Optimized_Sent_Index: "1626",
+  Optimized_Voc_Index: "1707",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1862",
   Frequency: "74946",
-  Optimized_Sent_Index: "1627",
-  Optimized_Voc_Index: "1708",
   Furigana: "再来週[さらいしゅう]",
   Kana: "さらいしゅう",
   Kanji: "再来週",
+  Optimized_Sent_Index: "1627",
+  Optimized_Voc_Index: "1708",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "851",
   Frequency: "3870",
-  Optimized_Sent_Index: "1628",
-  Optimized_Voc_Index: "1709",
   Furigana: "放送[ほうそう]",
   Kana: "ほうそう",
   Kanji: "放送",
+  Optimized_Sent_Index: "1628",
+  Optimized_Voc_Index: "1709",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "617",
   Frequency: "2550",
-  Optimized_Sent_Index: "1629",
-  Optimized_Voc_Index: "1710",
   Furigana: "装置[そうち]",
   Kana: "そうち",
   Kanji: "装置",
+  Optimized_Sent_Index: "1629",
+  Optimized_Voc_Index: "1710",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1750",
   Frequency: "17475",
-  Optimized_Sent_Index: "650",
-  Optimized_Voc_Index: "1711",
   Furigana: "ティッシュ",
   Kana: "ティッシュ",
   Kanji: "ティッシュ",
+  Optimized_Sent_Index: "650",
+  Optimized_Voc_Index: "1711",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1563",
   Frequency: "13946",
-  Optimized_Sent_Index: "1630",
-  Optimized_Voc_Index: "1712",
   Furigana: "仮名[かな]",
   Kana: "かな",
   Kanji: "仮名",
+  Optimized_Sent_Index: "1630",
+  Optimized_Voc_Index: "1712",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1692",
   Frequency: "117780",
-  Optimized_Sent_Index: "1631",
-  Optimized_Voc_Index: "1713",
   Furigana: "送[おく]り 仮名[がな]",
   Kana: "おくりがな",
   Kanji: "送り仮名",
+  Optimized_Sent_Index: "1631",
+  Optimized_Voc_Index: "1713",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1215",
   Frequency: "1297",
-  Optimized_Sent_Index: "1769",
-  Optimized_Voc_Index: "1714",
   Furigana: "鏡[かがみ]",
   Kana: "かがみ",
   Kanji: "鏡",
+  Optimized_Sent_Index: "1769",
+  Optimized_Voc_Index: "1714",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1526",
   Frequency: "4819",
-  Optimized_Sent_Index: "1632",
-  Optimized_Voc_Index: "1715",
   Furigana: "悲[かな]しむ",
   Kana: "かなしむ",
   Kanji: "悲しむ",
+  Optimized_Sent_Index: "1632",
+  Optimized_Voc_Index: "1715",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1754",
   Frequency: "3683",
-  Optimized_Sent_Index: "418",
-  Optimized_Voc_Index: "1716",
   Furigana: "ノック",
   Kana: "ノック",
   Kanji: "ノック",
+  Optimized_Sent_Index: "418",
+  Optimized_Voc_Index: "1716",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1252",
   Frequency: "1735",
-  Optimized_Sent_Index: "1649",
-  Optimized_Voc_Index: "1717",
   Furigana: "固[かた]い",
   Kana: "かたい",
   Kanji: "固い",
+  Optimized_Sent_Index: "1649",
+  Optimized_Voc_Index: "1717",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1097",
   Frequency: "11305",
-  Optimized_Sent_Index: "1636",
-  Optimized_Voc_Index: "1718",
   Furigana: "美術館[びじゅつかん]",
   Kana: "びじゅつかん",
   Kanji: "美術館",
+  Optimized_Sent_Index: "1636",
+  Optimized_Voc_Index: "1718",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1429",
   Frequency: "2011",
-  Optimized_Sent_Index: "1637",
-  Optimized_Voc_Index: "1719",
   Furigana: "美人[びじん]",
   Kana: "びじん",
   Kanji: "美人",
+  Optimized_Sent_Index: "1637",
+  Optimized_Voc_Index: "1719",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1684",
   Frequency: "17641",
-  Optimized_Sent_Index: "1770",
-  Optimized_Voc_Index: "1720",
   Furigana: "美容院[びよういん]",
   Kana: "びよういん",
   Kanji: "美容院",
+  Optimized_Sent_Index: "1770",
+  Optimized_Voc_Index: "1720",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1762",
   Frequency: "2414",
-  Optimized_Sent_Index: "1146",
-  Optimized_Voc_Index: "1721",
   Furigana: "よろしく",
   Kana: "よろしく",
   Kanji: "よろしく",
+  Optimized_Sent_Index: "1146",
+  Optimized_Voc_Index: "1721",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1168",
   Frequency: "8524",
-  Optimized_Sent_Index: "1639",
-  Optimized_Voc_Index: "1722",
   Furigana: "博物館[はくぶつかん]",
   Kana: "はくぶつかん",
   Kanji: "博物館",
+  Optimized_Sent_Index: "1639",
+  Optimized_Voc_Index: "1722",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "688",
   Frequency: "11636",
-  Optimized_Sent_Index: "1641",
-  Optimized_Voc_Index: "1723",
   Furigana: "開催[かいさい]",
   Kana: "かいさい",
   Kanji: "開催",
+  Optimized_Sent_Index: "1641",
+  Optimized_Voc_Index: "1723",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "539",
   Frequency: "2991",
-  Optimized_Sent_Index: "1642",
-  Optimized_Voc_Index: "1724",
   Furigana: "特徴[とくちょう]",
   Kana: "とくちょう",
   Kanji: "特徴",
+  Optimized_Sent_Index: "1642",
+  Optimized_Voc_Index: "1724",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "791",
   Frequency: "745",
-  Optimized_Sent_Index: "1644",
-  Optimized_Voc_Index: "1725",
   Furigana: "許[ゆる]す",
   Kana: "ゆるす",
   Kanji: "許す",
+  Optimized_Sent_Index: "1644",
+  Optimized_Voc_Index: "1725",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1771",
   Frequency: "20976",
-  Optimized_Sent_Index: "877",
-  Optimized_Voc_Index: "1726",
   Furigana: "がらがら",
   Kana: "がらがら",
   Kanji: "がらがら",
+  Optimized_Sent_Index: "877",
+  Optimized_Voc_Index: "1726",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1686",
   Frequency: "24294",
-  Optimized_Sent_Index: "1645",
-  Optimized_Voc_Index: "1727",
   Furigana: "免許証[めんきょしょう]",
   Kana: "めんきょしょう",
   Kanji: "免許証",
+  Optimized_Sent_Index: "1645",
+  Optimized_Voc_Index: "1727",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "820",
   Frequency: "2026",
-  Optimized_Sent_Index: "1651",
-  Optimized_Voc_Index: "1728",
   Furigana: "教師[きょうし]",
   Kana: "きょうし",
   Kanji: "教師",
+  Optimized_Sent_Index: "1651",
+  Optimized_Voc_Index: "1728",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "735",
   Frequency: "1585",
-  Optimized_Sent_Index: "1655",
-  Optimized_Voc_Index: "1729",
   Furigana: "教授[きょうじゅ]",
   Kana: "きょうじゅ",
   Kanji: "教授",
+  Optimized_Sent_Index: "1655",
+  Optimized_Voc_Index: "1729",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "634",
   Frequency: "873",
-  Optimized_Sent_Index: "1657",
-  Optimized_Voc_Index: "1730",
   Furigana: "伝[つた]える",
   Kana: "つたえる",
   Kanji: "伝える",
+  Optimized_Sent_Index: "1657",
+  Optimized_Voc_Index: "1730",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1773",
   Frequency: "12897",
-  Optimized_Sent_Index: "1304",
-  Optimized_Voc_Index: "1731",
   Furigana: "ぎらぎら",
   Kana: "ぎらぎら",
   Kanji: "ぎらぎら",
+  Optimized_Sent_Index: "1304",
+  Optimized_Voc_Index: "1731",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1905",
   Frequency: "1292",
-  Optimized_Sent_Index: "1660",
-  Optimized_Voc_Index: "1732",
   Furigana: "鳥[とり]",
   Kana: "とり",
   Kanji: "鳥",
+  Optimized_Sent_Index: "1660",
+  Optimized_Voc_Index: "1732",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1265",
   Frequency: "971",
-  Optimized_Sent_Index: "1661",
-  Optimized_Voc_Index: "1733",
   Furigana: "鳴[な]る",
   Kana: "なる",
   Kanji: "鳴る",
+  Optimized_Sent_Index: "1661",
+  Optimized_Voc_Index: "1733",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1470",
   Frequency: "3841",
-  Optimized_Sent_Index: "1662",
-  Optimized_Voc_Index: "1734",
   Furigana: "鳴[な]く",
   Kana: "なく",
   Kanji: "鳴く",
+  Optimized_Sent_Index: "1662",
+  Optimized_Voc_Index: "1734",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "472",
   Frequency: "86",
-  Optimized_Sent_Index: "1664",
-  Optimized_Voc_Index: "1735",
   Furigana: "声[こえ]",
   Kana: "こえ",
   Kanji: "声",
+  Optimized_Sent_Index: "1664",
+  Optimized_Voc_Index: "1735",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1779",
   Frequency: "2240",
-  Optimized_Sent_Index: "560",
-  Optimized_Voc_Index: "1736",
   Furigana: "そっち",
   Kana: "そっち",
   Kanji: "そっち",
+  Optimized_Sent_Index: "560",
+  Optimized_Voc_Index: "1736",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1109",
   Frequency: "2940",
-  Optimized_Sent_Index: "1666",
-  Optimized_Voc_Index: "1737",
   Furigana: "卵[たまご]",
   Kana: "たまご",
   Kanji: "卵",
+  Optimized_Sent_Index: "1666",
+  Optimized_Voc_Index: "1737",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "899",
   Frequency: "672",
-  Optimized_Sent_Index: "1864",
-  Optimized_Voc_Index: "1738",
   Furigana: "犬[いぬ]",
   Kana: "いぬ",
   Kanji: "犬",
+  Optimized_Sent_Index: "1864",
+  Optimized_Voc_Index: "1738",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "926",
   Frequency: "387",
-  Optimized_Sent_Index: "1892",
-  Optimized_Voc_Index: "1739",
   Furigana: "馬[うま]",
   Kana: "うま",
   Kanji: "馬",
+  Optimized_Sent_Index: "1892",
+  Optimized_Voc_Index: "1739",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1089",
   Frequency: "4351",
-  Optimized_Sent_Index: "1671",
-  Optimized_Voc_Index: "1740",
   Furigana: "駐車場[ちゅうしゃじょう]",
   Kana: "ちゅうしゃじょう",
   Kanji: "駐車場",
+  Optimized_Sent_Index: "1671",
+  Optimized_Voc_Index: "1740",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1783",
   Frequency: "37293",
-  Optimized_Sent_Index: "469",
-  Optimized_Voc_Index: "1741",
   Furigana: "ピンポン",
   Kana: "ピンポン",
   Kanji: "ピンポン",
+  Optimized_Sent_Index: "469",
+  Optimized_Voc_Index: "1741",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1863",
   Frequency: "2738",
-  Optimized_Sent_Index: "1672",
-  Optimized_Voc_Index: "1742",
   Furigana: "騒[さわ]ぐ",
   Kana: "さわぐ",
   Kanji: "騒ぐ",
+  Optimized_Sent_Index: "1672",
+  Optimized_Voc_Index: "1742",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1177",
   Frequency: "1981",
-  Optimized_Sent_Index: "1785",
-  Optimized_Voc_Index: "1743",
   Furigana: "刺[さ]す",
   Kana: "さす",
   Kanji: "刺す",
+  Optimized_Sent_Index: "1785",
+  Optimized_Voc_Index: "1743",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1744",
   Frequency: "13010",
-  Optimized_Sent_Index: "1673",
-  Optimized_Voc_Index: "1744",
   Furigana: "刺身[さしみ]",
   Kana: "さしみ",
   Kanji: "刺身",
+  Optimized_Sent_Index: "1673",
+  Optimized_Voc_Index: "1744",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "558",
   Frequency: "855",
-  Optimized_Sent_Index: "1674",
-  Optimized_Voc_Index: "1745",
   Furigana: "激[はげ]しい",
   Kana: "はげしい",
   Kanji: "激しい",
+  Optimized_Sent_Index: "1674",
+  Optimized_Voc_Index: "1745",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1786",
   Frequency: "25484",
-  Optimized_Sent_Index: "438",
-  Optimized_Voc_Index: "1746",
   Furigana: "ぺこぺこ",
   Kana: "ぺこぺこ",
   Kanji: "ぺこぺこ",
+  Optimized_Sent_Index: "438",
+  Optimized_Voc_Index: "1746",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "787",
   Frequency: "454",
-  Optimized_Sent_Index: "1679",
-  Optimized_Voc_Index: "1747",
   Furigana: "驚[おどろ]く",
   Kana: "おどろく",
   Kanji: "驚く",
+  Optimized_Sent_Index: "1679",
+  Optimized_Voc_Index: "1747",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "888",
   Frequency: "786",
-  Optimized_Sent_Index: "1683",
-  Optimized_Voc_Index: "1748",
   Furigana: "倒[たお]れる",
   Kana: "たおれる",
   Kanji: "倒れる",
+  Optimized_Sent_Index: "1683",
+  Optimized_Voc_Index: "1748",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1887",
   Frequency: "2071",
-  Optimized_Sent_Index: "1684",
-  Optimized_Voc_Index: "1749",
   Furigana: "倒[たお]す",
   Kana: "たおす",
   Kanji: "倒す",
+  Optimized_Sent_Index: "1684",
+  Optimized_Voc_Index: "1749",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "687",
   Frequency: "4110",
-  Optimized_Sent_Index: "1685",
-  Optimized_Voc_Index: "1750",
   Furigana: "傾向[けいこう]",
   Kana: "けいこう",
   Kanji: "傾向",
+  Optimized_Sent_Index: "1685",
+  Optimized_Voc_Index: "1750",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1787",
   Frequency: "26860",
-  Optimized_Sent_Index: "1021",
-  Optimized_Voc_Index: "1751",
   Furigana: "ぺらぺら",
   Kana: "ぺらぺら",
   Kanji: "ぺらぺら",
+  Optimized_Sent_Index: "1021",
+  Optimized_Voc_Index: "1751",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1342",
   Frequency: "11464",
-  Optimized_Sent_Index: "1688",
-  Optimized_Voc_Index: "1752",
   Furigana: "柔道[じゅうどう]",
   Kana: "じゅうどう",
   Kanji: "柔道",
+  Optimized_Sent_Index: "1688",
+  Optimized_Voc_Index: "1752",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1347",
   Frequency: "3790",
-  Optimized_Sent_Index: "1807",
-  Optimized_Voc_Index: "1753",
   Furigana: "柔[やわ]らかい",
   Kana: "やわらかい",
   Kanji: "柔らかい",
+  Optimized_Sent_Index: "1807",
+  Optimized_Voc_Index: "1753",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1607",
   Frequency: "7625",
-  Optimized_Sent_Index: "1689",
-  Optimized_Voc_Index: "1754",
   Furigana: "柔[やわ]らか",
   Kana: "やわらか",
   Kanji: "柔らか",
+  Optimized_Sent_Index: "1689",
+  Optimized_Voc_Index: "1754",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "618",
   Frequency: "1887",
-  Optimized_Sent_Index: "1690",
-  Optimized_Voc_Index: "1755",
   Furigana: "主張[しゅちょう]",
   Kana: "しゅちょう",
   Kanji: "主張",
+  Optimized_Sent_Index: "1690",
+  Optimized_Voc_Index: "1755",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1789",
   Frequency: "16883",
-  Optimized_Sent_Index: "769",
-  Optimized_Voc_Index: "1756",
   Furigana: "レインコート",
   Kana: "レインコート",
   Kanji: "レインコート",
+  Optimized_Sent_Index: "769",
+  Optimized_Voc_Index: "1756",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1286",
   Frequency: "3023",
-  Optimized_Sent_Index: "1692",
-  Optimized_Voc_Index: "1757",
   Furigana: "引[ひ]っ 張[ぱ]る",
   Kana: "ひっぱる",
   Kanji: "引っ張る",
+  Optimized_Sent_Index: "1692",
+  Optimized_Voc_Index: "1757",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1629",
   Frequency: "27996",
-  Optimized_Sent_Index: "1694",
-  Optimized_Voc_Index: "1758",
   Furigana: "突[つ]き 当[あ]たる",
   Kana: "つきあたる",
   Kanji: "突き当たる",
+  Optimized_Sent_Index: "1694",
+  Optimized_Voc_Index: "1758",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1715",
   Frequency: "15681",
-  Optimized_Sent_Index: "1695",
-  Optimized_Voc_Index: "1759",
   Furigana: "突[つ]き 当[あ]たり",
   Kana: "つきあたり",
   Kanji: "突き当たり",
+  Optimized_Sent_Index: "1695",
+  Optimized_Voc_Index: "1759",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "814",
   Frequency: "467",
-  Optimized_Sent_Index: "1829",
-  Optimized_Voc_Index: "1760",
   Furigana: "壁[かべ]",
   Kana: "かべ",
   Kanji: "壁",
+  Optimized_Sent_Index: "1829",
+  Optimized_Voc_Index: "1760",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1790",
   Frequency: "17692",
-  Optimized_Sent_Index: "597",
-  Optimized_Voc_Index: "1761",
   Furigana: "アイス",
   Kana: "アイス",
   Kanji: "アイス",
+  Optimized_Sent_Index: "597",
+  Optimized_Voc_Index: "1761",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1936",
   Frequency: "2702",
-  Optimized_Sent_Index: "1698",
-  Optimized_Voc_Index: "1762",
   Furigana: "弾[ひ]く",
   Kana: "ひく",
   Kanji: "弾く",
+  Optimized_Sent_Index: "1698",
+  Optimized_Voc_Index: "1762",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1302",
   Frequency: "1958",
-  Optimized_Sent_Index: "1700",
-  Optimized_Voc_Index: "1763",
   Furigana: "丸[まる]い",
   Kana: "まるい",
   Kanji: "丸い",
+  Optimized_Sent_Index: "1700",
+  Optimized_Voc_Index: "1763",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1963",
   Frequency: "1426",
-  Optimized_Sent_Index: "1701",
-  Optimized_Voc_Index: "1764",
   Furigana: "丸[まる]",
   Kana: "まる",
   Kanji: "丸",
+  Optimized_Sent_Index: "1701",
+  Optimized_Voc_Index: "1764",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "739",
   Frequency: "1018",
-  Optimized_Sent_Index: "1702",
-  Optimized_Voc_Index: "1765",
   Furigana: "攻撃[こうげき]",
   Kana: "こうげき",
   Kanji: "攻撃",
+  Optimized_Sent_Index: "1702",
+  Optimized_Voc_Index: "1765",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1791",
   Frequency: "",
-  Optimized_Sent_Index: "651",
-  Optimized_Voc_Index: "1766",
   Furigana: "いつごろ",
   Kana: "いつごろ",
   Kanji: "いつごろ",
+  Optimized_Sent_Index: "651",
+  Optimized_Voc_Index: "1766",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1990",
   Frequency: "10851",
-  Optimized_Sent_Index: "1874",
-  Optimized_Voc_Index: "1767",
   Furigana: "絶対[ぜったい]に",
   Kana: "ぜったいに",
   Kanji: "絶対に",
+  Optimized_Sent_Index: "1874",
+  Optimized_Voc_Index: "1767",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1446",
   Frequency: "26827",
-  Optimized_Sent_Index: "1703",
-  Optimized_Voc_Index: "1768",
   Furigana: "消防車[しょうぼうしゃ]",
   Kana: "しょうぼうしゃ",
   Kanji: "消防車",
+  Optimized_Sent_Index: "1703",
+  Optimized_Voc_Index: "1768",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1621",
   Frequency: "1215",
-  Optimized_Sent_Index: "1705",
-  Optimized_Voc_Index: "1769",
   Furigana: "嫌[いや]",
   Kana: "いや",
   Kanji: "嫌",
+  Optimized_Sent_Index: "1705",
+  Optimized_Voc_Index: "1769",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1678",
   Frequency: "10474",
-  Optimized_Sent_Index: "1707",
-  Optimized_Voc_Index: "1770",
   Furigana: "大嫌[だいきら]い",
   Kana: "だいきらい",
   Kanji: "大嫌い",
+  Optimized_Sent_Index: "1707",
+  Optimized_Voc_Index: "1770",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1792",
   Frequency: "9567",
-  Optimized_Sent_Index: "684",
-  Optimized_Voc_Index: "1771",
   Furigana: "ウィスキー",
   Kana: "ウィスキー",
   Kanji: "ウィスキー",
+  Optimized_Sent_Index: "684",
+  Optimized_Voc_Index: "1771",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1612",
   Frequency: "6667",
-  Optimized_Sent_Index: "1869",
-  Optimized_Voc_Index: "1772",
   Furigana: "大抵[たいてい]",
   Kana: "たいてい",
   Kanji: "大抵",
+  Optimized_Sent_Index: "1869",
+  Optimized_Voc_Index: "1772",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1069",
   Frequency: "2109",
-  Optimized_Sent_Index: "1711",
-  Optimized_Voc_Index: "1773",
   Furigana: "大勢[おおぜい]",
   Kana: "おおぜい",
   Kanji: "大勢",
+  Optimized_Sent_Index: "1711",
+  Optimized_Voc_Index: "1773",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "483",
   Frequency: "170",
-  Optimized_Sent_Index: "1712",
-  Optimized_Voc_Index: "1774",
   Furigana: "姿[すがた]",
   Kana: "すがた",
   Kanji: "姿",
+  Optimized_Sent_Index: "1712",
+  Optimized_Voc_Index: "1774",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "645",
   Frequency: "1754",
-  Optimized_Sent_Index: "1713",
-  Optimized_Voc_Index: "1775",
   Furigana: "姿勢[しせい]",
   Kana: "しせい",
   Kanji: "姿勢",
+  Optimized_Sent_Index: "1713",
+  Optimized_Voc_Index: "1775",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1793",
   Frequency: "90120",
-  Optimized_Sent_Index: "1022",
-  Optimized_Voc_Index: "1776",
   Furigana: "エアメール",
   Kana: "エアメール",
   Kanji: "エアメール",
+  Optimized_Sent_Index: "1022",
+  Optimized_Voc_Index: "1776",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1125",
   Frequency: "845",
-  Optimized_Sent_Index: "1715",
-  Optimized_Voc_Index: "1777",
   Furigana: "恐[おそ]ろしい",
   Kana: "おそろしい",
   Kanji: "恐ろしい",
+  Optimized_Sent_Index: "1715",
+  Optimized_Voc_Index: "1777",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1214",
   Frequency: "995",
-  Optimized_Sent_Index: "1716",
-  Optimized_Voc_Index: "1778",
   Furigana: "怖[こわ]い",
   Kana: "こわい",
   Kanji: "怖い",
+  Optimized_Sent_Index: "1716",
+  Optimized_Voc_Index: "1778",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1133",
   Frequency: "1867",
-  Optimized_Sent_Index: "1731",
-  Optimized_Voc_Index: "1779",
   Furigana: "糸[いと]",
   Kana: "いと",
   Kanji: "糸",
+  Optimized_Sent_Index: "1731",
+  Optimized_Voc_Index: "1779",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1960",
   Frequency: "1741",
-  Optimized_Sent_Index: "1717",
-  Optimized_Voc_Index: "1780",
   Furigana: "孫[まご]",
   Kana: "まご",
   Kanji: "孫",
+  Optimized_Sent_Index: "1717",
+  Optimized_Voc_Index: "1780",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1797",
   Frequency: "59483",
-  Optimized_Sent_Index: "439",
-  Optimized_Voc_Index: "1781",
   Furigana: "シャープペンシル",
   Kana: "シャープペンシル",
   Kanji: "シャープペンシル",
+  Optimized_Sent_Index: "439",
+  Optimized_Voc_Index: "1781",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1968",
   Frequency: "11397",
-  Optimized_Sent_Index: "1718",
-  Optimized_Voc_Index: "1782",
   Furigana: "木綿[もめん]",
   Kana: "もめん",
   Kanji: "木綿",
+  Optimized_Sent_Index: "1718",
+  Optimized_Voc_Index: "1782",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1482",
   Frequency: "3907",
-  Optimized_Sent_Index: "1719",
-  Optimized_Voc_Index: "1783",
   Furigana: "偉[えら]い",
   Kana: "えらい",
   Kanji: "偉い",
+  Optimized_Sent_Index: "1719",
+  Optimized_Voc_Index: "1783",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1901",
   Frequency: "2623",
-  Optimized_Sent_Index: "1720",
-  Optimized_Voc_Index: "1784",
   Furigana: "爪[つめ]",
   Kana: "つめ",
   Kanji: "爪",
+  Optimized_Sent_Index: "1720",
+  Optimized_Voc_Index: "1784",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1899",
   Frequency: "1107",
-  Optimized_Sent_Index: "1722",
-  Optimized_Voc_Index: "1785",
   Furigana: "机[つくえ]",
   Kana: "つくえ",
   Kanji: "机",
+  Optimized_Sent_Index: "1722",
+  Optimized_Voc_Index: "1785",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1798",
   Frequency: "56799",
-  Optimized_Sent_Index: "1797",
-  Optimized_Voc_Index: "1786",
   Furigana: "セロテープ",
   Kana: "セロテープ",
   Kanji: "セロテープ",
+  Optimized_Sent_Index: "1797",
+  Optimized_Voc_Index: "1786",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1308",
   Frequency: "2825",
-  Optimized_Sent_Index: "1725",
-  Optimized_Voc_Index: "1787",
   Furigana: "棚[たな]",
   Kana: "たな",
   Kanji: "棚",
+  Optimized_Sent_Index: "1725",
+  Optimized_Voc_Index: "1787",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1497",
   Frequency: "8683",
-  Optimized_Sent_Index: "1726",
-  Optimized_Voc_Index: "1788",
   Furigana: "本棚[ほんだな]",
   Kana: "ほんだな",
   Kanji: "本棚",
+  Optimized_Sent_Index: "1726",
+  Optimized_Voc_Index: "1788",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "543",
   Frequency: "4255",
-  Optimized_Sent_Index: "1730",
-  Optimized_Voc_Index: "1789",
   Furigana: "方針[ほうしん]",
   Kana: "ほうしん",
   Kanji: "方針",
+  Optimized_Sent_Index: "1730",
+  Optimized_Voc_Index: "1789",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1560",
   Frequency: "8289",
-  Optimized_Sent_Index: "1732",
-  Optimized_Voc_Index: "1790",
   Furigana: "釣[つ]る",
   Kana: "つる",
   Kanji: "釣る",
+  Optimized_Sent_Index: "1732",
+  Optimized_Voc_Index: "1790",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1810",
   Frequency: "23826",
-  Optimized_Sent_Index: "1023",
-  Optimized_Voc_Index: "1791",
   Furigana: "やけど",
   Kana: "やけど",
   Kanji: "やけど",
+  Optimized_Sent_Index: "1023",
+  Optimized_Voc_Index: "1791",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1825",
   Frequency: "35598",
-  Optimized_Sent_Index: "1733",
-  Optimized_Voc_Index: "1792",
   Furigana: "お 釣[つ]り",
   Kana: "おつり",
   Kanji: "お釣り",
+  Optimized_Sent_Index: "1733",
+  Optimized_Voc_Index: "1792",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1365",
   Frequency: "1047",
-  Optimized_Sent_Index: "1830",
-  Optimized_Voc_Index: "1793",
   Furigana: "鍵[かぎ]",
   Kana: "かぎ",
   Kanji: "鍵",
+  Optimized_Sent_Index: "1830",
+  Optimized_Voc_Index: "1793",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1700",
   Frequency: "3443",
-  Optimized_Sent_Index: "1736",
-  Optimized_Voc_Index: "1794",
   Furigana: "鍋[なべ]",
   Kana: "なべ",
   Kanji: "鍋",
+  Optimized_Sent_Index: "1736",
+  Optimized_Voc_Index: "1794",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1492",
   Frequency: "14073",
-  Optimized_Sent_Index: "1739",
-  Optimized_Voc_Index: "1795",
   Furigana: "寿司[すし]",
   Kana: "すし",
   Kanji: "寿司",
+  Optimized_Sent_Index: "1739",
+  Optimized_Voc_Index: "1795",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1813",
   Frequency: "31355",
-  Optimized_Sent_Index: "1813",
-  Optimized_Voc_Index: "1796",
   Furigana: "アイスコーヒー",
   Kana: "アイスコーヒー",
   Kanji: "アイスコーヒー",
+  Optimized_Sent_Index: "1813",
+  Optimized_Voc_Index: "1796",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1450",
   Frequency: "3315",
-  Optimized_Sent_Index: "1744",
-  Optimized_Voc_Index: "1797",
   Furigana: "泥棒[どろぼう]",
   Kana: "どろぼう",
   Kanji: "泥棒",
+  Optimized_Sent_Index: "1744",
+  Optimized_Voc_Index: "1797",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1973",
   Frequency: "2343",
-  Optimized_Sent_Index: "1927",
-  Optimized_Voc_Index: "1798",
   Furigana: "湯[ゆ]",
   Kana: "ゆ",
   Kanji: "湯",
+  Optimized_Sent_Index: "1927",
+  Optimized_Voc_Index: "1798",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1499",
   Frequency: "12094",
-  Optimized_Sent_Index: "1922",
-  Optimized_Voc_Index: "1799",
   Furigana: "沸[わ]く",
   Kana: "わく",
   Kanji: "沸く",
+  Optimized_Sent_Index: "1922",
+  Optimized_Voc_Index: "1799",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1763",
   Frequency: "16883",
-  Optimized_Sent_Index: "1745",
-  Optimized_Voc_Index: "1800",
   Furigana: "沸[わ]かす",
   Kana: "わかす",
   Kanji: "沸かす",
+  Optimized_Sent_Index: "1745",
+  Optimized_Voc_Index: "1800",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1818",
   Frequency: "2937",
-  Optimized_Sent_Index: "626",
-  Optimized_Voc_Index: "1801",
   Furigana: "あっち",
   Kana: "あっち",
   Kanji: "あっち",
+  Optimized_Sent_Index: "626",
+  Optimized_Voc_Index: "1801",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1531",
   Frequency: "20445",
-  Optimized_Sent_Index: "1748",
-  Optimized_Voc_Index: "1802",
   Furigana: "洗濯機[せんたくき]",
   Kana: "せんたくき",
   Kanji: "洗濯機",
+  Optimized_Sent_Index: "1748",
+  Optimized_Voc_Index: "1802",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1875",
   Frequency: "6333",
-  Optimized_Sent_Index: "1749",
-  Optimized_Voc_Index: "1803",
   Furigana: "洗濯[せんたく]",
   Kana: "せんたく",
   Kanji: "洗濯",
+  Optimized_Sent_Index: "1749",
+  Optimized_Voc_Index: "1803",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1918",
   Frequency: "2015",
-  Optimized_Sent_Index: "1750",
-  Optimized_Voc_Index: "1804",
   Furigana: "濡[ぬ]れる",
   Kana: "ぬれる",
   Kanji: "濡れる",
+  Optimized_Sent_Index: "1750",
+  Optimized_Voc_Index: "1804",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1304",
   Frequency: "3169",
-  Optimized_Sent_Index: "1751",
-  Optimized_Voc_Index: "1805",
   Furigana: "喫茶店[きっさてん]",
   Kana: "きっさてん",
   Kanji: "喫茶店",
+  Optimized_Sent_Index: "1751",
+  Optimized_Voc_Index: "1805",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1819",
   Frequency: "2252",
-  Optimized_Sent_Index: "416",
-  Optimized_Voc_Index: "1806",
   Furigana: "あんなに",
   Kana: "あんなに",
   Kanji: "あんなに",
+  Optimized_Sent_Index: "416",
+  Optimized_Voc_Index: "1806",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1701",
   Frequency: "20056",
-  Optimized_Sent_Index: "1752",
-  Optimized_Voc_Index: "1807",
   Furigana: "怠[なま]ける",
   Kana: "なまける",
   Kanji: "怠ける",
+  Optimized_Sent_Index: "1752",
+  Optimized_Voc_Index: "1807",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1441",
   Frequency: "4296",
-  Optimized_Sent_Index: "1753",
-  Optimized_Voc_Index: "1808",
   Furigana: "一生懸命[いっしょうけんめい]",
   Kana: "いっしょうけんめい",
   Kanji: "一生懸命",
+  Optimized_Sent_Index: "1753",
+  Optimized_Voc_Index: "1808",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1378",
   Frequency: "8667",
-  Optimized_Sent_Index: "1754",
-  Optimized_Voc_Index: "1809",
   Furigana: "休憩[きゅうけい]",
   Kana: "きゅうけい",
   Kanji: "休憩",
+  Optimized_Sent_Index: "1754",
+  Optimized_Voc_Index: "1809",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1047",
   Frequency: "1367",
-  Optimized_Sent_Index: "1755",
-  Optimized_Voc_Index: "1810",
   Furigana: "天井[てんじょう]",
   Kana: "てんじょう",
   Kanji: "天井",
+  Optimized_Sent_Index: "1755",
+  Optimized_Voc_Index: "1810",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1821",
   Frequency: "4483",
-  Optimized_Sent_Index: "430",
-  Optimized_Voc_Index: "1811",
   Furigana: "いたずら",
   Kana: "いたずら",
   Kanji: "いたずら",
+  Optimized_Sent_Index: "430",
+  Optimized_Voc_Index: "1811",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1718",
   Frequency: "19439",
-  Optimized_Sent_Index: "1756",
-  Optimized_Voc_Index: "1812",
   Furigana: "納豆[なっとう]",
   Kana: "なっとう",
   Kanji: "納豆",
+  Optimized_Sent_Index: "1756",
+  Optimized_Voc_Index: "1812",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1491",
   Frequency: "3546",
-  Optimized_Sent_Index: "1759",
-  Optimized_Voc_Index: "1813",
   Furigana: "化粧[けしょう]",
   Kana: "けしょう",
   Kanji: "化粧",
+  Optimized_Sent_Index: "1759",
+  Optimized_Voc_Index: "1813",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1705",
   Frequency: "2427",
-  Optimized_Sent_Index: "1760",
-  Optimized_Voc_Index: "1814",
   Furigana: "畑[はたけ]",
   Kana: "はたけ",
   Kanji: "畑",
+  Optimized_Sent_Index: "1760",
+  Optimized_Voc_Index: "1814",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1484",
   Frequency: "14367",
-  Optimized_Sent_Index: "1761",
-  Optimized_Voc_Index: "1815",
   Furigana: "炊[た]く",
   Kana: "たく",
   Kanji: "炊く",
+  Optimized_Sent_Index: "1761",
+  Optimized_Voc_Index: "1815",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1822",
   Frequency: "103602",
-  Optimized_Sent_Index: "1601",
-  Optimized_Voc_Index: "1816",
   Furigana: "ウェートレス",
   Kana: "ウェートレス",
   Kanji: "ウェートレス",
+  Optimized_Sent_Index: "1601",
+  Optimized_Voc_Index: "1816",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1577",
   Frequency: "35407",
-  Optimized_Sent_Index: "1762",
-  Optimized_Voc_Index: "1817",
   Furigana: "自炊[じすい]",
   Kana: "じすい",
   Kanji: "自炊",
+  Optimized_Sent_Index: "1762",
+  Optimized_Voc_Index: "1817",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1641",
   Frequency: "7006",
-  Optimized_Sent_Index: "1763",
-  Optimized_Voc_Index: "1818",
   Furigana: "灰皿[はいざら]",
   Kana: "はいざら",
   Kanji: "灰皿",
+  Optimized_Sent_Index: "1763",
+  Optimized_Voc_Index: "1818",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1924",
   Frequency: "3775",
-  Optimized_Sent_Index: "1764",
-  Optimized_Voc_Index: "1819",
   Furigana: "灰[はい]",
   Kana: "はい",
   Kanji: "灰",
+  Optimized_Sent_Index: "1764",
+  Optimized_Voc_Index: "1819",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1925",
   Frequency: "2116",
-  Optimized_Sent_Index: "1765",
-  Optimized_Voc_Index: "1820",
   Furigana: "灰色[はいいろ]",
   Kana: "はいいろ",
   Kanji: "灰色",
+  Optimized_Sent_Index: "1765",
+  Optimized_Voc_Index: "1820",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1828",
   Frequency: "2258",
-  Optimized_Sent_Index: "881",
-  Optimized_Voc_Index: "1821",
   Furigana: "おばさん",
   Kana: "おばさん",
   Kanji: "おばさん",
+  Optimized_Sent_Index: "881",
+  Optimized_Voc_Index: "1821",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1530",
   Frequency: "20916",
-  Optimized_Sent_Index: "1766",
-  Optimized_Voc_Index: "1822",
   Furigana: "西暦[せいれき]",
   Kana: "せいれき",
   Kanji: "西暦",
+  Optimized_Sent_Index: "1766",
+  Optimized_Voc_Index: "1822",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1396",
   Frequency: "2197",
-  Optimized_Sent_Index: "1904",
-  Optimized_Voc_Index: "1823",
   Furigana: "毛[け]",
   Kana: "け",
   Kanji: "毛",
+  Optimized_Sent_Index: "1904",
+  Optimized_Voc_Index: "1823",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1035",
   Frequency: "560",
-  Optimized_Sent_Index: "1768",
-  Optimized_Voc_Index: "1824",
   Furigana: "髪[かみ]",
   Kana: "かみ",
   Kanji: "髪",
+  Optimized_Sent_Index: "1768",
+  Optimized_Voc_Index: "1824",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1379",
   Frequency: "1412",
-  Optimized_Sent_Index: "1773",
-  Optimized_Voc_Index: "1825",
   Furigana: "舌[した]",
   Kana: "した",
   Kanji: "舌",
+  Optimized_Sent_Index: "1773",
+  Optimized_Voc_Index: "1825",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1848",
   Frequency: "9755",
-  Optimized_Sent_Index: "1771",
-  Optimized_Voc_Index: "1826",
   Furigana: "くし",
   Kana: "くし",
   Kanji: "くし",
+  Optimized_Sent_Index: "1771",
+  Optimized_Voc_Index: "1826",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1713",
   Frequency: "2095",
-  Optimized_Sent_Index: "1774",
-  Optimized_Voc_Index: "1827",
   Furigana: "臭[くさ]い",
   Kana: "くさい",
   Kanji: "臭い",
+  Optimized_Sent_Index: "1774",
+  Optimized_Voc_Index: "1827",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1138",
   Frequency: "1101",
-  Optimized_Sent_Index: "1775",
-  Optimized_Voc_Index: "1828",
   Furigana: "匂[にお]い",
   Kana: "におい",
   Kanji: "匂い",
+  Optimized_Sent_Index: "1775",
+  Optimized_Voc_Index: "1828",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1589",
   Frequency: "561",
-  Optimized_Sent_Index: "1776",
-  Optimized_Voc_Index: "1829",
   Furigana: "居[い]る",
   Kana: "いる",
   Kanji: "居る",
+  Optimized_Sent_Index: "1776",
+  Optimized_Voc_Index: "1829",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1510",
   Frequency: "5687",
-  Optimized_Sent_Index: "1778",
-  Optimized_Voc_Index: "1830",
   Furigana: "履[は]く",
   Kana: "はく",
   Kanji: "履く",
+  Optimized_Sent_Index: "1778",
+  Optimized_Voc_Index: "1830",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1850",
   Frequency: "29580",
-  Optimized_Sent_Index: "419",
-  Optimized_Voc_Index: "1831",
   Furigana: "クリーニング",
   Kana: "クリーニング",
   Kanji: "クリーニング",
+  Optimized_Sent_Index: "419",
+  Optimized_Voc_Index: "1831",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "956",
   Frequency: "1452",
-  Optimized_Sent_Index: "1779",
-  Optimized_Voc_Index: "1832",
   Furigana: "戸[と]",
   Kana: "と",
   Kanji: "戸",
+  Optimized_Sent_Index: "1779",
+  Optimized_Voc_Index: "1832",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1558",
   Frequency: "26163",
-  Optimized_Sent_Index: "1780",
-  Optimized_Voc_Index: "1833",
   Furigana: "扇風機[せんぷうき]",
   Kana: "せんぷうき",
   Kanji: "扇風機",
+  Optimized_Sent_Index: "1780",
+  Optimized_Voc_Index: "1833",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1757",
   Frequency: "4629",
-  Optimized_Sent_Index: "1782",
-  Optimized_Voc_Index: "1834",
   Furigana: "豚[ぶた]",
   Kana: "ぶた",
   Kanji: "豚",
+  Optimized_Sent_Index: "1782",
+  Optimized_Voc_Index: "1834",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1946",
   Frequency: "22292",
-  Optimized_Sent_Index: "1783",
-  Optimized_Voc_Index: "1835",
   Furigana: "豚肉[ぶたにく]",
   Kana: "ぶたにく",
   Kanji: "豚肉",
+  Optimized_Sent_Index: "1783",
+  Optimized_Voc_Index: "1835",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1854",
   Frequency: "10179",
-  Optimized_Sent_Index: "1079",
-  Optimized_Voc_Index: "1836",
   Furigana: "ごちそう",
   Kana: "ごちそう",
   Kanji: "ごちそう",
+  Optimized_Sent_Index: "1079",
+  Optimized_Voc_Index: "1836",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1913",
   Frequency: "5293",
-  Optimized_Sent_Index: "1784",
-  Optimized_Voc_Index: "1837",
   Furigana: "鶏[にわとり]",
   Kana: "にわとり",
   Kanji: "鶏",
+  Optimized_Sent_Index: "1784",
+  Optimized_Voc_Index: "1837",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1459",
   Frequency: "4434",
-  Optimized_Sent_Index: "1786",
-  Optimized_Voc_Index: "1838",
   Furigana: "腕時計[うでどけい]",
   Kana: "うでどけい",
   Kanji: "腕時計",
+  Optimized_Sent_Index: "1786",
+  Optimized_Voc_Index: "1838",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1824",
   Frequency: "8055",
-  Optimized_Sent_Index: "1789",
-  Optimized_Voc_Index: "1839",
   Furigana: "お 菓子[かし]",
   Kana: "おかし",
   Kanji: "お菓子",
+  Optimized_Sent_Index: "1789",
+  Optimized_Voc_Index: "1839",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1667",
   Frequency: "6324",
-  Optimized_Sent_Index: "1791",
-  Optimized_Voc_Index: "1840",
   Furigana: "お 辞儀[じぎ]",
   Kana: "おじぎ",
   Kanji: "お辞儀",
+  Optimized_Sent_Index: "1791",
+  Optimized_Voc_Index: "1840",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1855",
   Frequency: "",
-  Optimized_Sent_Index: "478",
-  Optimized_Voc_Index: "1841",
   Furigana: "ごちそうする",
   Kana: "ごちそうする",
   Kanji: "ごちそうする",
+  Optimized_Sent_Index: "478",
+  Optimized_Voc_Index: "1841",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1703",
   Frequency: "24565",
-  Optimized_Sent_Index: "1792",
-  Optimized_Voc_Index: "1842",
   Furigana: "寝坊[ねぼう]",
   Kana: "ねぼう",
   Kanji: "寝坊",
+  Optimized_Sent_Index: "1792",
+  Optimized_Voc_Index: "1842",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1930",
   Frequency: "2915",
-  Optimized_Sent_Index: "1793",
-  Optimized_Voc_Index: "1843",
   Furigana: "旗[はた]",
   Kana: "はた",
   Kanji: "旗",
+  Optimized_Sent_Index: "1793",
+  Optimized_Voc_Index: "1843",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1289",
   Frequency: "6948",
-  Optimized_Sent_Index: "1794",
-  Optimized_Voc_Index: "1844",
   Furigana: "鉛筆[えんぴつ]",
   Kana: "えんぴつ",
   Kanji: "鉛筆",
+  Optimized_Sent_Index: "1794",
+  Optimized_Voc_Index: "1844",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1606",
   Frequency: "14100",
-  Optimized_Sent_Index: "1795",
-  Optimized_Voc_Index: "1845",
   Furigana: "万年筆[まんねんひつ]",
   Kana: "まんねんひつ",
   Kanji: "万年筆",
+  Optimized_Sent_Index: "1795",
+  Optimized_Voc_Index: "1845",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1857",
   Frequency: "4279",
-  Optimized_Sent_Index: "1534",
-  Optimized_Voc_Index: "1846",
   Furigana: "こぼれる",
   Kana: "こぼれる",
   Kanji: "こぼれる",
+  Optimized_Sent_Index: "1534",
+  Optimized_Voc_Index: "1846",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1036",
   Frequency: "1162",
-  Optimized_Sent_Index: "1796",
-  Optimized_Voc_Index: "1847",
   Furigana: "箱[はこ]",
   Kana: "はこ",
   Kanji: "箱",
+  Optimized_Sent_Index: "1796",
+  Optimized_Voc_Index: "1847",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1760",
   Frequency: "31509",
-  Optimized_Sent_Index: "1799",
-  Optimized_Voc_Index: "1848",
   Furigana: "本箱[ほんばこ]",
   Kana: "ほんばこ",
   Kanji: "本箱",
+  Optimized_Sent_Index: "1799",
+  Optimized_Voc_Index: "1848",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1409",
   Frequency: "4866",
-  Optimized_Sent_Index: "1801",
-  Optimized_Voc_Index: "1849",
   Furigana: "手袋[てぶくろ]",
   Kana: "てぶくろ",
   Kanji: "手袋",
+  Optimized_Sent_Index: "1801",
+  Optimized_Voc_Index: "1849",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1805",
   Frequency: "1832",
-  Optimized_Sent_Index: "1802",
-  Optimized_Voc_Index: "1850",
   Furigana: "袋[ふくろ]",
   Kana: "ふくろ",
   Kanji: "袋",
+  Optimized_Sent_Index: "1802",
+  Optimized_Voc_Index: "1850",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1859",
   Frequency: "1240",
-  Optimized_Sent_Index: "835",
-  Optimized_Voc_Index: "1851",
   Furigana: "こんなに",
   Kana: "こんなに",
   Kanji: "こんなに",
+  Optimized_Sent_Index: "835",
+  Optimized_Voc_Index: "1851",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1263",
   Frequency: "3757",
-  Optimized_Sent_Index: "1806",
-  Optimized_Voc_Index: "1852",
   Furigana: "財布[さいふ]",
   Kana: "さいふ",
   Kanji: "財布",
+  Optimized_Sent_Index: "1806",
+  Optimized_Voc_Index: "1852",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1421",
   Frequency: "3860",
-  Optimized_Sent_Index: "1808",
-  Optimized_Voc_Index: "1853",
   Furigana: "毛布[もうふ]",
   Kana: "もうふ",
   Kanji: "毛布",
+  Optimized_Sent_Index: "1808",
+  Optimized_Voc_Index: "1853",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1454",
   Frequency: "2884",
-  Optimized_Sent_Index: "1884",
-  Optimized_Voc_Index: "1854",
   Furigana: "布団[ふとん]",
   Kana: "ふとん",
   Kanji: "布団",
+  Optimized_Sent_Index: "1884",
+  Optimized_Voc_Index: "1854",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1326",
   Frequency: "24241",
-  Optimized_Sent_Index: "1814",
-  Optimized_Voc_Index: "1855",
   Furigana: "小包[こづつみ]",
   Kana: "こづつみ",
   Kanji: "小包",
+  Optimized_Sent_Index: "1814",
+  Optimized_Voc_Index: "1855",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1860",
   Frequency: "57176",
-  Optimized_Sent_Index: "762",
-  Optimized_Voc_Index: "1856",
   Furigana: "ざあざあ",
   Kana: "ざあざあ",
   Kanji: "ざあざあ",
+  Optimized_Sent_Index: "762",
+  Optimized_Voc_Index: "1856",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1749",
   Frequency: "1096",
-  Optimized_Sent_Index: "1815",
-  Optimized_Voc_Index: "1857",
   Furigana: "包[つつ]む",
   Kana: "つつむ",
   Kanji: "包む",
+  Optimized_Sent_Index: "1815",
+  Optimized_Voc_Index: "1857",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "922",
   Frequency: "2726",
-  Optimized_Sent_Index: "1816",
-  Optimized_Voc_Index: "1858",
   Furigana: "飾[かざ]る",
   Kana: "かざる",
   Kanji: "飾る",
+  Optimized_Sent_Index: "1816",
+  Optimized_Voc_Index: "1858",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1425",
   Frequency: "4921",
-  Optimized_Sent_Index: "1817",
-  Optimized_Voc_Index: "1859",
   Furigana: "手帳[てちょう]",
   Kana: "てちょう",
   Kanji: "手帳",
+  Optimized_Sent_Index: "1817",
+  Optimized_Voc_Index: "1859",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1519",
   Frequency: "19163",
-  Optimized_Sent_Index: "1818",
-  Optimized_Voc_Index: "1860",
   Furigana: "電話帳[でんわちょう]",
   Kana: "でんわちょう",
   Kanji: "電話帳",
+  Optimized_Sent_Index: "1818",
+  Optimized_Voc_Index: "1860",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1868",
   Frequency: "20397",
-  Optimized_Sent_Index: "573",
-  Optimized_Voc_Index: "1861",
   Furigana: "ジャガイモ",
   Kana: "ジャガイモ",
   Kanji: "ジャガイモ",
+  Optimized_Sent_Index: "573",
+  Optimized_Voc_Index: "1861",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1203",
   Frequency: "7433",
-  Optimized_Sent_Index: "1819",
-  Optimized_Voc_Index: "1862",
   Furigana: "牛乳[ぎゅうにゅう]",
   Kana: "ぎゅうにゅう",
   Kanji: "牛乳",
+  Optimized_Sent_Index: "1819",
+  Optimized_Voc_Index: "1862",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "958",
   Frequency: "977",
-  Optimized_Sent_Index: "1820",
-  Optimized_Voc_Index: "1863",
   Furigana: "玄関[げんかん]",
   Kana: "げんかん",
   Kanji: "玄関",
+  Optimized_Sent_Index: "1820",
+  Optimized_Voc_Index: "1863",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1809",
   Frequency: "2458",
-  Optimized_Sent_Index: "1822",
-  Optimized_Voc_Index: "1864",
   Furigana: "眼鏡[めがね]",
   Kana: "めがね",
   Kanji: "眼鏡",
+  Optimized_Sent_Index: "1822",
+  Optimized_Voc_Index: "1864",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1920",
   Frequency: "4792",
-  Optimized_Sent_Index: "1825",
-  Optimized_Voc_Index: "1865",
   Furigana: "眠[ねむ]い",
   Kana: "ねむい",
   Kanji: "眠い",
+  Optimized_Sent_Index: "1825",
+  Optimized_Voc_Index: "1865",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1880",
   Frequency: "2351",
-  Optimized_Sent_Index: "662",
-  Optimized_Voc_Index: "1866",
   Furigana: "ソファ",
   Kana: "ソファ",
   Kanji: "ソファ",
+  Optimized_Sent_Index: "662",
+  Optimized_Voc_Index: "1866",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1921",
   Frequency: "758",
-  Optimized_Sent_Index: "1826",
-  Optimized_Voc_Index: "1867",
   Furigana: "眠[ねむ]る",
   Kana: "ねむる",
   Kanji: "眠る",
+  Optimized_Sent_Index: "1826",
+  Optimized_Voc_Index: "1867",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1330",
   Frequency: "3619",
-  Optimized_Sent_Index: "1828",
-  Optimized_Voc_Index: "1868",
   Furigana: "封筒[ふうとう]",
   Kana: "ふうとう",
   Kanji: "封筒",
+  Optimized_Sent_Index: "1828",
+  Optimized_Voc_Index: "1868",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1367",
   Frequency: "807",
-  Optimized_Sent_Index: "1831",
-  Optimized_Voc_Index: "1869",
   Furigana: "出[で]かける",
   Kana: "でかける",
   Kanji: "出かける",
+  Optimized_Sent_Index: "1831",
+  Optimized_Voc_Index: "1869",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1625",
   Frequency: "222",
-  Optimized_Sent_Index: "1833",
-  Optimized_Voc_Index: "1870",
   Furigana: "かかる",
   Kana: "かかる",
   Kanji: "かかる",
+  Optimized_Sent_Index: "1833",
+  Optimized_Voc_Index: "1870",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1889",
   Frequency: "1317",
-  Optimized_Sent_Index: "1603",
-  Optimized_Voc_Index: "1871",
   Furigana: "煙草[たばこ]",
   Kana: "たばこ",
   Kanji: "煙草",
+  Optimized_Sent_Index: "1603",
+  Optimized_Voc_Index: "1871",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1712",
   Frequency: "68263",
-  Optimized_Sent_Index: "1834",
-  Optimized_Voc_Index: "1872",
   Furigana: "掛[か]け 算[ざん]",
   Kana: "かけざん",
   Kanji: "掛け算",
+  Optimized_Sent_Index: "1834",
+  Optimized_Voc_Index: "1872",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1926",
   Frequency: "4477",
-  Optimized_Sent_Index: "1835",
-  Optimized_Voc_Index: "1873",
   Furigana: "拍手[はくしゅ]",
   Kana: "はくしゅ",
   Kanji: "拍手",
+  Optimized_Sent_Index: "1835",
+  Optimized_Voc_Index: "1873",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1220",
   Frequency: "2926",
-  Optimized_Sent_Index: "1837",
-  Optimized_Voc_Index: "1874",
   Furigana: "掃除[そうじ]",
   Kana: "そうじ",
   Kanji: "掃除",
+  Optimized_Sent_Index: "1837",
+  Optimized_Voc_Index: "1874",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1781",
   Frequency: "11833",
-  Optimized_Sent_Index: "1881",
-  Optimized_Voc_Index: "1875",
   Furigana: "掃[は]く",
   Kana: "はく",
   Kanji: "掃く",
+  Optimized_Sent_Index: "1881",
+  Optimized_Voc_Index: "1875",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1896",
   Frequency: "688",
-  Optimized_Sent_Index: "587",
-  Optimized_Voc_Index: "1876",
   Furigana: "ちょうど",
   Kana: "ちょうど",
   Kanji: "ちょうど",
+  Optimized_Sent_Index: "587",
+  Optimized_Voc_Index: "1876",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1876",
   Frequency: "29809",
-  Optimized_Sent_Index: "1838",
-  Optimized_Voc_Index: "1877",
   Furigana: "掃除機[そうじき]",
   Kana: "そうじき",
   Kanji: "掃除機",
+  Optimized_Sent_Index: "1838",
+  Optimized_Voc_Index: "1877",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1064",
   Frequency: "868",
-  Optimized_Sent_Index: "1839",
-  Optimized_Voc_Index: "1878",
   Furigana: "握[にぎ]る",
   Kana: "にぎる",
   Kanji: "握る",
+  Optimized_Sent_Index: "1839",
+  Optimized_Voc_Index: "1878",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1251",
   Frequency: "5336",
-  Optimized_Sent_Index: "1840",
-  Optimized_Voc_Index: "1879",
   Furigana: "握手[あくしゅ]",
   Kana: "あくしゅ",
   Kanji: "握手",
+  Optimized_Sent_Index: "1840",
+  Optimized_Voc_Index: "1879",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "949",
   Frequency: "920",
-  Optimized_Sent_Index: "1841",
-  Optimized_Voc_Index: "1880",
   Furigana: "迎[むか]える",
   Kana: "むかえる",
   Kanji: "迎える",
+  Optimized_Sent_Index: "1841",
+  Optimized_Voc_Index: "1880",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1897",
   Frequency: "196",
-  Optimized_Sent_Index: "1468",
-  Optimized_Voc_Index: "1881",
   Furigana: "ちょっと",
   Kana: "ちょっと",
   Kanji: "ちょっと",
+  Optimized_Sent_Index: "1468",
+  Optimized_Voc_Index: "1881",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1728",
   Frequency: "24009",
-  Optimized_Sent_Index: "1842",
-  Optimized_Voc_Index: "1882",
   Furigana: "お 巡[まわ]りさん",
   Kana: "おまわりさん",
   Kanji: "お巡りさん",
+  Optimized_Sent_Index: "1842",
+  Optimized_Voc_Index: "1882",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1371",
   Frequency: "965",
-  Optimized_Sent_Index: "1844",
-  Optimized_Voc_Index: "1883",
   Furigana: "いくつ",
   Kana: "いくつ",
   Kanji: "いくつ",
+  Optimized_Sent_Index: "1844",
+  Optimized_Voc_Index: "1883",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1765",
   Frequency: "16541",
-  Optimized_Sent_Index: "1962",
-  Optimized_Voc_Index: "1884",
   Furigana: "幾[いく]ら",
   Kana: "いくら",
   Kanji: "幾ら",
+  Optimized_Sent_Index: "1962",
+  Optimized_Voc_Index: "1884",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1517",
   Frequency: "1217",
-  Optimized_Sent_Index: "1849",
-  Optimized_Voc_Index: "1885",
   Furigana: "冗談[じょうだん]",
   Kana: "じょうだん",
   Kanji: "冗談",
+  Optimized_Sent_Index: "1849",
+  Optimized_Voc_Index: "1885",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1898",
   Frequency: "124",
-  Optimized_Sent_Index: "563",
-  Optimized_Voc_Index: "1886",
   Furigana: "つく",
   Kana: "つく",
   Kanji: "つく",
+  Optimized_Sent_Index: "563",
+  Optimized_Voc_Index: "1886",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "943",
   Frequency: "906",
-  Optimized_Sent_Index: "1955",
-  Optimized_Voc_Index: "1887",
   Furigana: "穴[あな]",
   Kana: "あな",
   Kanji: "穴",
+  Optimized_Sent_Index: "1955",
+  Optimized_Voc_Index: "1887",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1227",
   Frequency: "2953",
-  Optimized_Sent_Index: "1850",
-  Optimized_Voc_Index: "1888",
   Furigana: "寂[さび]しい",
   Kana: "さびしい",
   Kanji: "寂しい",
+  Optimized_Sent_Index: "1850",
+  Optimized_Voc_Index: "1888",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1384",
   Frequency: "3276",
-  Optimized_Sent_Index: "1851",
-  Optimized_Voc_Index: "1889",
   Furigana: "丁寧[ていねい]",
   Kana: "ていねい",
   Kanji: "丁寧",
+  Optimized_Sent_Index: "1851",
+  Optimized_Voc_Index: "1889",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1418",
   Frequency: "3142",
-  Optimized_Sent_Index: "1853",
-  Optimized_Voc_Index: "1890",
   Furigana: "可哀相[かわいそう]",
   Kana: "かわいそう",
   Kanji: "かわいそう",
+  Optimized_Sent_Index: "1853",
+  Optimized_Voc_Index: "1890",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1903",
   Frequency: "42439",
-  Optimized_Sent_Index: "440",
-  Optimized_Voc_Index: "1891",
   Furigana: "てんぷら",
   Kana: "てんぷら",
   Kanji: "てんぷら",
+  Optimized_Sent_Index: "440",
+  Optimized_Voc_Index: "1891",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1775",
   Frequency: "2883",
-  Optimized_Sent_Index: "1855",
-  Optimized_Voc_Index: "1892",
   Furigana: "怪我[けが]",
   Kana: "けが",
   Kanji: "怪我",
+  Optimized_Sent_Index: "1855",
+  Optimized_Voc_Index: "1892",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1234",
   Frequency: "1902",
-  Optimized_Sent_Index: "1858",
-  Optimized_Voc_Index: "1893",
   Furigana: "我慢[がまん]",
   Kana: "がまん",
   Kanji: "我慢",
+  Optimized_Sent_Index: "1858",
+  Optimized_Voc_Index: "1893",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1356",
   Frequency: "9630",
-  Optimized_Sent_Index: "1859",
-  Optimized_Voc_Index: "1894",
   Furigana: "幼稚園[ようちえん]",
   Kana: "ようちえん",
   Kanji: "幼稚園",
+  Optimized_Sent_Index: "1859",
+  Optimized_Voc_Index: "1894",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1185",
   Frequency: "1739",
-  Optimized_Sent_Index: "1861",
-  Optimized_Voc_Index: "1895",
   Furigana: "隠[かく]れる",
   Kana: "かくれる",
   Kanji: "隠れる",
+  Optimized_Sent_Index: "1861",
+  Optimized_Voc_Index: "1895",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1906",
   Frequency: "21871",
-  Optimized_Sent_Index: "1772",
-  Optimized_Voc_Index: "1896",
   Furigana: "とんとん",
   Kana: "とんとん",
   Kanji: "とんとん",
+  Optimized_Sent_Index: "1772",
+  Optimized_Voc_Index: "1896",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1683",
   Frequency: "21596",
-  Optimized_Sent_Index: "1862",
-  Optimized_Voc_Index: "1897",
   Furigana: "日陰[ひかげ]",
   Kana: "ひかげ",
   Kanji: "日陰",
+  Optimized_Sent_Index: "1862",
+  Optimized_Voc_Index: "1897",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1285",
   Frequency: "1062",
-  Optimized_Sent_Index: "1863",
-  Optimized_Voc_Index: "1898",
   Furigana: "随分[ずいぶん]",
   Kana: "ずいぶん",
   Kanji: "随分",
+  Optimized_Sent_Index: "1863",
+  Optimized_Voc_Index: "1898",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1173",
   Frequency: "2969",
-  Optimized_Sent_Index: "1866",
-  Optimized_Voc_Index: "1899",
   Furigana: "頑張[がんば]る",
   Kana: "がんばる",
   Kanji: "頑張る",
+  Optimized_Sent_Index: "1866",
+  Optimized_Voc_Index: "1899",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "427",
   Frequency: "466",
-  Optimized_Sent_Index: "1867",
-  Optimized_Voc_Index: "1900",
   Furigana: "頃[ころ]",
   Kana: "ころ",
   Kanji: "頃",
+  Optimized_Sent_Index: "1867",
+  Optimized_Voc_Index: "1900",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1916",
   Frequency: "20113",
-  Optimized_Sent_Index: "1709",
-  Optimized_Voc_Index: "1901",
   Furigana: "人参[にんじん]",
   Kana: "にんじん",
   Kanji: "人参",
+  Optimized_Sent_Index: "1709",
+  Optimized_Voc_Index: "1901",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1856",
   Frequency: "3602",
-  Optimized_Sent_Index: "1870",
-  Optimized_Voc_Index: "1902",
   Furigana: "この 頃[ごろ]",
   Kana: "このごろ",
   Kanji: "この頃",
+  Optimized_Sent_Index: "1870",
+  Optimized_Voc_Index: "1902",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1570",
   Frequency: "34937",
-  Optimized_Sent_Index: "1871",
-  Optimized_Voc_Index: "1903",
   Furigana: "消防署[しょうぼうしょ]",
   Kana: "しょうぼうしょ",
   Kanji: "消防署",
+  Optimized_Sent_Index: "1871",
+  Optimized_Voc_Index: "1903",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1081",
   Frequency: "863",
-  Optimized_Sent_Index: "1872",
-  Optimized_Voc_Index: "1904",
   Furigana: "尋[たず]ねる",
   Kana: "たずねる",
   Kanji: "尋ねる",
+  Optimized_Sent_Index: "1872",
+  Optimized_Voc_Index: "1904",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1772",
   Frequency: "15043",
-  Optimized_Sent_Index: "1875",
-  Optimized_Voc_Index: "1905",
   Furigana: "缶詰[かんづめ]",
   Kana: "かんづめ",
   Kanji: "缶詰",
+  Optimized_Sent_Index: "1875",
+  Optimized_Voc_Index: "1905",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1917",
   Frequency: "18693",
-  Optimized_Sent_Index: "1925",
-  Optimized_Voc_Index: "1906",
   Furigana: "ぬるい",
   Kana: "ぬるい",
   Kanji: "ぬるい",
+  Optimized_Sent_Index: "1925",
+  Optimized_Voc_Index: "1906",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1842",
   Frequency: "6560",
-  Optimized_Sent_Index: "1876",
-  Optimized_Voc_Index: "1907",
   Furigana: "缶[かん]",
   Kana: "かん",
   Kanji: "缶",
+  Optimized_Sent_Index: "1876",
+  Optimized_Voc_Index: "1907",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1372",
   Frequency: "4116",
-  Optimized_Sent_Index: "1877",
-  Optimized_Voc_Index: "1908",
   Furigana: "腐[くさ]る",
   Kana: "くさる",
   Kanji: "腐る",
+  Optimized_Sent_Index: "1877",
+  Optimized_Voc_Index: "1908",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1532",
   Frequency: "9391",
-  Optimized_Sent_Index: "1878",
-  Optimized_Voc_Index: "1909",
   Furigana: "豆腐[とうふ]",
   Kana: "とうふ",
   Kanji: "豆腐",
+  Optimized_Sent_Index: "1878",
+  Optimized_Voc_Index: "1909",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1645",
   Frequency: "572",
-  Optimized_Sent_Index: "1879",
-  Optimized_Voc_Index: "1910",
   Furigana: "床[ゆか]",
   Kana: "ゆか",
   Kanji: "床",
+  Optimized_Sent_Index: "1879",
+  Optimized_Voc_Index: "1910",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1923",
   Frequency: "3297",
-  Optimized_Sent_Index: "1873",
-  Optimized_Voc_Index: "1911",
   Furigana: "パーセント",
   Kana: "パーセント",
   Kanji: "パーセント",
+  Optimized_Sent_Index: "1873",
+  Optimized_Voc_Index: "1911",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1656",
   Frequency: "11517",
-  Optimized_Sent_Index: "1880",
-  Optimized_Voc_Index: "1912",
   Furigana: "床屋[とこや]",
   Kana: "とこや",
   Kanji: "床屋",
+  Optimized_Sent_Index: "1880",
+  Optimized_Voc_Index: "1912",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1221",
   Frequency: "1637",
-  Optimized_Sent_Index: "1882",
-  Optimized_Voc_Index: "1913",
   Furigana: "畳[たたみ]",
   Kana: "たたみ",
   Kanji: "畳",
+  Optimized_Sent_Index: "1882",
+  Optimized_Voc_Index: "1913",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1679",
   Frequency: "10794",
-  Optimized_Sent_Index: "1883",
-  Optimized_Voc_Index: "1914",
   Furigana: "畳[たた]む",
   Kana: "たたむ",
   Kanji: "畳む",
+  Optimized_Sent_Index: "1883",
+  Optimized_Voc_Index: "1914",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1522",
   Frequency: "8285",
-  Optimized_Sent_Index: "1885",
-  Optimized_Voc_Index: "1915",
   Furigana: "干[ほ]す",
   Kana: "ほす",
   Kanji: "干す",
+  Optimized_Sent_Index: "1885",
+  Optimized_Voc_Index: "1915",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1937",
   Frequency: "5371",
-  Optimized_Sent_Index: "1856",
-  Optimized_Voc_Index: "1916",
   Furigana: "ひざ",
   Kana: "ひざ",
   Kanji: "ひざ",
+  Optimized_Sent_Index: "1856",
+  Optimized_Voc_Index: "1916",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1287",
   Frequency: "1773",
-  Optimized_Sent_Index: "1887",
-  Optimized_Voc_Index: "1917",
   Furigana: "帽子[ぼうし]",
   Kana: "ぼうし",
   Kanji: "帽子",
+  Optimized_Sent_Index: "1887",
+  Optimized_Voc_Index: "1917",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1187",
   Frequency: "6233",
-  Optimized_Sent_Index: "1889",
-  Optimized_Voc_Index: "1918",
   Furigana: "ぜひ",
   Kana: "ぜひ",
   Kanji: "ぜひ",
+  Optimized_Sent_Index: "1889",
+  Optimized_Voc_Index: "1918",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1217",
   Frequency: "16982",
-  Optimized_Sent_Index: "1890",
-  Optimized_Voc_Index: "1919",
   Furigana: "敬語[けいご]",
   Kana: "けいご",
   Kanji: "敬語",
+  Optimized_Sent_Index: "1890",
+  Optimized_Voc_Index: "1919",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1229",
   Frequency: "2972",
-  Optimized_Sent_Index: "1909",
-  Optimized_Voc_Index: "1920",
   Furigana: "尊敬[そんけい]",
   Kana: "そんけい",
   Kanji: "尊敬",
+  Optimized_Sent_Index: "1909",
+  Optimized_Voc_Index: "1920",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1938",
   Frequency: "14514",
-  Optimized_Sent_Index: "1857",
-  Optimized_Voc_Index: "1921",
   Furigana: "ひじ",
   Kana: "ひじ",
   Kanji: "ひじ",
+  Optimized_Sent_Index: "1857",
+  Optimized_Voc_Index: "1921",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1131",
   Frequency: "3199",
-  Optimized_Sent_Index: "1891",
-  Optimized_Voc_Index: "1922",
   Furigana: "敷[し]く",
   Kana: "しく",
   Kanji: "敷く",
+  Optimized_Sent_Index: "1891",
+  Optimized_Voc_Index: "1922",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1839",
   Frequency: "1956",
-  Optimized_Sent_Index: "1893",
-  Optimized_Voc_Index: "1923",
   Furigana: "雷[かみなり]",
   Kana: "かみなり",
   Kanji: "雷",
+  Optimized_Sent_Index: "1893",
+  Optimized_Voc_Index: "1923",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1985",
   Frequency: "5460",
-  Optimized_Sent_Index: "1894",
-  Optimized_Voc_Index: "1924",
   Furigana: "零[れい]",
   Kana: "れい",
   Kanji: "零",
+  Optimized_Sent_Index: "1894",
+  Optimized_Voc_Index: "1924",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1866",
   Frequency: "14119",
-  Optimized_Sent_Index: "1895",
-  Optimized_Voc_Index: "1925",
   Furigana: "仕舞[しま]う",
   Kana: "しまう",
   Kanji: "仕舞う",
+  Optimized_Sent_Index: "1895",
+  Optimized_Voc_Index: "1925",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1940",
   Frequency: "9153",
-  Optimized_Sent_Index: "1964",
-  Optimized_Voc_Index: "1926",
   Furigana: "ひも",
   Kana: "ひも",
   Kanji: "ひも",
+  Optimized_Sent_Index: "1964",
+  Optimized_Voc_Index: "1926",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1213",
   Frequency: "2233",
-  Optimized_Sent_Index: "1896",
-  Optimized_Voc_Index: "1927",
   Furigana: "踊[おど]る",
   Kana: "おどる",
   Kanji: "踊る",
+  Optimized_Sent_Index: "1896",
+  Optimized_Voc_Index: "1927",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1297",
   Frequency: "4535",
-  Optimized_Sent_Index: "1897",
-  Optimized_Voc_Index: "1928",
   Furigana: "踊[おど]り",
   Kana: "おどり",
   Kanji: "踊り",
+  Optimized_Sent_Index: "1897",
+  Optimized_Voc_Index: "1928",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1062",
   Frequency: "1484",
-  Optimized_Sent_Index: "1898",
-  Optimized_Voc_Index: "1929",
   Furigana: "踏[ふ]む",
   Kana: "ふむ",
   Kanji: "踏む",
+  Optimized_Sent_Index: "1898",
+  Optimized_Voc_Index: "1929",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1487",
   Frequency: "28754",
-  Optimized_Sent_Index: "1899",
-  Optimized_Voc_Index: "1930",
   Furigana: "踏切[ふみきり]",
   Kana: "ふみきり",
   Kanji: "踏切",
+  Optimized_Sent_Index: "1899",
+  Optimized_Voc_Index: "1930",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1958",
   Frequency: "3937",
-  Optimized_Sent_Index: "1758",
-  Optimized_Voc_Index: "1931",
   Furigana: "まく",
   Kana: "まく",
   Kanji: "まく",
+  Optimized_Sent_Index: "1758",
+  Optimized_Voc_Index: "1931",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1199",
   Frequency: "1790",
-  Optimized_Sent_Index: "1900",
-  Optimized_Voc_Index: "1932",
   Furigana: "蹴[け]る",
   Kana: "ける",
   Kanji: "蹴る",
+  Optimized_Sent_Index: "1900",
+  Optimized_Voc_Index: "1932",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1046",
   Frequency: "2660",
-  Optimized_Sent_Index: "1901",
-  Optimized_Voc_Index: "1933",
   Furigana: "食堂[しょくどう]",
   Kana: "しょくどう",
   Kanji: "食堂",
+  Optimized_Sent_Index: "1901",
+  Optimized_Voc_Index: "1933",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1184",
   Frequency: "1012",
-  Optimized_Sent_Index: "1903",
-  Optimized_Voc_Index: "1934",
   Furigana: "猫[ねこ]",
   Kana: "ねこ",
   Kanji: "猫",
+  Optimized_Sent_Index: "1903",
+  Optimized_Voc_Index: "1934",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "584",
   Frequency: "2141",
-  Optimized_Sent_Index: "1905",
-  Optimized_Voc_Index: "1935",
   Furigana: "文章[ぶんしょう]",
   Kana: "ぶんしょう",
   Kanji: "文章",
+  Optimized_Sent_Index: "1905",
+  Optimized_Voc_Index: "1935",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1969",
   Frequency: "27510",
-  Optimized_Sent_Index: "1746",
-  Optimized_Voc_Index: "1936",
   Furigana: "やかん",
   Kana: "やかん",
   Kanji: "やかん",
+  Optimized_Sent_Index: "1746",
+  Optimized_Voc_Index: "1936",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1870",
   Frequency: "6643",
-  Optimized_Sent_Index: "1915",
-  Optimized_Voc_Index: "1937",
   Furigana: "丈夫[じょうぶ]",
   Kana: "じょうぶ",
   Kanji: "丈夫",
+  Optimized_Sent_Index: "1915",
+  Optimized_Voc_Index: "1937",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1961",
   Frequency: "100",
-  Optimized_Sent_Index: "448",
-  Optimized_Voc_Index: "1938",
   Furigana: "また",
   Kana: "また",
   Kanji: "また",
+  Optimized_Sent_Index: "448",
+  Optimized_Voc_Index: "1938",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1339",
   Frequency: "5167",
-  Optimized_Sent_Index: "1910",
-  Optimized_Voc_Index: "1939",
   Furigana: "お 祖父[じい]さん",
   Kana: "おじいさん",
   Kanji: "お祖父さん",
+  Optimized_Sent_Index: "1910",
+  Optimized_Voc_Index: "1939",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1827",
   Frequency: "6866",
-  Optimized_Sent_Index: "1914",
-  Optimized_Voc_Index: "1940",
   Furigana: "お 祖母[ばあ]さん",
   Kana: "おばあさん",
   Kanji: "お祖母さん",
+  Optimized_Sent_Index: "1914",
+  Optimized_Voc_Index: "1940",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1980",
   Frequency: "13192",
-  Optimized_Sent_Index: "421",
-  Optimized_Voc_Index: "1941",
   Furigana: "ようこそ",
   Kana: "ようこそ",
   Kanji: "ようこそ",
+  Optimized_Sent_Index: "421",
+  Optimized_Voc_Index: "1941",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1879",
   Frequency: "2542",
-  Optimized_Sent_Index: "1916",
-  Optimized_Voc_Index: "1942",
   Furigana: "祖父[そふ]",
   Kana: "そふ",
   Kanji: "祖父",
+  Optimized_Sent_Index: "1916",
+  Optimized_Voc_Index: "1942",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1881",
   Frequency: "3293",
-  Optimized_Sent_Index: "1917",
-  Optimized_Voc_Index: "1943",
   Furigana: "祖母[そぼ]",
   Kana: "そぼ",
   Kanji: "祖母",
+  Optimized_Sent_Index: "1917",
+  Optimized_Voc_Index: "1943",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1505",
   Frequency: "1949",
-  Optimized_Sent_Index: "1919",
-  Optimized_Voc_Index: "1944",
   Furigana: "邪魔[じゃま]",
   Kana: "じゃま",
   Kanji: "邪魔",
+  Optimized_Sent_Index: "1919",
+  Optimized_Voc_Index: "1944",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1834",
   Frequency: "42249",
-  Optimized_Sent_Index: "1921",
-  Optimized_Voc_Index: "1945",
   Furigana: "風邪薬[かぜぐすり]",
   Kana: "かぜぐすり",
   Kanji: "風邪薬",
+  Optimized_Sent_Index: "1921",
+  Optimized_Voc_Index: "1945",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1987",
   Frequency: "137227",
-  Optimized_Sent_Index: "781",
-  Optimized_Voc_Index: "1946",
   Furigana: "ウェーター",
   Kana: "ウェーター",
   Kanji: "ウェーター",
+  Optimized_Sent_Index: "781",
+  Optimized_Voc_Index: "1946",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1806",
   Frequency: "33230",
-  Optimized_Sent_Index: "1924",
-  Optimized_Voc_Index: "1947",
   Furigana: "風呂屋[ふろや]",
   Kana: "ふろや",
   Kanji: "風呂屋",
+  Optimized_Sent_Index: "1924",
+  Optimized_Voc_Index: "1947",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1950",
   Frequency: "3087",
-  Optimized_Sent_Index: "1926",
-  Optimized_Voc_Index: "1948",
   Furigana: "風呂[ふろ]",
   Kana: "ふろ",
   Kanji: "風呂",
+  Optimized_Sent_Index: "1926",
+  Optimized_Voc_Index: "1948",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "485",
   Frequency: "881",
-  Optimized_Sent_Index: "1928",
-  Optimized_Voc_Index: "1949",
   Furigana: "昭和[しょうわ]",
   Kana: "しょうわ",
   Kanji: "昭和",
+  Optimized_Sent_Index: "1928",
+  Optimized_Voc_Index: "1949",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1966",
   Frequency: "2579",
-  Optimized_Sent_Index: "1929",
-  Optimized_Voc_Index: "1950",
   Furigana: "紫[むらさき]",
   Kana: "むらさき",
   Kanji: "紫",
+  Optimized_Sent_Index: "1929",
+  Optimized_Voc_Index: "1950",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1991",
   Frequency: "877",
-  Optimized_Sent_Index: "542",
-  Optimized_Voc_Index: "1951",
   Furigana: "そんなに",
   Kana: "そんなに",
   Kanji: "そんなに",
+  Optimized_Sent_Index: "542",
+  Optimized_Voc_Index: "1951",
   PartOfSpeech: "Adverb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1504",
   Frequency: "4892",
-  Optimized_Sent_Index: "1931",
-  Optimized_Voc_Index: "1952",
   Furigana: "紅茶[こうちゃ]",
   Kana: "こうちゃ",
   Kanji: "紅茶",
+  Optimized_Sent_Index: "1931",
+  Optimized_Voc_Index: "1952",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1476",
   Frequency: "12324",
-  Optimized_Sent_Index: "1932",
-  Optimized_Voc_Index: "1953",
   Furigana: "梅雨[つゆ]",
   Kana: "つゆ",
   Kanji: "梅雨",
+  Optimized_Sent_Index: "1932",
+  Optimized_Voc_Index: "1953",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1723",
   Frequency: "6384",
-  Optimized_Sent_Index: "1933",
-  Optimized_Voc_Index: "1954",
   Furigana: "桃[もも]",
   Kana: "もも",
   Kanji: "桃",
+  Optimized_Sent_Index: "1933",
+  Optimized_Voc_Index: "1954",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1180",
   Frequency: "3917",
-  Optimized_Sent_Index: "1934",
-  Optimized_Voc_Index: "1955",
   Furigana: "遭[あ]う",
   Kana: "あう",
   Kanji: "遭う",
+  Optimized_Sent_Index: "1934",
+  Optimized_Voc_Index: "1955",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1959",
   Frequency: "3803",
-  Optimized_Sent_Index: "1935",
-  Optimized_Voc_Index: "1956",
   Furigana: "枕[まくら]",
   Kana: "まくら",
   Kanji: "枕",
+  Optimized_Sent_Index: "1935",
+  Optimized_Voc_Index: "1956",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1411",
   Frequency: "823",
-  Optimized_Sent_Index: "1936",
-  Optimized_Voc_Index: "1957",
   Furigana: "嘘[うそ]",
   Kana: "うそ",
   Kanji: "嘘",
+  Optimized_Sent_Index: "1936",
+  Optimized_Voc_Index: "1957",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1412",
   Frequency: "2693",
-  Optimized_Sent_Index: "1938",
-  Optimized_Voc_Index: "1958",
   Furigana: "遠慮[えんりょ]",
   Kana: "えんりょ",
   Kanji: "遠慮",
+  Optimized_Sent_Index: "1938",
+  Optimized_Voc_Index: "1958",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1865",
   Frequency: "2798",
-  Optimized_Sent_Index: "1939",
-  Optimized_Voc_Index: "1959",
   Furigana: "叱[しか]る",
   Kana: "しかる",
   Kanji: "叱る",
+  Optimized_Sent_Index: "1939",
+  Optimized_Voc_Index: "1959",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1366",
   Frequency: "3603",
-  Optimized_Sent_Index: "1940",
-  Optimized_Voc_Index: "1960",
   Furigana: "傘[かさ]",
   Kana: "かさ",
   Kanji: "傘",
+  Optimized_Sent_Index: "1940",
+  Optimized_Voc_Index: "1960",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1423",
   Frequency: "41087",
-  Optimized_Sent_Index: "1941",
-  Optimized_Voc_Index: "1961",
   Furigana: "おじょうさん",
   Kana: "おじょうさん",
   Kanji: "おじょうさん",
+  Optimized_Sent_Index: "1941",
+  Optimized_Voc_Index: "1961",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1452",
   Frequency: "22640",
-  Optimized_Sent_Index: "1942",
-  Optimized_Voc_Index: "1962",
   Furigana: "年賀状[ねんがじょう]",
   Kana: "ねんがじょう",
   Kanji: "年賀状",
+  Optimized_Sent_Index: "1942",
+  Optimized_Voc_Index: "1962",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1911",
   Frequency: "7659",
-  Optimized_Sent_Index: "1943",
-  Optimized_Voc_Index: "1963",
   Furigana: "賑[にぎ]やか",
   Kana: "にぎやか",
   Kanji: "賑やか",
+  Optimized_Sent_Index: "1943",
+  Optimized_Voc_Index: "1963",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1524",
   Frequency: "7128",
-  Optimized_Sent_Index: "1944",
-  Optimized_Voc_Index: "1964",
   Furigana: "蚊[か]",
   Kana: "か",
   Kanji: "蚊",
+  Optimized_Sent_Index: "1944",
+  Optimized_Voc_Index: "1964",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1944",
   Frequency: "3213",
-  Optimized_Sent_Index: "1945",
-  Optimized_Voc_Index: "1965",
   Furigana: "拭[ふ]く",
   Kana: "ふく",
   Kanji: "拭く",
+  Optimized_Sent_Index: "1945",
+  Optimized_Voc_Index: "1965",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1079",
   Frequency: "1257",
-  Optimized_Sent_Index: "1947",
-  Optimized_Voc_Index: "1966",
   Furigana: "挨拶[あいさつ]",
   Kana: "あいさつ",
   Kanji: "挨拶",
+  Optimized_Sent_Index: "1947",
+  Optimized_Voc_Index: "1966",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "582",
   Frequency: "3441",
-  Optimized_Sent_Index: "1948",
-  Optimized_Voc_Index: "1967",
   Furigana: "伴[ともな]う",
   Kana: "ともなう",
   Kanji: "伴う",
+  Optimized_Sent_Index: "1948",
+  Optimized_Voc_Index: "1967",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1073",
   Frequency: "1314",
-  Optimized_Sent_Index: "1949",
-  Optimized_Voc_Index: "1968",
   Furigana: "巻[ま]く",
   Kana: "まく",
   Kanji: "巻く",
+  Optimized_Sent_Index: "1949",
+  Optimized_Voc_Index: "1968",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1049",
   Frequency: "1503",
-  Optimized_Sent_Index: "1957",
-  Optimized_Voc_Index: "1969",
   Furigana: "靴[くつ]",
   Kana: "くつ",
   Kanji: "靴",
+  Optimized_Sent_Index: "1957",
+  Optimized_Voc_Index: "1969",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1528",
   Frequency: "7356",
-  Optimized_Sent_Index: "1961",
-  Optimized_Voc_Index: "1970",
   Furigana: "靴下[くつした]",
   Kana: "くつした",
   Kanji: "靴下",
+  Optimized_Sent_Index: "1961",
+  Optimized_Voc_Index: "1970",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1310",
   Frequency: "5011",
-  Optimized_Sent_Index: "1965",
-  Optimized_Voc_Index: "1971",
   Furigana: "磨[みが]く",
   Kana: "みがく",
   Kanji: "磨く",
+  Optimized_Sent_Index: "1965",
+  Optimized_Voc_Index: "1971",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1658",
   Frequency: "50154",
-  Optimized_Sent_Index: "1966",
-  Optimized_Voc_Index: "1972",
   Furigana: "歯磨[はみが]き",
   Kana: "はみがき",
   Kanji: "歯磨き",
+  Optimized_Sent_Index: "1966",
+  Optimized_Voc_Index: "1972",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1083",
   Frequency: "717",
-  Optimized_Sent_Index: "1967",
-  Optimized_Voc_Index: "1973",
   Furigana: "廊下[ろうか]",
   Kana: "ろうか",
   Kanji: "廊下",
+  Optimized_Sent_Index: "1967",
+  Optimized_Voc_Index: "1973",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1943",
   Frequency: "3651",
-  Optimized_Sent_Index: "1969",
-  Optimized_Voc_Index: "1974",
   Furigana: "瓶[びん]",
   Kana: "びん",
   Kanji: "瓶",
+  Optimized_Sent_Index: "1969",
+  Optimized_Voc_Index: "1974",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1759",
   Frequency: "5818",
-  Optimized_Sent_Index: "1970",
-  Optimized_Voc_Index: "1975",
   Furigana: "褒[ほ]める",
   Kana: "ほめる",
   Kanji: "褒める",
+  Optimized_Sent_Index: "1970",
+  Optimized_Voc_Index: "1975",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1843",
   Frequency: "19294",
-  Optimized_Sent_Index: "1971",
-  Optimized_Voc_Index: "1976",
   Furigana: "元旦[がんたん]",
   Kana: "がんたん",
   Kanji: "元旦",
+  Optimized_Sent_Index: "1971",
+  Optimized_Voc_Index: "1976",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1877",
   Frequency: "2312",
-  Optimized_Sent_Index: "1973",
-  Optimized_Voc_Index: "1977",
   Furigana: "袖[そで]",
   Kana: "そで",
   Kanji: "袖",
+  Optimized_Sent_Index: "1973",
+  Optimized_Voc_Index: "1977",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1907",
   Frequency: "26761",
-  Optimized_Sent_Index: "1974",
-  Optimized_Voc_Index: "1978",
   Furigana: "長袖[ながそで]",
   Kana: "ながそで",
   Kanji: "長袖",
+  Optimized_Sent_Index: "1974",
+  Optimized_Voc_Index: "1978",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1932",
   Frequency: "21888",
-  Optimized_Sent_Index: "1975",
-  Optimized_Voc_Index: "1979",
   Furigana: "半袖[はんそで]",
   Kana: "はんそで",
   Kanji: "半袖",
+  Optimized_Sent_Index: "1975",
+  Optimized_Voc_Index: "1979",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1632",
   Frequency: "1636",
-  Optimized_Sent_Index: "1976",
-  Optimized_Voc_Index: "1980",
   Furigana: "馬鹿[ばか]",
   Kana: "ばか",
   Kanji: "馬鹿",
+  Optimized_Sent_Index: "1976",
+  Optimized_Voc_Index: "1980",
   PartOfSpeech: "Adjectival Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1154",
   Frequency: "2446",
-  Optimized_Sent_Index: "1977",
-  Optimized_Voc_Index: "1981",
   Furigana: "凄[すご]い",
   Kana: "すごい",
   Kanji: "凄い",
+  Optimized_Sent_Index: "1977",
+  Optimized_Voc_Index: "1981",
   PartOfSpeech: "Adjective"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1883",
   Frequency: "7642",
-  Optimized_Sent_Index: "1978",
-  Optimized_Voc_Index: "1982",
   Furigana: "剃[そ]る",
   Kana: "そる",
   Kanji: "剃る",
+  Optimized_Sent_Index: "1978",
+  Optimized_Voc_Index: "1982",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1852",
   Frequency: "2243",
-  Optimized_Sent_Index: "1980",
-  Optimized_Voc_Index: "1983",
   Furigana: "喧嘩[けんか]",
   Kana: "けんか",
   Kanji: "喧嘩",
+  Optimized_Sent_Index: "1980",
+  Optimized_Voc_Index: "1983",
   PartOfSpeech: "Verbal Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1082",
   Frequency: "783",
-  Optimized_Sent_Index: "1982",
-  Optimized_Voc_Index: "1984",
   Furigana: "叩[たた]く",
   Kana: "たたく",
   Kanji: "叩く",
+  Optimized_Sent_Index: "1982",
+  Optimized_Voc_Index: "1984",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1322",
   Frequency: "2219",
-  Optimized_Sent_Index: "1983",
-  Optimized_Voc_Index: "1985",
   Furigana: "噛[か]む",
   Kana: "かむ",
   Kanji: "噛む",
+  Optimized_Sent_Index: "1983",
+  Optimized_Voc_Index: "1985",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1619",
   Frequency: "10776",
-  Optimized_Sent_Index: "1985",
-  Optimized_Voc_Index: "1986",
   Furigana: "味噌汁[みそしる]",
   Kana: "みそしる",
   Kanji: "味噌汁",
+  Optimized_Sent_Index: "1985",
+  Optimized_Voc_Index: "1986",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1967",
   Frequency: "8903",
-  Optimized_Sent_Index: "1986",
-  Optimized_Voc_Index: "1987",
   Furigana: "姪[めい]",
   Kana: "めい",
   Kanji: "姪",
+  Optimized_Sent_Index: "1986",
+  Optimized_Voc_Index: "1987",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1649",
   Frequency: "23551",
-  Optimized_Sent_Index: "1987",
-  Optimized_Voc_Index: "1988",
   Furigana: "苺[いちご]",
   Kana: "いちご",
   Kanji: "苺",
+  Optimized_Sent_Index: "1987",
+  Optimized_Voc_Index: "1988",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1908",
   Frequency: "18956",
-  Optimized_Sent_Index: "1988",
-  Optimized_Voc_Index: "1989",
   Furigana: "茄子[なす]",
   Kana: "なす",
   Kanji: "茄子",
+  Optimized_Sent_Index: "1988",
+  Optimized_Voc_Index: "1989",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "983",
   Frequency: "2647",
-  Optimized_Sent_Index: "1989",
-  Optimized_Voc_Index: "1990",
   Furigana: "逢[あ]う",
   Kana: "あう",
   Kanji: "逢う",
+  Optimized_Sent_Index: "1989",
+  Optimized_Voc_Index: "1990",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1295",
   Frequency: "725",
-  Optimized_Sent_Index: "1990",
-  Optimized_Voc_Index: "1991",
   Furigana: "椅子[いす]",
   Kana: "いす",
   Kanji: "椅子",
+  Optimized_Sent_Index: "1990",
+  Optimized_Voc_Index: "1991",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1971",
   Frequency: "3220",
-  Optimized_Sent_Index: "1992",
-  Optimized_Voc_Index: "1992",
   Furigana: "痩[や]せる",
   Kana: "やせる",
   Kanji: "痩せる",
+  Optimized_Sent_Index: "1992",
+  Optimized_Voc_Index: "1992",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1582",
   Frequency: "4149",
-  Optimized_Sent_Index: "1993",
-  Optimized_Voc_Index: "1993",
   Furigana: "箸[はし]",
   Kana: "はし",
   Kanji: "箸",
+  Optimized_Sent_Index: "1993",
+  Optimized_Voc_Index: "1993",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1615",
   Frequency: "16994",
-  Optimized_Sent_Index: "1994",
-  Optimized_Voc_Index: "1994",
   Furigana: "糊[のり]",
   Kana: "のり",
   Kanji: "糊",
+  Optimized_Sent_Index: "1994",
+  Optimized_Voc_Index: "1994",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1871",
   Frequency: "9391",
-  Optimized_Sent_Index: "1995",
-  Optimized_Voc_Index: "1995",
   Furigana: "醤油[しょうゆ]",
   Kana: "しょうゆ",
   Kanji: "醤油",
+  Optimized_Sent_Index: "1995",
+  Optimized_Voc_Index: "1995",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1704",
   Frequency: "12068",
-  Optimized_Sent_Index: "1996",
-  Optimized_Voc_Index: "1996",
   Furigana: "鋏[はさみ]",
   Kana: "はさみ",
   Kanji: "鋏",
+  Optimized_Sent_Index: "1996",
+  Optimized_Voc_Index: "1996",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1837",
   Frequency: "3619",
-  Optimized_Sent_Index: "1997",
-  Optimized_Voc_Index: "1997",
   Furigana: "鞄[かばん]",
   Kana: "かばん",
   Kanji: "鞄",
+  Optimized_Sent_Index: "1997",
+  Optimized_Voc_Index: "1997",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1815",
   Frequency: "1822",
-  Optimized_Sent_Index: "1998",
-  Optimized_Voc_Index: "1998",
   Furigana: "顎[あご]",
   Kana: "あご",
   Kanji: "顎",
+  Optimized_Sent_Index: "1998",
+  Optimized_Voc_Index: "1998",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1726",
   Frequency: "16027",
-  Optimized_Sent_Index: "1999",
-  Optimized_Voc_Index: "1999",
   Furigana: "飴[あめ]",
   Kana: "あめ",
   Kanji: "飴",
+  Optimized_Sent_Index: "1999",
+  Optimized_Voc_Index: "1999",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "1874",
   Frequency: "11972",
-  Optimized_Sent_Index: "2000",
-  Optimized_Voc_Index: "2000",
   Furigana: "石鹸[せっけん]",
   Kana: "せっけん",
   Kanji: "石鹸",
+  Optimized_Sent_Index: "2000",
+  Optimized_Voc_Index: "2000",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "2054",
   Frequency: "2354",
-  Optimized_Sent_Index: "2393",
-  Optimized_Voc_Index: "2459",
   Furigana: "差[さ]",
   Kana: "さ",
   Kanji: "差",
+  Optimized_Sent_Index: "2393",
+  Optimized_Voc_Index: "2459",
   PartOfSpeech: "Noun"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "2041",
   Frequency: "546",
-  Optimized_Sent_Index: "3801",
-  Optimized_Voc_Index: "2870",
   Furigana: "失[うしな]う",
   Kana: "うしなう",
   Kanji: "失う",
+  Optimized_Sent_Index: "3801",
+  Optimized_Voc_Index: "2870",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "5017",
   Frequency: "3998",
-  Optimized_Sent_Index: "2024",
-  Optimized_Voc_Index: "4066",
   Furigana: "外[はず]れる",
   Kana: "はずれる",
   Kanji: "外れる",
+  Optimized_Sent_Index: "2024",
+  Optimized_Voc_Index: "4066",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "4503",
   Frequency: "6848",
-  Optimized_Sent_Index: "3780",
-  Optimized_Voc_Index: "5182",
   Furigana: "測[はか]る",
   Kana: "はかる",
   Kanji: "測る",
+  Optimized_Sent_Index: "3780",
+  Optimized_Voc_Index: "5182",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "5422",
   Frequency: "3198",
-  Optimized_Sent_Index: "4087",
-  Optimized_Voc_Index: "5314",
   Furigana: "含[ふく]める",
   Kana: "ふくめる",
   Kanji: "含める",
+  Optimized_Sent_Index: "4087",
+  Optimized_Voc_Index: "5314",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "5864",
   Frequency: "1674",
-  Optimized_Sent_Index: "4088",
-  Optimized_Voc_Index: "5315",
   Furigana: "含[ふく]む",
   Kana: "ふくむ",
   Kanji: "含む",
+  Optimized_Sent_Index: "4088",
+  Optimized_Voc_Index: "5315",
   PartOfSpeech: "Verb"
 }, {
+
+  Alt_Spelling: {},
   Core_Index: "5742",
   Frequency: "5616",
-  Optimized_Sent_Index: "5979",
-  Optimized_Voc_Index: "5994",
   Furigana: "頂戴[ちょうだい]",
   Kana: "ちょうだい",
   Kanji: "頂戴",
+  Optimized_Sent_Index: "5979",
+  Optimized_Voc_Index: "5994",
   PartOfSpeech: "Verbal Noun"
 }
 
