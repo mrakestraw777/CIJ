@@ -3,7 +3,7 @@
             /* height: 15%; */
     /* width: fit-content; */
     /* height: 100%; */
-    margin: 14px;
+    margin-left: 8px;
     padding: 0 5px 0 0;
     display: flex;
     /* width: 100%; */
@@ -47,10 +47,11 @@ button{
 }
 
 #searchResults{
-        margin-left: 14px;
-        background-color: #ffffff;
-        padding: 8px;
-        width: fit-content;
+    margin-left: 14px;
+    margin-right: 14px;
+    background-color: #ffffff;
+    padding: 8px;
+    width: fit-content;
 }
 
 #searchResults p{
