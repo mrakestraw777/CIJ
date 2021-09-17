@@ -13,10 +13,6 @@
 height: fit-content;
 }
 
-.formItem{
-
-}
-
 #inputForm input{
     font-size: 18px;
     /* text-size-adjust: 100%; */
@@ -122,11 +118,6 @@ html, body {margin:0;padding:0;height:100%;}
 body{
     background-color: #eee0e0;
 }
-
-/* a, a:hover, a:focus, a:active {
-    text-decoration: none;
-    color: inherit;
-} */
 
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
