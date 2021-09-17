@@ -1,24 +1,25 @@
+
 #inputForm{
-    /* height: 15%; */
-/* width: fit-content; */
-/* height: fit-content; */
-margin: 14px;
-/* padding: 0 5px 0 0; */
-display: flex;
-align-items: center;
-width: 100%;
+        /* height: 15%; */
+    /* width: fit-content; */
+    /* height: 100%; */
+    margin: 14px;
+    padding: 0 5px 0 0;
+    display: flex;
+    /* width: 100%; */
 }
 
 #inputForm button{
 height: fit-content;
 }
 
-/* .formItem{
+.formItem{
 
-} */
+}
 
 #inputForm input{
-    font-size: 3em;
+    font-size: 18px;
+    /* text-size-adjust: 100%; */
     margin: 4px;
     border: solid black 2px;
     flex-grow: 1;
@@ -65,7 +66,7 @@ height: fit-content;
 }
 
 button{
-    border-radius: 3px;
+    border-radius: 5px;
     background: #db7aa2;
     color: #ffffff;
     padding: 0.4em 1em;
