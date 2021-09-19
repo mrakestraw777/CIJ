@@ -1,3 +1,28 @@
+const mySelects = document.querySelectorAll("select");
+let searchDisplay = document.getElementById('searchResults');
+
+mySelects.forEach(e =>{
+  e.addEventListener('change', selectsChanged)
+})
+
+
+function selectsChanged(){
+  if(searchDisplay.style.display != 'none')
+  {
+    const searchTerm = document.getElementById('searchInput').value;
+    let searchTermArray = searchTranscripts(fullTranscripts, searchTerm, mySelects[0].value, mySelects[1].value);
+    if(searchTermArray.length != 0)
+    {
+      document.getElementById('searchResults').innerHTML = presentArrayData(searchTermArray);
+      document.getElementById('searchResults').style.display = 'inherit';
+    }else
+    document.getElementById('searchResults').innerHTML = `<p><span class="searchTerm">${searchTerm}</span> does not seem to appear in any transcripts. If you entered a Kanji try removing any suffixes from the root Kanji or enter the pure Kana form of the word</p>
+    
+    <p>Example: <span class="searchTerm">頑張る</span> has "0" results.  Removing the kana suffix "-る" leaves the root form <span class="searchTerm">頑張</span> which has some results.</p>`;
+    document.getElementById('searchResults').style.display = 'inherit';
+  }
+}
+
 /* Source for stringSearch function:
 https://medium.com/nerd-for-tech/naive-string-searching-algorithm-2d5fa07fdbcd */
 
@@ -13,27 +38,80 @@ function stringSearch(string, pattern) {
     
   };
 
-function searchTranscripts(text,searchTerm) 
+  
+function searchTranscripts(text,searchTerm, availability, level) 
 {
-  let newArray = [];
-  text.forEach(element => {
-      let newElement = {};
-      let count = stringSearch(element['transcript'], searchTerm);
-      newElement['url'] = element['url'];
-      newElement['title'] = element['title'];
-      newElement['level'] = element['level'];        
-      newElement['termCount'] = count;
-      newElement['term']= searchTerm;
-      if(count != 0)
-      {
-          newArray.push(newElement);
-      }
-      console.log(searchTerm + " appears " + count + " times in " + newElement['title']);
-  });
+      let newArray = [];
+      text.forEach(element => {
+        /* console.log(`availability = ${availability}`)
+        console.log(`element member ship = ${element['membership']}`) */
 
-  sortSearchArray(newArray);
-  console.log(newArray);
-  return newArray;
+        if(availability == 'all' && level == 'all'){
+          console.log(`in all/all availabilty == ${availability} and membership == ${level}`)
+
+        let newElement = {};
+        let count = stringSearch(element['transcript'], searchTerm);
+        newElement['url'] = element['url'];
+        newElement['title'] = element['title'];
+        newElement['level'] = element['level'];        
+        newElement['termCount'] = count;
+        newElement['term']= searchTerm;
+        if(count != 0)
+        {
+            newArray.push(newElement);
+        }
+        console.log(searchTerm + " appears " + count + " times in " + newElement['title']);
+
+        }else if(element['membership'] == availability && element['level'] == level){
+
+          console.log(element['membership'] == availability)
+          console.log(element['level'] == level)
+          
+          let newElement = {};
+          let count = stringSearch(element['transcript'], searchTerm);
+          newElement['url'] = element['url'];
+          newElement['title'] = element['title'];
+          newElement['level'] = element['level'];        
+          newElement['termCount'] = count;
+          newElement['term']= searchTerm;
+          if(count != 0)
+          {
+              newArray.push(newElement);
+          }
+          console.log(searchTerm + " appears " + count + " times in " + newElement['title']);
+        }else if(element['membership'] == availability && level == 'all'){
+          let newElement = {};
+          let count = stringSearch(element['transcript'], searchTerm);
+          newElement['url'] = element['url'];
+          newElement['title'] = element['title'];
+          newElement['level'] = element['level'];        
+          newElement['termCount'] = count;
+          newElement['term']= searchTerm;
+          if(count != 0)
+          {
+              newArray.push(newElement);
+          }
+          console.log(searchTerm + " appears " + count + " times in " + newElement['title']);
+        }else if(availability == 'all' && element['level'] == level){
+          let newElement = {};
+          let count = stringSearch(element['transcript'], searchTerm);
+          newElement['url'] = element['url'];
+          newElement['title'] = element['title'];
+          newElement['level'] = element['level'];        
+          newElement['termCount'] = count;
+          newElement['term']= searchTerm;
+          if(count != 0)
+          {
+              newArray.push(newElement);
+          }
+          console.log(searchTerm + " appears " + count + " times in " + newElement['title']);
+        }
+
+      });
+
+      sortSearchArray(newArray);
+      console.log(newArray);
+      return newArray;
 }
 
 function presentArrayData(formattedArray)
@@ -53,7 +131,7 @@ function presentArrayData(formattedArray)
       htmlData += `<a target="_blank" href="${currentArray['url']}"><p>${currentArray['title']}</a> has <span class="searchTerm">${currentArray['term']}</span> appear ${currentArray['termCount']} times (${currentArray['level']})</p><br>`
     }
     
-    console.log(htmlData)
+    // console.log(htmlData)
   })
   return htmlData;
 };
@@ -68,10 +146,16 @@ function sortSearchArray(sortedArray){
 
 document.getElementById("searchButton").onclick = function() {
     const searchTerm = document.getElementById('searchInput').value;
-    let searchTermArray = searchTranscripts(fullTranscripts, searchTerm);
-    document.getElementById('searchResults').innerHTML = presentArrayData(searchTermArray);
+    let searchTermArray = searchTranscripts(fullTranscripts, searchTerm, mySelects[0].value, mySelects[1].value);
+    if(searchTermArray.length != 0)
+    {
+      document.getElementById('searchResults').innerHTML = presentArrayData(searchTermArray);
+      document.getElementById('searchResults').style.display = 'inherit';
+    }else
+    document.getElementById('searchResults').innerHTML = `<p><span class="searchTerm">${searchTerm}</span> does not seem to appear in any transcripts. If you entered a Kanji try removing any suffixes from the root Kanji or enter the pure Kana form of the word</p>
+    
+    <p>Example: <span class="searchTerm">頑張る</span> has "0" results.  Removing the kana suffix "-る" leaves the root form <span class="searchTerm">頑張</span> which has some results.</p>`;
     document.getElementById('searchResults').style.display = 'inherit';
-
   }
     
 
@@ -84,6 +168,120 @@ document.getElementById("searchButton").onclick = function() {
 
 /* BELOW IS THE FULL TRANSCRIPTS  */
 
+/* let numberSwitch = [
+  {
+    numeral:{
+      num: '0',
+      unicode: 48,
+    },
+    fullWidth:{
+      num: '０',
+      unicode: 65296,
+    },
+    kana: '',
+  },
+  {
+    numeral:{
+      num: '1',
+      unicode: 49,
+    },
+    fullWidth:{
+      num: '１',
+      unicode: 65297,
+    },
+    kana: '',
+  },
+  {
+    numeral:{
+      num: '2',
+      unicode: 50,
+    },
+    fullWidth:{
+      num: '２',
+      unicode: 65298,
+    },
+    kana: '',
+  },
+  {
+    numeral:{
+      num: '3',
+      unicode: 51,
+    },
+    fullWidth:{
+      num: '３',
+      unicode: 65299,
+    },
+    kana: '',
+  },
+  {
+    numeral:{
+      num: '4',
+      unicode: 52,
+    },
+    fullWidth:{
+      num: '４',
+      unicode: 65300,
+    },
+    kana: '',
+  },
+  {
+    numeral:{
+      num: '5',
+      unicode: 53,
+    },
+    fullWidth:{
+      num: '５',
+      unicode: 65301,
+    },
+    kana: '',
+  },
+  {
+    numeral:{
+      num: '6',
+      unicode: 54,
+    },
+    fullWidth:{
+      num: '６',
+      unicode: 65302,
+    },
+    kana: '',
+  },
+  {
+    numeral:{
+      num: '7',
+      unicode: 55,
+    },
+    fullWidth:{
+      num: '７',
+      unicode: 65303,
+    },
+    kana: '',
+  },
+  {
+    numeral:{
+      num: '8',
+      unicode: 56,
+    },
+    fullWidth:{
+      num: '８',
+      unicode: 65304,
+    },
+    kana: '',
+  },
+  {
+    numeral:{
+      num: '9',
+      unicode: 57,
+    },
+    fullWidth:{
+      num: '９',
+      unicode: 65305,
+    },
+    kana: '',
+  },
+  
+]
+ */
 let fullTranscripts = [ //this is the main array for FULL TRANSCRIPTS
 
     {
@@ -40026,11 +40224,3 @@ let core2000 = [ //begining of core2000 array
 }
 
 ] //end of core2000 array
-
-
-
-
-
-
-
-

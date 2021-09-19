@@ -21,13 +21,43 @@
         </div>
     </a>
         
+    <div id="bodyDiv">
 
-    <form id="inputForm">  
-        <input  id="searchInput" type="text" placeholder="Enter Kanji or Kana...">
-        <button  type="button" id="searchButton">Search!</button>
-     </form>
+        <label for="availability">Availability: </label>
 
-     <div style="display: none;" id="searchResults"></div>
+        <select name="availability" id="availability">
+            <option value="all">全て All</option>
+            <option value="free">無料 Free</option>
+            <option value="members only">会員限定 Members Only</option>
+        </select>
+
+        <label for="difficulty">Difficulty Level: </label>
+
+        <select name="difficulty" id="difficulty">
+            <option value="all">全て All</option>
+            <option value="complete beginner">超初心者 Complete Beginner</option>
+            <option value="beginner">初級 Beginner</option>
+            <option value="intermediate">中級 Intermediate</option>
+        </select>
+
+        <!-- <ul>
+            <label><input type="checkbox" name="myCheckbox" value="all">全て All</label>
+            <label><input type="checkbox" name="myCheckbox" value="free">無料 Free</label>
+            <label><input type="checkbox" name="myCheckbox" value="members">会員限定 Members Only</label>
+            <label><input type="checkbox" name="myCheckbox" value="complete Beginner">超初心者 Complete Beginner</label>
+            <label><input type="checkbox" name="myCheckbox" value="beginner">初級 Beginner</label>
+            <label><input type="checkbox" name="myCheckbox" value="intermediate">中級 Intermediate</label>
+    
+        </ul> -->
+    
+        <form id="inputForm">  
+            <input  id="searchInput" type="text" placeholder="Enter Kanji or Kana...">
+            <button  type="button" id="searchButton">Search!</button>
+         </form>
+    
+         <div style="display: none;" id="searchResults"></div>
+
+        </div>
 
      <script src="cij.js"></script>
 
