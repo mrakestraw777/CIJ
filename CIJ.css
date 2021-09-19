@@ -60,6 +60,16 @@ ul{
 .categories{
     font-family: Roboto, sans-serif;
 }
+
+select{
+    margin-right: 8px;
+    margin-left: 2px;
+}
+
+#selectors{
+    display: flex;
+    flex-wrap: wrap;
+}
 #inputForm{
             /* height: 15%; */
     /* width: fit-content; */
