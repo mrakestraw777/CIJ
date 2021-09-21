@@ -60,10 +60,10 @@ function searchCore2000(searchTerm){
   core2000.forEach(e => {
     if(searchTerm == e.kanji || searchTerm==e.kana)
     {
-      console.log(`${searchTerm} appears in the core2000 as is.`)
+      // console.log(`${searchTerm} appears in the core2000 as is.`)
     }else
     {
-      console.log(`${searchTerm} does NOT appear in the core2000 as is.`)
+      // console.log(`${searchTerm} does NOT appear in the core2000 as is.`)
     }
   })
 }
