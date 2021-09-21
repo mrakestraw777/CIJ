@@ -1,7 +1,7 @@
 const mySelects = document.querySelectorAll("select");
 let searchDisplay = document.getElementById('searchResults');
 
-console.log(`Here's proof of my new commits working with the same url.`)
+// console.log(`Here's proof of my new commits working with the same url.`)
 
 mySelects.forEach(e =>{
   e.addEventListener('change', selectsChanged)
