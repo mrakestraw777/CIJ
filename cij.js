@@ -33,9 +33,7 @@ function selectsChanged(){
       document.getElementById('searchResults').style.display = 'inherit';
     }else{
       /* document.getElementById('searchResults').innerHTML = core2000Check(core2000,searchTerm); */
-    document.getElementById('searchResults').innerHTML = `<p><span class="searchTerm">${searchTerm}</span> does not seem to appear in any transcripts. If you entered a Kanji try removing any suffixes from the root Kanji or enter the pure Kana form of the word</p>
-    
-    <p>Example: <span class="searchTerm">頑張る</span> has "0" results.  Removing the kana suffix "-る" leaves the root form <span class="searchTerm">頑張</span> which has some results.</p>`;
+    document.getElementById('searchResults').innerHTML = `<p><span class="searchTerm">${searchTerm}</span> does not seem to appear in any transcripts. Try searching <a target="blank" href="https://jisho.org/search/${searchTerm}">${searchTerm} on Jisho</a> to see if there's another form you might use.</p>`;
     document.getElementById('searchResults').style.display = 'inherit';
     }
   }
