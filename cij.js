@@ -235,7 +235,8 @@ function searchTranscripts(text,searchTerm, availability, level)
 
 function presentArrayData(formattedArray)
 {
-  let htmlData = `<p><span class="searchTerm">${formattedArray[0].term}</span> appears in ${formattedArray.length} transcripts. </p><br>`;
+  let htmlData = `<p><span class="searchTerm">${formattedArray[0].term}</span> appears in ${formattedArray.length} transcripts.<br><br>
+  Try searching <a target="blank" href="https://jisho.org/search/${formattedArray[0].term}">${formattedArray[0].term} on Jisho</a> for more forms you might search.</p><br>`;
   let arrayFormatCount = 0
   formattedArray.forEach(currentArray =>{
     if(arrayFormatCount == 0)
