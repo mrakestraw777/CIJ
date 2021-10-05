@@ -1354,8 +1354,8 @@ let fullTranscripts = [
       肉にくじゃが　完成かんせい！`
   },
   {
-      title: `いくつ？ How many?`,
-      url: `https://cijapanese.com/how-many/`,
+      title: `いくつ？①人や動物の数え方 How many?#1 Counters for people and animals`,
+      url: `https://cijapanese.com/how-many-1/`,
       level: `complete beginner`,
       membership: `free`,
       transcript: `この写真を見てください。人がいます。人がいます。何人いますか。何人いますか。１人、２人、３人。３人います。この人は男の人です。男性です。この人達は女の人です。女性です。男の人は何人いますか。１人います。女の人は何人いますか。１人、２人。２人います。男性が１人、女性が２人います。
