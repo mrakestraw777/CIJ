@@ -2689,12 +2689,64 @@ let fullTranscripts = [
   今日きょうはこれでおしまい。またね！`
 },
 {
-  title: ``,
-  url: ``,
-  level: ``,
-  membership: ``,
-  transcript: ``,
-  transcript_furigana: ``
+  title: `Thản Nhiên Chọc Ghẹo Gái Xinh Bán Cà Phê Nơi Đông Người | Anh Áo Đen #4`,
+  url: `https://www.youtube.com/watch?v=Qqfk07gL0M0`,
+  level: `beginner`,
+  membership: `free`,
+  transcript: `Dạ rồi em gửi thuốc ạ Dạ cái này là cà
+  phê sữa ạ Dạ cái này là sữa cà phê ạ
+  Anh ơi anh anh làm cái gì vậy anh
+  có tiền mà
+  em chứ không phải lấy tiền của anh nữa
+  không
+  không nhận thì tao nựng hai thằng mày
+  [âm nhạc]
+  vậy đó hả
+  Tại sao lại không thích hot tren anh anh
+  anh anh đợi em định thần lại em hỏi anh
+  một cái nó có một điều phi lý mà nó hợp
+  lý ở đây là vấn đề là tại sao cái thằng
+  này nó nó không bị uýnh em không thích
+  tại sao bị đánh cái đó là hot trend của
+  tao
+  cảm ơn biết cái đó
+  tranh thủ đi về nhà rồi
+  tao hỏi hai thằng mày đó là bạn gái của
+  tao tụi mày mới làm gì vậy
+  [âm nhạc]
+  [âm nhạc]
+  Uống cà phê cho hết
+  [âm nhạc]
+  em
+  [âm nhạc]
+  [âm nhạc]`,
+  transcript_furigana: `Dạ rồi em gửi thuốc ạ Dạ cái này là cà
+  phê sữa ạ Dạ cái này là sữa cà phê ạ
+  Anh ơi anh anh làm cái gì vậy anh
+  có tiền mà
+  em chứ không phải lấy tiền của anh nữa
+  không
+  không nhận thì tao nựng hai thằng mày
+  [âm nhạc]
+  vậy đó hả
+  Tại sao lại không thích hot tren anh anh
+  anh anh đợi em định thần lại em hỏi anh
+  một cái nó có một điều phi lý mà nó hợp
+  lý ở đây là vấn đề là tại sao cái thằng
+  này nó nó không bị uýnh em không thích
+  tại sao bị đánh cái đó là hot trend của
+  tao
+  cảm ơn biết cái đó
+  tranh thủ đi về nhà rồi
+  tao hỏi hai thằng mày đó là bạn gái của
+  tao tụi mày mới làm gì vậy
+  [âm nhạc]
+  [âm nhạc]
+  Uống cà phê cho hết
+  [âm nhạc]
+  em
+  [âm nhạc]
+  [âm nhạc]`
 },
 {
   title: ``,
