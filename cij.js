@@ -2691,7 +2691,7 @@ let fullTranscripts = [
 {
   title: `Thản Nhiên Chọc Ghẹo Gái Xinh Bán Cà Phê Nơi Đông Người | Anh Áo Đen #4`,
   url: `https://www.youtube.com/watch?v=Qqfk07gL0M0`,
-  level: `beginner`,
+  level: `intermediate`,
   membership: `free`,
   transcript: `Dạ rồi em gửi thuốc ạ Dạ cái này là cà
   phê sữa ạ Dạ cái này là sữa cà phê ạ
